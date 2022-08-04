@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import classes from "../assets/scss/partials/_nav.module.scss";
+import classes from "../../assets/scss/partials/_nav.module.scss";
 
 const Nav = () => {
    return (

@@ -19,4 +19,7 @@ export const slides = [
    <a href="">
       <img src="https://picsum.photos/800/304/?random" alt="" />
    </a>,
+	<div>
+		
+	</div>
 ];
