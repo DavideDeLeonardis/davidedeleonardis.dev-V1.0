@@ -1,5 +1,7 @@
 import { links } from "../../assets/config/linksHrefRepos";
 
+import classes from "../../assets/scss/partials/_repos.module.scss";
+
 const RepoItem = ({ repo }) => {
    const getLinkHref = () => {
       for (let index = 0; index < links.length; index++) {
@@ -37,7 +39,10 @@ const RepoItem = ({ repo }) => {
          <br /> {repo.description}
          <br /> {repo.language}
          <br />
-         <span className="color" style={{ backgroundColor: getColor() }}></span>
+         <span
+            className={classes["color-language"]}
+            style={{ backgroundColor: getColor() }}
+         ></span>
          <br />
          <a href={getLinkHref()} target="_blank" rel="noreferrer">
             See Demo
