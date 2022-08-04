@@ -10,7 +10,7 @@
 body {
    font-family: "PT Sans", sans-serif;
    font-size: 16rem 100%;
-	scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 // commons
@@ -28,4 +28,11 @@ a {
 ul,
 li {
    list-style-type: none;
+}
+
+span.color {
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
 }
