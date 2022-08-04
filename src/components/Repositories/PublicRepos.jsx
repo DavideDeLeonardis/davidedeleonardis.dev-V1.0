@@ -32,7 +32,7 @@ const PublicRepos = () => {
 
             setTimeout(() => {
                setIsLoading(false);
-            }, 1000);
+            }, 750);
          } catch (error) {
             setError(error || "Something went wrong");
             setIsLoading(false);
