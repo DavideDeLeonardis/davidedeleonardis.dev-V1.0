@@ -1,9 +1,12 @@
-const RepoItem = (props) => {
+const RepoItem = ({ repo }) => {
    return (
-      <>
-         <li>{props.name}</li>
+      <li>
+         - {repo.name}
+         <br /> {repo.description}
+         <br /> {repo.language}
          <br />
-      </>
+         <br />
+      </li>
    );
 };
 

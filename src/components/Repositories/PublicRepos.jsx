@@ -58,9 +58,13 @@ const PublicRepos = () => {
       );
    }
 
-   const reposList = repos.map((repo, index) => (
-      <RepoItem key={index} name={repo.name} />
-   ));
+   const reposList = repos.map(
+      (repo, index) =>
+         repo.owner.login === "DavideDeLeonardis" &&
+         repo.name !== "DavideDeLeonardis" && (
+            <RepoItem key={index} repo={repo} />
+         )
+   );
 
    return <ul>{reposList}</ul>;
 };
