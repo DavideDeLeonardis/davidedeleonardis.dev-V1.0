@@ -1,17 +1,22 @@
 export const slides = [
-   <a href="/">
-      <img src="https://picsum.photos/800/300/?random" alt="1" />
+	// eslint-disable-next-line
+   <a href="">
+      <img src="https://picsum.photos/800/300/?random" alt="" />
    </a>,
-   <a href="/">
-      <img src="https://picsum.photos/800/301/?random" alt="2" />
+	// eslint-disable-next-line
+   <a href="">
+      <img src="https://picsum.photos/800/301/?random" alt="" />
    </a>,
-   <a href="/">
-      <img src="https://picsum.photos/800/302/?random" alt="3" />
+	// eslint-disable-next-line
+   <a href="">
+      <img src="https://picsum.photos/800/302/?random" alt="" />
    </a>,
-   <a href="/">
-      <img src="https://picsum.photos/800/303/?random" alt="4" />
+	// eslint-disable-next-line
+   <a href="">
+      <img src="https://picsum.photos/800/303/?random" alt="" />
    </a>,
-   <a href="/">
-      <img src="https://picsum.photos/800/304/?random" alt="5" />
+	// eslint-disable-next-line
+   <a href="">
+      <img src="https://picsum.photos/800/304/?random" alt="" />
    </a>,
 ];
