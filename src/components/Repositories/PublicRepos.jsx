@@ -1,46 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 import RepoItem from "./RepoItem";
 
 const PublicRepos = () => {
    const [repos, setRepos] = useState([]);
-   const [isLoading, setIsLoading] = useState(false);
-   const [error, setError] = useState(null);
-
-   useEffect(() => {
-      const fetchGH = async () => {
-         setIsLoading(true);
-         setError(null);
-
-         try {
-            const response = await fetch(
-               "https://api.github.com/user/repos?type=public",
-               {
-                  headers: {
-                     Authorization:
-                        "Bearer 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",
-                  },
-               }
-            );
-
-            if (!response.ok) {
-               throw new Error("Request failed!");
-            }
-
-            const data = await response.json();
-            setRepos(data);
-
-            setTimeout(() => {
-               setIsLoading(false);
-            }, 750);
-         } catch (error) {
-            setError(error || "Something went wrong");
-            setIsLoading(false);
-         }
-      };
-
-      fetchGH();
-   }, []);
+   const { isLoading, error } = useFetch(
+      setRepos,
+      750,
+      "https://api.github.com/user/repos?type=public",
+      "GET",
+      "Bearer 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"
+   );
 
    if (isLoading) {
       return (
