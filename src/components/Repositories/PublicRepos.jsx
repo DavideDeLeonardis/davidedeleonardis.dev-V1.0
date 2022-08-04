@@ -9,7 +9,6 @@ const PublicRepos = () => {
       setRepos,
       750,
       "https://api.github.com/user/repos?type=public",
-      "GET",
       "Bearer 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"
    );
 

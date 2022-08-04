@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (applyData, time, url, method, auth) => {
+const useFetch = (applyData, time, url, token = "", method = "GET") => {
    const [isLoading, setIsLoading] = useState(false);
    const [error, setError] = useState(null);
 
@@ -13,7 +13,7 @@ const useFetch = (applyData, time, url, method, auth) => {
             const response = await fetch(url, {
                method: method,
                headers: {
-                  Authorization: auth,
+                  Authorization: token,
                },
             });
 
@@ -34,7 +34,7 @@ const useFetch = (applyData, time, url, method, auth) => {
       };
 
       fetchGH();
-   }, [applyData, time, url, method, auth]);
+   }, [applyData, time, url, method, token]);
 
    return {
       isLoading,
