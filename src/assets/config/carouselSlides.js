@@ -19,7 +19,7 @@ const findImageOfFavourites = () => {
       for (let index = 0; index < repos.length; index++) {
          const repo = repos[index];
          if (favourite.name === repo.name) {
-            images.push({ image: repo.image, name: repo.name });
+            images.push({ image: repo.imageHorizontal, name: repo.name });
          }
       }
    });

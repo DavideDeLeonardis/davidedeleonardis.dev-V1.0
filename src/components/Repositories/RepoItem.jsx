@@ -21,7 +21,7 @@ const RepoItem = ({ repo }) => {
 
    const getImage = () => {
       for (let index = 0; index < repos.length; index++) {
-         if (repos[index].name === repo.name) return repos[index].image;
+         if (repos[index].name === repo.name) return repos[index].imageHorizontal;
       }
    };
 
