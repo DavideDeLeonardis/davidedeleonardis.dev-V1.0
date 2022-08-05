@@ -1,35 +1,21 @@
 import { links } from "../../assets/config/linksHrefRepos";
+import { languageColors } from "../../assets/config/languageColors";
 
 import classes from "../../assets/scss/partials/_repos.module.scss";
 
 const RepoItem = ({ repo }) => {
    const getLinkHref = () => {
       for (let index = 0; index < links.length; index++) {
-         const element = links[index];
-         if (element.name === repo.name) {
-            return element.link;
+         if (links[index].name === repo.name) {
+            return links[index].link;
          }
       }
    };
 
    const getColor = () => {
-      switch (repo.language) {
-         case "HTML":
-            return `#E34C26`;
-         case "CSS":
-            return `#563D7C`;
-         case "JavaScript":
-            return `#F0E159`;
-         case "Vue":
-            return `#40B983`;
-         case "PHP":
-            return `#4F5E96`;
-         case "C#":
-            return `#188601`;
-         case "Solidity":
-            return `#AA6746`;
-         default:
-            return "";
+      for (let index = 0; index < languageColors.length; index++) {
+         if (languageColors[index].language === repo.language)
+            return languageColors[index].color;
       }
    };
 

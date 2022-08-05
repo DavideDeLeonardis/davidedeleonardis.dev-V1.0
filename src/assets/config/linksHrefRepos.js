@@ -1,6 +1,12 @@
 export const links = [
-   { name: "deliverboo", link: "" },
-   { name: "laravel-boolpress", link: "" },
+   {
+      name: "deliveboo",
+      link: "https://github.com/DavideDeLeonardis/deliveboo",
+   }, // GH
+   {
+      name: "laravel-boolpress",
+      link: "https://github.com/DavideDeLeonardis/laravel-boolpress",
+   }, // GH
    { name: "react-amazon", link: "https://react--clone-d9242.web.app" },
    // { name: "react-youtube", link: "" },
    {
