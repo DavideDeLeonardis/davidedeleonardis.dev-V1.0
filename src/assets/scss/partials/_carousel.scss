@@ -1,6 +1,18 @@
 .react-3d-carousel .slider-container .slider-right div,
 .react-3d-carousel .slider-container .slider-left div {
-   //    display: none;
    color: black;
    border: none;
+}
+
+.react-3d-carousel
+   .slider-container
+   .slider-content
+   .slider-single
+   .slider-single-content {
+   box-shadow: none !important;
+}
+
+.carousel-img-container {
+   max-height: 30vw;
+   overflow: hidden;
 }

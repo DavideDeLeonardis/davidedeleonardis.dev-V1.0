@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (applyData, time, url, token = "", method = "GET") => {
+const useFetch = (applyData, url, token = "", method = "GET") => {
    const [isLoading, setIsLoading] = useState(false);
    const [error, setError] = useState(null);
 
@@ -23,18 +23,15 @@ const useFetch = (applyData, time, url, token = "", method = "GET") => {
 
             const data = await response.json();
             applyData(data);
-
-            setTimeout(() => {
-               setIsLoading(false);
-            }, time);
          } catch (error) {
             setError(error || "Something went wrong");
-            setIsLoading(false);
          }
+			
+         setIsLoading(false);
       };
 
       fetchGH();
-   }, [applyData, time, url, method, token]);
+   }, [applyData, url, method, token]);
 
    return {
       isLoading,

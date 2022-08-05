@@ -13,6 +13,11 @@ body {
    scroll-behavior: smooth;
 }
 
+#root {
+   max-width: 1500px;
+   margin: auto;
+}
+
 // commons
 a {
    color: inherit;

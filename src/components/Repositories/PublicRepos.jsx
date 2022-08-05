@@ -7,7 +7,6 @@ const PublicRepos = () => {
    const [repos, setRepos] = useState([]);
    const { isLoading, error } = useFetch(
       setRepos,
-      750,
       "https://api.github.com/user/repos?type=public",
       "Bearer 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"
    );
