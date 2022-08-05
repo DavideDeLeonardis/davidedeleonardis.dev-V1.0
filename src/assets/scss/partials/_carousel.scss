@@ -6,7 +6,15 @@
    box-shadow: none !important;
 }
 
-.carousel-img-container {
-   max-height: 30vw;
-   overflow: hidden;
+@media screen and (min-width: 768px) {
+   .carousel-img-container {
+      max-height: 30vw;
+      overflow: hidden;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .carousel-img-container {
+      max-height: inherit;
+   }
 }

@@ -19,7 +19,11 @@ const findImageOfFavourites = () => {
       for (let index = 0; index < repos.length; index++) {
          const repo = repos[index];
          if (favourite.name === repo.name) {
-            images.push({ image: repo.imageHorizontal, name: repo.name });
+            images.push({
+               name: repo.name,
+               imageHorizontal: repo.imageHorizontal,
+               imageVertical: repo.imageVertical,
+            });
          }
       }
    });
@@ -27,13 +31,18 @@ const findImageOfFavourites = () => {
    return images;
 };
 
-const images = findImageOfFavourites().map((image, index) => (
+const vw = Math.max(
+   document.documentElement.clientWidth || 0,
+   window.innerWidth || 0
+);
+
+const images = findImageOfFavourites().map((repo, index) => (
    <div className="carousel-img-container">
       <a key={index} href="/">
          <img
-            src={image.image}
+            src={vw > 768 ? repo.imageHorizontal : repo.imageVertical}
             alt={`${
-               image.name.charAt(0).toUpperCase() + image.name.slice(1)
+               repo.name.charAt(0).toUpperCase() + repo.name.slice(1)
             } from Davide De Leonardis`}
          />
       </a>
