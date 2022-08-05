@@ -5,7 +5,7 @@ import "../../assets/scss/partials/_carousel.scss";
 
 const CarouselComponent = () => {
    return (
-      <Carousel slides={slides} autoplay={true} interval={1750} arrows={true} />
+      <Carousel slides={slides} autoplay={true} interval={1750} arrows={false} />
    );
 };
 
