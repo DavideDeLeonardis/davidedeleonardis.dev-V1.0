@@ -32,11 +32,20 @@ const Contact = () => {
          <h3>{message}</h3>
          <form ref={form} onSubmit={sendEmail}>
             <label>Name</label>
+            <br />
             <input type="text" name="user_name" />
+            <br />
+            <br />
             <label>Email</label>
+            <br />
             <input type="email" name="user_email" />
+            <br />
+            <br />
             <label>Message</label>
+            <br />
             <textarea name="message" />
+            <br />
+            <br />
             <input type="submit" value={isLoading ? "Sending..." : "Send"} />
          </form>
       </Fragment>
