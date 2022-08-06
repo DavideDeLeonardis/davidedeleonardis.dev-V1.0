@@ -1,21 +1,22 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import RepoItem from "./RepoItem";
 
 const PublicRepos = ({ isLoading, error, repos }) => {
-   if (isLoading) {
+   if (isLoading)
       return (
          <section>
+            <FontAwesomeIcon icon="fa-spinner" spin />
             <span>Loading repositories...</span>
          </section>
       );
-   }
 
-   if (error) {
+   if (error)
       return (
          <section>
             <p>{error}</p>
          </section>
       );
-   }
 
    const reposList = repos.map(
       (repo, index) =>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 
-import SelectLanguage from "../components/Layout/SelectLanguage";
+import SelectLanguage from "../components/Repositories/SelectLanguage";
 import PublicRepos from "../components/Repositories/PublicRepos";
 
 const Projects = () => {
@@ -26,9 +26,8 @@ const Projects = () => {
             !options.includes(repo.language) &&
             repo.language !== findLanguagesUseless() &&
             repo.language !== null
-         ) {
+         )
             options.push(repo.language);
-         }
       });
 
       return options;
