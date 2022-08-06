@@ -2,8 +2,7 @@ import { repos } from "./repos";
 
 /* Add images in carousel:
 		INSERT REPO NAME IN favourites 
-		ADD images[i] AT THE END IN export slides
-*/
+		ADD images[i] AT THE END IN export slides */
 
 const favourites = [
    { name: "deliveboo" },
@@ -13,26 +12,35 @@ const favourites = [
 ];
 
 const findImageOfFavourites = () => {
-   let images = [];
+   let carouselItems = [];
 
    favourites.forEach((favourite) => {
       for (let index = 0; index < repos.length; index++) {
          const repo = repos[index];
          if (favourite.name === repo.name) {
-            images.push({
+            carouselItems.push({
                name: repo.name,
                image: repo.image,
+               publicLink: repo.publicLink,
             });
          }
       }
    });
 
-   return images;
+   return carouselItems;
 };
 
 const images = findImageOfFavourites().map((repo, index) => (
    <div className="carousel-img-container">
-      <a key={index} href="/">
+      <a
+         key={index}
+         href={
+            repo.publicLink ||
+            `https://github.com/DavideDeLeonardis/${repo.name}`
+         }
+         target="_blank"
+         rel="noreferrer"
+      >
          <img
             src={repo.image}
             alt={`${
