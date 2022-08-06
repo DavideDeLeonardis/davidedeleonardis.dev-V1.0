@@ -24,7 +24,7 @@ const RepoItem = ({ repo }) => {
 
    const getRepoProperty = () => {
       for (let index = 0; index < repos.length; index++) {
-         if (repos[index].name === repo.name)
+         if (repos[index].id === repo.id)
             return {
                repo_link: repos[index].publicLink,
                repo_image: repos[index].image,

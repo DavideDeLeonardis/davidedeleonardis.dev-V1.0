@@ -9,7 +9,7 @@ const Projects = () => {
       <div>
          <h2>Projects</h2>
          <PublicRepos />
-         <a href="#header" className="up">
+         <a href="#header" className="arrow-up-scroll">
             <FontAwesomeIcon icon="angle-up" />
          </a>
       </div>
