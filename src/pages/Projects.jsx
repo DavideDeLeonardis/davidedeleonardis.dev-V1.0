@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 import SelectLanguage from "../components/Repositories/SelectLanguage";
@@ -48,7 +48,7 @@ const Projects = () => {
    };
 
    return (
-      <div>
+      <Fragment>
          <h2>Projects</h2>
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
          <PublicRepos
@@ -56,7 +56,7 @@ const Projects = () => {
             isLoading={isLoading}
             error={error}
          />
-      </div>
+      </Fragment>
    );
 };
 
