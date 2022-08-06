@@ -1,16 +1,6 @@
-import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
-
 import RepoItem from "./RepoItem";
 
-const PublicRepos = () => {
-   const [repos, setRepos] = useState([]);
-   const { isLoading, error } = useFetch(
-      setRepos,
-      "https://api.github.com/user/repos?type=public",
-      "Bearer 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"
-   );
-
+const PublicRepos = ({ isLoading, error, repos }) => {
    if (isLoading) {
       return (
          <section>
