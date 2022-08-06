@@ -1,0 +1,4 @@
+-  set CV things in HOME page
+-  download CV through QRcode
+-  name animation
+-  qualifications animation
