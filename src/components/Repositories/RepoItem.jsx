@@ -16,23 +16,33 @@ const RepoItem = ({ repo }) => {
       }
    };
 
-   const getColor = () => {
+   const getLanguageColor = () => {
       for (let index = 0; index < languageColors.length; index++) {
          if (languageColors[index].language === repo.language)
             return languageColors[index].color;
       }
    };
 
-   const { repo_link, repo_image } = getRepoProperty();
-
-   const capitalized__repo_name =
-      repo.name.charAt(0).toUpperCase() + repo.name.slice(1);
-
-   const repo_description = repo.description.replace(/PREVIEW.*$/i, "");
+   const {
+      // repo.name
+      capitalized__repo_name,
+      repo_description,
+      repo_image,
+      repo_public_link,
+      // repo.language
+      language_color,
+   } = {
+      capitalized__repo_name:
+         repo.name.charAt(0).toUpperCase() + repo.name.slice(1),
+      repo_description: repo.description.replace(/PREVIEW.*$/i, ""),
+      repo_image: getRepoProperty().repo_image,
+      repo_public_link: getRepoProperty().repo_link,
+      language_color: getLanguageColor(),
+   };
 
    return (
       <li>
-         - {repo.name}
+         - {capitalized__repo_name}
          <br />
          <img
             className={classes["repo-img"]}
@@ -44,12 +54,13 @@ const RepoItem = ({ repo }) => {
          <br />
          <span
             className={classes["color-language"]}
-            style={{ backgroundColor: getColor() || `#000000` }}
+            style={{ backgroundColor: language_color || `#000000` }}
          ></span>
          <br />
          <a
             href={
-               repo_link || `https://github.com/DavideDeLeonardis/${repo.name}`
+               repo_public_link ||
+               `https://github.com/DavideDeLeonardis/${repo.name}`
             }
             target="_blank"
             rel="noreferrer"
