@@ -6,9 +6,13 @@ import default_image from "../../assets/images/default.png";
 import classes from "../../assets/scss/partials/_repos.module.scss";
 
 const RepoItem = ({ repo }) => {
-   const getLinkHref = () => {
+   const getRepoProperty = () => {
       for (let index = 0; index < repos.length; index++) {
-         if (repos[index].name === repo.name) return repos[index].publicLink;
+         if (repos[index].name === repo.name)
+            return {
+               repo_link: repos[index].publicLink,
+               repo_image: repos[index].image,
+            };
       }
    };
 
@@ -19,11 +23,12 @@ const RepoItem = ({ repo }) => {
       }
    };
 
-   const getImage = () => {
-      for (let index = 0; index < repos.length; index++) {
-         if (repos[index].name === repo.name) return repos[index].imageHorizontal;
-      }
-   };
+   const { repo_link, repo_image } = getRepoProperty();
+
+   const capitalized__repo_name =
+      repo.name.charAt(0).toUpperCase() + repo.name.slice(1);
+
+   const repo_description = repo.description.replace(/PREVIEW.*$/i, "");
 
    return (
       <li>
@@ -31,12 +36,10 @@ const RepoItem = ({ repo }) => {
          <br />
          <img
             className={classes["repo-img"]}
-            src={getImage() || default_image}
-            alt={`${
-               repo.name.charAt(0).toUpperCase() + repo.name.slice(1)
-            } from Davide De Leonardis`}
+            src={repo_image || default_image}
+            alt={`${capitalized__repo_name} from Davide De Leonardis`}
          />
-         <br /> {repo.description}
+         <br /> {repo_description}
          <br /> {repo.language}
          <br />
          <span
@@ -46,8 +49,7 @@ const RepoItem = ({ repo }) => {
          <br />
          <a
             href={
-               getLinkHref() ||
-               `https://github.com/DavideDeLeonardis/${repo.name}`
+               repo_link || `https://github.com/DavideDeLeonardis/${repo.name}`
             }
             target="_blank"
             rel="noreferrer"
