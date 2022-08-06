@@ -45,6 +45,7 @@ const RepoItem = ({ repo }) => {
       repo_description,
       repo_image,
       repo_public_link,
+      gitHub_link,
       // repo.language
       language_color,
    } = {
@@ -52,6 +53,7 @@ const RepoItem = ({ repo }) => {
       repo_description: repo.description.replace(/PREVIEW.*$/i, ""),
       repo_image: getRepoProperty().repo_image,
       repo_public_link: getRepoProperty().repo_link,
+      gitHub_link: `https://github.com/DavideDeLeonardis/${repo.name}`,
       language_color: getLanguageColor(),
    };
 
@@ -73,15 +75,17 @@ const RepoItem = ({ repo }) => {
          ></span>
          <br />
          <a
-            href={
-               repo_public_link ||
-               `https://github.com/DavideDeLeonardis/${repo.name}`
-            }
+            href={repo_public_link || gitHub_link}
             target="_blank"
             rel="noreferrer"
          >
             See Demo
          </a>
+         <br />
+         <a href={gitHub_link} target="_blank" rel="noreferrer">
+            See on GitHub
+         </a>
+         <br />
          <br />
          <br />
       </li>
