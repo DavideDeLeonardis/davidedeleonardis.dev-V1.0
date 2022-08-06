@@ -6,6 +6,22 @@ import default_image from "../../assets/images/default.png";
 import classes from "../../assets/scss/partials/_repos.module.scss";
 
 const RepoItem = ({ repo }) => {
+   const transformName = () => {
+      if (repo.name.startsWith("php")) {
+         return `
+				${repo.name.charAt(0).toUpperCase()}
+				${repo.name.charAt(1).toUpperCase()}
+				${repo.name.charAt(2).toUpperCase()}
+				${repo.name.slice(3).replace("-", " ")}
+			`;
+      } else {
+         return (
+            repo.name.charAt(0).toUpperCase() +
+            repo.name.slice(1).replace("-", " ")
+         );
+      }
+   };
+
    const getRepoProperty = () => {
       for (let index = 0; index < repos.length; index++) {
          if (repos[index].name === repo.name)
@@ -32,8 +48,7 @@ const RepoItem = ({ repo }) => {
       // repo.language
       language_color,
    } = {
-      capitalized__repo_name:
-         repo.name.charAt(0).toUpperCase() + repo.name.slice(1),
+      capitalized__repo_name: transformName(),
       repo_description: repo.description.replace(/PREVIEW.*$/i, ""),
       repo_image: getRepoProperty().repo_image,
       repo_public_link: getRepoProperty().repo_link,
