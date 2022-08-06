@@ -1,3 +1,5 @@
+// images: 1336h x 1350w
+
 export const repos = [
    {
       id: 480318106,

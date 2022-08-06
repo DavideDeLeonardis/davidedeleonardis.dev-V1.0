@@ -1,9 +1,0 @@
-@use "../mixins" as mixin;
-
-nav {
-	padding: 20px 0;
-
-	.list-elements {
-		@include mixin.flex($gap: 20px);
-	}
-}

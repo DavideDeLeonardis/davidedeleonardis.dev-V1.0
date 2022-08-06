@@ -7,11 +7,11 @@
    box-sizing: border-box;
 }
 
-body,
 html {
    font-family: "PT Sans", sans-serif;
    font-size: 16rem 100%;
    scroll-behavior: smooth;
+   scroll-padding-top: 61px;
 }
 
 #root {

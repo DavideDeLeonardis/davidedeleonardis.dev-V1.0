@@ -10,10 +10,10 @@ const Layout = (props) => {
    return (
       <Fragment>
          <Header />
-         <main>{props.children}</main>
+         <main id="top">{props.children}</main>
          <Footer />
 
-         <a href="#header" className="arrow-up-scroll">
+         <a href="#top" className="arrow-up-scroll">
             <FontAwesomeIcon icon="angle-up" />
          </a>
       </Fragment>

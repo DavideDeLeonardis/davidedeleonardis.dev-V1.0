@@ -21,7 +21,7 @@ const findImageOfFavourites = () => {
          if (favourite.name === repo.name) {
             images.push({
                name: repo.name,
-               image: repo.image
+               image: repo.image,
             });
          }
       }

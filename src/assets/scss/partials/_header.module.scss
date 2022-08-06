@@ -1,0 +1,16 @@
+@use "../mixins" as mixin;
+
+header {
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: #ffffff;
+   padding: 20px 0;
+
+   nav {
+      .list-elements {
+         @include mixin.flex($gap: 20px);
+      }
+   }
+}

@@ -6,11 +6,13 @@ import PublicRepos from "../components/Repositories/PublicRepos";
 
 const Projects = () => {
    const [repos, setRepos] = useState([]);
+   const [filteredRepos, setFilteredRepos] = useState([]);
    const { isLoading, error } = useFetch(
       setRepos,
       "https://api.github.com/user/repos?type=public",
       "Bearer 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"
    );
+   // const [valueSelect, setValueSelect] = useState("All");
 
    const findLanguagesUseless = () => {
       const notShowableLanguages = ["HTML", "CSS", "SCSS", "shell"];
@@ -34,11 +36,27 @@ const Projects = () => {
    };
    setOptionsHandler();
 
+   const setValueHandler = (e) => {
+      if (e.target.value === "All") {
+         setFilteredRepos(repos);
+      } else {
+         setFilteredRepos(
+            repos.filter((repo) => {
+               return repo.language === e.target.value;
+            })
+         );
+      }
+   };
+
    return (
       <div>
          <h2>Projects</h2>
-         <SelectLanguage options={options} />
-         <PublicRepos repos={repos} isLoading={isLoading} error={error} />
+         <SelectLanguage options={options} onChangeValue={setValueHandler} />
+         <PublicRepos
+            repos={filteredRepos}
+            isLoading={isLoading}
+            error={error}
+         />
       </div>
    );
 };

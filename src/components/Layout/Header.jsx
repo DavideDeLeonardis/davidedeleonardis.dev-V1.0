@@ -1,8 +1,10 @@
 import Nav from "./Nav";
 
+import "../../assets/scss/partials/_header.module.scss";
+
 const Header = () => {
    return (
-      <header id="header">
+      <header>
          <Nav />
       </header>
    );
