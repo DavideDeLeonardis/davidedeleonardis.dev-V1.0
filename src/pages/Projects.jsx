@@ -12,7 +12,6 @@ const Projects = () => {
       "https://api.github.com/user/repos?type=public",
       "Bearer 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"
    );
-   // const [valueSelect, setValueSelect] = useState("All");
 
    const findLanguagesUseless = () => {
       const notShowableLanguages = ["HTML", "CSS", "SCSS", "shell"];
@@ -53,7 +52,7 @@ const Projects = () => {
          <h2>Projects</h2>
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
          <PublicRepos
-            repos={filteredRepos}
+            repos={filteredRepos.length === 0 ? repos : filteredRepos}
             isLoading={isLoading}
             error={error}
          />
