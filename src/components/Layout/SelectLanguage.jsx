@@ -1,6 +1,8 @@
 const selectLanguage = ({ options }) => {
    const optionsList = options.map((option, index) => (
-      <option value={option} key={index}></option>
+      <option value={option} key={index}>
+         {option}
+      </option>
    ));
 
    return (

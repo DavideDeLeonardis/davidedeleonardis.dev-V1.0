@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 
-// import SelectLanguage from "../components/Layout/SelectLanguage";
+import SelectLanguage from "../components/Layout/SelectLanguage";
 import PublicRepos from "../components/Repositories/PublicRepos";
 
 const Projects = () => {
@@ -11,20 +11,34 @@ const Projects = () => {
       "https://api.github.com/user/repos?type=public",
       "Bearer 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"
    );
-   // const [options, setOptions] = useState([]);
 
-   // useEffect(() => {
-   //    repos.forEach((repo) => {
-   //       if (!options.includes(repo.language)) {
-   //          setOptions(repo.language);
-   //       }
-   //    });
-   // }, [repos, options]);
+   const findLanguagesUseless = () => {
+      const notShowableLanguages = ["HTML", "CSS", "SCSS", "shell"];
+
+      for (let index = 0; index < notShowableLanguages.length; index++)
+         return notShowableLanguages[index];
+   };
+
+   let options = [];
+   const setOptionsHandler = () => {
+      repos.forEach((repo) => {
+         if (
+            !options.includes(repo.language) &&
+            repo.language !== findLanguagesUseless() &&
+            repo.language !== null
+         ) {
+            options.push(repo.language);
+         }
+      });
+
+      return options;
+   };
+   setOptionsHandler();
 
    return (
       <div>
          <h2>Projects</h2>
-         {/* <SelectLanguage options={options} /> */}
+         <SelectLanguage options={options} />
          <PublicRepos repos={repos} isLoading={isLoading} error={error} />
       </div>
    );
