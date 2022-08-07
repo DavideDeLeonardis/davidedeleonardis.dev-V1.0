@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import { repos } from "../../assets/config/repos";
 import { languageColors } from "../../assets/config/languageColors";
 import default_image from "../../assets/images/default.png";
@@ -21,69 +23,58 @@ const RepoItem = ({ repo }) => {
       }
    };
 
-   const getRepoProperty = () => {
-      for (let index = 0; index < repos.length; index++) {
-         if (repos[index].id === repo.id)
-            return {
-               repo_link: repos[index].publicLink,
-               repo_image: repos[index].image,
-            };
+   const getProperties = (array) => {
+      for (let index = 0; index < array.length; index++) {
+         switch (array) {
+            case repos:
+               if (array[index].id === repo.id) return array[index].image;
+               break;
+            case languageColors:
+               if (languageColors[index].language === repo.language)
+                  return languageColors[index].color;
+               break;
+            default:
+               break;
+         }
       }
    };
 
-   const getLanguageColor = () => {
-      for (let index = 0; index < languageColors.length; index++) {
-         if (languageColors[index].language === repo.language)
-            return languageColors[index].color;
-      }
-   };
+   const image = getProperties(repos);
 
-   const {
-      // repo.name
-      capitalized__repo_name,
-      repo_description,
-      repo_image,
-      repo_public_link,
-      gitHub_link,
-      // repo.language
-      language_color,
-   } = {
-      capitalized__repo_name: transformName(),
-      repo_description: repo.description.replace(/PREVIEW.*$/i, ""),
-      repo_image: getRepoProperty().repo_image,
-      repo_public_link: getRepoProperty().repo_link,
-      gitHub_link: `https://github.com/DavideDeLeonardis/${repo.name}`,
-      language_color: getLanguageColor(),
-   };
+   const languageColor = getProperties(languageColors);
+
+   const topics = repo.topics.map((topic, index) => (
+      <li key={index}>{topic}</li>
+   ));
 
    return (
       <li>
-         - {capitalized__repo_name}
+         - {transformName()}
          <br />
          <img
             className={classes["repo-img"]}
-            src={repo_image || default_image}
-            alt={`${capitalized__repo_name} from Davide De Leonardis`}
+            src={image || default_image}
+            alt={`${transformName()} from Davide De Leonardis`}
          />
-         <br /> {repo_description}
+         <br /> {repo.description}
          <br /> {repo.language}
          <br />
          <span
             className={classes["color-language"]}
-            style={{ backgroundColor: language_color || `#000000` }}
+            style={{ backgroundColor: languageColor || `#000000` }}
          ></span>
          <br />
-         {repo_public_link && (
-            <a
-               href={repo_public_link || gitHub_link}
-               target="_blank"
-               rel="noreferrer"
-            >
-               See Demo
-            </a>
-         )}
+         <ul>{topics}</ul>
          <br />
-         <a href={gitHub_link} target="_blank" rel="noreferrer">
+         {repo.homepage !== "" && (
+            <Fragment>
+               <a href={repo.homepage} target="_blank" rel="noreferrer">
+                  See Demo
+               </a>
+               <br />
+            </Fragment>
+         )}
+         <a href={repo.html_url} target="_blank" rel="noreferrer">
             See on GitHub
          </a>
          <br />

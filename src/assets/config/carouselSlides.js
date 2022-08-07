@@ -21,7 +21,6 @@ const findImageOfFavourites = () => {
             carouselItems.push({
                name: repo.name,
                image: repo.image,
-               publicLink: repo.publicLink,
             });
          }
       }
@@ -34,10 +33,7 @@ const images = findImageOfFavourites().map((repo, index) => (
    <div className="carousel-img-container">
       <a
          key={index}
-         href={
-            repo.publicLink ||
-            `https://github.com/DavideDeLeonardis/${repo.name}`
-         }
+         href={repo.homepage !== "" ? repo.homepage : repo.html_url}
          target="_blank"
          rel="noreferrer"
       >

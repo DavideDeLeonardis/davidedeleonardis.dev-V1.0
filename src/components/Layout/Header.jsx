@@ -5,7 +5,7 @@ import classes from "../../assets/scss/partials/_header.module.scss";
 const Header = () => {
    return (
       <header>
-         <span>LOGO</span>
+         <h2 className={classes.name}>Davide De Leonardis</h2>
          <div className={classes["header-right"]}>
             <Nav />
             <span>Impostazioni</span>

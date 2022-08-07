@@ -7,10 +7,14 @@ header {
    @include mixin.flex($justify: space-between);
    width: 100%;
    background-color: #ffffff;
-   padding: 15px 25px;
+   padding: 15px 45px;
+
+   .name {
+      font-style: italic;
+   }
 
    .header-right {
-      @include mixin.flex($gap: 50px);
+      @include mixin.flex($gap: 20px);
 
       nav {
          .list-elements {

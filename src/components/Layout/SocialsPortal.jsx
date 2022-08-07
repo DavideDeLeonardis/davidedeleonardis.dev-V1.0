@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { socials } from "../../assets/config/mySocials";
-import classes from "../../assets/scss/partials/_aside.module.scss";
+import classes from "../../assets/scss/partials/_socialsPortal.module.scss";
 
 const SocialsPortal = () => {
    const socialList = socials.map((social, index) => (
