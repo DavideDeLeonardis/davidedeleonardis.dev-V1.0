@@ -1,0 +1,17 @@
+@use "../mixins" as mixin;
+
+.aside-container {
+   position: fixed;
+   top: 50%;
+   right: 5px;
+   @include mixin.flex($direction: column, $gap: 20px);
+
+   .social-item {
+      background-color: #ffa600;
+      border-radius: 50%;
+
+      .social {
+         padding: 7px 8px 5px;
+      }
+   }
+}

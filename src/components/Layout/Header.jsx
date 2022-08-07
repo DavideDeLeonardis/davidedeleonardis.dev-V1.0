@@ -1,11 +1,15 @@
 import Nav from "./Nav";
 
-import "../../assets/scss/partials/_header.module.scss";
+import classes from "../../assets/scss/partials/_header.module.scss";
 
 const Header = () => {
    return (
       <header>
-         <Nav />
+         <span>LOGO</span>
+         <div className={classes["header-right"]}>
+            <Nav />
+            <span>Impostazioni</span>
+         </div>
       </header>
    );
 };

@@ -73,13 +73,15 @@ const RepoItem = ({ repo }) => {
             style={{ backgroundColor: language_color || `#000000` }}
          ></span>
          <br />
-         <a
-            href={repo_public_link || gitHub_link}
-            target="_blank"
-            rel="noreferrer"
-         >
-            See Demo
-         </a>
+         {repo_public_link && (
+            <a
+               href={repo_public_link || gitHub_link}
+               target="_blank"
+               rel="noreferrer"
+            >
+               See Demo
+            </a>
+         )}
          <br />
          <a href={gitHub_link} target="_blank" rel="noreferrer">
             See on GitHub
