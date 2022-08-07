@@ -7,7 +7,7 @@ import default_image from "../../assets/images/default.png";
 import classes from "../../assets/scss/partials/_repos.module.scss";
 
 const RepoItem = ({ repo }) => {
-   const transformName = () => {
+   const transformedName = () => {
       if (repo.name.startsWith("php")) {
          return `
 				${repo.name.charAt(0).toUpperCase()}
@@ -25,6 +25,7 @@ const RepoItem = ({ repo }) => {
 
    const getProperties = (array) => {
       for (let index = 0; index < array.length; index++) {
+         // eslint-disable-next-line default-case
          switch (array) {
             case repos:
                if (array[index].id === repo.id) return array[index].image;
@@ -32,8 +33,6 @@ const RepoItem = ({ repo }) => {
             case languageColors:
                if (languageColors[index].language === repo.language)
                   return languageColors[index].color;
-               break;
-            default:
                break;
          }
       }
@@ -49,12 +48,12 @@ const RepoItem = ({ repo }) => {
 
    return (
       <li>
-         - {transformName()}
+         - {transformedName()}
          <br />
          <img
             className={classes["repo-img"]}
             src={image || default_image}
-            alt={`${transformName()} from Davide De Leonardis`}
+            alt={`${transformedName()} project from Davide De Leonardis`}
          />
          <br /> {repo.description}
          <br /> {repo.language}
