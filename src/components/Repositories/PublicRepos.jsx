@@ -21,7 +21,8 @@ const PublicRepos = ({ isLoading, error, repos }) => {
    const reposList = repos.map(
       (repo, index) =>
          repo.owner.login === "DavideDeLeonardis" &&
-         repo.name !== "DavideDeLeonardis" && (
+         repo.name !== "DavideDeLeonardis" &&
+         repo.name !== "react-my-website" && (
             <RepoItem key={index} repo={repo} />
          )
    );
