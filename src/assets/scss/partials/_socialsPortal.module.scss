@@ -7,16 +7,20 @@
    @include mixin.flex($direction: column, $gap: 20px);
 
    .social-item {
+      @include mixin.flex();
+      width: 35px;
+      height: 35px;
       background-color: #000000;
       border-radius: 50%;
 
       .social {
-         padding: 8px 8px 5px;
-			font-size: 1.2em;
-
+			font-size: 1.35em;
+			transform: translateY(1.25px);
+			
          path {
-            fill: #ffa600;
+				fill: #ffa600;
          }
+			
       }
    }
 }
