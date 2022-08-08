@@ -6,8 +6,9 @@ header {
    left: 0;
    @include mixin.flex($justify: space-between);
    width: 100%;
-   background-color: #ffffff9b;
+   background-color: rgba(255, 255, 255, 0.698);
    padding: 15px 45px;
+	z-index: 1;
 
    .name {
       font-style: italic;
