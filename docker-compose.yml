@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+    React-my-website:
+        container_name: React-my-website
+        image: node:12-alpine
+        build:
+          context: .
+          dockerfile: Dockerfile
+        command: sh -c "apk add --no-cache python2 g++ make && npm install && npm start"
+        ports:
+            - 3000:3000
+        working_dir: /app
+        volumes:
+            - ./:/app
+            - '/app/node_modules'
+
+# docker-compose up -d
