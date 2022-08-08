@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import App from "./App";
+// import MaintenancePage from "./pages/MaintenancePage";
 
 import "./assets/scss/index.scss";
 
@@ -24,4 +25,5 @@ root.render(
          <App />
       </BrowserRouter>
    </StrictMode>
+   // <MaintenancePage />
 );

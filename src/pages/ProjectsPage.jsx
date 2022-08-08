@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch";
 import SelectLanguage from "../components/Repositories/SelectLanguage";
 import PublicRepos from "../components/Repositories/PublicRepos";
 
-const Projects = () => {
+const ProjectsPage = () => {
    const [repos, setRepos] = useState([]);
    const [filteredRepos, setFilteredRepos] = useState([]);
    const { isLoading, error } = useFetch(
@@ -60,4 +60,4 @@ const Projects = () => {
    );
 };
 
-export default Projects;
+export default ProjectsPage;

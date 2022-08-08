@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const Contact = () => {
+const ContactPage = () => {
    const [message, setMessage] = useState(null);
    const [isLoading, setIsLoading] = useState(false);
    const form = useRef();
@@ -52,4 +52,4 @@ const Contact = () => {
    );
 };
 
-export default Contact;
+export default ContactPage;

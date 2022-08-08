@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import Carousel from "../components/Layout/Carousel";
 import qrcode from "../assets/images/qrcode.png";
 
-const Home = () => {
+const HomePage = () => {
    return (
       <Fragment>
          <img width="200" src={qrcode} alt="qrcode of CV" />
@@ -12,4 +12,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default HomePage;
