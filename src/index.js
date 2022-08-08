@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import App from "./App";
-// import MaintenancePage from "./pages/MaintenancePage";
+import MaintenancePage from "./pages/MaintenancePage";
 
 import "./assets/scss/index.scss";
 
@@ -20,10 +20,10 @@ library.add(faAngleUp, faSpinner, faLinkedin, faInstagram, faTwitter, faGithub);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-   <StrictMode>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>
-   </StrictMode>
-   // <MaintenancePage />
+   // <StrictMode>
+   //    <BrowserRouter>
+   //       <App />
+   //    </BrowserRouter>
+   // </StrictMode>
+   <MaintenancePage />
 );
