@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
-import Presentation from "../components/Layout/Presentation";
-import Carousel from "../components/Layout/Carousel";
+import Presentation from "../components/Elements/Presentation";
+import Carousel from "../components/Elements/Carousel";
 import qrcode from "../assets/images/qrcode.png";
 
 const HomePage = () => {

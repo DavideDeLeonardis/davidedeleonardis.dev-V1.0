@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Header from "./Header";
-import SocialsPortal from "./SocialsPortal";
+import SocialsPortal from "../Elements/SocialsPortal";
 import Footer from "./Footer";
 
 import "../../assets/scss/partials/_arrow_up.scss";
