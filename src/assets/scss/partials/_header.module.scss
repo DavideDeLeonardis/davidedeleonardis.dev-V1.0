@@ -4,23 +4,33 @@ header {
    position: sticky;
    top: 0;
    left: 0;
-   @include mixin.flex($justify: space-between);
    width: 100%;
-   background-color: rgba(255, 255, 255, 0.698);
-   padding: 15px 45px;
-	z-index: 1;
+   background-color: rgba(255, 255, 255, 0.517);
+   padding: 20px 0;
+   z-index: 1;
 
-   .name {
-      font-style: italic;
-   }
+   .header {
+      @include mixin.flex($justify: space-between);
 
-   .header-right {
-      @include mixin.flex($gap: 20px);
+      .logo {
+         font-size: 1.5em;
+         font-weight: bold;
+         font-style: italic;
+      }
 
-      nav {
-         .list-elements {
-            @include mixin.flex($gap: 20px);
+      .header-right-horizontal {
+         @include mixin.flex($gap: 20px);
+
+         nav {
+            .list-elements {
+               @include mixin.flex($gap: 20px);
+            }
          }
+      }
+
+      .header-right-vertical {
+         @include mixin.flex($direction: column, $gap: 20px);
+         color: red;
       }
    }
 }

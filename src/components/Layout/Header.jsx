@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Nav from "./Nav";
 
 import classes from "../../assets/scss/partials/_header.module.scss";
@@ -5,10 +7,13 @@ import classes from "../../assets/scss/partials/_header.module.scss";
 const Header = () => {
    return (
       <header>
-         <h2 className={classes.name}>Davide De Leonardis</h2>
-         <div className={classes["header-right"]}>
-            <Nav />
-            <span>Impostazioni</span>
+         <div className={`container ${classes.header}`}>
+            <div className={classes.logo}>Davide De Leonardis</div>
+            <FontAwesomeIcon icon="fa-solid fa-bars" />
+            <div className={`${classes["header-right-horizontal"]}`}>
+               <Nav />
+               <button>L/D mode</button>
+            </div>
          </div>
       </header>
    );

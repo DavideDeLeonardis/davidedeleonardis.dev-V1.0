@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
 
+:root {
+   --dark-blue: #0a0a41;
+   --blue: ;
+   --light-blue: ;
+   --orange: ;
+}
+
 //general
 * {
    margin: 0;
@@ -8,18 +15,31 @@
 }
 
 html {
+   height: 100vh;
    font-family: "PT Sans", sans-serif;
    font-size: 16rem 100%;
+   background-color: var(--dark-blue);
    scroll-behavior: smooth;
    scroll-padding-top: 61px;
 }
 
 #root {
-   max-width: 1400px;
-   margin: auto;
+   width: 100%;
+   height: 100%;
+   color: #ffffff;
 }
 
 // commons
+.container {
+   max-width: 1400px;
+   margin: auto;
+   padding: 0 45px;
+
+   @media screen and (max-width: 600px) {
+      padding: 0 20px;
+   }
+}
+
 a {
    color: inherit;
    text-decoration: none;
@@ -36,6 +56,8 @@ li {
    list-style-type: none;
 }
 
-main {
-   padding: 0 45px;
+button {
+   font-size: initial;
+   background-color: inherit;
+   border: none;
 }

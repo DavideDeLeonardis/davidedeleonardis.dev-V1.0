@@ -12,6 +12,10 @@ export const languageColors = [
       color: `#F0E159`,
    },
    {
+      language: "TypeScript",
+      color: `#3078C6`,
+   },
+   {
       language: "Vue",
       color: `#40B983`,
    },
@@ -28,3 +32,4 @@ export const languageColors = [
       color: `#AA6746`,
    },
 ];
+

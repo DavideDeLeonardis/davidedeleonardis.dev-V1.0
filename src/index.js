@@ -3,7 +3,11 @@ import { StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faAngleUp, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+   faAngleUp,
+   faSpinner,
+   faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import {
    faLinkedin,
    faInstagram,
@@ -16,7 +20,15 @@ import App from "./App";
 
 import "./assets/scss/index.scss";
 
-library.add(faAngleUp, faSpinner, faLinkedin, faInstagram, faTwitter, faGithub);
+library.add(
+   faAngleUp,
+   faSpinner,
+   faBars,
+   faLinkedin,
+   faInstagram,
+   faTwitter,
+   faGithub
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
