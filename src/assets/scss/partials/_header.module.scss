@@ -26,11 +26,41 @@ header {
                @include mixin.flex($gap: 20px);
             }
          }
-      }
 
-      .header-right-vertical {
-         @include mixin.flex($direction: column, $gap: 20px);
-         color: red;
+         @media screen and (max-width: 768px) {
+            & {
+               display: none;
+            }
+         }
       }
+   }
+}
+
+.header-portal {
+   position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 9999;
+   width: 250px;
+   height: 100vh;
+   background-color: white;
+   animation: slide-right 300ms ease-out forwards;
+   overflow: scroll;
+
+   @keyframes slide-right {
+      from {
+         transform: translateX(20rem);
+      }
+      to {
+         transform: translateX(0);
+      }
+   }
+}
+
+@media screen and (min-width: 769px) {
+   .toggler,
+   .button-close,
+   .header-portal {
+      display: none;
    }
 }
