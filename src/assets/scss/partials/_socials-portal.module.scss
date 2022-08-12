@@ -3,7 +3,8 @@
 .aside-container {
    position: fixed;
    top: 50%;
-   right: 5px;
+	right: 5px;
+	transform: translateY(-50%);
    @include mixin.flex($direction: column, $gap: 20px);
 
    .social-item {
@@ -18,7 +19,7 @@
          transform: translateY(1.25px);
 
          path {
-            fill: #ffa600;
+            fill: var(--orange);
          }
       }
    }

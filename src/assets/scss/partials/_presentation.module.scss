@@ -1,14 +1,9 @@
-:root {
-   --font-size-l: 30px;
-   --font-size-s: 4.5vw;
-}
-
 .presentation {
    margin: 30px 0 150px 0;
 
    .name-container {
       position: relative;
-      height: calc(var(--font-size-l) + 10px);
+      height: calc(var(--font-size-name-animation-l) + 10px);
 
       span {
          font-size: 1.5em;
@@ -26,20 +21,20 @@
             position: absolute;
             top: 0;
             left: 0;
-            font-size: var(--font-size-l);
-            color: #ff7a00;
-            -webkit-text-stroke: 3px #ff7a00;
+            font-size: var(--font-size-name-animation-l);
+            color: var(--orange);
+            -webkit-text-stroke: 3px var(--orange);
             width: 0;
             white-space: nowrap;
             overflow: hidden;
             padding-top: 20px;
-            border-right: 3px solid #ff7a00;
+            border-right: 3px solid var(--orange);
             animation: text-fill-l 2s ease-in-out alternate infinite;
          }
 
          @keyframes text-fill-l {
             40% {
-               width: calc(var(--font-size-l) * 5);
+               width: calc(var(--font-size-name-animation-l) * 5);
                /* depends from font-size */
             }
 
@@ -52,16 +47,16 @@
 
       @media screen and (max-width: 650px) {
          & {
-            height: calc(var(--font-size-s) + 10px);
+            height: calc(var(--font-size-name-animation-s) + 10px);
 
             .text:before {
-               font-size: var(--font-size-s);
+               font-size: var(--font-size-name-animation-s);
                animation: text-fill-s 2s ease-in-out alternate infinite;
             }
 
             @keyframes text-fill-s {
                40% {
-                  width: calc(var(--font-size-s) * 5);
+                  width: calc(var(--font-size-name-animation-s) * 5);
                   /* depends from font-size */
                }
 
@@ -81,7 +76,7 @@
       span {
          width: max-content;
          position: absolute;
-         background-color: #ff7a00;
+         background-color: var(--orange);
          margin-top: 15px;
          padding: 5px;
          opacity: 0;
