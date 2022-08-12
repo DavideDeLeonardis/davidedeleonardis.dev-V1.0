@@ -1,18 +1,23 @@
+import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
+import SplashPage from './pages/SplashPage';
 // import MaintenancePage from './pages/HomePage';
 
 const App = () => {
+   const [showHome, setShowHome] = useState(false);
+
+   setTimeout(() => {
+      setShowHome(true);
+   }, 200);
+
    return (
-      <Layout>
-         <Routes>
-            <Route path="/" element={<HomePage />} />
-            {/* <Route path="/" element={<MaintenancePage />} /> */}
-            <Route path="*" element={<Navigate replace to="/" />} />
-         </Routes>
-      </Layout>
+      <Routes>
+         <Route path="/" element={showHome ? <HomePage /> : <SplashPage />} />
+         {/* <Route path="/" element={<MaintenancePage />} /> */}
+         <Route path="*" element={<Navigate replace to="/" />} />
+      </Routes>
    );
 };
 

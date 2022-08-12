@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
-import useFetch from "../../hooks/useFetch";
 
 import SelectLanguage from "./SelectLanguage";
 import PublicRepos from "./PublicRepos";
+import useFetch from "../../hooks/useFetch";
 
 const ProjectsPage = () => {
    const [repos, setRepos] = useState([]);

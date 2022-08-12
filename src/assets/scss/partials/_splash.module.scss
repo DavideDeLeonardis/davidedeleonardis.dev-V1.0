@@ -1,0 +1,6 @@
+@use '../mixins' as mixin;
+
+.splash {
+   @include mixin.flex();
+   height: 100%;
+}

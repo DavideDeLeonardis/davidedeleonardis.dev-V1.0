@@ -6,8 +6,6 @@ import Footer from './Footer';
 import SocialsPortal from '../Portals/SocialsPortal';
 import ArrowUp from '../Portals/ArrowUp';
 
-import '../../assets/scss/partials/_arrow_up.scss';
-
 const Layout = (props) => {
    const overlay = document.getElementById('overlays');
 
