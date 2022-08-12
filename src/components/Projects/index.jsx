@@ -8,6 +8,7 @@ const ProjectsPage = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
+   // const [showButton, setShowButton] = useState(true);
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -62,20 +63,20 @@ const ProjectsPage = () => {
       setReposAreSliced(false);
    };
 
+   const hideReposHandler = () => {
+      setReposAreSliced(true);
+   };
+
    const getRepos = () => {
       if (filteredReposByLanguage.length === 0) {
-         if (reposAreSliced) {
-            return filteredRepos().slice(0, 3);
-         } else {
-            return filteredRepos();
-         }
-      } else {
-         if (reposAreSliced) {
-            return filteredReposByLanguage.slice(0, 3);
-         } else {
-            return filteredReposByLanguage;
-         }
+         if (!reposAreSliced) return filteredRepos();
+
+         return filteredRepos().slice(0, 3);
       }
+
+      if (!reposAreSliced) return filteredReposByLanguage;
+
+      return filteredReposByLanguage.slice(0, 3);
    };
 
    return (
@@ -86,10 +87,10 @@ const ProjectsPage = () => {
          <PublicRepos repos={getRepos()} isLoading={isLoading} error={error} />
 
          <button
-            onClick={showAllReposHandler}
+            onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
             style={{ backgroundColor: 'white' }}
          >
-            Show more
+            {reposAreSliced ? 'Show more' : 'Show less'}
          </button>
       </Fragment>
    );

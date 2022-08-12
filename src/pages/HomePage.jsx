@@ -1,7 +1,7 @@
 import Layout from '../components/Layout/Layout';
 // import About from '../components/About';
 import Projects from '../components/Projects';
-// import Contact from '../components/Contact';
+import Contact from '../components/Contact';
 
 const HomePage = () => {
    return (
@@ -15,7 +15,7 @@ const HomePage = () => {
          </section>
 
          <section id="contact">
-            {/* <Contact /> */}
+            <Contact />
          </section>
       </Layout>
    );

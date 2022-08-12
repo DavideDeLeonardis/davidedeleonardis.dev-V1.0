@@ -7,7 +7,7 @@ const SelectLanguage = ({ options, onChangeValue }) => {
 
    return (
       <select onChange={onChangeValue}>
-         <option value="All">All</option>
+         <option value='All'>All</option>
          {optionsList}
       </select>
    );

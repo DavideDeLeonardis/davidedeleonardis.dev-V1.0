@@ -1,6 +1,6 @@
-import { links } from "../../assets/config/navLinks";
+import { links } from '../../assets/config/navLinks';
 
-import classes from "../../assets/scss/partials/_header.module.scss";
+import classes from '../../assets/scss/partials/_header.module.scss';
 
 const Nav = (props) => {
    const linksList = links.map((link, key) => (
@@ -11,10 +11,10 @@ const Nav = (props) => {
 
    return (
       <nav>
-         <button className={classes["button-close"]} onClick={props.onClose}>
+         <button className={classes['button-close']} onClick={props.onClose}>
             X
          </button>
-         <ul className={classes["list-elements"]}>{linksList}</ul>
+         <ul className={classes['list-elements']}>{linksList}</ul>
       </nav>
    );
 };

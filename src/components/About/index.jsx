@@ -10,7 +10,7 @@ const About = () => {
          <Presentation />
          <Carousel />
          <div>
-            <img width="200" src={qrcode} alt="qrcode of curriculum vitae" />
+            <img width='200' src={qrcode} alt='qrcode of curriculum vitae' />
          </div>
       </Fragment>
    );
