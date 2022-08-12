@@ -1,13 +1,13 @@
 import Layout from '../components/Layout/Layout';
-import About from '../components/About';
+// import About from '../components/About';
 import Projects from '../components/Projects';
-import Contact from '../components/Contact';
+// import Contact from '../components/Contact';
 
 const HomePage = () => {
    return (
       <Layout>
          <section id="about">
-            <About />
+            {/* <About /> */}
          </section>
 
          <section id="projects">
@@ -15,7 +15,7 @@ const HomePage = () => {
          </section>
 
          <section id="contact">
-            <Contact />
+            {/* <Contact /> */}
          </section>
       </Layout>
    );

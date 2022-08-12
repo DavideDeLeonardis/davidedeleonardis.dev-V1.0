@@ -1,10 +1,21 @@
-.repo-img {
-   width: 150px;
-}
+@use '../mixins' as mixin;
 
-.color-language {
-   display: inline-block;
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
+.repos-container {
+   @include mixin.flex($justify: flex-start, $align: flex-start, $wrap: true);
+
+   .repo {
+      width: 33%;
+      border: 1px solid red;
+
+      .repo-img {
+         width: 150px;
+      }
+		
+      .color-language {
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         border-radius: 50%;
+      }
+   }
 }

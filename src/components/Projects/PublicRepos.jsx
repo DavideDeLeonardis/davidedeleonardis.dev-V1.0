@@ -2,11 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import RepoItem from './RepoItem';
 
+import classes from '../../assets/scss/partials/_repos.module.scss';
+
 const PublicRepos = ({ isLoading, error, repos }) => {
    if (isLoading)
       return (
          <section>
-            <FontAwesomeIcon icon="fa-spinner" spin />
+            <FontAwesomeIcon icon='fa-spinner' spin />
             <span>Loading repositories...</span>
          </section>
       );
@@ -18,18 +20,11 @@ const PublicRepos = ({ isLoading, error, repos }) => {
          </section>
       );
 
-   console.log(repos);
+   const reposList = repos.map((repo, index) => (
+      <RepoItem key={index} repo={repo} />
+   ));
 
-   const reposList = repos.map(
-      (repo, index) =>
-         repo.owner.login === 'DavideDeLeonardis' &&
-         repo.name !== 'DavideDeLeonardis' &&
-         repo.name !== 'react-my-website' && (
-            <RepoItem key={index} repo={repo} />
-         )
-   );
-
-   return <ul>{reposList}</ul>;
+   return <ul className={classes['repos-container']}>{reposList}</ul>;
 };
 
 export default PublicRepos;

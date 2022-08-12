@@ -47,7 +47,7 @@ const RepoItem = ({ repo }) => {
    ));
 
    return (
-      <li>
+      <li className={classes.repo}>
          - {transformedName()}
          <br />
          <img
