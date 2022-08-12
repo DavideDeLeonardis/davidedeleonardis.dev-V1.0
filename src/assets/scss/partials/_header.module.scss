@@ -37,12 +37,12 @@ header {
 }
 
 .header-portal {
-   position: absolute;
+   position: fixed;
    top: 0;
    right: 0;
    z-index: 9999;
    width: 250px;
-   height: 100vh;
+   height: 100%;
    background-color: white;
    animation: slide-right 300ms ease-out forwards;
    overflow: scroll;
