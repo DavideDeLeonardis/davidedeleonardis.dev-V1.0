@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Header from './Header';
 import Footer from './Footer';
-import SocialsPortal from '../portals/SocialsPortal';
-import ArrowUp from '../portals/ArrowUp';
+import SocialsPortal from '../Portals/SocialsPortal';
+import ArrowUp from '../Portals/ArrowUp';
 
 import '../../assets/scss/partials/_arrow_up.scss';
 

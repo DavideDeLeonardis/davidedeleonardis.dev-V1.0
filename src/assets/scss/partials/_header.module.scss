@@ -44,15 +44,31 @@ header {
    width: 250px;
    height: 100%;
    background-color: white;
-   animation: slide-right 300ms ease-out forwards;
    overflow: scroll;
+}
 
-   @keyframes slide-right {
+.slide-to-left {
+   animation: slide-to-left var(--animation-menu-time) ease-out forwards;
+
+   @keyframes slide-to-left {
       from {
          transform: translateX(20rem);
       }
       to {
          transform: translateX(0);
+      }
+   }
+}
+
+.slide-to-right {
+   animation: slide-to-right var(--animation-menu-time) ease-out forwards;
+
+   @keyframes slide-to-right {
+      from {
+         transform: translateX(0);
+      }
+      to {
+         transform: translateX(20rem);
       }
    }
 }

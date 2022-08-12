@@ -9,17 +9,24 @@ import classes from '../../assets/scss/partials/_header.module.scss';
 const Header = () => {
    const [menuIsShown, setMenuIsShown] = useState(false);
    const [togglerIsShown, setTogglerIsShown] = useState(true);
+   const [slideToLeft, setSlideToLeft] = useState(false);
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
+      setSlideToLeft(true);
       setTogglerIsShown(false);
    };
 
    const hideMenuHandler = () => {
-      setMenuIsShown(false);
+      setSlideToLeft(false);
+		// give to animation time necessary to complete
+      setTimeout(() => {
+         setMenuIsShown(false);
+      }, 350);
       setTogglerIsShown(true);
    };
 
+   // actual nav and dark/light button elements
    const navAndSwitch = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
@@ -27,9 +34,18 @@ const Header = () => {
       </Fragment>
    );
 
+   // nav vertical portal
    const menuPortal = ReactDOM.createPortal(
       menuIsShown && (
-         <div className={classes['header-portal']}>{navAndSwitch}</div>
+         <div
+            className={`${classes['header-portal']} ${
+               slideToLeft
+                  ? classes['slide-to-left']
+                  : classes['slide-to-right']
+            }`}
+         >
+            {navAndSwitch}
+         </div>
       ),
       document.getElementById('overlays')
    );
@@ -39,12 +55,14 @@ const Header = () => {
          <div className={`container ${classes.header}`}>
             <div className={classes.logo}>Davide De Leonardis</div>
 
+            {/* toggler */}
             {togglerIsShown && (
                <button className={classes.toggler} onClick={showMenuHandler}>
                   <FontAwesomeIcon icon="fa-solid fa-bars" />
                </button>
             )}
 
+            {/* nav horizontal (d-none con vw < 768px) */}
             <div className={classes['header-right-horizontal']}>
                {navAndSwitch}
             </div>
