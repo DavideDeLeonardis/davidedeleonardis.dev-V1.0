@@ -1,18 +1,16 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Layout from "./components/Layout/Layout";
-import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ContactPage from "./pages/ContactPage";
+import Layout from './components/Layout/Layout';
+import HomePage from './pages/HomePage';
+// import MaintenancePage from './pages/HomePage';
 
 const App = () => {
    return (
       <Layout>
          <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<Navigate replace to="/" />}></Route>
+            {/* <Route path="/" element={<MaintenancePage />} /> */}
+            <Route path="*" element={<Navigate replace to="/" />} />
          </Routes>
       </Layout>
    );

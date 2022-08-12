@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const useFetch = (applyData, url, token = "", method = "GET") => {
+const useFetch = (applyData, url, token = '', method = 'GET') => {
    const [isLoading, setIsLoading] = useState(false);
    const [error, setError] = useState(null);
 
@@ -18,15 +18,15 @@ const useFetch = (applyData, url, token = "", method = "GET") => {
             });
 
             if (!response.ok) {
-               throw new Error("Request failed!");
+               throw new Error('Request failed!');
             }
 
             const data = await response.json();
             applyData(data);
          } catch (error) {
-            setError(error || "Something went wrong");
+            setError(error || 'Something went wrong');
          }
-			
+
          setIsLoading(false);
       };
 

@@ -1,14 +1,14 @@
 export const links = [
    {
-      to: "/",
-      linkName: "Home",
+      to: '#about',
+      linkName: 'About Me',
    },
    {
-      to: "/projects",
-      linkName: "Projects",
+      to: '#projects',
+      linkName: 'Projects',
    },
    {
-      to: "contact",
-      linkName: "Contact Me",
+      to: '#contact',
+      linkName: 'Contact Me',
    },
 ];

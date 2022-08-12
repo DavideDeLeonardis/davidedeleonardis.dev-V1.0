@@ -1,7 +1,17 @@
--  set CV things in HOME page
--  name animation
--  qualifications animation
--  box-shadow to header
+# Davide De Leonardis
 
--  per cambiare img QRcode andare su https://qr.io
--  email sender tramite emailJS package
+## Personal site portfolio 
+
+<hr><br>
+
+## Install dependencies
+
+```
+npm install
+```
+
+## Compile and start server
+
+```
+npm start
+```

@@ -1,17 +1,23 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
-import Presentation from "../components/Elements/Presentation";
-import Carousel from "../components/Elements/Carousel";
-import qrcode from "../assets/images/qrcode.png";
+import About from '../components/About';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 
 const HomePage = () => {
    return (
       <Fragment>
-			<Presentation />
-         <Carousel />
-         <div>
-            <img width="200" src={qrcode} alt="qrcode of curriculum vitae" />
-         </div>
+         <section id="about">
+            <About />
+         </section>
+
+         <section id="projects">
+            <Projects />
+         </section>
+
+         <section id="contact">
+            <Contact />
+         </section>
       </Fragment>
    );
 };

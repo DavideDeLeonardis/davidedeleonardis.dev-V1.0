@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 :root {
    --dark-blue: #0a0a41;
@@ -16,7 +16,7 @@
 
 html {
    height: 100vh;
-   font-family: "PT Sans", sans-serif;
+   font-family: 'PT Sans', sans-serif;
    font-size: 16rem 100%;
    background-color: var(--dark-blue);
    scroll-behavior: smooth;
@@ -31,7 +31,7 @@ html {
 
 // commons
 .container {
-   max-width: 1400px;
+   max-width: 1500px;
    margin: auto;
    padding: 0 45px;
 

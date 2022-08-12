@@ -1,4 +1,4 @@
-@use "../mixins" as mixin;
+@use '../mixins' as mixin;
 
 .aside-container {
    position: fixed;
@@ -14,13 +14,12 @@
       border-radius: 50%;
 
       .social {
-			font-size: 1.35em;
-			transform: translateY(1.25px);
-			
+         font-size: 1.35em;
+         transform: translateY(1.25px);
+
          path {
-				fill: #ffa600;
+            fill: #ffa600;
          }
-			
       }
    }
 }

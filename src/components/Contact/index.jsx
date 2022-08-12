@@ -46,7 +46,7 @@ const ContactPage = () => {
             <textarea name="message" />
             <br />
             <br />
-            <input type="submit" value={isLoading ? "Sending..." : "Send"} />
+            <input type="submit" value={isLoading ? 'Sending...' : 'Send'} />
          </form>
       </Fragment>
    );

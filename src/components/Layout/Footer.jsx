@@ -1,4 +1,4 @@
-import "../../assets/scss/partials/_footer.module.scss";
+import '../../assets/scss/partials/_footer.module.scss';
 
 const Footer = () => {
    return <footer>FOOTER</footer>;

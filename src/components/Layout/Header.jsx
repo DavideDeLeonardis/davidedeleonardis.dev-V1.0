@@ -1,10 +1,10 @@
-import { Fragment, useState } from "react";
-import ReactDOM from "react-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Fragment, useState } from 'react';
+import ReactDOM from 'react-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Nav from "./Nav";
+import Nav from './Nav';
 
-import classes from "../../assets/scss/partials/_header.module.scss";
+import classes from '../../assets/scss/partials/_header.module.scss';
 
 const Header = () => {
    const [menuIsShown, setMenuIsShown] = useState(false);
@@ -29,9 +29,9 @@ const Header = () => {
 
    const menuPortal = ReactDOM.createPortal(
       menuIsShown && (
-         <div className={classes["header-portal"]}>{navAndSwitch}</div>
+         <div className={classes['header-portal']}>{navAndSwitch}</div>
       ),
-      document.getElementById("overlays")
+      document.getElementById('overlays')
    );
 
    return (
@@ -45,7 +45,7 @@ const Header = () => {
                </button>
             )}
 
-            <div className={classes["header-right-horizontal"]}>
+            <div className={classes['header-right-horizontal']}>
                {navAndSwitch}
             </div>
 
