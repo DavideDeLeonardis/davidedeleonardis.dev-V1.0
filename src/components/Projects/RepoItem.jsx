@@ -1,24 +1,24 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
-import { repos } from "../../assets/config/repos";
-import { languageColors } from "../../assets/config/languageColors";
-import default_image from "../../assets/images/default.png";
+import { repos } from '../../assets/config/repos';
+import { languageColors } from '../../assets/config/languageColors';
+import default_image from '../../assets/images/default.png';
 
-import classes from "../../assets/scss/partials/_repos.module.scss";
+import classes from '../../assets/scss/partials/_repos.module.scss';
 
 const RepoItem = ({ repo }) => {
    const transformedName = () => {
-      if (repo.name.startsWith("php")) {
+      if (repo.name.startsWith('php')) {
          return `
 				${repo.name.charAt(0).toUpperCase()}
 				${repo.name.charAt(1).toUpperCase()}
 				${repo.name.charAt(2).toUpperCase()}
-				${repo.name.slice(3).replace("-", " ")}
+				${repo.name.slice(3).replace('-', ' ')}
 			`;
       } else {
          return (
             repo.name.charAt(0).toUpperCase() +
-            repo.name.slice(1).replace("-", " ")
+            repo.name.slice(1).replace('-', ' ')
          );
       }
    };
@@ -51,7 +51,7 @@ const RepoItem = ({ repo }) => {
          - {transformedName()}
          <br />
          <img
-            className={classes["repo-img"]}
+            className={classes['repo-img']}
             src={image || default_image}
             alt={`${transformedName()} project from Davide De Leonardis`}
          />
@@ -59,13 +59,13 @@ const RepoItem = ({ repo }) => {
          <br /> {repo.language}
          <br />
          <span
-            className={classes["color-language"]}
+            className={classes['color-language']}
             style={{ backgroundColor: languageColor || `#000000` }}
          ></span>
          <br />
          <ul>{topics}</ul>
          <br />
-         {repo.homepage !== "" && (
+         {repo.homepage !== '' && (
             <Fragment>
                <a href={repo.homepage} target="_blank" rel="noreferrer">
                   See Demo

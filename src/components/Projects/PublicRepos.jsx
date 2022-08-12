@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import RepoItem from "./RepoItem";
+import RepoItem from './RepoItem';
 
 const PublicRepos = ({ isLoading, error, repos }) => {
    if (isLoading)
@@ -18,11 +18,13 @@ const PublicRepos = ({ isLoading, error, repos }) => {
          </section>
       );
 
+   console.log(repos);
+
    const reposList = repos.map(
       (repo, index) =>
-         repo.owner.login === "DavideDeLeonardis" &&
-         repo.name !== "DavideDeLeonardis" &&
-         repo.name !== "react-my-website" && (
+         repo.owner.login === 'DavideDeLeonardis' &&
+         repo.name !== 'DavideDeLeonardis' &&
+         repo.name !== 'react-my-website' && (
             <RepoItem key={index} repo={repo} />
          )
    );
