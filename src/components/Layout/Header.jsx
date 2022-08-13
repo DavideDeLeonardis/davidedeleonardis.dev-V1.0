@@ -26,11 +26,13 @@ const Header = () => {
       setTogglerIsShown(true);
    };
 
-   // actual nav and dark/light button elements
-   const navAndSwitch = (
+   // actual nav elements
+   const navElements = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
-         <button>L/D mode</button>
+         <button>Light/Dark mode</button>
+			<br />
+			<button>RESUME</button>
       </Fragment>
    );
 
@@ -44,7 +46,7 @@ const Header = () => {
                   : classes['slide-to-right']
             }`}
          >
-            {navAndSwitch}
+            {navElements}
          </div>
       ),
       document.getElementById('overlays')
@@ -64,7 +66,7 @@ const Header = () => {
 
             {/* nav horizontal (d-none con vw < 768px) */}
             <div className={classes['header-right-horizontal']}>
-               {navAndSwitch}
+               {navElements}
             </div>
 
             {menuPortal}

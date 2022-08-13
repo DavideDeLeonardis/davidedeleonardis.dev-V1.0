@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import SplashPage from './pages/SplashPage';
-import HomePage from './pages/HomePage';
+import { HomePage } from './pages';
 // import ArchivePage from './pages/ArchivePage';
 // import MaintenancePage from './pages/HomePage';
 

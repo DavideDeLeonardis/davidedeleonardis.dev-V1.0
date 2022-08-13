@@ -1,8 +1,8 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
-import ProjectsList from './ProjectsList';
-import useFetch from '../../hooks/useFetch';
-import * as ignoredRepos from '../../assets/config/ignoredRepos';
+import ProjectsList from '../ProjectsList';
+import useFetch from '../../../hooks/useFetch';
+import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 const MainProjects = () => {
    const [repos, setRepos] = useState([]);
@@ -14,7 +14,7 @@ const MainProjects = () => {
 
    const filterRepos = () => {
       let filteredRepos = [];
-		
+
       repos.forEach((repo) => {
          if (repo.owner.login !== process.env.REACT_APP_GITHUB_NAME) return;
 
@@ -28,15 +28,17 @@ const MainProjects = () => {
 
       return filteredRepos;
    };
+
    return (
-      <Fragment>
+      <div>
          <h2>Main Projects</h2>
          <ProjectsList
             repos={filterRepos()}
             isLoading={isLoading}
             error={error}
+				isHor
          />
-      </Fragment>
+      </div>
    );
 };
 

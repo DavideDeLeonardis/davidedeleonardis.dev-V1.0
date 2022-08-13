@@ -1,13 +1,14 @@
+import { Fragment } from 'react';
+
 import MainProjects from './MainProjects';
 import OtherProjects from './OtherProjects';
 
 const Works = () => {
    return (
-      <div>
+      <Fragment>
          <MainProjects />
-         <br />
          <OtherProjects />
-      </div>
+      </Fragment>
    );
 };
 

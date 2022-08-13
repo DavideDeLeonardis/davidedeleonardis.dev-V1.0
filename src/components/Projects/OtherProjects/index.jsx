@@ -1,11 +1,11 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
+import ProjectsList from '../ProjectsList';
 import SelectLanguage from './SelectLanguage';
-import ProjectsList from './ProjectsList';
-import useFetch from '../../hooks/useFetch';
-import * as ignoredRepos from '../../assets/config/ignoredRepos';
+import useFetch from '../../../hooks/useFetch';
+import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
-import classes from '../../assets/scss/partials/_other-projects.module.scss';
+import classes from '../../../assets/scss/partials/_other-projects.module.scss';
 
 const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
@@ -91,14 +91,19 @@ const OtherProjects = () => {
    );
 
    return (
-      <Fragment>
+      <div>
          <h2>Other Projects</h2>
 
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
-         <ProjectsList repos={getRepos()} isLoading={isLoading} error={error} />
+         <ProjectsList
+            repos={getRepos()}
+            isLoading={isLoading}
+            error={error}
+            isVert
+         />
 
          {showMoreButton}
-      </Fragment>
+      </div>
    );
 };
 

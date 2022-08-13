@@ -1,17 +1,16 @@
 import { Fragment } from 'react';
 
 import Presentation from './Presentation';
+import Skills from './Skills';
+import QRcode from './QRcode';
 // import Carousel from './Carousel';
-import qrcode from '../../assets/images/qrcode.png';
 
 const About = () => {
    return (
       <Fragment>
          <Presentation />
-         {/* <Carousel /> */}
-         <div>
-            <img width='200' src={qrcode} alt='qrcode of curriculum vitae' />
-         </div>
+			<Skills />
+         <QRcode />
       </Fragment>
    );
 };
