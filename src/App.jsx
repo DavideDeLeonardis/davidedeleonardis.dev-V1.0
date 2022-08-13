@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
 import SplashPage from './pages/SplashPage';
+import HomePage from './pages/HomePage';
+// import ArchivePage from './pages/ArchivePage';
 // import MaintenancePage from './pages/HomePage';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
    return (
       <Routes>
          <Route path="/" element={showHome ? <HomePage /> : <SplashPage />} />
+         {/* <Route path="/archive" element={<ArchivePage />} /> */}
          {/* <Route path="/" element={<MaintenancePage />} /> */}
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>

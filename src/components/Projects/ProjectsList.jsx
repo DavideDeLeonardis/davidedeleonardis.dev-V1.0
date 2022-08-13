@@ -2,13 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import RepoItem from './RepoItem';
 
-import classes from '../../assets/scss/partials/_repos.module.scss';
+import classes from '../../assets/scss/partials/_other-projects.module.scss';
 
-const PublicRepos = ({ isLoading, error, repos }) => {
+const ProjectsList = ({ isLoading, error, repos }) => {
    if (isLoading)
       return (
          <section>
-            <FontAwesomeIcon icon='fa-spinner' spin />
+            <FontAwesomeIcon icon="fa-spinner" spin />
             <span>Loading repositories...</span>
          </section>
       );
@@ -27,4 +27,4 @@ const PublicRepos = ({ isLoading, error, repos }) => {
    return <ul className={classes['repos-container']}>{reposList}</ul>;
 };
 
-export default PublicRepos;
+export default ProjectsList;

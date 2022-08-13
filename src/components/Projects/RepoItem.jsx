@@ -4,7 +4,7 @@ import { repos } from '../../assets/config/repos';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
 
-import classes from '../../assets/scss/partials/_repos.module.scss';
+import classes from '../../assets/scss/partials/_other-projects.module.scss';
 
 const RepoItem = ({ repo }) => {
    const transformedName = () => {

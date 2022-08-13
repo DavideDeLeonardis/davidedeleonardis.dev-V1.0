@@ -20,8 +20,8 @@ export const socials = [
 		fontAwesomePrefix: 'solid',
    },
    // {
-   //    socialName: "twitter",
-   //    myLink: "https://twitter.com/DavideDeLeo_",
-	// 	fontAwesomePrefix: 'brands',
+      // socialName: "twitter",
+      // myLink: "https://twitter.com/DavideDeLeo_",
+		// fontAwesomePrefix: 'brands',
    // },
 ];
