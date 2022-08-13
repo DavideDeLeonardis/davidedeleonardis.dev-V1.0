@@ -16,8 +16,6 @@ const App = () => {
    return (
       <Routes>
          <Route path="/" element={showHome ? <HomePage /> : <SplashPage />} />
-         {/* <Route path="/archive" element={<ArchivePage />} /> */}
-         {/* <Route path="/" element={<MaintenancePage />} /> */}
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
    );
