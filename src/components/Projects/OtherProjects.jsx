@@ -23,20 +23,12 @@ const OtherProjects = () => {
       return repos.filter(
          (repo) =>
             repo.owner.login === process.env.REACT_APP_GITHUB_NAME &&
-            repo.name !== ignoredRepos.README &&
-            repo.name !== ignoredRepos.PERSONAL_WEBSITE &&
+            repo.name !== process.env.REACT_APP_GITHUB_NAME && // README
+            repo.name !== ignoredRepos.PERSONAL_WEBSITE_NAME &&
             repo.name !== ignoredRepos.PROJECT_1 &&
             repo.name !== ignoredRepos.PROJECT_2 &&
             repo.name !== ignoredRepos.PROJECT_3
       );
-   };
-
-   // NOT showing these languages is select's options
-   const findLanguagesUseless = () => {
-      const notShowableLanguages = ['HTML', 'CSS', 'SCSS', 'shell', ''];
-
-      for (let index = 0; index < notShowableLanguages.length; index++)
-         return notShowableLanguages[index];
    };
 
    // set select options
@@ -45,8 +37,8 @@ const OtherProjects = () => {
       repos.forEach((repo) => {
          if (
             !options.includes(repo.language) &&
-            repo.language !== findLanguagesUseless() &&
-            repo.language !== null
+            repo.language !== 'HTML' &&
+            repo.language !== null // README
          )
             options.push(repo.language);
       });
