@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import RepoItem from './RepoItem';
+import RepoItem from './ProjectItem';
 
 import classes from '../../assets/scss/partials/_other-projects.module.scss';
 

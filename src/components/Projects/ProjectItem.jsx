@@ -6,7 +6,7 @@ import default_image from '../../assets/images/default.png';
 
 import classes from '../../assets/scss/partials/_other-projects.module.scss';
 
-const RepoItem = ({ repo }) => {
+const ProjectItem = ({ repo }) => {
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -83,4 +83,4 @@ const RepoItem = ({ repo }) => {
    );
 };
 
-export default RepoItem;
+export default ProjectItem;
