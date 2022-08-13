@@ -8,7 +8,6 @@ const ProjectsPage = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
-   // const [showButton, setShowButton] = useState(true);
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -39,6 +38,8 @@ const ProjectsPage = () => {
    setOptionsHandler();
 
    const filteredRepos = () => {
+      // sort repos
+
       return repos.filter(
          (repo) =>
             repo.owner.login === 'DavideDeLeonardis' &&
@@ -63,21 +64,35 @@ const ProjectsPage = () => {
       setReposAreSliced(false);
    };
 
-   const hideReposHandler = () => {
-      setReposAreSliced(true);
-   };
+   // const hideReposHandler = () => {
+   //    setReposAreSliced(true);
+   // };
 
    const getRepos = () => {
+      const NUMBER_REPOS_SHOWN = 3;
+
       if (filteredReposByLanguage.length === 0) {
          if (!reposAreSliced) return filteredRepos();
 
-         return filteredRepos().slice(0, 3);
+         return filteredRepos().slice(0, NUMBER_REPOS_SHOWN);
       }
 
       if (!reposAreSliced) return filteredReposByLanguage;
 
-      return filteredReposByLanguage.slice(0, 3);
+      return filteredReposByLanguage.slice(0, NUMBER_REPOS_SHOWN);
    };
+
+   const showMoreButton = reposAreSliced && (
+      <button
+         // onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
+         onClick={showAllReposHandler}
+         style={{ backgroundColor: 'white' }}
+         className="slicer"
+      >
+         {/* {reposAreSliced ? 'Show more' : 'Show less'} */}
+         SHOW MORE
+      </button>
+   );
 
    return (
       <Fragment>
@@ -86,12 +101,7 @@ const ProjectsPage = () => {
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
          <PublicRepos repos={getRepos()} isLoading={isLoading} error={error} />
 
-         <button
-            onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
-            style={{ backgroundColor: 'white' }}
-         >
-            {reposAreSliced ? 'Show more' : 'Show less'}
-         </button>
+         {showMoreButton}
       </Fragment>
    );
 };
