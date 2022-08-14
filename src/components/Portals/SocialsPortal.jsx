@@ -6,11 +6,14 @@ import classes from '../../assets/scss/partials/_socials-portal.module.scss';
 
 const SocialsPortal = () => {
    const socialList = socials.map((social, index) => (
-      <div className={classes['social-item']} key={index}>
-         <a href={social.myLink} target='_blank' rel='noreferrer'>
+      <div
+         key={index}
+         className={`${classes['social-item']} ${classes[social.socialName]}`}
+      >
+         <a href={social.myLink} target="_blank" rel="noreferrer">
             <FontAwesomeIcon
                icon={`fa-${social.fontAwesomePrefix} fa-${social.socialName}`}
-               className={classes.social}
+               className={classes.socialIcon}
             />
          </a>
       </div>

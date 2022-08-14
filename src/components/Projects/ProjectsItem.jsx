@@ -57,6 +57,7 @@ const ProjectItem = ({ repo }) => {
          />
          <br /> {repo.description}
          <br /> {repo.language}
+         {/* <br /> {repo.created_at} */}
          <br />
          <span
             className={classes['color-language']}

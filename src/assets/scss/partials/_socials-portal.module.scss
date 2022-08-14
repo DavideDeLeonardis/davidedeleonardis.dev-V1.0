@@ -3,8 +3,8 @@
 .aside-container {
    position: fixed;
    top: 50%;
-	right: 5px;
-	transform: translateY(-50%);
+   right: 5px;
+   transform: translateY(-50%);
    @include mixin.flex($direction: column, $gap: 20px);
 
    .social-item {
@@ -13,8 +13,31 @@
       height: 35px;
       background-color: #000000;
       border-radius: 50%;
+      transform: translateX(5rem);
+      animation: slide-left 650ms forwards;
 
-      .social {
+      @keyframes slide-left {
+         from {
+            transform: translateX(5rem);
+         }
+         to {
+            transform: translateX(0);
+         }
+      }
+
+      &.linkedin {
+         animation-delay: 100ms;
+      }
+
+      &.instagram {
+         animation-delay: 200ms;
+      }
+
+      &.envelope {
+         animation-delay: 300ms;
+      }
+
+      .socialIcon {
          font-size: 1.35em;
          transform: translateY(1.25px);
 
