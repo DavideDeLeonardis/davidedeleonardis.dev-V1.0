@@ -7,7 +7,7 @@ header {
    width: 100%;
    background-color: rgba(255, 255, 255, 0.517);
    padding: 20px 0;
-   z-index: 1;
+   z-index: 10;
 
    .header {
       @include mixin.flex($justify: space-between);
@@ -40,7 +40,7 @@ header {
    position: fixed;
    top: 0;
    right: 0;
-   z-index: 9999;
+   z-index: 1000;
    width: 250px;
    height: 100%;
    background-color: white;

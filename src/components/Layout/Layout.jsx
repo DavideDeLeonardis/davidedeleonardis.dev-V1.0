@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom';
 import Header from './Header';
 import Footer from './Footer';
 import SocialsPortal from '../Portals/SocialsPortal';
-import ArrowUp from '../Portals/ArrowUp';
+import ArrowUpPortal from '../Portals/ArrowUpPortal';
 
 const Layout = (props) => {
    const overlay = document.getElementById('overlays');
 
    const socials = ReactDOM.createPortal(<SocialsPortal />, overlay);
-   const arrowUp = ReactDOM.createPortal(<ArrowUp />, overlay);
+   const arrowUp = ReactDOM.createPortal(<ArrowUpPortal />, overlay);
 
    return (
       <Fragment>
@@ -19,7 +19,7 @@ const Layout = (props) => {
             {props.children}
          </main>
          <Footer />
-			
+
          {socials}
          {arrowUp}
       </Fragment>
