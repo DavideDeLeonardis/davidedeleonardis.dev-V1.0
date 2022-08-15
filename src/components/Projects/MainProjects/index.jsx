@@ -36,7 +36,7 @@ const MainProjects = () => {
             repos={filterRepos()}
             isLoading={isLoading}
             error={error}
-				isHor
+				isMain={true}
          />
       </div>
    );

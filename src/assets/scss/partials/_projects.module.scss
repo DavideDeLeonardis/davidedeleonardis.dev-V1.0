@@ -1,0 +1,26 @@
+@use '../mixins' as mixin;
+
+.repos-container {
+   @include mixin.flex($justify: flex-start, $align: flex-start, $wrap: true);
+
+   .main {
+      width: 100%;
+      border: 1px solid black;
+   }
+
+   .other {
+      width: 33%;
+      border: 1px solid red;
+   }
+
+   .repo-img {
+      width: 100%;
+   }
+
+   .color-language {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+   }
+}

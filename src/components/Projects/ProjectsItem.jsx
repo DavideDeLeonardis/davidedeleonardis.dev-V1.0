@@ -4,9 +4,9 @@ import { repos } from '../../assets/config/repos';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
 
-import classes from '../../assets/scss/partials/_other-projects.module.scss';
+import classes from '../../assets/scss/partials/_projects.module.scss';
 
-const ProjectItem = ({ repo }) => {
+const ProjectItem = ({ repo, isMain }) => {
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -47,7 +47,7 @@ const ProjectItem = ({ repo }) => {
    ));
 
    return (
-      <li className={classes.repo}>
+      <li className={isMain ? classes.main : classes.other}>
          - {transformedName()}
          <br />
          <img
@@ -57,7 +57,7 @@ const ProjectItem = ({ repo }) => {
          />
          <br /> {repo.description}
          <br /> {repo.language}
-         {/* <br /> {repo.created_at} */}
+         <br /> {!isMain && repo.created_at}
          <br />
          <span
             className={classes['color-language']}

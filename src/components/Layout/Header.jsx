@@ -13,7 +13,6 @@ const Header = () => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [slideToLeft, setSlideToLeft] = useState(false);
    const [resumeIsShown, setResumeisShown] = useState(false);
-   const overlays = document.getElementById('overlays');
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
@@ -44,14 +43,12 @@ const Header = () => {
    const navElements = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
-         <button>Light/Dark mode</button>
-         <br />
-         <button onClick={showResumeHandler}>
-            RESUME
-            {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}
-         </button>
+         <button onClick={showResumeHandler}>Resume</button>
       </Fragment>
    );
+
+   // HTML portal element
+   const overlays = document.getElementById('overlays');
 
    // nav vertical portal
    const menuPortal = ReactDOM.createPortal(
@@ -63,7 +60,6 @@ const Header = () => {
                   : classes['slide-to-right']
             }`}
          >
-				{/* actual nav elements */}
             {navElements}
          </div>
       ),
@@ -72,8 +68,14 @@ const Header = () => {
 
    return (
       <header>
-			{/* backdrop black */}
+         {/* backdrop black */}
          {resumeIsShown && <Backdrop onClose={hideResumeHandler} />}
+
+         {/* resume portal */}
+         {ReactDOM.createPortal(
+            resumeIsShown && <Resume onClose={hideResumeHandler} />,
+            overlays
+         )}
 
          <div className={`container ${classes.header}`}>
             <div className={classes.logo}>Davide De Leonardis</div>

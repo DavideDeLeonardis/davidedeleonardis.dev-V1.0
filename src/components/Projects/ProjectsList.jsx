@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import RepoItem from './ProjectsItem';
 
-import classes from '../../assets/scss/partials/_other-projects.module.scss';
+import classes from '../../assets/scss/partials/_projects.module.scss';
 
-const ProjectsList = ({ isLoading, error, repos }) => {
+const ProjectsList = ({ isLoading, error, repos, isMain }) => {
    if (isLoading)
       return (
          <section>
@@ -21,7 +21,7 @@ const ProjectsList = ({ isLoading, error, repos }) => {
       );
 
    const reposList = repos.map((repo, index) => (
-      <RepoItem key={index} repo={repo} />
+      <RepoItem key={index} repo={repo} isMain={isMain} />
    ));
 
    return <ul className={classes['repos-container']}>{reposList}</ul>;

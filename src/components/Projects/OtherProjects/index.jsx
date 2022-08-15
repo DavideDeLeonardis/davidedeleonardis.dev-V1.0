@@ -1,11 +1,9 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
 import SelectLanguage from './SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
-
-import classes from '../../../assets/scss/partials/_other-projects.module.scss';
 
 const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
@@ -85,13 +83,13 @@ const OtherProjects = () => {
    };
 
    const showMoreButton = reposAreSliced && (
-      <button onClick={showAllReposHandler} className={classes.slicer}>
+      <button onClick={showAllReposHandler} className="slicer">
          SHOW MORE
       </button>
    );
 
    return (
-      <div>
+      <Fragment>
          <h2>Other Projects</h2>
 
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
@@ -99,11 +97,11 @@ const OtherProjects = () => {
             repos={getRepos()}
             isLoading={isLoading}
             error={error}
-            isVert
+            isMain={false}
          />
 
          {showMoreButton}
-      </div>
+      </Fragment>
    );
 };
 
