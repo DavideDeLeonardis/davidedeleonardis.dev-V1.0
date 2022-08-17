@@ -11,6 +11,7 @@ const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
+   const otherReposShown = 3;
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -70,18 +71,12 @@ const OtherProjects = () => {
       if (filteredReposByLanguage.length === 0) {
          if (!reposAreSliced) return filteredRepos();
 
-         return filteredRepos().slice(
-            0,
-            process.env.REACT_APP_NUMBER_OTHER_PROJECTS_SHOWN
-         );
+         return filteredRepos().slice(0, otherReposShown);
       }
 
       if (!reposAreSliced) return filteredReposByLanguage;
 
-      return filteredReposByLanguage.slice(
-         0,
-         process.env.REACT_APP_NUMBER_OTHER_PROJECTS_SHOWN
-      );
+      return filteredReposByLanguage.slice(0, otherReposShown);
    };
 
    const showMoreButton = reposAreSliced && (
