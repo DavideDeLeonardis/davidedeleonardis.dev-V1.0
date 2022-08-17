@@ -6,8 +6,8 @@
    --light-blue: ;
    --orange: #ff7a00;
    --animation-menu-time: 300ms;
-   // --font-size-name-animation-l: 30px;
-   // --font-size-name-animation-s: 4.5vw;
+   --font-size-name-animation-l: 30px;
+   --font-size-name-animation-s: 4.5vw;
 }
 
 //general
@@ -34,7 +34,7 @@ html {
 
 // commons
 .container {
-   max-width: 1500px;
+   max-width: 1700px;
    margin: auto;
    padding: 0 55px;
 	overflow: hidden;
