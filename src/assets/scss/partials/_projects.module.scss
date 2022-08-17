@@ -17,9 +17,21 @@
       }
 
       .other-p {
-         width: 33%;
+         width: 25%;
          border: 1px solid red;
          margin-bottom: 10px;
+
+			@media screen and (max-width: 991px) {
+				width: 33%;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 50%;
+			}
+
+			@media screen and (max-width: 600px) {
+				width: 100%;
+			}
       }
 
       .repo-img {

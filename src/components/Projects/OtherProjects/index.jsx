@@ -11,7 +11,6 @@ const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
-   const otherReposShown = 3;
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -68,6 +67,11 @@ const OtherProjects = () => {
 
    // repos to pass to <ProjectsList />
    const getRepos = () => {
+      let vw = window.innerWidth;
+      let otherReposShown = 4;
+      if (vw < 992) otherReposShown = 3;
+      if (vw < 769) otherReposShown = 2;
+
       if (filteredReposByLanguage.length === 0) {
          if (!reposAreSliced) return filteredRepos();
 
