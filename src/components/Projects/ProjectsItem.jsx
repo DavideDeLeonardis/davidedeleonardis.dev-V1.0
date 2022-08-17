@@ -57,7 +57,7 @@ const ProjectItem = ({ repo, isMain }) => {
          />
          <br /> {repo.description}
          <br /> {repo.language}
-         <br /> {!isMain && repo.created_at}
+         {/* <br /> {repo.created_at} */}
          <br />
          <span
             className={classes['color-language']}
