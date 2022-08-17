@@ -1,9 +1,11 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
 import SelectLanguage from './SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
+
+import classes from '../../../assets/scss/partials/_projects.module.scss';
 
 const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
@@ -89,7 +91,7 @@ const OtherProjects = () => {
    );
 
    return (
-      <Fragment>
+      <div className={classes['projects-container']}>
          <h2>Other Projects</h2>
 
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
@@ -101,7 +103,7 @@ const OtherProjects = () => {
          />
 
          {showMoreButton}
-      </Fragment>
+      </div>
    );
 };
 

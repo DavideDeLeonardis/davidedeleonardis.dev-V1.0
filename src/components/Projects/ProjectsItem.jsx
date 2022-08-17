@@ -47,7 +47,7 @@ const ProjectItem = ({ repo, isMain }) => {
    ));
 
    return (
-      <li className={isMain ? classes.main : classes.other}>
+      <li className={isMain ? classes['main-p'] : classes['other-p']}>
          - {transformedName()}
          <br />
          <img
@@ -77,9 +77,6 @@ const ProjectItem = ({ repo, isMain }) => {
          <a href={repo.html_url} target="_blank" rel="noreferrer">
             See on GitHub
          </a>
-         <br />
-         <br />
-         <br />
       </li>
    );
 };

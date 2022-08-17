@@ -4,6 +4,8 @@ import ProjectsList from '../ProjectsList';
 import useFetch from '../../../hooks/useFetch';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
+import classes from '../../../assets/scss/partials/_projects.module.scss';
+
 const MainProjects = () => {
    const [repos, setRepos] = useState([]);
    const { isLoading, error } = useFetch(
@@ -30,7 +32,7 @@ const MainProjects = () => {
    };
 
    return (
-      <div>
+      <div className={classes['projects-container']}>
          <h2>Main Projects</h2>
          <ProjectsList
             repos={filterRepos()}
