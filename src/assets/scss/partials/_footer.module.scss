@@ -1,7 +1,7 @@
 footer {
-   border: 1px solid red;
+	font-size: 0.9em;
    text-align: center;
-   padding: 20px 0;
+   padding: 100px 0 40px 0;
 
    .top {
       display: inline-block;
@@ -15,7 +15,7 @@ footer {
    }
 
    img {
-      width: 25px;
-      transform: translate(5px, 7.5px);
+      width: 30px;
+      transform: translate(5px, 11px);
    }
 }

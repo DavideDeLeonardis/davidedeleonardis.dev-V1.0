@@ -7,42 +7,50 @@
    transform: translateY(-50%);
    @include mixin.flex($direction: column, $gap: 20px);
 
-   .social-item {
-      @include mixin.flex();
-      width: 35px;
-      height: 35px;
-      background-color: #000000;
-      border-radius: 50%;
-      transform: translateX(5rem);
-      animation: slide-left 650ms forwards;
+   .container-item {
+      transition: all 100ms;
 
-      @keyframes slide-left {
-         from {
-            transform: translateX(5rem);
+      &:hover {
+         transform: scale(1.2);
+      }
+
+      .social-item {
+         @include mixin.flex();
+         width: 35px;
+         height: 35px;
+         background-color: #000000;
+         border-radius: 50%;
+         transform: translateX(5rem);
+         animation: slide-left 650ms forwards;
+
+         @keyframes slide-left {
+            from {
+               transform: translateX(5rem);
+            }
+            to {
+               transform: translateX(0);
+            }
          }
-         to {
-            transform: translateX(0);
+
+         &.linkedin {
+            animation-delay: 100ms;
          }
-      }
 
-      &.linkedin {
-         animation-delay: 100ms;
-      }
+         &.instagram {
+            animation-delay: 200ms;
+         }
 
-      &.instagram {
-         animation-delay: 200ms;
-      }
+         &.envelope {
+            animation-delay: 300ms;
+         }
 
-      &.envelope {
-         animation-delay: 300ms;
-      }
+         .socialIcon {
+            font-size: 1.35em;
+            transform: translateY(1.25px);
 
-      .socialIcon {
-         font-size: 1.35em;
-         transform: translateY(1.25px);
-
-         path {
-            fill: var(--orange);
+            path {
+               fill: var(--orange);
+            }
          }
       }
    }

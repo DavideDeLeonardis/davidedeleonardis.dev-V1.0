@@ -36,11 +36,11 @@ html {
 .container {
    max-width: 1500px;
    margin: auto;
-   padding: 0 45px;
+   padding: 0 55px;
 	overflow: hidden;
 
    @media screen and (max-width: 600px) {
-      padding: 0 40px;
+      padding: 0 45px;
    }
 }
 
