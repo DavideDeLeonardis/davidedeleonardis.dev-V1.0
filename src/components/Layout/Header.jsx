@@ -73,7 +73,7 @@ const Header = () => {
 
          {/* resume portal */}
          {ReactDOM.createPortal(
-            resumeIsShown && <Resume onClose={hideResumeHandler} />,
+            resumeIsShown && <Resume />,
             overlays
          )}
 

@@ -1,73 +1,73 @@
 .presentation {
    margin: 30px 0 150px 0;
 
-   .name-container {
-      position: relative;
-      height: calc(var(--font-size-name-animation-l) + 10px);
+   // .name-container {
+   //    position: relative;
+   //    height: calc(var(--font-size-name-animation-l) + 10px);
 
-      span {
-         font-size: 1.5em;
-      }
+   //    span {
+   //       font-size: 1.5em;
+   //    }
 
-      .text {
-         font-family: 'Montserrat', sans-serif;
-         text-transform: uppercase;
-         -webkit-text-stroke: 1px #eee;
-         letter-spacing: 5px;
-         color: transparent;
+   //    .text {
+   //       font-family: 'Montserrat', sans-serif;
+   //       text-transform: uppercase;
+   //       -webkit-text-stroke: 1px #eee;
+   //       letter-spacing: 5px;
+   //       color: transparent;
 
-         &::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: var(--font-size-name-animation-l);
-            color: var(--orange);
-            -webkit-text-stroke: 3px var(--orange);
-            width: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            padding-top: 20px;
-            border-right: 3px solid var(--orange);
-            animation: text-fill-l 2s ease-in-out alternate infinite;
-         }
+   //       &::before {
+   //          content: attr(data-text);
+   //          position: absolute;
+   //          top: 0;
+   //          left: 0;
+   //          font-size: var(--font-size-name-animation-l);
+   //          color: var(--orange);
+   //          -webkit-text-stroke: 3px var(--orange);
+   //          width: 0;
+   //          white-space: nowrap;
+   //          overflow: hidden;
+   //          padding-top: 20px;
+   //          border-right: 3px solid var(--orange);
+   //          animation: text-fill-l 2s ease-in-out alternate infinite;
+   //       }
 
-         @keyframes text-fill-l {
-            40% {
-               width: calc(var(--font-size-name-animation-l) * 5);
-               /* depends from font-size */
-            }
+   //       @keyframes text-fill-l {
+   //          40% {
+   //             width: calc(var(--font-size-name-animation-l) * 5);
+   //             /* depends from font-size */
+   //          }
 
-            100% {
-               width: 600px;
-               /* depends from font-size */
-            }
-         }
-      }
+   //          100% {
+   //             width: 600px;
+   //             /* depends from font-size */
+   //          }
+   //       }
+   //    }
 
-      @media screen and (max-width: 650px) {
-         & {
-            height: calc(var(--font-size-name-animation-s) + 10px);
+   //    @media screen and (max-width: 650px) {
+   //       & {
+   //          height: calc(var(--font-size-name-animation-s) + 10px);
 
-            .text:before {
-               font-size: var(--font-size-name-animation-s);
-               animation: text-fill-s 2s ease-in-out alternate infinite;
-            }
+   //          .text:before {
+   //             font-size: var(--font-size-name-animation-s);
+   //             animation: text-fill-s 2s ease-in-out alternate infinite;
+   //          }
 
-            @keyframes text-fill-s {
-               40% {
-                  width: calc(var(--font-size-name-animation-s) * 5);
-                  /* depends from font-size */
-               }
+   //          @keyframes text-fill-s {
+   //             40% {
+   //                width: calc(var(--font-size-name-animation-s) * 5);
+   //                /* depends from font-size */
+   //             }
 
-               100% {
-                  width: 600px;
-                  /* depends from font-size */
-               }
-            }
-         }
-      }
-   }
+   //             100% {
+   //                width: 600px;
+   //                /* depends from font-size */
+   //             }
+   //          }
+   //       }
+   //    }
+   // }
 
    .rotate-words {
       position: relative;

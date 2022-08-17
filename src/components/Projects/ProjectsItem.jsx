@@ -31,8 +31,8 @@ const ProjectItem = ({ repo, isMain }) => {
                if (array[index].id === repo.id) return array[index].image;
                break;
             case languageColors:
-               if (languageColors[index].language === repo.language)
-                  return languageColors[index].color;
+               if (array[index].language === repo.language)
+                  return array[index].color;
                break;
          }
       }

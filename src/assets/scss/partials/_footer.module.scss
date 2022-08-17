@@ -1,4 +1,21 @@
 footer {
+   border: 1px solid red;
    text-align: center;
    padding: 20px 0;
+
+   .top {
+      display: inline-block;
+      margin-bottom: 5px;
+
+      span {
+         font-size: 1.1em;
+         text-transform: uppercase;
+         color: #61dafb;
+      }
+   }
+
+   img {
+      width: 25px;
+      transform: translate(5px, 7.5px);
+   }
 }

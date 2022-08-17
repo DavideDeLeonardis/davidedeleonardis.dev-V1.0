@@ -6,8 +6,8 @@
    --light-blue: ;
    --orange: #ff7a00;
    --animation-menu-time: 300ms;
-   --font-size-name-animation-l: 30px;
-   --font-size-name-animation-s: 4.5vw;
+   // --font-size-name-animation-l: 30px;
+   // --font-size-name-animation-s: 4.5vw;
 }
 
 //general
@@ -23,7 +23,7 @@ html {
    font-size: 16rem 100%;
    background-color: var(--dark-blue);
    scroll-behavior: smooth;
-   scroll-padding-top: 61px;
+   scroll-padding-top: 100px;
 }
 
 #root {
@@ -37,6 +37,7 @@ html {
    max-width: 1500px;
    margin: auto;
    padding: 0 45px;
+	overflow: hidden;
 
    @media screen and (max-width: 600px) {
       padding: 0 40px;

@@ -7,6 +7,10 @@ export const links = [
       to: '#projects',
       linkName: 'Projects',
    },
+   // {
+   //    to: '#experience',
+   //    linkName: 'Experience',
+   // },
    {
       to: '#contact',
       linkName: 'Contact Me',
