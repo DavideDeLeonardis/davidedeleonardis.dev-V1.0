@@ -72,7 +72,7 @@ const Header = () => {
          {/* resume portal */}
          {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}
 
-         <div className={`container ${classes.header}`}>
+         <div className={`container-sm ${classes.header}`}>
             <div className={classes.logo}>Davide De Leonardis</div>
 
             {/* toggler */}

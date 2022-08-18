@@ -3,7 +3,7 @@
 .aside-container {
    position: fixed;
    top: 50%;
-   right: 5px;
+   right: 10px;
    transform: translateY(-50%);
    @include mixin.flex($direction: column, $gap: 20px);
 
@@ -16,8 +16,8 @@
 
       .social-item {
          @include mixin.flex();
-         width: 35px;
-         height: 35px;
+         width: 40px;
+         height: 40px;
          background-color: #000000;
          border-radius: 50%;
          transform: translateX(5rem);
@@ -45,12 +45,25 @@
          }
 
          .socialIcon {
-            font-size: 1.35em;
+            font-size: 1.55em;
             transform: translateY(1.25px);
 
             path {
                fill: var(--orange);
             }
+         }
+      }
+   }
+
+   @media screen and (max-width: 650px) {
+      right: 5px;
+
+      .container-item .social-item {
+         width: 32.5px;
+         height: 32.5px;
+
+         .socialIcon {
+            font-size: 1.35em;
          }
       }
    }

@@ -36,11 +36,22 @@ html {
 .container {
    max-width: 1700px;
    margin: auto;
-   padding: 0 55px;
-	overflow: hidden;
+   padding: 0 80px;
+   overflow: hidden;
 
-   @media screen and (max-width: 600px) {
+   @media screen and (max-width: 650px) {
       padding: 0 45px;
+   }
+}
+
+.container-sm {
+   max-width: 1700px;
+   margin: auto;
+   padding: 0 45px;
+   overflow: hidden;
+
+   @media screen and (max-width: 650px) {
+      padding: 0 30px;
    }
 }
 
@@ -64,8 +75,4 @@ button {
    font-size: initial;
    background-color: inherit;
    border: none;
-}
-
-.slicer {
-   background-color: white;
 }

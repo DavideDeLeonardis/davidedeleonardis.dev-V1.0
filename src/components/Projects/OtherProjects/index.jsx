@@ -82,7 +82,10 @@ const OtherProjects = () => {
    };
 
    const showMoreButton = reposAreSliced && (
-      <button onClick={showAllReposHandler} className="slicer">
+      <button
+         onClick={showAllReposHandler}
+         style={{ backgroundColor: '#ffffff' }}
+      >
          SHOW MORE
       </button>
    );
