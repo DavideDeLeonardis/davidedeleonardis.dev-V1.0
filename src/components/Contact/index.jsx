@@ -3,6 +3,8 @@ import { TextareaAutosize, TextField } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emailjs from '@emailjs/browser';
 
+import useInput from '../../hooks/useInput';
+
 import classes from '../../assets/scss/partials/_contact.module.scss';
 
 const ContactPage = () => {
@@ -10,8 +12,36 @@ const ContactPage = () => {
    const [isLoading, setIsLoading] = useState(false);
    const form = useRef();
 
+   const {
+      value: enteredName,
+      isValid: enteredNameIsValid,
+      hasError: nameInputHasError,
+      valueChangeHandler: nameChangedHandler,
+      inputBlurHandler: nameBlurHandler,
+      reset: resetNameInput,
+   } = useInput((value) => value.trim() !== '');
+
+   const {
+      value: enteredEmail,
+      isValid: enteredEmailIsValid,
+      hasError: emailInputHasError,
+      valueChangeHandler: emailChangeHandler,
+      inputBlurHandler: emailBlurHandler,
+      reset: resetEmailInput,
+   } = useInput((value) => {
+      return value.includes('@') && value.includes('.');
+   });
+
+   let formIsValid = false;
+
+   if (enteredNameIsValid && enteredEmailIsValid) {
+      formIsValid = true;
+   }
+
    const sendEmail = (e) => {
       e.preventDefault();
+
+      if (!enteredNameIsValid) return;
 
       setMessage(null);
       setIsLoading(true);
@@ -32,6 +62,9 @@ const ContactPage = () => {
             setMessage('Something went wrong');
             setIsLoading(false);
          });
+
+      resetNameInput();
+      resetEmailInput();
    };
 
    const hideMessageHandler = () => setMessage(null);
@@ -39,29 +72,52 @@ const ContactPage = () => {
    return (
       <Fragment>
          <form ref={form} onSubmit={sendEmail}>
-            <TextField
-               id="outlined-basic"
-               label="Name"
-               variant="outlined"
-               name="user_name"
+            <div className={classes['input-container']}>
+               <TextField
+                  id="outlined-basic"
+                  className={classes.input}
+                  label="Name"
+                  variant="outlined"
+                  name="user_name"
+                  value={enteredName}
+                  onChange={nameChangedHandler}
+                  onBlur={nameBlurHandler}
+               />
+               {nameInputHasError && (
+                  <p className={classes.error}>Name must not be empty</p>
+               )}
+            </div>
+
+            <div className={classes['input-container']}>
+               <TextField
+                  id="outlined-basic"
+                  className={classes.input}
+                  label="Email"
+                  variant="outlined"
+                  name="user_email"
+                  value={enteredEmail}
+                  onChange={emailChangeHandler}
+                  onBlur={emailBlurHandler}
+               />
+               {emailInputHasError && (
+                  <p className={classes.error}>Please enter a valid email.</p>
+               )}
+            </div>
+
+            <div className={classes['input-container']}>
+               <TextareaAutosize
+                  aria-label="minimum height"
+                  minRows={3}
+                  placeholder="Message"
+                  name="message"
+               />
+            </div>
+
+            <input
+               type="submit"
+               disabled={!formIsValid}
+               value={isLoading ? 'Sending...' : 'Send'}
             />
-            <br />
-            <TextField
-               id="outlined-basic"
-               label="Email"
-               variant="outlined"
-               name="user_email"
-            />
-            <br />
-            <TextareaAutosize
-               aria-label="minimum height"
-               minRows={3}
-               placeholder="Message"
-               style={{ width: 200 }}
-               name="message"
-            />
-            <br />
-            <input type="submit" value={isLoading ? 'Sending...' : 'Send'} />
          </form>
 
          <div
