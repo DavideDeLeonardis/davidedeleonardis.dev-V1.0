@@ -25,9 +25,7 @@ const ContactPage = () => {
          )
          .then(() => {
             setMessage('Message sent!');
-            setTimeout(() => {
-               setMessage(null);
-            }, 6500);
+            setTimeout(() => setMessage(null), 7500);
             setIsLoading(false);
          })
          .catch(() => {

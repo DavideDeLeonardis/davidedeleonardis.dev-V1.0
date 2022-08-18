@@ -1,5 +1,6 @@
 footer {
-	font-size: 0.9em;
+	font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;;
+	font-size: 0.8em;
    text-align: center;
    padding: 100px 0 40px 0;
 
@@ -16,6 +17,6 @@ footer {
 
    img {
       width: 30px;
-      transform: translate(5px, 11px);
+      transform: translate(5px, 10px);
    }
 }

@@ -1,3 +1,4 @@
+// install 3d-react-carousal
 import { repos } from './repos';
 
 // Add images in carousel: INSERT REPO NAME IN favourites
