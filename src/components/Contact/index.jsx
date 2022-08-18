@@ -1,5 +1,9 @@
 import { Fragment, useRef, useState } from 'react';
+import { TextareaAutosize, TextField } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emailjs from '@emailjs/browser';
+
+import classes from '../../assets/scss/partials/_contact.module.scss';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
@@ -8,6 +12,8 @@ const ContactPage = () => {
 
    const sendEmail = (e) => {
       e.preventDefault();
+
+      setMessage(null);
       setIsLoading(true);
 
       emailjs
@@ -19,6 +25,9 @@ const ContactPage = () => {
          )
          .then(() => {
             setMessage('Message sent!');
+            setTimeout(() => {
+               setMessage(null);
+            }, 6500);
             setIsLoading(false);
          })
          .catch(() => {
@@ -27,27 +36,47 @@ const ContactPage = () => {
          });
    };
 
+   const hideMessageHandler = () => setMessage(null);
+
    return (
       <Fragment>
-         <h3>{message}</h3>
          <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
+            <TextField
+               id="outlined-basic"
+               label="Name"
+               variant="outlined"
+               name="user_name"
+            />
             <br />
-            <input type='text' name='user_name' />
+            <TextField
+               id="outlined-basic"
+               label="Email"
+               variant="outlined"
+               name="user_email"
+            />
             <br />
+            <TextareaAutosize
+               aria-label="minimum height"
+               minRows={3}
+               placeholder="Message"
+               style={{ width: 200 }}
+               name="message"
+            />
             <br />
-            <label>Email</label>
-            <br />
-            <input type='email' name='user_email' />
-            <br />
-            <br />
-            <label>Message</label>
-            <br />
-            <textarea name='message' />
-            <br />
-            <br />
-            <input type='submit' value={isLoading ? 'Sending...' : 'Send'} />
+            <input type="submit" value={isLoading ? 'Sending...' : 'Send'} />
          </form>
+
+         <div
+            className={`
+					${classes.message} 
+					${message && classes['slide-to-right']}
+				`}
+         >
+            {message}
+            <div className={classes.x} onClick={hideMessageHandler}>
+               <FontAwesomeIcon icon="fa-solid fa-xmark" />
+            </div>
+         </div>
       </Fragment>
    );
 };

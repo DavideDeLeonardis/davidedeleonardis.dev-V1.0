@@ -1,14 +1,12 @@
-import { repos } from "./repos";
+import { repos } from './repos';
 
-/* Add images in carousel:
-		INSERT REPO NAME IN favourites 
-		ADD images[i] AT THE END IN export slides */
+// Add images in carousel: INSERT REPO NAME IN favourites
 
 const favourites = [
-   { name: "deliveboo" },
-   { name: "laravel-boolpress" },
-   { name: "react-amazon" },
-   { name: "vue-netflix" },
+   { name: 'deliveboo' },
+   { name: 'laravel-boolpress' },
+   { name: 'react-amazon' },
+   { name: 'vue-netflix' },
 ];
 
 const findImageOfFavourites = () => {
@@ -33,7 +31,7 @@ const images = findImageOfFavourites().map((repo, index) => (
    <div className="carousel-img-container">
       <a
          key={index}
-         href={repo.homepage !== "" ? repo.homepage : repo.html_url}
+         href={repo.homepage !== '' ? repo.homepage : repo.html_url}
          target="_blank"
          rel="noreferrer"
       >
@@ -47,4 +45,4 @@ const images = findImageOfFavourites().map((repo, index) => (
    </div>
 ));
 
-export const slides = [images[0], images[1], images[2], images[3]];
+export const slides = [...images];

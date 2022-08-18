@@ -7,7 +7,8 @@ import {
    faAngleUp,
    faSpinner,
    faBars,
-	faEnvelope
+   faEnvelope,
+   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import {
    faLinkedin,
@@ -28,7 +29,8 @@ library.add(
    faInstagram,
    faTwitter,
    faGithub,
-   faEnvelope
+   faEnvelope,
+   faXmark
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

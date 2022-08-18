@@ -10,9 +10,9 @@ export const HomePage = () => {
             <About />
          </section>
 
-         <section id="projects">
+         {/* <section id="projects">
             <Projects />
-         </section>
+         </section> */}
 
          <section id="contact">
             <Contact />
