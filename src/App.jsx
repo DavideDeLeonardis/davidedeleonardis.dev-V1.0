@@ -9,9 +9,7 @@ import { HomePage } from './pages';
 const App = () => {
    const [showHome, setShowHome] = useState(false);
 
-   setTimeout(() => {
-      setShowHome(true);
-   }, 200);
+   setTimeout(() => setShowHome(true), 200);
 
    return (
       <Routes>

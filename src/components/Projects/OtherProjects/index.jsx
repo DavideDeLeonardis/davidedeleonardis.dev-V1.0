@@ -61,9 +61,7 @@ const OtherProjects = () => {
    };
 
    // button for showing all projects
-   const showAllReposHandler = () => {
-      setReposAreSliced(false);
-   };
+   const showAllReposHandler = () => setReposAreSliced(false);
 
    // repos to pass to <ProjectsList />
    const getRepos = () => {

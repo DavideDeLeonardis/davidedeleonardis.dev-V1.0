@@ -35,9 +35,7 @@ const Header = () => {
       setTogglerIsShown(true);
    };
 
-   const hideResumeHandler = () => {
-      setResumeisShown(false);
-   };
+   const hideResumeHandler = () => setResumeisShown(false);
 
    // actual nav elements
    const navElements = (
@@ -72,10 +70,7 @@ const Header = () => {
          {resumeIsShown && <Backdrop onClose={hideResumeHandler} />}
 
          {/* resume portal */}
-         {ReactDOM.createPortal(
-            resumeIsShown && <Resume />,
-            overlays
-         )}
+         {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}
 
          <div className={`container ${classes.header}`}>
             <div className={classes.logo}>Davide De Leonardis</div>

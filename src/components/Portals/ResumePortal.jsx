@@ -3,7 +3,7 @@ import QRcode from '../About/QRcode';
 
 import classes from '../../assets/scss/partials/_resume-portal.module.scss';
 
-const Resume = (props) => {
+const Resume = () => {
    return (
       <div className={classes['resume-container']}>
          <h2>RESUME</h2>
