@@ -6,13 +6,13 @@ import Contact from '../components/Contact';
 const HomePage = () => {
    return (
       <Layout>
-         {/* <section id="about">
+         <section id="about">
             <About />
          </section>
 
          <section id="projects">
             <Projects />
-         </section> */}
+         </section>
 
          <section id="contact">
             <Contact />
