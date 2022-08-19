@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import SplashPage from './pages/SplashPage';
-import HomePage from './pages/HomePage';
+import SplashPage from '../pages/SplashPage';
+import HomePage from '../pages/HomePage';
 
 const App = () => {
    const [showHome, setShowHome] = useState(false);

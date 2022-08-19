@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
 import { repos } from '../../assets/config/repos';
+import * as ignoredRepos from '../../assets/config/ignoredRepos';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
 
@@ -66,14 +67,15 @@ const ProjectItem = ({ repo, isMain }) => {
          <br />
          <ul>{topics}</ul>
          <br />
-         {repo.homepage !== '' && (
-            <Fragment>
-               <a href={repo.homepage} target="_blank" rel="noreferrer">
-                  See Demo
-               </a>
-               <br />
-            </Fragment>
-         )}
+         {repo.homepage !== '' &&
+            repo.name !== ignoredRepos.PERSONAL_WEBSITE_NAME && (
+               <Fragment>
+                  <a href={repo.homepage} target="_blank" rel="noreferrer">
+                     See Demo
+                  </a>
+                  <br />
+               </Fragment>
+            )}
          <a href={repo.html_url} target="_blank" rel="noreferrer">
             See on GitHub
          </a>

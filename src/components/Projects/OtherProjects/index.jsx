@@ -24,7 +24,6 @@ const OtherProjects = () => {
          (repo) =>
             repo.owner.login === process.env.REACT_APP_GITHUB_NAME &&
             repo.name !== process.env.REACT_APP_GITHUB_NAME && // README
-            repo.name !== ignoredRepos.PERSONAL_WEBSITE_NAME &&
             repo.name !== ignoredRepos.PROJECT_1 &&
             repo.name !== ignoredRepos.PROJECT_2 &&
             repo.name !== ignoredRepos.PROJECT_3
