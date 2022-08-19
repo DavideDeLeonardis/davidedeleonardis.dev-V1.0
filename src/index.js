@@ -17,7 +17,7 @@ import {
    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 
-import App from './App';
+import App from './components/App';
 
 import './assets/scss/index.scss';
 
