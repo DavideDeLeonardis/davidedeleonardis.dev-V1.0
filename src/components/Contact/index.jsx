@@ -87,7 +87,7 @@ const ContactPage = () => {
                   onBlur={nameBlurHandler}
                />
                {nameInputHasError && (
-                  <p className={classes.error}>Name must not be empty</p>
+                  <p className={classes.error}>Name must not be empty.</p>
                )}
             </div>
 
@@ -117,9 +117,14 @@ const ContactPage = () => {
 
             <button
                disabled={!formIsValid}
+               className={formIsValid ? classes.onHover : null}
                style={
                   !formIsValid
-                     ? { cursor: 'not-allowed' }
+                     ? {
+                          cursor: 'not-allowed',
+                          color: 'gray',
+                          backgroundColor: '#2463a7',
+                       }
                      : { cursor: 'pointer' }
                }
             >
