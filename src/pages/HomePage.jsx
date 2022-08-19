@@ -6,17 +6,9 @@ import Contact from '../components/Contact';
 const HomePage = () => {
    return (
       <Layout>
-         {/* <section id="about">
-            <About />
-         </section>
-
-         <section id="projects">
-            <Projects />
-         </section> */}
-
-         <section id="contact">
-            <Contact />
-         </section>
+         {/* <About />
+         <Projects /> */}
+         <Contact />
       </Layout>
    );
 };

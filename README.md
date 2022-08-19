@@ -1,8 +1,8 @@
 # Davide De Leonardis
 
-## Personal site portfolio 
+## Personal site portfolio V1.0
 
-<hr><br>
+<br>
 
 ## Install dependencies
 

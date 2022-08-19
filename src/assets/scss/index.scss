@@ -2,8 +2,8 @@
 
 :root {
    --dark-blue: #0a0a41;
-   --primary-color: #1e69ff;
-	// #1976d2
+   --primary-color: #2a91ff;
+   //
    --light-blue: ;
    --orange: #ff7a00;
    --animation-menu-time: 300ms;
@@ -78,7 +78,12 @@ button {
    border: none;
 }
 
+input,
+textarea {
+   border: none;
+   outline: none;
+}
+
 section {
-	border: 1px solid white;
-	margin-bottom: 50px;
+   margin-bottom: 50px;
 }

@@ -1,14 +1,12 @@
-import { Fragment } from 'react';
-
 import Presentation from './Presentation';
 import Skills from './Skills';
 
 const About = () => {
    return (
-      <Fragment>
+      <section id="about">
          <Presentation />
-			<Skills />
-      </Fragment>
+         <Skills />
+      </section>
    );
 };
 

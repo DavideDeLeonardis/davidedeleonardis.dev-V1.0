@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { TextareaAutosize, TextField } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
@@ -68,12 +68,13 @@ const ContactPage = () => {
    const hideMessageHandler = () => setMessage(null);
 
    return (
-      <Fragment>
-         <h1>Get In Touch</h1>
-         <span>
+      <section id="contact" className={classes.contact}>
+         <h1>Get In Touch!</h1>
+         <span className={classes.text}>
             Feel free to reach out if you want to collaborate with me or just to
             say hi!
          </span>
+
          <form ref={form} onSubmit={sendEmail}>
             <div className={classes['input-container']}>
                <TextField
@@ -108,21 +109,27 @@ const ContactPage = () => {
             <div className={classes['input-container']}>
                <TextareaAutosize
                   aria-label="minimum height"
-                  minRows={3}
-                  placeholder="Message"
+                  minRows={8}
+                  placeholder="Your Message"
                   name="message"
                />
             </div>
 
-            <input
-               type="submit"
+            <button
                disabled={!formIsValid}
-               value={isLoading ? 'Sending...' : 'Send'}
-            />
+               style={
+                  !formIsValid
+                     ? { cursor: 'not-allowed' }
+                     : { cursor: 'pointer' }
+               }
+            >
+               {isLoading ? 'Sending...' : 'Send'}
+               <span />
+            </button>
          </form>
 
          <Message message={message} onHideMessage={hideMessageHandler} />
-      </Fragment>
+      </section>
    );
 };
 

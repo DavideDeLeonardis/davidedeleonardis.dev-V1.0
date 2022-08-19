@@ -11,6 +11,7 @@
    transition: all 150ms;
 
    &:hover {
+      color: var(--orange);
       background-color: rgba(230, 230, 230, 0.5);
       transform: scale(1.2);
    }
