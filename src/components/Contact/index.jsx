@@ -1,9 +1,9 @@
 import { Fragment, useRef, useState } from 'react';
 import { TextareaAutosize, TextField } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emailjs from '@emailjs/browser';
 
 import useInput from '../../hooks/useInput';
+import Message from './Message';
 
 import classes from '../../assets/scss/partials/_contact.module.scss';
 
@@ -34,9 +34,7 @@ const ContactPage = () => {
 
    let formIsValid = false;
 
-   if (enteredNameIsValid && enteredEmailIsValid) {
-      formIsValid = true;
-   }
+   if (enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
    const sendEmail = (e) => {
       e.preventDefault();
@@ -71,14 +69,18 @@ const ContactPage = () => {
 
    return (
       <Fragment>
+         <h1>Get In Touch</h1>
+         <span>
+            Feel free to reach out if you want to collaborate with me or just to
+            say hi!
+         </span>
          <form ref={form} onSubmit={sendEmail}>
             <div className={classes['input-container']}>
                <TextField
-                  id="outlined-basic"
                   className={classes.input}
                   label="Name"
-                  variant="outlined"
                   name="user_name"
+                  variant="outlined"
                   value={enteredName}
                   onChange={nameChangedHandler}
                   onBlur={nameBlurHandler}
@@ -90,11 +92,10 @@ const ContactPage = () => {
 
             <div className={classes['input-container']}>
                <TextField
-                  id="outlined-basic"
                   className={classes.input}
                   label="Email"
-                  variant="outlined"
                   name="user_email"
+                  variant="outlined"
                   value={enteredEmail}
                   onChange={emailChangeHandler}
                   onBlur={emailBlurHandler}
@@ -120,17 +121,7 @@ const ContactPage = () => {
             />
          </form>
 
-         <div
-            className={`
-					${classes.message} 
-					${message && classes['slide-to-right']}
-				`}
-         >
-            {message}
-            <div className={classes.x} onClick={hideMessageHandler}>
-               <FontAwesomeIcon icon="fa-solid fa-xmark" />
-            </div>
-         </div>
+         <Message message={message} onHideMessage={hideMessageHandler} />
       </Fragment>
    );
 };

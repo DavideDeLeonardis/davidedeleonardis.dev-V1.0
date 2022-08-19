@@ -6,6 +6,7 @@ const ArrowUp = () => {
    return (
       <a href="#page-top" className="arrow-up-scroll">
          <FontAwesomeIcon icon="angle-up" />
+         <FontAwesomeIcon icon="angle-up" />
       </a>
    );
 };

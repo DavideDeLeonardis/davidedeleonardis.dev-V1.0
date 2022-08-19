@@ -15,8 +15,12 @@
       transform: scale(1.2);
    }
 
-   .fa-angle-up {
-      transform: translate(-5.5px, 5px);
+   .fa-angle-up:first-child {
+      transform: translateX(-5.5px);
+   }
+
+   .fa-angle-up:last-child {
+      transform: translate(-5.5px, -28px);
    }
 
    @media screen and (max-width: 650px) {

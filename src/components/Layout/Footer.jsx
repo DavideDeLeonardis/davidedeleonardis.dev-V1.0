@@ -14,7 +14,10 @@ const Footer = () => {
          </div>
          <img src={react_logo} alt="React" />
          <br />
-         <span>August 2022&nbsp; - &nbsp;{date}</span>
+         <span>
+            <span className={classes.c}>&#169;</span>&nbsp; August 2022&nbsp; -
+            &nbsp;{date}
+         </span>
       </footer>
    );
 };
