@@ -1,54 +1,54 @@
 // images: 1336h x 1350w
 
 export const repos = [
-   {
+	{
+		// portfolio V-1.0
       id: 521026706,
-      name: 'davidedeleonardis.dev-V1.0',
       image: null,
    },
    {
+		// deliveboo
       id: 480318106,
-      name: 'deliveboo',
       image: require('../images/deliveboo.png'),
    },
    {
+		// laravel-boolpress
       id: 464647959,
-      name: 'laravel-boolpress',
       image: require('../images/boolpress.png'),
    },
    {
+		// react-amazon
       id: 497369439,
-      name: 'react-amazon',
       image: require('../images/react-amazon.png'),
    },
    {
+		// react-auth-test
       id: 507615722,
-      name: 'react-auth-test',
       image: require('../images/react-auth-test.png'),
    },
    {
+		// vue-netflix
       id: 449656740,
-      name: 'vue-netflix',
       image: require('../images/vue-netflix.png'),
    },
    {
+		// vue-boolzapp
       id: 440119535,
-      name: 'vue-boolzapp',
       image: require('../images/vue-boolzapp.png'),
    },
    {
+		// vue-instagram
       id: 507411259,
-      name: 'vue-instagram',
       image: require('../images/vue-instagram.png'),
    },
    {
+		// proj-vuejs
       id: 451409349,
-      name: 'proj-vuejs',
       image: require('../images/vue-proj-vuejs.png'),
    },
    {
+		// minefield-game
       id: 434247273,
-      name: 'minefield-game',
       image: require('../images/minefield-game.png'),
    },
 ];
