@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom/client';
 import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -18,8 +18,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import App from './components/App';
-
-import './assets/scss/index.scss';
 
 library.add(
    faAngleUp,

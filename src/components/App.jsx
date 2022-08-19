@@ -4,6 +4,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import SplashPage from '../pages/SplashPage';
 import HomePage from '../pages/HomePage';
 
+import '../assets/scss/index.scss';
+
 const App = () => {
    const [showHome, setShowHome] = useState(false);
 
