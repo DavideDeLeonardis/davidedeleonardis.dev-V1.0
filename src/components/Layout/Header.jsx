@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Nav from './Nav';
 import Resume from '../Portals/ResumePortal';
 import Backdrop from '../UI/BackdropPortal';
+import useDimensions from '../../hooks/useDimensions';
 
 import '../../assets/scss/partials/_header.scss';
 
@@ -13,6 +14,7 @@ const Header = () => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [slideToLeft, setSlideToLeft] = useState(false);
    const [resumeIsShown, setResumeisShown] = useState(false);
+   const { width: screenWidth } = useDimensions();
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
@@ -66,8 +68,13 @@ const Header = () => {
 
    return (
       <header>
-         {/* backdrop black */}
+         {/* backdrop resume */}
          {resumeIsShown && <Backdrop onClose={hideResumeHandler} />}
+
+         {/* backdrop menu vertical */}
+         {menuIsShown && screenWidth < 769 && (
+            <Backdrop onClose={hideMenuHandler} />
+         )}
 
          {/* resume portal */}
          {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}

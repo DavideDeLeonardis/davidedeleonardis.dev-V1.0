@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ProjectsList from '../ProjectsList';
 import SelectLanguage from './SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
+import useDimensions from '../../../hooks/useDimensions';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../../../assets/scss/partials/_projects.module.scss';
@@ -11,6 +12,7 @@ const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
+   const { width: screenWidth } = useDimensions();
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -63,10 +65,9 @@ const OtherProjects = () => {
 
    // Repos to pass to <ProjectsList />
    const getRepos = () => {
-      let vw = window.innerWidth;
       let otherReposShown = 4;
-      if (vw < 992) otherReposShown = 3;
-      if (vw < 769) otherReposShown = 2;
+      if (screenWidth < 992) otherReposShown = 3;
+      if (screenWidth < 769) otherReposShown = 2;
 
       if (filteredReposByLanguage.length === 0) {
          if (!reposAreSliced) return filteredRepos();
