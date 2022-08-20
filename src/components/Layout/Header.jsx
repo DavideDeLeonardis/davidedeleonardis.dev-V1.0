@@ -22,7 +22,7 @@ const Header = () => {
 
    const hideMenuHandler = () => {
       setSlideToLeft(false);
-      // give to animation time necessary to complete
+      // give to animation the time necessary to complete + 50ms
       setTimeout(() => {
          setMenuIsShown(false);
       }, 350);
