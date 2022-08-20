@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import SplashPage from '../pages/SplashPage';
 import HomePage from '../pages/HomePage';
+// import MaintenancePage from '../pages/MaintenancePage';
 
 import '../assets/scss/index.scss';
 
@@ -14,6 +15,7 @@ const App = () => {
    return (
       <Routes>
          <Route path="/" element={showHome ? <HomePage /> : <SplashPage />} />
+         {/* <Route path="/" element={<MaintenancePage />} /> */}
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
    );

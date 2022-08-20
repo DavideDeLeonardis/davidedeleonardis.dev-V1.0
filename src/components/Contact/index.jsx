@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { TextareaAutosize, TextField } from '@mui/material';
+import { TextareaAutosize } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
 import useInput from '../../hooks/useInput';
@@ -77,30 +77,48 @@ const ContactPage = () => {
 
          <form ref={form} onSubmit={sendEmail}>
             <div className={classes['input-container']}>
-               <TextField
+               <input
                   className={classes.input}
-                  label="Name"
+                  style={
+                     nameInputHasError
+                        ? {
+                             border: '1px solid #d00909',
+                             backgroundColor: '#fddddd',
+                          }
+                        : null
+                  }
+                  type="name"
                   name="user_name"
-                  variant="outlined"
+                  placeholder="Name"
                   value={enteredName}
                   onChange={nameChangedHandler}
                   onBlur={nameBlurHandler}
                />
+               <label className={classes.label}>Name</label>
                {nameInputHasError && (
                   <p className={classes.error}>Name must not be empty.</p>
                )}
             </div>
 
             <div className={classes['input-container']}>
-               <TextField
+               <input
                   className={classes.input}
-                  label="Email"
+                  style={
+                     emailInputHasError
+                        ? {
+                             border: '1px solid #d00909',
+                             backgroundColor: '#fddddd',
+                          }
+                        : null
+                  }
+                  type="email"
                   name="user_email"
-                  variant="outlined"
+                  placeholder="Email"
                   value={enteredEmail}
                   onChange={emailChangeHandler}
                   onBlur={emailBlurHandler}
                />
+               <label className={classes.label}>Email</label>
                {emailInputHasError && (
                   <p className={classes.error}>Please enter a valid email.</p>
                )}
