@@ -133,22 +133,24 @@ const ContactPage = () => {
                />
             </div>
 
-            <button
-               disabled={!formIsValid}
-               className={formIsValid ? classes.onHover : null}
-               style={
-                  !formIsValid
-                     ? {
-                          cursor: 'not-allowed',
-                          color: 'gray',
-                          backgroundColor: '#2463a7',
-                       }
-                     : { cursor: 'pointer' }
-               }
-            >
-               {isLoading ? 'Sending...' : 'Send'}
-               <span />
-            </button>
+            <div className={classes['button-container']}>
+               <button
+                  disabled={!formIsValid}
+                  className={formIsValid ? classes.onHover : null}
+                  style={
+                     !formIsValid
+                        ? {
+                             cursor: 'not-allowed',
+                             color: 'gray',
+                             backgroundColor: '#2463a7',
+                          }
+                        : { cursor: 'pointer' }
+                  }
+               >
+                  {isLoading ? 'Sending...' : 'Send'}
+                  <span />
+               </button>
+            </div>
          </form>
 
          <Message message={message} onHideMessage={hideMessageHandler} />
