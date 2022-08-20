@@ -6,7 +6,7 @@ import Nav from './Nav';
 import Resume from '../Portals/ResumePortal';
 import Backdrop from '../UI/BackdropPortal';
 
-import classes from '../../assets/scss/partials/_header.module.scss';
+import '../../assets/scss/partials/_header.scss';
 
 const Header = () => {
    const [menuIsShown, setMenuIsShown] = useState(false);
@@ -41,7 +41,9 @@ const Header = () => {
    const navElements = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
-         <button onClick={showResumeHandler}>Resume</button>
+         <button className="resume-button" onClick={showResumeHandler}>
+            Resume
+         </button>
       </Fragment>
    );
 
@@ -52,10 +54,8 @@ const Header = () => {
    const menuPortal = ReactDOM.createPortal(
       menuIsShown && (
          <div
-            className={`${classes['header-portal']} ${
-               slideToLeft
-                  ? classes['slide-to-left']
-                  : classes['slide-to-right']
+            className={`${'header-portal'} ${
+               slideToLeft ? 'slide-to-left' : 'slide-to-right'
             }`}
          >
             {navElements}
@@ -72,21 +72,20 @@ const Header = () => {
          {/* resume portal */}
          {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}
 
-         <div className={`container-sm ${classes.header}`}>
-            <div className={classes.logo}>Davide De Leonardis</div>
+         <div className="container-sm header">
+            <div className="logo-header">Davide</div>
 
             {/* toggler */}
             {togglerIsShown && (
-               <button className={classes.toggler} onClick={showMenuHandler}>
+               <button className="toggler" onClick={showMenuHandler}>
                   <FontAwesomeIcon icon="fa-solid fa-bars" />
                </button>
             )}
 
             {/* nav horizontal (d-none con vw < 768px) */}
-            <div className={classes['header-right']}>
-               {navElements}
-            </div>
+            <div className="header-right">{navElements}</div>
 
+            {/* nav vertical */}
             {menuPortal}
          </div>
       </header>

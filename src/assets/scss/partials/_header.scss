@@ -1,0 +1,189 @@
+@use '../mixins' as mixin;
+
+$gap-nav-elements: 40px;
+$transition-time-nav-elements: 200ms;
+$font-size-nav-elements: 1.05em;
+$animation-menu-slide-time: 300ms;
+
+// General
+@media screen and (min-width: 769px) {
+   .toggler,
+   .button-close-header,
+   .header-portal {
+      display: none;
+   }
+}
+
+// Header horizontal
+header {
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: rgba(10, 10, 65, 0.95);
+   padding: 20px 0;
+   z-index: 10;
+   box-shadow: 0px 4px 20px -5px #000000;
+
+   .header {
+      @include mixin.flex($justify: space-between);
+
+      .logo-header {
+         font-size: 1.5em;
+         font-weight: bold;
+         font-style: italic;
+      }
+
+      .header-right {
+         @include mixin.flex($gap: $gap-nav-elements);
+
+         .list-elements {
+            @include mixin.flex($gap: $gap-nav-elements);
+         }
+
+         @media screen and (max-width: 768px) {
+            & {
+               display: none;
+            }
+         }
+      }
+   }
+}
+
+// Header vertical
+.header-portal {
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 1000;
+   width: 250px;
+   height: 100%;
+   text-align: center;
+   background-color: #dcdcdc;
+
+   .button-close-header {
+      font-size: 1.5em;
+      transform: translateX(-110px);
+      transition: all 100ms;
+
+      &:hover {
+         transform: translateX(-110px) scale(1.2);
+      }
+   }
+
+   li {
+      margin-top: 30px;
+      transform: translateX(20rem);
+      animation: slide-to-left $animation-menu-slide-time ease-out forwards;
+      animation-delay: $animation-menu-slide-time - 100ms;
+
+      &:nth-child(2) {
+         animation-delay: $animation-menu-slide-time;
+      }
+
+      &:last-child {
+         animation-delay: $animation-menu-slide-time + 50ms;
+      }
+   }
+
+   .resume-button {
+      color: var(--secondary-color);
+      margin-top: 30px;
+      transform: translateX(20rem);
+      animation: slide-to-left $animation-menu-slide-time ease-out forwards;
+      animation-delay: $animation-menu-slide-time + 100ms;
+
+      &:hover {
+         color: #ffffff;
+      }
+   }
+}
+
+// Header nav elements
+.header-nav-element {
+   font-size: $font-size-nav-elements;
+
+   a {
+      position: relative;
+      text-transform: uppercase;
+      padding: 10px 0;
+      transition: all $transition-time-nav-elements;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 0;
+         height: 2px;
+         background-color: var(--secondary-color);
+         transition: $transition-time-nav-elements;
+      }
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--secondary-color);
+		}
+	
+		&:hover::after,
+		&:active::after,
+		&:focus::after {
+			width: 100%;
+		}
+   }
+
+}
+
+// Resume
+.resume-button {
+   font-size: $font-size-nav-elements;
+   text-transform: uppercase;
+   color: #ffffff;
+   padding: 10px 15px;
+   border: 1px solid var(--secondary-color);
+   border-radius: 5px;
+   transition: $transition-time-nav-elements;
+
+   &:hover {
+      background-color: var(--secondary-color);
+   }
+}
+
+// Toggler
+.toggler {
+   font-size: 1.4em;
+   color: #ffffff;
+   transition: all 100ms;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+}
+
+// Animations
+.slide-to-left {
+   animation: slide-to-left $animation-menu-slide-time ease-out forwards;
+
+   @keyframes slide-to-left {
+      from {
+         transform: translateX(20rem);
+      }
+      to {
+         transform: translateX(0);
+      }
+   }
+}
+
+.slide-to-right {
+   animation: slide-to-right $animation-menu-slide-time ease-out forwards;
+
+   @keyframes slide-to-right {
+      from {
+         transform: translateX(0);
+      }
+      to {
+         transform: translateX(20rem);
+      }
+   }
+}

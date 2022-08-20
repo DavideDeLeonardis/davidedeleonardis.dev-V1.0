@@ -1,20 +1,22 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { links } from '../../assets/config/navLinks';
 
-import classes from '../../assets/scss/partials/_header.module.scss';
+import '../../assets/scss/partials/_header.scss';
 
 const Nav = (props) => {
    const linksList = links.map((link, key) => (
-      <li key={key} onClick={props.onClose}>
+      <li className="header-nav-element" key={key} onClick={props.onClose}>
          <a href={link.to}>{link.linkName}</a>
       </li>
    ));
 
    return (
       <nav>
-         <button className={classes['button-close']} onClick={props.onClose}>
-            X
+         <button className="button-close-header" onClick={props.onClose}>
+            <FontAwesomeIcon icon="fa-solid fa-xmark" />
          </button>
-         <ul className={classes['list-elements']}>{linksList}</ul>
+         <ul className="list-elements">{linksList}</ul>
       </nav>
    );
 };
