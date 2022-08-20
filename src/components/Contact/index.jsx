@@ -3,6 +3,7 @@ import { TextareaAutosize } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
 import useInput from '../../hooks/useInput';
+import Input from '../UI/InputContactForm';
 import Message from './Message';
 
 import classes from '../../assets/scss/partials/_contact.module.scss';
@@ -76,53 +77,27 @@ const ContactPage = () => {
          </span>
 
          <form ref={form} onSubmit={sendEmail}>
-            <div className={classes['input-container']}>
-               <input
-                  className={classes.input}
-                  style={
-                     nameInputHasError
-                        ? {
-                             border: '1px solid #d00909',
-                             backgroundColor: '#fddddd',
-                          }
-                        : null
-                  }
-                  type="name"
-                  name="user_name"
-                  placeholder="Name"
-                  value={enteredName}
-                  onChange={nameChangedHandler}
-                  onBlur={nameBlurHandler}
-               />
-               <label className={classes.label}>Name</label>
-               {nameInputHasError && (
-                  <p className={classes.error}>Name must not be empty.</p>
-               )}
-            </div>
+            <Input
+               value={enteredName}
+               type="name"
+               name="user_name"
+               onChange={nameChangedHandler}
+               onBlur={nameBlurHandler}
+               label="Name"
+               error={nameInputHasError}
+               errorDescription="Name must not be empty."
+            />
 
-            <div className={classes['input-container']}>
-               <input
-                  className={classes.input}
-                  style={
-                     emailInputHasError
-                        ? {
-                             border: '1px solid #d00909',
-                             backgroundColor: '#fddddd',
-                          }
-                        : null
-                  }
-                  type="email"
-                  name="user_email"
-                  placeholder="Email"
-                  value={enteredEmail}
-                  onChange={emailChangeHandler}
-                  onBlur={emailBlurHandler}
-               />
-               <label className={classes.label}>Email</label>
-               {emailInputHasError && (
-                  <p className={classes.error}>Please enter a valid email.</p>
-               )}
-            </div>
+            <Input
+               value={enteredEmail}
+               type="email"
+               name="user_email"
+               onChange={emailChangeHandler}
+               onBlur={emailBlurHandler}
+               label="Email"
+               error={emailInputHasError}
+               errorDescription="Please enter a valid email."
+            />
 
             <div className={classes['input-container']}>
                <TextareaAutosize
