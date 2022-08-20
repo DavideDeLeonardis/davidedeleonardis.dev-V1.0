@@ -14,6 +14,7 @@ const MainProjects = () => {
       `Bearer ${process.env.REACT_APP_TOKEN_GH}`
    );
 
+	// Filter for showing only main projects
    const filterRepos = () => {
       let filteredRepos = [];
 

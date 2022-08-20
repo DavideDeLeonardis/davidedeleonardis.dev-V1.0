@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 import { repos } from '../../assets/config/reposImages';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
@@ -7,6 +5,7 @@ import default_image from '../../assets/images/default.png';
 import classes from '../../assets/scss/partials/_projects.module.scss';
 
 const ProjectItem = ({ repo, isMain }) => {
+	// If repo name starts with PHP or other
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -23,6 +22,7 @@ const ProjectItem = ({ repo, isMain }) => {
       }
    };
 
+	// Function for taking repo's image or language
    const getProperties = (array) => {
       for (let index = 0; index < array.length; index++) {
          // eslint-disable-next-line default-case
@@ -46,6 +46,13 @@ const ProjectItem = ({ repo, isMain }) => {
       <li key={index}>{topic}</li>
    ));
 
+   const seeDemoLink = repo.homepage !== '' &&
+      repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
+         <a href={repo.homepage} target="_blank" rel="noreferrer">
+            See Demo
+         </a>
+      );
+
    return (
       <li className={isMain ? classes['main-p'] : classes['other-p']}>
          - {transformedName()}
@@ -57,7 +64,6 @@ const ProjectItem = ({ repo, isMain }) => {
          />
          <br /> {repo.description}
          <br /> {repo.language}
-         {/* <br /> {repo.created_at} */}
          <br />
          <span
             className={classes['color-language']}
@@ -66,14 +72,8 @@ const ProjectItem = ({ repo, isMain }) => {
          <br />
          <ul>{topics}</ul>
          <br />
-         {repo.homepage !== '' && repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
-            <Fragment>
-               <a href={repo.homepage} target="_blank" rel="noreferrer">
-                  See Demo
-               </a>
-               <br />
-            </Fragment>
-         )}
+         {seeDemoLink}
+         <br />
          <a href={repo.html_url} target="_blank" rel="noreferrer">
             See on GitHub
          </a>

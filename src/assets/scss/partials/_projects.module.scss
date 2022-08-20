@@ -10,12 +10,14 @@
          $wrap: true
       );
 
+		// Main projects
       .main-p {
          width: 100%;
          border: 1px solid red;
          margin-bottom: 10px;
       }
 
+		// Other projects
       .other-p {
          width: 25%;
          border: 1px solid red;

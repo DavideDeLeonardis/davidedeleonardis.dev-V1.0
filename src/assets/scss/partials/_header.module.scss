@@ -2,9 +2,19 @@
 
 $gap-nav-elements: 40px;
 $transition-time-nav-elements: 200ms;
-$font-size-nav-elements: 1.1em;
+$font-size-nav-elements: 1.05em;
 $animation-menu-slide-time: 300ms;
 
+// General
+@media screen and (min-width: 769px) {
+   .toggler,
+   .button-close,
+   .header-portal {
+      display: none;
+   }
+}
+
+// Header horizontal
 header {
    position: sticky;
    top: 0;
@@ -24,7 +34,7 @@ header {
          font-style: italic;
       }
 
-      .header-right-horizontal {
+      .header-right {
          @include mixin.flex($gap: $gap-nav-elements);
 
          nav .list-elements {
@@ -35,6 +45,7 @@ header {
 
                a {
                   position: relative;
+                  text-transform: uppercase;
                   padding: 10px 0;
                   transition: all $transition-time-nav-elements;
 
@@ -50,13 +61,13 @@ header {
                   }
 
                   &:hover,
-						&:active,
-						&:focus {
+                  &:active,
+                  &:focus {
                      color: var(--secondary-color);
                   }
 
                   &:hover::after,
-						&:active::after,
+                  &:active::after,
                   &:focus::after {
                      width: 100%;
                   }
@@ -66,6 +77,7 @@ header {
 
          button {
             font-size: $font-size-nav-elements;
+            text-transform: uppercase;
             color: #ffffff;
             padding: 10px 15px;
             border: 1px solid var(--secondary-color);
@@ -86,6 +98,7 @@ header {
    }
 }
 
+// Header vertical
 .header-portal {
    position: fixed;
    top: 0;
@@ -97,6 +110,7 @@ header {
    overflow: scroll;
 }
 
+// Animations
 .slide-to-left {
    animation: slide-to-left $animation-menu-slide-time ease-out forwards;
 
@@ -120,13 +134,5 @@ header {
       to {
          transform: translateX(20rem);
       }
-   }
-}
-
-@media screen and (min-width: 769px) {
-   .toggler,
-   .button-close,
-   .header-portal {
-      display: none;
    }
 }

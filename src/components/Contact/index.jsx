@@ -13,6 +13,7 @@ const ContactPage = () => {
    const [isLoading, setIsLoading] = useState(false);
    const form = useRef();
 
+	// Name
    const {
       value: enteredName,
       isValid: enteredNameIsValid,
@@ -22,6 +23,7 @@ const ContactPage = () => {
       reset: resetNameInput,
    } = useInput((value) => value.trim() !== '');
 
+	// Email
    const {
       value: enteredEmail,
       isValid: enteredEmailIsValid,
@@ -37,7 +39,9 @@ const ContactPage = () => {
 
    if (enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
-   const sendEmail = (e) => {
+
+	// Form submitting
+	const sendEmail = (e) => {
       e.preventDefault();
 
       if (!enteredNameIsValid) return;

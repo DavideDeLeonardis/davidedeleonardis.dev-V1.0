@@ -37,7 +37,7 @@ const Header = () => {
 
    const hideResumeHandler = () => setResumeisShown(false);
 
-   // actual nav elements
+   // Actual nav elements
    const navElements = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
@@ -48,7 +48,7 @@ const Header = () => {
    // HTML portal element
    const overlays = document.getElementById('overlays');
 
-   // nav vertical portal
+   // Nav vertical portal
    const menuPortal = ReactDOM.createPortal(
       menuIsShown && (
          <div
@@ -83,7 +83,7 @@ const Header = () => {
             )}
 
             {/* nav horizontal (d-none con vw < 768px) */}
-            <div className={classes['header-right-horizontal']}>
+            <div className={classes['header-right']}>
                {navElements}
             </div>
 

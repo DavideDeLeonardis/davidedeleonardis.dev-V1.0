@@ -18,7 +18,7 @@ const OtherProjects = () => {
       `Bearer ${process.env.REACT_APP_TOKEN_GH}`
    );
 
-   // filter for not showing main projects, readme, and personal website
+   // Filter for not showing main projects, readme
    const filteredRepos = () => {
       return repos.filter(
          (repo) =>
@@ -30,7 +30,7 @@ const OtherProjects = () => {
       );
    };
 
-   // set select options
+   // Set select tag options
    let options = [];
    const setOptionsHandler = () => {
       repos.forEach((repo) => {
@@ -46,7 +46,7 @@ const OtherProjects = () => {
    };
    setOptionsHandler();
 
-   // set repos to show when value in select changes
+   // Set repos to show when value in select changes
    const setValueHandler = (e) => {
       if (e.target.value === 'All') {
          setFilteredReposByLanguage(filteredRepos());
@@ -59,10 +59,9 @@ const OtherProjects = () => {
       }
    };
 
-   // button for showing all projects
    const showAllReposHandler = () => setReposAreSliced(false);
 
-   // repos to pass to <ProjectsList />
+   // Repos to pass to <ProjectsList />
    const getRepos = () => {
       let vw = window.innerWidth;
       let otherReposShown = 4;

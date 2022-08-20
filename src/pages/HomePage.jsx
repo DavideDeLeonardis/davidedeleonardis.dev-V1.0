@@ -6,9 +6,9 @@ import Contact from '../components/Contact';
 const HomePage = () => {
    return (
       <Layout>
-         <About />
-         {/* <Projects /> */}
-         <Contact />
+         {/* <About /> */}
+         <Projects />
+         {/* <Contact /> */}
       </Layout>
    );
 };
