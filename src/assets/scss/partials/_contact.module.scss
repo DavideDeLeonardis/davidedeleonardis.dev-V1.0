@@ -39,6 +39,8 @@ $form-elements-padding: 14px;
          .input,
          textarea {
             width: 100%;
+				min-width: 100%;
+				max-width: 100%;
             font-family: inherit;
             font-size: $form-font-size;
             background-color: rgb(210, 210, 210);

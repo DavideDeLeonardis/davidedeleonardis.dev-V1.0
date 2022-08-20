@@ -6,7 +6,7 @@ import Contact from '../components/Contact';
 const HomePage = () => {
    return (
       <Layout>
-         {/* <About /> */}
+         <About />
          {/* <Projects /> */}
          <Contact />
       </Layout>
