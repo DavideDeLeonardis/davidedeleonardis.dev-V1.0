@@ -1,9 +1,39 @@
+@use '../mixins' as mixin;
+
 .resume-container {
+   @include mixin.flex($direction: column, $gap: 15px);
    position: fixed;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   width: 400px;
    text-align: center;
    background-color: #ffffff;
+   padding: 30px 0 20px 0;
    z-index: 9999;
+
+   a {
+      font-size: 1.1em;
+      font-weight: 500;
+      color: var(--secondary-color);
+      padding: 10px 15px;
+      border: 1px solid var(--secondary-color);
+      border-radius: 5px;
+      transition: all 200ms;
+
+      &:hover {
+         color: #ffffff;
+         background-color: var(--secondary-color);
+      }
+   }
+
+   img {
+      display: block;
+   }
+
+   .scan-text {
+      font-size: 1.2em;
+      text-transform: uppercase;
+      font-weight: bold;
+   }
 }

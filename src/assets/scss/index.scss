@@ -4,10 +4,7 @@
    --dark-blue: #0a0a41;
    --primary-color: #2a91ff;
    --light-blue: #439eff;
-   --orange: #ff7a00;
-   --animation-menu-time: 300ms;
-   --font-size-name-animation-l: 30px;
-   --font-size-name-animation-s: 4.5vw;
+   --secondary-color: #ff7a00;
 }
 
 //general
@@ -35,7 +32,7 @@ html {
 // commons
 .container {
    max-width: 1700px;
-   margin: auto;
+   margin: 30px auto;
    padding: 0 80px;
    overflow: hidden;
 
@@ -75,6 +72,7 @@ button {
    font-size: initial;
    background-color: inherit;
    border: none;
+	cursor: pointer;
 }
 
 input,
@@ -85,6 +83,7 @@ textarea {
 
 section {
    margin-bottom: 100px;
+	border: 1px solid white;
 
 	&:last-child {
 		margin-bottom: 60px;

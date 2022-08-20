@@ -1,19 +1,19 @@
-import CV from '../../assets/images/cv_IT.png';
-import QRcode from '../About/QRcode';
+import CV from '../../assets/images/resume.pdf';
+import qrcode from '../../assets/images/qrcode.png';
 
 import classes from '../../assets/scss/partials/_resume-portal.module.scss';
 
 const Resume = () => {
    return (
       <div className={classes['resume-container']}>
-         <h2>RESUME</h2>
-         <a href={CV} download>
-            Download my RESUME
+         <a href={CV} target="_blank" rel="noreferrer">
+            See my Resume
          </a>
-         <br />
-         or <br />
-         <span>scan it</span>
-         <QRcode />
+         <span>or</span>
+         <div>
+            <img width="200" src={qrcode} alt="qrcode of curriculum vitae" />
+            <span className={classes['scan-text']}>Scan Me!</span>
+         </div>
       </div>
    );
 };

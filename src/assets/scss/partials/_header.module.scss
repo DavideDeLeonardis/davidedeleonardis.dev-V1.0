@@ -1,13 +1,19 @@
 @use '../mixins' as mixin;
 
+$gap-nav-elements: 40px;
+$transition-time-nav-elements: 200ms;
+$font-size-nav-elements: 1.1em;
+$animation-menu-slide-time: 300ms;
+
 header {
    position: sticky;
    top: 0;
    left: 0;
    width: 100%;
-   background-color: rgba(255, 255, 255, 0.517);
+   background-color: rgba(10, 10, 65, 0.95);
    padding: 20px 0;
    z-index: 10;
+   box-shadow: 0px 4px 20px -5px #000000;
 
    .header {
       @include mixin.flex($justify: space-between);
@@ -19,11 +25,51 @@ header {
       }
 
       .header-right-horizontal {
-         @include mixin.flex($gap: 20px);
+         @include mixin.flex($gap: $gap-nav-elements);
 
-         nav {
-            .list-elements {
-               @include mixin.flex($gap: 20px);
+         nav .list-elements {
+            @include mixin.flex($gap: $gap-nav-elements);
+
+            li {
+               font-size: $font-size-nav-elements;
+
+               a {
+                  position: relative;
+                  padding: 10px 0;
+                  transition: all $transition-time-nav-elements;
+
+                  &::after {
+                     content: '';
+                     position: absolute;
+                     bottom: 0;
+                     left: 0;
+                     width: 0;
+                     height: 2px;
+                     background-color: var(--secondary-color);
+                     transition: $transition-time-nav-elements;
+                  }
+
+                  &:hover {
+                     color: var(--secondary-color);
+                  }
+
+                  &:hover::after {
+                     width: 100%;
+                  }
+               }
+            }
+         }
+
+         button {
+            font-size: $font-size-nav-elements;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+            transition: $transition-time-nav-elements;
+
+            &:hover {
+               background-color: var(--secondary-color);
             }
          }
 
@@ -48,7 +94,7 @@ header {
 }
 
 .slide-to-left {
-   animation: slide-to-left var(--animation-menu-time) ease-out forwards;
+   animation: slide-to-left $animation-menu-slide-time ease-out forwards;
 
    @keyframes slide-to-left {
       from {
@@ -61,7 +107,7 @@ header {
 }
 
 .slide-to-right {
-   animation: slide-to-right var(--animation-menu-time) ease-out forwards;
+   animation: slide-to-right $animation-menu-slide-time ease-out forwards;
 
    @keyframes slide-to-right {
       from {
