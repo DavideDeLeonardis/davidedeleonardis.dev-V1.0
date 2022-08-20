@@ -69,11 +69,13 @@ const Header = () => {
    return (
       <header>
          {/* backdrop resume */}
-         {resumeIsShown && <Backdrop onClose={hideResumeHandler} />}
+         {resumeIsShown && (
+            <Backdrop onClose={hideResumeHandler} isBlack={true} />
+         )}
 
          {/* backdrop menu vertical */}
          {menuIsShown && screenWidth < 769 && (
-            <Backdrop onClose={hideMenuHandler} />
+            <Backdrop onClose={hideMenuHandler} isBlack={false} />
          )}
 
          {/* resume portal */}
