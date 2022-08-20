@@ -49,11 +49,15 @@ header {
                      transition: $transition-time-nav-elements;
                   }
 
-                  &:hover {
+                  &:hover,
+						&:active,
+						&:focus {
                      color: var(--secondary-color);
                   }
 
-                  &:hover::after {
+                  &:hover::after,
+						&:active::after,
+                  &:focus::after {
                      width: 100%;
                   }
                }
