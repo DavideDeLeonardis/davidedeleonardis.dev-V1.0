@@ -54,15 +54,13 @@ const Header = () => {
 
    // Nav vertical portal
    const menuPortal = ReactDOM.createPortal(
-      menuIsShown && (
-         <div
-            className={`${'header-portal'} ${
-               slideToLeft ? 'slide-to-left' : 'slide-to-right'
-            }`}
-         >
-            {navElements}
-         </div>
-      ),
+      <div
+         className={`${'header-portal'} ${
+            slideToLeft ? 'slide-to-left' : 'slide-to-right'
+         }`}
+      >
+         {navElements}
+      </div>,
       overlays
    );
 
@@ -85,17 +83,19 @@ const Header = () => {
             <div className="logo-header">Davide</div>
 
             {/* toggler */}
-            {togglerIsShown && (
+            {togglerIsShown && screenWidth < 769 && (
                <button className="toggler" onClick={showMenuHandler}>
                   <FontAwesomeIcon icon="fa-solid fa-bars" />
                </button>
             )}
 
-            {/* nav horizontal (d-none con vw < 768px) */}
-            <div className="header-right">{navElements}</div>
+            {/* nav horizontal */}
+            {screenWidth > 768 && (
+               <div className="header-right">{navElements}</div>
+            )}
 
             {/* nav vertical */}
-            {menuPortal}
+            {menuIsShown && screenWidth < 769 && menuPortal}
          </div>
       </header>
    );

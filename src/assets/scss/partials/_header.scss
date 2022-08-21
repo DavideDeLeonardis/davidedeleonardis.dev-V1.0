@@ -3,13 +3,12 @@
 $gap-nav-elements: 40px;
 $transition-time-nav-elements: 200ms;
 $font-size-nav-elements: 1.05em;
-$animation-menu-slide-time: 300ms;
+$menu-slide-time: 300ms;
+$nav-el-time: 500ms;
 
 // General
 @media screen and (min-width: 769px) {
-   .toggler,
-   .button-close-header,
-   .header-portal {
+   .button-close-header {
       display: none;
    }
 }
@@ -39,12 +38,27 @@ header {
 
          .list-elements {
             @include mixin.flex($gap: $gap-nav-elements);
+
+            li {
+               transform: translateY(-5rem);
+               animation: slide-bottom $nav-el-time forwards;
+               animation-delay: 400ms;
+
+               &:nth-child(2) {
+                  animation-delay: 600ms;
+               }
+
+               &:last-child {
+                  animation-delay: 800ms;
+               }
+            }
          }
 
-         @media screen and (max-width: 768px) {
-            & {
-               display: none;
-            }
+         .resume-button {
+            transform: translateY(-5rem);
+            animation: slide-bottom $nav-el-time ease-in-out
+               forwards;
+            animation-delay: 1000ms;
          }
       }
    }
@@ -74,15 +88,15 @@ header {
    li {
       margin-top: 30px;
       transform: translateX(20rem);
-      animation: slide-to-left $animation-menu-slide-time ease-out forwards;
-      animation-delay: $animation-menu-slide-time - 100ms;
+      animation: slide-to-left $menu-slide-time ease-out forwards;
+      animation-delay: $menu-slide-time - 100ms;
 
       &:nth-child(2) {
-         animation-delay: $animation-menu-slide-time;
+         animation-delay: $menu-slide-time;
       }
 
       &:last-child {
-         animation-delay: $animation-menu-slide-time + 50ms;
+         animation-delay: $menu-slide-time + 50ms;
       }
    }
 
@@ -90,8 +104,8 @@ header {
       color: var(--secondary-color);
       margin-top: 30px;
       transform: translateX(20rem);
-      animation: slide-to-left $animation-menu-slide-time ease-out forwards;
-      animation-delay: $animation-menu-slide-time + 100ms;
+      animation: slide-to-left $menu-slide-time ease-out forwards;
+      animation-delay: $menu-slide-time + 100ms;
 
       &:hover {
          color: #ffffff;
@@ -119,20 +133,19 @@ header {
          background-color: var(--secondary-color);
          transition: $transition-time-nav-elements;
       }
-		
-		&:hover,
-		&:active,
-		&:focus {
-			color: var(--secondary-color);
-		}
-	
-		&:hover::after,
-		&:active::after,
-		&:focus::after {
-			width: 100%;
-		}
-   }
 
+      &:hover,
+      &:active,
+      &:focus {
+         color: var(--secondary-color);
+      }
+
+      &:hover::after,
+      &:active::after,
+      &:focus::after {
+         width: 100%;
+      }
+   }
 }
 
 // Resume
@@ -163,7 +176,7 @@ header {
 
 // Animations
 .slide-to-left {
-   animation: slide-to-left $animation-menu-slide-time ease-out forwards;
+   animation: slide-to-left $menu-slide-time ease-out forwards;
 
    @keyframes slide-to-left {
       from {
@@ -176,7 +189,7 @@ header {
 }
 
 .slide-to-right {
-   animation: slide-to-right $animation-menu-slide-time ease-out forwards;
+   animation: slide-to-right $menu-slide-time ease-out forwards;
 
    @keyframes slide-to-right {
       from {
@@ -185,5 +198,14 @@ header {
       to {
          transform: translateX(20rem);
       }
+   }
+}
+
+@keyframes slide-bottom {
+   from {
+      transform: translateY(-5rem);
+   }
+   to {
+      transform: translateX(0);
    }
 }
