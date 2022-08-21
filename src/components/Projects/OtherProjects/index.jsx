@@ -101,6 +101,8 @@ const OtherProjects = () => {
             isMain={false}
          />
 
+         {!reposAreSliced && <span>More soon...</span>}
+
          {showMoreButton}
       </div>
    );

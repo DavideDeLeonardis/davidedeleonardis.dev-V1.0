@@ -45,9 +45,27 @@ $gap-pojects: 5px;
             width: 100%;
          }
 
-         .img-container img {
-            width: 100%;
-            height: 100%;
+         .img-container {
+            overflow: hidden;
+
+            img {
+               display: block;
+               width: 100%;
+               height: 100%;
+               transition: all 150ms;
+            }
+         }
+
+         &:hover .img-container img {
+            transform: scale(1.1);
+         }
+
+         .language {
+            @include mixin.flex($justify: flex-start, $gap: 10px);
+         }
+
+         button {
+            background-color: #ffffff;
          }
       }
 

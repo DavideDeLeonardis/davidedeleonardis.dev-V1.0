@@ -58,22 +58,28 @@ const ProjectItem = ({ repo, isMain }) => {
       );
 
    return (
-      <li className={isMain ? classes['main-project'] : classes['other-project']}>
-         {transformedName()}
-         <br />
+      <li
+         className={isMain ? classes['main-project'] : classes['other-project']}
+      >
          <div className={classes['img-container']}>
             <img
                src={image || default_image}
                alt={`${transformedName()} project from Davide De Leonardis`}
             />
          </div>
-         {repo.description}
-         <br /> {repo.language}
+         {transformedName()}
          <br />
-         <span
-            className={classes['color-language']}
-            style={{ backgroundColor: languageColor || `#000000` }}
-         ></span>
+         <div className={classes.language}>
+            {repo.language}
+            <span
+               className={classes['color-language']}
+               style={{ backgroundColor: languageColor || `#000000` }}
+            ></span>
+         </div>
+         <br />
+         <button>Learn more</button>
+         {/* <br />
+         {repo.description}
          <br />
          <ul>{topics}</ul>
          <br />
@@ -81,7 +87,7 @@ const ProjectItem = ({ repo, isMain }) => {
          <br />
          <a href={repo.html_url} target="_blank" rel="noreferrer">
             See on GitHub
-         </a>
+         </a> */}
       </li>
    );
 };
