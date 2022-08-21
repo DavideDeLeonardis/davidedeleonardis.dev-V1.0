@@ -91,7 +91,7 @@ const OtherProjects = () => {
 
    return (
       <div className={classes['projects-container']}>
-         <h2>Other Projects</h2>
+         <h2 className={classes['heading-other']}>Other Projects</h2>
 
          <SelectLanguage options={options} onChangeValue={setValueHandler} />
          <ProjectsList

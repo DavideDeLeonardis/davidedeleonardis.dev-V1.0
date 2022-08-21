@@ -5,7 +5,7 @@ import default_image from '../../assets/images/default.png';
 import classes from '../../assets/scss/partials/_projects.module.scss';
 
 const ProjectItem = ({ repo, isMain }) => {
-	// If repo name starts with PHP or other based on GitHub name
+   // If repo name starts with PHP or other based on GitHub name
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -22,7 +22,7 @@ const ProjectItem = ({ repo, isMain }) => {
       }
    };
 
-	// Function for taking repo's image or language
+   // Function for taking repo's image or language
    const getProperties = (array) => {
       for (let index = 0; index < array.length; index++) {
          // eslint-disable-next-line default-case
@@ -38,18 +38,18 @@ const ProjectItem = ({ repo, isMain }) => {
       }
    };
 
-	// Get image
+   // Get image
    const image = getProperties(repos);
 
-	// Get language
+   // Get language
    const languageColor = getProperties(languageColors);
 
-	// Repo's topics
+   // Repo's topics
    const topics = repo.topics.map((topic, index) => (
       <li key={index}>{topic}</li>
    ));
 
-	// Button see demo
+   // Button see demo
    const seeDemoLink = repo.homepage !== '' &&
       repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
          <a href={repo.homepage} target="_blank" rel="noreferrer">
@@ -58,15 +58,16 @@ const ProjectItem = ({ repo, isMain }) => {
       );
 
    return (
-      <li className={isMain ? classes['main-p'] : classes['other-p']}>
-         - {transformedName()}
+      <li className={isMain ? classes['main-project'] : classes['other-project']}>
+         {transformedName()}
          <br />
-         <img
-            className={classes['repo-img']}
-            src={image || default_image}
-            alt={`${transformedName()} project from Davide De Leonardis`}
-         />
-         <br /> {repo.description}
+         <div className={classes['img-container']}>
+            <img
+               src={image || default_image}
+               alt={`${transformedName()} project from Davide De Leonardis`}
+            />
+         </div>
+         {repo.description}
          <br /> {repo.language}
          <br />
          <span

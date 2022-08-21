@@ -1,43 +1,50 @@
 @use '../mixins' as mixin;
 
+$gap-pojects: 5px;
+
 .projects-container {
    margin: 20px 0;
+
+   .heading-other {
+      text-align: center;
+   }
 
    .repos-container {
       @include mixin.flex(
          $justify: flex-start,
-         $align: flex-start,
+         $align: stretch,
+         $gap: $gap-pojects,
          $wrap: true
       );
 
-		// Main projects
-      .main-p {
+      // Main projects
+      .main-project {
          width: 100%;
          border: 1px solid red;
          margin-bottom: 10px;
       }
 
-		// Other projects
-      .other-p {
-         width: 25%;
-         border: 1px solid red;
+      // Other projects
+      .other-project {
+         width: calc(25% - $gap-pojects);
          margin-bottom: 10px;
 
-			@media screen and (max-width: 991px) {
-				width: 33%;
-			}
+         @media screen and (max-width: 991px) {
+            width: calc(33% - $gap-pojects);
+         }
 
-			@media screen and (max-width: 768px) {
-				width: 50%;
-			}
+         @media screen and (max-width: 768px) {
+            width: calc(50% - $gap-pojects);
+         }
 
-			@media screen and (max-width: 600px) {
-				width: 100%;
-			}
-      }
+         @media screen and (max-width: 600px) {
+            width: 100%;
+         }
 
-      .repo-img {
-         width: 100%;
+         .img-container img {
+            width: 100%;
+            height: 100%;
+         }
       }
 
       .color-language {

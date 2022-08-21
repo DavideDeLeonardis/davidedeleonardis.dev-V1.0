@@ -39,8 +39,8 @@ $form-elements-padding: 14px;
          .input,
          textarea {
             width: 100%;
-				min-width: 100%;
-				max-width: 100%;
+            min-width: 100%;
+            max-width: 100%;
             font-family: inherit;
             font-size: $form-font-size;
             background-color: rgb(210, 210, 210);
@@ -48,6 +48,11 @@ $form-elements-padding: 14px;
 
             &::-webkit-input-placeholder {
                color: #717171;
+               transition: all 100ms;
+            }
+
+            &:hover::-webkit-input-placeholder {
+               transform: scale(1.05) translateX(10px);
             }
          }
 

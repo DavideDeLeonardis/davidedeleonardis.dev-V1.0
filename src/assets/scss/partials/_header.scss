@@ -56,8 +56,7 @@ header {
 
          .resume-button {
             transform: translateY(-5rem);
-            animation: slide-bottom $nav-el-time ease-in-out
-               forwards;
+            animation: slide-bottom $nav-el-time ease-in-out forwards;
             animation-delay: 1000ms;
          }
       }
@@ -109,6 +108,14 @@ header {
 
       &:hover {
          color: #ffffff;
+      }
+   }
+
+   @media screen and (max-width: 500px) {
+      width: 170px;
+
+      .button-close-header {
+         transform: translateX(-70px);
       }
    }
 }
