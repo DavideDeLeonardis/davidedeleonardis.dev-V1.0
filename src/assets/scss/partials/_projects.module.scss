@@ -22,6 +22,10 @@ $gap-pojects: 5px;
          width: 100%;
          border: 1px solid red;
          margin-bottom: 10px;
+
+         .img-container img {
+            width: 100%;
+         }
       }
 
       // Other projects
