@@ -5,7 +5,7 @@ import default_image from '../../assets/images/default.png';
 import classes from '../../assets/scss/partials/_projects.module.scss';
 
 const ProjectItem = ({ repo, isMain }) => {
-	// If repo name starts with PHP or other
+	// If repo name starts with PHP or other based on GitHub name
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -38,14 +38,18 @@ const ProjectItem = ({ repo, isMain }) => {
       }
    };
 
+	// Get image
    const image = getProperties(repos);
 
+	// Get language
    const languageColor = getProperties(languageColors);
 
+	// Repo's topics
    const topics = repo.topics.map((topic, index) => (
       <li key={index}>{topic}</li>
    ));
 
+	// Button see demo
    const seeDemoLink = repo.homepage !== '' &&
       repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
          <a href={repo.homepage} target="_blank" rel="noreferrer">
