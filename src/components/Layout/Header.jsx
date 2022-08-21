@@ -68,7 +68,7 @@ const Header = () => {
       <header>
          {/* backdrop resume */}
          {resumeIsShown && (
-            <Backdrop onClose={hideResumeHandler} isBlack={true} />
+            <Backdrop onClose={hideResumeHandler} isBlack />
          )}
 
          {/* backdrop menu vertical */}
