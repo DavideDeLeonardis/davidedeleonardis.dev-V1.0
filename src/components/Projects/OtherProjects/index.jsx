@@ -85,8 +85,7 @@ const OtherProjects = () => {
       <div className={classes['projects-container']}>
          <h1>Other Projects</h1>
          <p className={classes.paragraph}>
-            Some of my other works. <br />- hover the cursor over them
-            :) -
+            Some of my other works. <br />- hover the cursor on them :) -
          </p>
 
          <span className={classes.filter}>Filter by language: &nbsp;</span>

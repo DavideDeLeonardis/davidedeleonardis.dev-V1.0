@@ -53,7 +53,7 @@ $gap-pojects: 5px;
       // Other projects
       .other-project {
          width: calc(25% - $gap-pojects);
-         margin-bottom: 20px;
+         margin-bottom: 25px;
          opacity: 0;
 
          @media screen and (max-width: 991px) {
@@ -215,4 +215,9 @@ $gap-pojects: 5px;
          height: 200px;
       }
    }
+}
+
+.loader,
+.loader-text {
+   font-size: 1.3em;
 }

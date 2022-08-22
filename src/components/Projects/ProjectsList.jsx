@@ -8,8 +8,15 @@ const ProjectsList = ({ isLoading, error, repos, isMain }) => {
    if (isLoading)
       return (
          <section>
-            <FontAwesomeIcon icon="fa-spinner" spin /> <br />
-            <span>Loading repositories...</span>
+            <FontAwesomeIcon
+               className={classes.loader}
+               icon="fa-spinner"
+               spin
+            />
+				<br />
+            <span className={classes['loader-text']}>
+               Loading repositories...
+            </span>
          </section>
       );
 

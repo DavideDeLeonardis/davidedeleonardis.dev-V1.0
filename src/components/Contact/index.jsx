@@ -106,7 +106,7 @@ const ContactPage = () => {
             <div className={classes['input-container']}>
                <TextareaAutosize
                   aria-label="minimum height"
-                  minRows={8}
+                  minRows={7}
                   placeholder="Your Message"
                   name="message"
                />
