@@ -80,13 +80,21 @@ $gap-pojects: 5px;
 
 .details-container {
    background-color: #ffffff;
-   width: 650px;
+   width: 750px;
 
    .img-container {
-      height: 350px;
+      height: 400px;
       background-position: left center;
       background-size: cover;
       background-repeat: no-repeat;
+   }
+
+   @media screen and (max-width: 1200px) {
+      width: 650px;
+
+      .img-container {
+         height: 350px;
+      }
    }
 
    @media screen and (max-width: 700px) {
@@ -97,7 +105,7 @@ $gap-pojects: 5px;
       }
    }
 
-	@media screen and (max-width: 500px) {
+   @media screen and (max-width: 500px) {
       width: 350px;
 
       .img-container {
