@@ -12,8 +12,15 @@ const Heading = ({
    return (
       <Fragment>
          <h1 className={`${h1ClassName}`}>{heading}</h1>
-         <p className={`${pClassName}`}>{subheading}</p>
-         <p style={{ margin: '0' }}>{sub_subheading}</p>
+         <p className={`${pClassName}`}>
+            {subheading}
+            {sub_subheading && (
+               <Fragment>
+                  <br />
+                  {sub_subheading}
+               </Fragment>
+            )}
+         </p>
       </Fragment>
    );
 };

@@ -7,7 +7,7 @@ $gap-pojects: 5px;
    margin: 20px 0;
 
    .paragraph {
-      margin: 20px 0 0 0;
+      margin-top: 20px;
    }
 
    .filter {
@@ -15,7 +15,7 @@ $gap-pojects: 5px;
    }
 
    .select {
-      margin: 40px 0;
+      margin: 10px 0 50px 0;
       width: 150px;
       height: 30px;
       font-size: 1.05em;
@@ -84,7 +84,7 @@ $gap-pojects: 5px;
             }
 
             .language {
-               @include mixin.flex($justify: center, $gap: 5px);
+               @include mixin.flex($justify: center, $gap: 5px, $wrap: true);
                margin: 15px 0;
 
                .color-language {
