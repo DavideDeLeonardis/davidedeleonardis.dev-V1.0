@@ -1,4 +1,4 @@
-import CenteredCard from '../UI/CenteredCard';
+import CardPortal from '../UI/CardPortal';
 import CV from '../../assets/images/resume.pdf';
 import qrcode from '../../assets/images/qrcode.png';
 
@@ -6,7 +6,7 @@ import classes from '../../assets/scss/partials/_resume-portal.module.scss';
 
 const Resume = ({ backdropIsShown, onClose }) => {
    return (
-      <CenteredCard backdropIsShown={backdropIsShown} onClose={onClose}>
+      <CardPortal backdropIsShown={backdropIsShown} onClose={onClose}>
          <div className={classes['resume-container']}>
             <a href={CV} target="_blank" rel="noreferrer">
                See my Resume
@@ -17,7 +17,7 @@ const Resume = ({ backdropIsShown, onClose }) => {
                <span className={classes['scan-text']}>Scan Me!</span>
             </div>
          </div>
-      </CenteredCard>
+      </CardPortal>
    );
 };
 

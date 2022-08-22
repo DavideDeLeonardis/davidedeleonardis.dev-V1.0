@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
-import CenteredCard from '../UI/CenteredCard';
+import CardPortal from '../UI/CardPortal';
 import { repos } from '../../assets/config/reposImages';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
@@ -53,7 +53,7 @@ const ProjectItem = ({ repo, isMain }) => {
    // Get language
    const languageColor = getProperties(languageColors);
 
-   // Repo's topics
+   // Project's topics
    const topics = repo.topics.map((topic, index) => (
       <li key={index}>{topic}</li>
    ));
@@ -66,46 +66,71 @@ const ProjectItem = ({ repo, isMain }) => {
          </a>
       );
 
-   // Actual modal's details elements
+   // All projects' info
+   const projectInfo = (
+      <Fragment>
+         {repo.description}
+         <br />
+         <ul>{topics}</ul>
+         <br />
+         {seeDemoLink}
+         <br />
+         <a href={repo.html_url} target="_blank" rel="noreferrer">
+            See on GitHub
+         </a>
+      </Fragment>
+   );
+
+   // Other project's details
    const detailsElement = (
-      <CenteredCard backdropIsShown={details} onClose={hideDetailsHandler}>
+      <CardPortal backdropIsShown={details} onClose={hideDetailsHandler}>
          <div className={classes['details-container']}>
-            {repo.description}
-            <br />
-            <ul>{topics}</ul>
-            <br />
-            {seeDemoLink}
-            <br />
-            <a href={repo.html_url} target="_blank" rel="noreferrer">
-               See on GitHub
-            </a>
+            <div
+               className={classes['img-container']}
+               style={{
+                  backgroundImage: `url('${image || default_image}')`,
+               }}
+            ></div>
+            {projectInfo}
          </div>
-      </CenteredCard>
+      </CardPortal>
    );
 
    return (
-      <li
-         className={isMain ? classes['main-project'] : classes['other-project']}
-      >
-         <div className={classes['img-container']}>
-            <img
-               src={image || default_image}
-               alt={`${transformedName()} project from Davide De Leonardis`}
-            />
-         </div>
-         {transformedName()}
-         <br />
-         <div className={classes.language}>
-            {repo.language}
-            <span
-               className={classes['color-language']}
-               style={{ backgroundColor: languageColor || `#000000` }}
-            ></span>
-         </div>
-         <br />
-         <button onClick={showDetailsHandler}>Learn more</button>
+      <Fragment>
+         <li
+            className={
+               isMain ? classes['main-project'] : classes['other-project']
+            }
+         >
+            {/* Show always */}
+            <div className={classes['img-container']}>
+               <img
+                  src={image || default_image}
+                  alt={`${transformedName()} project from Davide De Leonardis`}
+               />
+            </div>
+            <div>
+               {transformedName()}
+               <div className={classes.language}>
+                  {repo.language}
+                  <span
+                     className={classes['color-language']}
+                     style={{ backgroundColor: languageColor || `#000000` }}
+                  ></span>
+               </div>
+            </div>
+            {/* / Show always */}
+
+            {isMain && projectInfo}
+            {!isMain && (
+               <button onClick={showDetailsHandler}>Learn more</button>
+            )}
+         </li>
+
+         {/* Details portal */}
          {details && detailsElement}
-      </li>
+      </Fragment>
    );
 };
 

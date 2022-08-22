@@ -49,9 +49,6 @@ const Header = () => {
       </Fragment>
    );
 
-   // HTML portal element
-   const overlays = document.getElementById('overlays');
-
    // Nav vertical portal
    const menuPortal = ReactDOM.createPortal(
       <div
@@ -61,7 +58,7 @@ const Header = () => {
       >
          {navElements}
       </div>,
-      overlays
+      document.getElementById('overlays')
    );
 
    return (
@@ -72,14 +69,11 @@ const Header = () => {
          )}
 
          {/* resume portal */}
-         {ReactDOM.createPortal(
-            resumeIsShown && (
-               <Resume
-                  backdropIsShown={resumeIsShown}
-                  onClose={hideResumeHandler}
-               />
-            ),
-            overlays
+         {resumeIsShown && (
+            <Resume
+               backdropIsShown={resumeIsShown}
+               onClose={hideResumeHandler}
+            />
          )}
 
          <div className="container-sm header">

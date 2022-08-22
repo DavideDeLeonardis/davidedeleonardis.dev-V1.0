@@ -67,10 +67,6 @@ $gap-pojects: 5px;
          button {
             background-color: #ffffff;
          }
-
-         .details-container {
-            background-color: #ffffff;
-         }
       }
 
       .color-language {
@@ -78,6 +74,26 @@ $gap-pojects: 5px;
          width: 30px;
          height: 30px;
          border-radius: 50%;
+      }
+   }
+}
+
+.details-container {
+   background-color: #ffffff;
+   width: 650px;
+
+   .img-container {
+      height: 350px;
+      background-position: left center;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+
+   @media screen and (max-width: 700px) {
+      width: 450px;
+
+      .img-container {
+         height: 250px;
       }
    }
 }
