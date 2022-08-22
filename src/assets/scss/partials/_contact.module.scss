@@ -88,7 +88,7 @@ $form-elements-padding: 14px;
             color: #ffffff;
             background-color: var(--primary-color);
             padding: 10px 35px;
-            transition: all 100ms;
+				border: none;
 
             &.onHover:hover {
                background-color: var(--light-blue);

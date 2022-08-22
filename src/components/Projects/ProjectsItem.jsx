@@ -6,6 +6,7 @@ import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
 
 import classes from '../../assets/scss/partials/_projects.module.scss';
+import Button from '../UI/Button';
 
 const ProjectItem = ({ repo, isMain }) => {
    const [details, setDetails] = useState(false);
@@ -103,29 +104,37 @@ const ProjectItem = ({ repo, isMain }) => {
                isMain ? classes['main-project'] : classes['other-project']
             }
          >
-            {/* Show always */}
             <div className={classes['img-container']}>
                <img
                   src={image || default_image}
                   alt={`${transformedName()} project from Davide De Leonardis`}
                />
             </div>
-            <div>
-               {transformedName()}
+
+            <div
+               className={classes['card-content']}
+               onClick={showDetailsHandler}
+            >
+               <h2>{transformedName()}</h2>
                <div className={classes.language}>
-                  {repo.language}
+                  <span>Main language: &nbsp; {repo.language}</span>
                   <span
                      className={classes['color-language']}
                      style={{ backgroundColor: languageColor || `#000000` }}
                   ></span>
                </div>
+
+               {!isMain && (
+                  <Button
+                     className={`${classes['learn-more']} ${classes.onHover}`}
+                     onClick={showDetailsHandler}
+                  >
+                     Learn more
+                  </Button>
+               )}
             </div>
-            {/* / Show always */}
 
             {isMain && projectInfo}
-            {!isMain && (
-               <button onClick={showDetailsHandler}>Learn more</button>
-            )}
          </li>
 
          {/* Details portal */}

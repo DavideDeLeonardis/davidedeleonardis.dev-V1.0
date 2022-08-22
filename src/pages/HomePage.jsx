@@ -8,7 +8,7 @@ const HomePage = () => {
       <Layout>
          {/* <About /> */}
          <Projects />
-         {/* <Contact /> */}
+         <Contact />
       </Layout>
    );
 };

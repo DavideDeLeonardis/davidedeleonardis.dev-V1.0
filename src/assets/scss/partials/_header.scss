@@ -159,15 +159,7 @@ header {
 .resume-button {
    font-size: $font-size-nav-elements;
    text-transform: uppercase;
-   color: #ffffff;
-   padding: 10px 15px;
-   border: 1px solid var(--secondary-color);
-   border-radius: 5px;
    transition: $transition-time-nav-elements;
-
-   &:hover {
-      background-color: var(--secondary-color);
-   }
 }
 
 // Toggler

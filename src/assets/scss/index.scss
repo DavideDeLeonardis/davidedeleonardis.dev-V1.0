@@ -72,20 +72,20 @@ button {
    font-size: initial;
    background-color: inherit;
    border: none;
-	cursor: pointer;
+   cursor: pointer;
 }
 
 input,
-textarea {
+textarea,
+select {
    border: none;
    outline: none;
 }
 
 section {
-   margin-bottom: 100px;
-	border: 1px solid white;
+   margin-bottom: 200px;
 
-	&:last-child {
-		margin-bottom: 60px;
-	}
+   &:last-child {
+      margin-bottom: 120px;
+   }
 }

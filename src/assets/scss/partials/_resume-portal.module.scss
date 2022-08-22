@@ -5,6 +5,18 @@
    text-align: center;
    background-color: #ffffff;
    padding: 30px 100px 20px 100px;
+	border-radius: 10px;
+	transform: scale(0.5);
+   animation: scale 200ms forwards;
+
+   @keyframes scale {
+      from {
+         transform: scale(0.5);
+      }
+      to {
+         transform: scale(1);
+      }
+   }
 
    a {
       font-size: 1.1em;

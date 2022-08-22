@@ -1,4 +1,4 @@
-const SelectLanguage = ({ options, onChangeValue }) => {
+const SelectLanguage = ({ options, onChangeValue, className }) => {
    const optionsList = options.map((option, index) => (
       <option value={option} key={index}>
          {option}
@@ -6,8 +6,8 @@ const SelectLanguage = ({ options, onChangeValue }) => {
    ));
 
    return (
-      <select onChange={onChangeValue}>
-         <option value='All'>All</option>
+      <select className={className} onChange={onChangeValue}>
+         <option value="All">All</option>
          {optionsList}
       </select>
    );

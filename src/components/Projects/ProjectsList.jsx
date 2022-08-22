@@ -8,7 +8,7 @@ const ProjectsList = ({ isLoading, error, repos, isMain }) => {
    if (isLoading)
       return (
          <section>
-            <FontAwesomeIcon icon="fa-spinner" spin />
+            <FontAwesomeIcon icon="fa-spinner" spin /> <br />
             <span>Loading repositories...</span>
          </section>
       );

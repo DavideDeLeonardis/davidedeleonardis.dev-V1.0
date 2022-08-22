@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Nav from './Nav';
 import Resume from '../Portals/ResumePortal';
 import Backdrop from '../UI/BackdropPortal';
+import Button from '../UI/Button';
 import useDimensions from '../../hooks/useDimensions';
 
 import '../../assets/scss/partials/_header.scss';
@@ -43,9 +44,9 @@ const Header = () => {
    const navElements = (
       <Fragment>
          <Nav onClose={hideMenuHandler} />
-         <button className="resume-button" onClick={showResumeHandler}>
+         <Button className="resume-button" onClick={showResumeHandler}>
             Resume
-         </button>
+         </Button>
       </Fragment>
    );
 

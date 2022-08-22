@@ -4,6 +4,7 @@ import ProjectsList from '../ProjectsList';
 import SelectLanguage from './SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
 import useDimensions from '../../../hooks/useDimensions';
+import Button from '../../UI/Button';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../../../assets/scss/partials/_projects.module.scss';
@@ -80,20 +81,21 @@ const OtherProjects = () => {
       return filteredReposByLanguage.slice(0, otherReposShown);
    };
 
-   const showMoreButton = reposAreSliced && (
-      <button
-         onClick={showAllReposHandler}
-         style={{ backgroundColor: '#ffffff' }}
-      >
-         SHOW MORE
-      </button>
-   );
-
    return (
       <div className={classes['projects-container']}>
-         <h2 className={classes['heading-other']}>Other Projects</h2>
+         <h1>Other Projects</h1>
+         <p className={classes.paragraph}>
+            Some of my other works. <br />- hover the cursor over them
+            :) -
+         </p>
 
-         <SelectLanguage options={options} onChangeValue={setValueHandler} />
+         <span className={classes.filter}>Filter by language: &nbsp;</span>
+         <SelectLanguage
+            className={classes.select}
+            options={options}
+            onChangeValue={setValueHandler}
+         />
+
          <ProjectsList
             repos={getRepos()}
             isLoading={isLoading}
@@ -101,9 +103,9 @@ const OtherProjects = () => {
             isMain={false}
          />
 
-         {!reposAreSliced && <span>More soon...</span>}
-
-         {showMoreButton}
+         {reposAreSliced && (
+            <Button onClick={showAllReposHandler}>SHOW MORE</Button>
+         )}
       </div>
    );
 };

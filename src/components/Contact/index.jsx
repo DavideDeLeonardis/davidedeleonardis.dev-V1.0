@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import useInput from '../../hooks/useInput';
 import Input from './InputContactForm';
 import Message from './Message';
+import Button from '../UI/Button';
 
 import classes from '../../assets/scss/partials/_contact.module.scss';
 
@@ -13,7 +14,7 @@ const ContactPage = () => {
    const [isLoading, setIsLoading] = useState(false);
    const form = useRef();
 
-	// Name
+   // Name
    const {
       value: enteredName,
       isValid: enteredNameIsValid,
@@ -23,7 +24,7 @@ const ContactPage = () => {
       reset: resetNameInput,
    } = useInput((value) => value.trim() !== '');
 
-	// Email
+   // Email
    const {
       value: enteredEmail,
       isValid: enteredEmailIsValid,
@@ -39,9 +40,8 @@ const ContactPage = () => {
 
    if (enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
-
-	// Form submitting
-	const sendEmail = (e) => {
+   // Form submitting
+   const sendEmail = (e) => {
       e.preventDefault();
 
       if (!enteredNameIsValid) return;
@@ -113,7 +113,7 @@ const ContactPage = () => {
             </div>
 
             <div className={classes['button-container']}>
-               <button
+               <Button
                   disabled={!formIsValid}
                   className={formIsValid ? classes.onHover : null}
                   style={
@@ -128,7 +128,7 @@ const ContactPage = () => {
                >
                   {isLoading ? 'Sending...' : 'Send'}
                   <span />
-               </button>
+               </Button>
             </div>
          </form>
 
