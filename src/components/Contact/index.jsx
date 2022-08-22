@@ -8,6 +8,7 @@ import Message from './Message';
 import Button from '../UI/Button';
 
 import classes from '../../assets/scss/partials/_contact.module.scss';
+import Heading from '../UI/Heading';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
@@ -74,11 +75,14 @@ const ContactPage = () => {
 
    return (
       <section id="contact" className={classes.contact}>
-         <h1>Get In Touch!</h1>
-         <span className={classes.text}>
-            Feel free to reach out if you want to collaborate with me or just to
-            say hi!
-         </span>
+         <Heading
+            heading={'Get In Touch!'}
+            h1ClassName={classes.h1}
+            subheading={
+               'Feel free to reach out if you want to collaborate with me or just to say hi!'
+            }
+            pClassName={classes.text}
+         />
 
          <form ref={form} onSubmit={sendEmail}>
             <Input

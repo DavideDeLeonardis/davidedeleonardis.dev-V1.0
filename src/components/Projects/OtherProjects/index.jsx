@@ -5,6 +5,7 @@ import SelectLanguage from './SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
 import useDimensions from '../../../hooks/useDimensions';
 import Button from '../../UI/Button';
+import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../../../assets/scss/partials/_projects.module.scss';
@@ -83,10 +84,13 @@ const OtherProjects = () => {
 
    return (
       <div className={classes['projects-container']}>
-         <h1>Other Projects</h1>
-         <p className={classes.paragraph}>
-            Some of my other works. <br />- hover the cursor on them :) -
-         </p>
+         <Heading
+            heading={'Other Projects'}
+            subheading={
+               `Some of my other works. ${<br />} - hover the cursor on them :) -`
+            }
+            pClassName={classes.paragraph}
+         />
 
          <span className={classes.filter}>Filter by language: &nbsp;</span>
          <SelectLanguage

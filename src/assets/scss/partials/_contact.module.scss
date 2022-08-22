@@ -6,20 +6,13 @@ $form-elements-padding: 14px;
 .contact {
    @include mixin.flex($direction: column, $justify: center);
 
-   h1 {
-      display: inline-block;
-      font-size: 2em;
-      padding-bottom: 5px;
-      border-bottom: 2px solid var(--secondary-color);
+   .h1 {
       margin-bottom: 20px;
    }
 
    .text {
-      display: inline-block;
       max-width: 400px;
       text-align: center;
-      font-size: 1.2em;
-      color: var(--primary-color);
    }
 
    form {
@@ -88,7 +81,7 @@ $form-elements-padding: 14px;
             color: #ffffff;
             background-color: var(--primary-color);
             padding: 10px 35px;
-				border: none;
+            border: none;
 
             &.onHover:hover {
                background-color: var(--light-blue);
