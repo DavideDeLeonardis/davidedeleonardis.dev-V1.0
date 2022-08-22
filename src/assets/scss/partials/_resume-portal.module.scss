@@ -2,15 +2,9 @@
 
 .resume-container {
    @include mixin.flex($direction: column, $gap: 15px);
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 400px;
    text-align: center;
    background-color: #ffffff;
-   padding: 30px 0 20px 0;
-   z-index: 9999;
+   padding: 30px 100px 20px 100px;
 
    a {
       font-size: 1.1em;

@@ -66,18 +66,21 @@ const Header = () => {
 
    return (
       <header>
-         {/* backdrop resume */}
-         {resumeIsShown && (
-            <Backdrop onClose={hideResumeHandler} isBlack />
-         )}
-
          {/* backdrop menu vertical */}
          {menuIsShown && screenWidth < 769 && (
             <Backdrop onClose={hideMenuHandler} isBlack={false} />
          )}
 
          {/* resume portal */}
-         {ReactDOM.createPortal(resumeIsShown && <Resume />, overlays)}
+         {ReactDOM.createPortal(
+            resumeIsShown && (
+               <Resume
+                  backdropIsShown={resumeIsShown}
+                  onClose={hideResumeHandler}
+               />
+            ),
+            overlays
+         )}
 
          <div className="container-sm header">
             <div className="logo-header">Davide</div>
