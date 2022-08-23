@@ -22,6 +22,10 @@ const OtherProjects = () => {
       `Bearer ${process.env.REACT_APP_TOKEN_GH}`
    );
 
+   const showAllReposHandler = () => setReposAreSliced(false);
+
+   const hideReposHandler = () => setReposAreSliced(true);
+
    // Filter for not showing main projects, readme
    const filteredRepos = () => {
       return repos.filter(
@@ -52,6 +56,8 @@ const OtherProjects = () => {
 
    // Set repos to show when value in select changes
    const setValueHandler = (e) => {
+      hideReposHandler();
+
       if (e.target.value === 'All') {
          setFilteredReposByLanguage(filteredRepos());
       } else {
@@ -62,8 +68,6 @@ const OtherProjects = () => {
          );
       }
    };
-
-   const showAllReposHandler = () => setReposAreSliced(false);
 
    // Repos to pass to <ProjectsList />
    const getRepos = () => {
@@ -80,6 +84,30 @@ const OtherProjects = () => {
       if (!reposAreSliced) return filteredReposByLanguage;
 
       return filteredReposByLanguage.slice(0, otherReposShown);
+   };
+
+   // Show more button's conditions
+   const showMoreProjectsButton = () => {
+      if (
+         (reposAreSliced &&
+            screenWidth > 991 &&
+            (getRepos().length < 4 || filteredReposByLanguage.length === 4)) ||
+         (reposAreSliced &&
+            screenWidth < 992 &&
+            screenWidth > 768 &&
+            (getRepos().length < 3 || filteredReposByLanguage.length === 3)) ||
+         (reposAreSliced &&
+            screenWidth < 769 &&
+            (getRepos().length < 2 || filteredReposByLanguage.length === 2))
+      ) {
+         return;
+      }
+
+      return (
+         reposAreSliced && (
+            <Button onClick={showAllReposHandler}>SHOW MORE</Button>
+         )
+      );
    };
 
    return (
@@ -106,9 +134,7 @@ const OtherProjects = () => {
             isMain={false}
          />
 
-         {reposAreSliced && (
-            <Button onClick={showAllReposHandler}>SHOW MORE</Button>
-         )}
+         {showMoreProjectsButton()}
       </div>
    );
 };
