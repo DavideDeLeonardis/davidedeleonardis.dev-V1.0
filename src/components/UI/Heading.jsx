@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import '../../assets/scss/partials/_heading.module.scss';
+import classes from '../../assets/scss/partials/_heading.module.scss';
 
 const Heading = ({
    heading,
@@ -11,8 +11,10 @@ const Heading = ({
 }) => {
    return (
       <Fragment>
-         <h1 className={`${h1ClassName}`}>{heading}</h1>
-         <p className={`${pClassName}`}>
+         <h1 className={`${classes['heading-h1']} ${h1ClassName}`}>
+            {heading}
+         </h1>
+         <p className={`${classes['heading-p']} ${pClassName}`}>
             {subheading}
             {sub_subheading && (
                <Fragment>

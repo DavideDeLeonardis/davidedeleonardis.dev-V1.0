@@ -114,7 +114,6 @@ const OtherProjects = () => {
       <div className={classes['projects-container']}>
          <Heading
             heading={'Other Projects'}
-            h1ClassName={''}
             subheading={'Some of my other works.'}
             sub_subheading={'- hover the cursor on them... -'}
             pClassName={classes.paragraph}

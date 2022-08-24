@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
 import useFetch from '../../../hooks/useFetch';
+import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../../../assets/scss/partials/_projects.module.scss';
@@ -14,7 +15,7 @@ const MainProjects = () => {
       `Bearer ${process.env.REACT_APP_TOKEN_GH}`
    );
 
-	// Filter for showing only main projects
+   // Filter for showing only main projects
    const filterRepos = () => {
       let filteredRepos = [];
 
@@ -34,12 +35,13 @@ const MainProjects = () => {
 
    return (
       <div className={classes['projects-container']}>
-         <h2>Main Projects</h2>
+         <Heading heading={'Main Projects'} />
+
          <ProjectsList
             repos={filterRepos()}
             isLoading={isLoading}
             error={error}
-				isMain={true}
+            isMain={true}
          />
       </div>
    );

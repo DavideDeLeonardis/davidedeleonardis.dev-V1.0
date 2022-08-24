@@ -1,11 +1,11 @@
-h1 {
+.heading-h1 {
    display: inline-block;
    font-size: 2em;
    padding-bottom: 5px;
    border-bottom: 2px solid var(--secondary-color);
 }
 
-p {
+.heading-p {
    font-size: 1.2em;
    color: var(--primary-color);
    margin: 10px 0 25px 0;
