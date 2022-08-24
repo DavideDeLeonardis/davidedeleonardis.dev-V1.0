@@ -16,7 +16,7 @@ export const socials = [
    },
    {
       socialName: 'envelope',
-      myLink: 'mailto:davidedeleonardis@gmail.com',
+      myLink: 'mailto:davidedeleonardis1711@gmail.com',
 		fontAwesomePrefix: 'solid',
    },
    // {

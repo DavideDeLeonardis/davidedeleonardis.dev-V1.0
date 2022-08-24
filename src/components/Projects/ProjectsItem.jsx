@@ -1,12 +1,13 @@
 import { Fragment, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../UI/CardPortal';
+import Button from '../UI/Button';
 import { repos } from '../../assets/config/reposImages';
 import { languageColors } from '../../assets/config/languageColors';
 import default_image from '../../assets/images/default.png';
 
 import classes from '../../assets/scss/partials/_projects.module.scss';
-import Button from '../UI/Button';
 
 const ProjectItem = ({ repo, isMain }) => {
    const [details, setDetails] = useState(false);
@@ -56,30 +57,56 @@ const ProjectItem = ({ repo, isMain }) => {
 
    // Project's topics
    const topics = repo.topics.map((topic, index) => (
-      <li key={index}>{topic}</li>
+      <li key={index} className={classes.topic}>
+         {topic}
+      </li>
    ));
-
-   // Button see demo
-   const seeDemoLink = repo.homepage !== '' &&
-      repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
-         <a href={repo.homepage} target="_blank" rel="noreferrer">
-            See Demo
-         </a>
-      );
 
    // All projects' info
    const projectInfo = (
-      <Fragment>
-         {repo.description}
-         <br />
-         <ul>{topics}</ul>
-         <br />
-         {seeDemoLink}
-         <br />
-         <a href={repo.html_url} target="_blank" rel="noreferrer">
-            See on GitHub
-         </a>
-      </Fragment>
+      <div className={classes['info-container']}>
+         {!isMain && <h2>{transformedName()}</h2>}
+
+         <p>{repo.description}</p>
+
+         <ul className={classes['topic-container']}>{topics}</ul>
+
+         <div className={classes['project-bottom']}>
+            <div className={classes['project-links']}>
+               {/* See demo button */}
+               {repo.homepage !== '' &&
+                  repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
+                     <a href={repo.homepage} target="_blank" rel="noreferrer">
+                        <Button>
+                           See Demo
+                           <FontAwesomeIcon
+                              className={classes.icon}
+                              icon="fa-solid fa-arrow-up-right-from-square"
+                           />
+                        </Button>
+                     </a>
+                  )}
+
+               {/* See GH button */}
+               <a href={repo.html_url} target="_blank" rel="noreferrer">
+                  <Button>
+                     See on GitHub
+                     <FontAwesomeIcon
+                        className={classes.icon}
+                        icon="fa-brands fa-github"
+                     />
+                  </Button>
+               </a>
+            </div>
+
+            <button onClick={hideDetailsHandler}>
+               <FontAwesomeIcon
+                  className={classes['info-close']}
+                  icon="fa-solid fa-xmark"
+               />
+            </button>
+         </div>
+      </div>
    );
 
    // Other project's details
@@ -111,25 +138,25 @@ const ProjectItem = ({ repo, isMain }) => {
                />
             </div>
 
-            <div
-               className={classes['card-content']}
-               onClick={showDetailsHandler}
-            >
+            <div className={classes['card-content']}>
                <h2>{transformedName()}</h2>
                <div className={classes.language}>
-                  <span>Main language: &nbsp; {repo.language}</span>
-                  <span
-                     className={classes['color-language']}
-                     style={{ backgroundColor: languageColor || `#000000` }}
-                  ></span>
+                  <span>Main language:</span>
+                  <span className={classes.lang}>
+                     {repo.language}
+                     <span
+                        className={classes['color-language']}
+                        style={{ backgroundColor: languageColor || `#000000` }}
+                     ></span>
+                  </span>
                </div>
 
                {!isMain && (
                   <Button
-                     className={`${classes['learn-more']} ${classes.onHover}`}
+                     className={classes['learn-more']}
                      onClick={showDetailsHandler}
                   >
-                     Learn more
+                     Learn More
                   </Button>
                )}
             </div>

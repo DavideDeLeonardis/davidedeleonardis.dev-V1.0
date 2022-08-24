@@ -4,7 +4,7 @@ import OtherProjects from './OtherProjects';
 const Works = () => {
    return (
       <section id="projects">
-         {/* <MainProjects /> */}
+         <MainProjects />
          <OtherProjects />
       </section>
    );
