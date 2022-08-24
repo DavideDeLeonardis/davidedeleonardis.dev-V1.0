@@ -196,39 +196,39 @@ $gap-pojects: 5px;
    width: 750px;
 
    .img-container {
-      height: 400px;
-      background-position: left center;
+      height: 300px;
+      background-position: top center;
       background-size: cover;
       background-repeat: no-repeat;
    }
 
-   @media screen and (max-width: 1200px) {
+   @media screen and (max-width: 991px) {
       width: 650px;
-
-      .img-container {
-         height: 350px;
-      }
-   }
-
-   @media screen and (max-width: 700px) {
-      width: 450px;
 
       .img-container {
          height: 250px;
       }
    }
 
-   @media screen and (max-width: 500px) {
-      width: 350px;
+   @media screen and (max-width: 750px) {
+      width: 450px;
 
       .img-container {
          height: 200px;
       }
    }
 
+   @media screen and (max-width: 500px) {
+      width: 350px;
+   }
+
    .info-container {
       padding: 20px 30px;
       border-top: 1px solid #f0f0f0;
+
+		@media screen and (max-width: 650px) {
+			padding: 20px 15px;
+		}
 
       h2 {
          font-size: 1.9em;
