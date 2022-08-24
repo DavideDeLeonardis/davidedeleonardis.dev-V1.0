@@ -200,17 +200,6 @@ $gap-pojects: 5px;
 .details-container {
    background-color: #ffffff;
    width: 750px;
-   transform: scale(0.5);
-   animation: scale 200ms forwards;
-
-   @keyframes scale {
-      from {
-         transform: scale(0.5);
-      }
-      to {
-         transform: scale(1);
-      }
-   }
 
    .img-container {
       height: 400px;
