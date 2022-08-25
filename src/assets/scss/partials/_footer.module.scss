@@ -1,3 +1,5 @@
+@use '../mixins' as mixin;
+
 footer {
    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
    font-size: 0.75em;
@@ -23,6 +25,6 @@ footer {
    .c {
       display: inline-block;
       font-size: 1.2em;
-      transform: translateY(3px);
+      transform: translateY(2px);
    }
 }

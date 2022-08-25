@@ -13,11 +13,11 @@ const Footer = () => {
             Made by<span>&nbsp; Davide De Leonardis&nbsp;</span> with&nbsp;
          </div>
          <img src={react_logo} alt="React" />
-         <br />
-         <span>
-            <span className={classes.c}>&#169;</span>&nbsp; August 2022&nbsp; -
-            &nbsp;{date}
-         </span>
+         <div>
+            <span className={classes.c}>&#169;</span>
+            <span> August 2022 -</span>
+            <span> {date}</span>
+         </div>
       </footer>
    );
 };

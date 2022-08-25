@@ -77,6 +77,7 @@ header {
 
    .button-close-header {
       font-size: 1.5em;
+		color: #505050;
       transform: translateX(-110px);
       transition: all 100ms;
 
@@ -117,6 +118,10 @@ header {
 
       .button-close-header {
          transform: translateX(-70px);
+
+         &:hover {
+            transform: translateX(-70px) scale(1.2);
+         }
       }
    }
 }
