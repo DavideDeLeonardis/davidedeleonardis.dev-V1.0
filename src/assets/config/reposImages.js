@@ -10,7 +10,7 @@ export const repos = [
    {
       // deliveboo
       id: 480318106,
-      imageWidth: null,
+      imageWidth: require('../images/deliveboo.png'),
       imageHeight: require('../images/deliveboo-height.png'),
    },
    {

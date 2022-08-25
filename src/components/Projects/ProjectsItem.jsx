@@ -139,27 +139,37 @@ const ProjectItem = ({ repo, isMain }) => {
             </div>
 
             <div className={classes['card-content']}>
+               {isMain && repo.fork && (
+                  <span className={classes.featured}>Featured</span>
+               )}
                <h2>{transformedName()}</h2>
-               <div className={classes.language}>
-                  <span>Main language:</span>
-                  <span className={classes.lang}>
-                     {repo.language}
-                     <span
-                        className={classes['color-language']}
-                        style={{ backgroundColor: languageColor || `#000000` }}
-                     ></span>
-                  </span>
-               </div>
 
                {isMain && projectInfo}
 
                {!isMain && (
-                  <Button
-                     className={classes['learn-more']}
-                     onClick={showDetailsHandler}
-                  >
-                     Learn More
-                  </Button>
+                  <Fragment>
+                     <div className={classes.language}>
+                        <span>Main language:</span>
+                        <span className={classes.lang}>
+                           {repo.language}
+                           {!isMain && (
+                              <span
+                                 className={classes['color-language']}
+                                 style={{
+                                    backgroundColor: languageColor || `#000000`,
+                                 }}
+                              ></span>
+                           )}
+                        </span>
+                     </div>
+
+                     <Button
+                        className={classes['learn-more']}
+                        onClick={showDetailsHandler}
+                     >
+                        Learn More
+                     </Button>
+                  </Fragment>
                )}
             </div>
          </li>

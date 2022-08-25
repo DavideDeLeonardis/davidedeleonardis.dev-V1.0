@@ -39,7 +39,7 @@ const MainProjects = () => {
 
    return (
       <div className={classes['projects-container']}>
-         <Heading heading={'Main Projects'} h1ClassName={classes.h1Main} />
+         <Heading heading={'Some Projects'} h1ClassName={classes.h1Main} />
 
          <ProjectsList
             repos={filterRepos()}

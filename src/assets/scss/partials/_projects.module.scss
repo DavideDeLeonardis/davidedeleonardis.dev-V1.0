@@ -1,6 +1,12 @@
 @use '../mixins' as mixin;
 
 $gap-pojects: 5px;
+$links-gap: 10px;
+$first-bk: 1100px;
+$lg-bk: 992px;
+$almost-md-bk: 840px;
+$md-bk: 768px;
+$transition-image-time: 200ms;
 
 .projects-container {
    text-align: center;
@@ -44,9 +50,8 @@ $gap-pojects: 5px;
       // Main projects
       .main-project {
          position: relative;
-         max-height: 550px;
-         margin-bottom: 120px;
-         overflow: hidden;
+         max-height: 650px;
+         margin-bottom: 115px;
 
          &::after {
             content: '';
@@ -56,36 +61,148 @@ $gap-pojects: 5px;
 
          .img-container {
             float: left;
+            position: relative;
             width: 50%;
 
             img {
                width: 100%;
+               z-index: 2;
+               transition: filter $transition-image-time;
+
+               @media screen and (min-width: $md-bk) {
+                  filter: grayscale(0.75);
+               }
+            }
+
+            &::after {
+               content: '';
+               position: absolute;
+               left: -25px;
+               top: 13px;
+               width: 100%;
+               height: 100%;
+               border: 2px solid var(--secondary-color);
+               z-index: -1;
+               transition: all $transition-image-time;
             }
          }
 
+         &:hover .img-container {
+            img {
+               filter: grayscale(0);
+            }
+
+            &::after {
+               left: -15px;
+               top: 5px;
+            }
+         }
+
+         // Card content
          .card-content {
             float: right;
             position: absolute;
+            text-align: right;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
             width: 60%;
-            background-color: black;
-            padding: 20px;
+            background-color: #277dda;
+            padding: 20px 25px;
+
+				.featured {
+					display: inline-block;
+					font-size: 0.8em;
+					color: rgb(190, 190, 190);
+					transform: translateY(6px);
+				}
+
+            h2 {
+               font-size: 2em;
+               color: #151515;
+               padding-bottom: 3px;
+               margin-bottom: 15px;
+               border-bottom: 2px solid var(--secondary-color);
+            }
+
+            .language {
+               @include mixin.flex($justify: flex-end, $gap: 10px, $wrap: true);
+            }
+
+            .info-container {
+               p {
+                  font-size: 1.1rem;
+                  padding: 0 15px;
+                  margin: 25px 0;
+
+                  @media screen and (min-width: $almost-md-bk) {
+                     max-height: 90px;
+                     overflow-y: scroll;
+
+                     &::-webkit-scrollbar {
+                        width: 5px;
+                     }
+
+                     &::-webkit-scrollbar-thumb {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        border-radius: 5px;
+                     }
+                  }
+               }
+
+               .topic-container {
+                  @include mixin.flex(
+                     $justify: flex-end,
+                     $gap: 5px,
+                     $wrap: true
+                  );
+                  margin-bottom: 20px;
+               }
+
+               .project-links {
+                  @include mixin.flex($justify: flex-end, $gap: $links-gap);
+               }
+            }
          }
 
+         // 2nd/4nd/... card
          &:nth-child(even) {
             .img-container {
+               position: relative;
                float: right;
+
+               &::after {
+                  left: 25px;
+                  top: 14px;
+               }
+            }
+
+            &:hover .img-container::after {
+               left: 13px;
+               top: 6px;
             }
 
             .card-content {
                float: left;
                left: 0;
+               text-align: left;
+
+               .language {
+                  @include mixin.flex($justify: flex-start, $gap: 10px);
+               }
+
+               .topic-container {
+                  @include mixin.flex($justify: flex-start, $gap: 5px);
+               }
+
+               .project-links {
+                  @include mixin.flex($justify: flex-start, $gap: $links-gap);
+               }
             }
          }
 
-         @media screen and (max-width: 1100px) {
+         // Media queries single project
+         @media screen and (max-width: $first-bk) {
             .img-container {
                width: 60%;
             }
@@ -95,9 +212,9 @@ $gap-pojects: 5px;
             }
          }
 
-         @media screen and (max-width: 992px) {
+         @media screen and (max-width: $lg-bk) {
             .img-container {
-               width: 70%;
+               width: 73%;
             }
 
             .card-content {
@@ -105,7 +222,7 @@ $gap-pojects: 5px;
             }
          }
 
-         @media screen and (max-width: 800px) {
+         @media screen and (max-width: $almost-md-bk) {
             position: static;
             @include mixin.flex($wrap: true);
             max-height: none;
@@ -122,6 +239,14 @@ $gap-pojects: 5px;
             .img-container {
                max-height: 350px;
                overflow: hidden;
+
+               img {
+                  width: 90%;
+               }
+
+					&::after {
+						display: none;
+					}
             }
          }
       }
@@ -132,11 +257,11 @@ $gap-pojects: 5px;
          margin-bottom: 25px;
          opacity: 0;
 
-         @media screen and (max-width: 991px) {
+         @media screen and (max-width: calc($lg-bk - 1px)) {
             width: calc(33% - $gap-pojects);
          }
 
-         @media screen and (max-width: 768px) {
+         @media screen and (max-width: $md-bk) {
             width: calc(50% - $gap-pojects);
          }
 
@@ -155,6 +280,7 @@ $gap-pojects: 5px;
             }
          }
 
+         // Card content
          .card-content {
             padding: 10px;
 
@@ -164,13 +290,18 @@ $gap-pojects: 5px;
                border-bottom: 2px solid var(--primary-color);
             }
 
-            .lang {
-               @media screen and (max-width: 1120px) and (min-width: 992px) {
-                  width: 100%;
-               }
+            .language {
+               @include mixin.flex($justify: center, $gap: 10px, $wrap: true);
+               margin: 15px 0;
 
-               @media screen and (max-width: 890px) and (min-width: 769px) {
-                  width: 100%;
+               .lang {
+                  @media screen and (max-width: 1120px) and (min-width: $lg-bk) {
+                     width: 100%;
+                  }
+
+                  @media screen and (max-width: 890px) and (min-width: calc($md-bk + 1px)) {
+                     width: 100%;
+                  }
                }
             }
 
@@ -184,7 +315,7 @@ $gap-pojects: 5px;
                   background-color: var(--primary-color);
                }
 
-               @media screen and (max-width: 768px) {
+               @media screen and (max-width: $md-bk) {
                   opacity: 1;
                   transform: translateX(0);
                }
@@ -209,7 +340,7 @@ $gap-pojects: 5px;
                }
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: $md-bk) {
                animation: none;
             }
          }
@@ -275,26 +406,6 @@ $gap-pojects: 5px;
       background-repeat: no-repeat;
    }
 
-   @media screen and (max-width: 991px) {
-      width: 650px;
-
-      .img-container {
-         height: 250px;
-      }
-   }
-
-   @media screen and (max-width: 750px) {
-      width: 450px;
-
-      .img-container {
-         height: 200px;
-      }
-   }
-
-   @media screen and (max-width: 500px) {
-      width: 350px;
-   }
-
    .info-container {
       padding: 20px 30px;
       border-top: 1px solid #f0f0f0;
@@ -315,20 +426,20 @@ $gap-pojects: 5px;
          margin: 20px 15px;
       }
 
+      .topic-container {
+         @include mixin.flex($justify: flex-start, $gap: 5px);
+      }
+
       .project-bottom {
          @include mixin.flex($justify: space-between);
          margin-top: 40px;
 
          .project-links {
-            @include mixin.flex($gap: 10px);
+            @include mixin.flex($gap: $links-gap);
 
             button {
                color: var(--primary-color);
                border: 1px solid var(--primary-color);
-
-               .icon {
-                  margin-left: 7px;
-               }
 
                &:hover {
                   color: #ffffff;
@@ -348,32 +459,52 @@ $gap-pojects: 5px;
          }
       }
    }
+
+   // Media queries details othe projects
+   @media screen and (max-width: calc($lg-bk - 1px)) {
+      width: 650px;
+
+      .img-container {
+         height: 250px;
+      }
+   }
+
+   @media screen and (max-width: 750px) {
+      width: 450px;
+
+      .img-container {
+         height: 200px;
+      }
+   }
+
+   @media screen and (max-width: 500px) {
+      width: 350px;
+   }
 }
 
-.language {
-   @include mixin.flex($justify: center, $gap: 10px, $wrap: true);
-   margin: 15px 0;
+.lang {
+   @include mixin.flex($justify: center, $gap: 5px);
 
-   .lang {
-      @include mixin.flex($justify: center, $gap: 5px, $wrap: true);
-
-      .color-language {
-         display: inline-block;
-         width: 25px;
-         height: 25px;
-         border-radius: 50%;
-      }
+   .color-language {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
    }
 }
 
 .topic-container {
-   @include mixin.flex($justify: flex-start, $gap: 5px, $wrap: true);
+   @include mixin.flex($wrap: true);
 
    .topic {
       color: white;
       background-color: rgb(0, 76, 255);
       padding: 5px 10px 7px 10px;
    }
+}
+
+.project-links .icon {
+   margin-left: 7px;
 }
 
 .loader,
