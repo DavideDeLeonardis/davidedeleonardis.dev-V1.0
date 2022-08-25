@@ -30,12 +30,16 @@ const MainProjects = () => {
             filteredRepos.push(repo);
       });
 
+      // Change order for actual repos
+      // filteredRepos.push(filteredRepos[1]);
+      // filteredRepos.splice(1, 1);
+
       return filteredRepos;
    };
 
    return (
       <div className={classes['projects-container']}>
-         <Heading heading={'Main Projects'} />
+         <Heading heading={'Main Projects'} h1ClassName={classes.h1Main} />
 
          <ProjectsList
             repos={filterRepos()}

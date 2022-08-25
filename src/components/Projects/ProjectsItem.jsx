@@ -39,7 +39,7 @@ const ProjectItem = ({ repo, isMain }) => {
          // eslint-disable-next-line default-case
          switch (array) {
             case repos:
-               if (array[index].id === repo.id) return array[index].image;
+               if (array[index].id === repo.id) return array[index].imageWidth;
                break;
             case languageColors:
                if (array[index].language === repo.language)
@@ -73,7 +73,6 @@ const ProjectItem = ({ repo, isMain }) => {
 
          <div className={classes['project-bottom']}>
             <div className={classes['project-links']}>
-               {/* See demo button */}
                {repo.homepage !== '' &&
                   repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
                      <a href={repo.homepage} target="_blank" rel="noreferrer">
@@ -87,7 +86,6 @@ const ProjectItem = ({ repo, isMain }) => {
                      </a>
                   )}
 
-               {/* See GH button */}
                <a href={repo.html_url} target="_blank" rel="noreferrer">
                   <Button>
                      See on GitHub
@@ -99,12 +97,14 @@ const ProjectItem = ({ repo, isMain }) => {
                </a>
             </div>
 
-            <button onClick={hideDetailsHandler}>
-               <FontAwesomeIcon
-                  className={classes['info-close']}
-                  icon="fa-solid fa-xmark"
-               />
-            </button>
+            {!isMain && (
+               <button onClick={hideDetailsHandler}>
+                  <FontAwesomeIcon
+                     className={classes['info-close']}
+                     icon="fa-solid fa-xmark"
+                  />
+               </button>
+            )}
          </div>
       </div>
    );
@@ -151,6 +151,8 @@ const ProjectItem = ({ repo, isMain }) => {
                   </span>
                </div>
 
+               {isMain && projectInfo}
+
                {!isMain && (
                   <Button
                      className={classes['learn-more']}
@@ -160,8 +162,6 @@ const ProjectItem = ({ repo, isMain }) => {
                   </Button>
                )}
             </div>
-
-            {isMain && projectInfo}
          </li>
 
          {/* Details portal */}

@@ -1,54 +1,64 @@
 // images: 1336h x 1350w
 
 export const repos = [
-	{
-		// portfolio V-1.0
+   {
+      // portfolio V-1.0
       id: 521026706,
-      image: null,
+      imageWidth: null,
+      imageHeight: null,
    },
    {
-		// deliveboo
+      // deliveboo
       id: 480318106,
-      image: require('../images/deliveboo.png'),
+      imageWidth: null,
+      imageHeight: require('../images/deliveboo-height.png'),
    },
    {
-		// laravel-boolpress
+      // laravel-boolpress
       id: 464647959,
-      image: require('../images/boolpress.png'),
+      imageWidth: require('../images/boolpress.png'),
+      imageHeight: null,
    },
    {
-		// react-amazon
+      // react-amazon
       id: 497369439,
-      image: require('../images/react-amazon.png'),
+      imageWidth: require('../images/react-amazon.png'),
+      imageHeight: require('../images/react-amazon-height.png'),
    },
    {
-		// react-auth-test
+      // react-auth-test
       id: 507615722,
-      image: require('../images/react-auth-test.png'),
+      imageWidth: require('../images/react-auth-test.png'),
+      imageHeight: null,
    },
    {
-		// vue-netflix
+      // vue-netflix
       id: 449656740,
-      image: require('../images/vue-netflix.png'),
+      imageWidth: require('../images/vue-netflix.png'),
+      imageHeight: require('../images/vue-netflix-height.png'),
    },
    {
-		// vue-boolzapp
+      // vue-boolzapp
       id: 440119535,
-      image: require('../images/vue-boolzapp.png'),
+      imageWidth: require('../images/vue-boolzapp.png'),
+      imageHeight: null,
    },
    {
-		// vue-instagram
+      // vue-instagram
       id: 507411259,
-      image: require('../images/vue-instagram.png'),
+      imageWidth: require('../images/vue-instagram.png'),
+      imageHeight: null,
    },
    {
-		// proj-vuejs
+      // proj-vuejs
       id: 451409349,
-      image: require('../images/vue-proj-vuejs.png'),
+      imageWidth: require('../images/vue-proj-vuejs.png'),
+      imageHeight: null,
    },
    {
-		// minefield-game
+      // minefield-game
       id: 434247273,
-      image: require('../images/minefield-game.png'),
+      imageWidth: require('../images/minefield-game.png'),
+      imageHeight: null,
    },
 ];
