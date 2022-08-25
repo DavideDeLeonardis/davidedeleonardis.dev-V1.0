@@ -6,9 +6,9 @@ import useInput from '../../hooks/useInput';
 import Input from './InputContactForm';
 import Message from './Message';
 import Button from '../UI/Button';
+import Heading from '../UI/Heading';
 
 import classes from '../../assets/scss/partials/_contact.module.scss';
-import Heading from '../UI/Heading';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
