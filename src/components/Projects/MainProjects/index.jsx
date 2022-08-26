@@ -30,10 +30,6 @@ const MainProjects = () => {
             filteredRepos.push(repo);
       });
 
-      // Change order for actual repos
-      // filteredRepos.push(filteredRepos[1]);
-      // filteredRepos.splice(1, 1);
-
       return filteredRepos;
    };
 

@@ -39,7 +39,7 @@ const ProjectItem = ({ repo, isMain }) => {
          // eslint-disable-next-line default-case
          switch (array) {
             case repos:
-               if (array[index].id === repo.id) return array[index].imageWidth;
+               if (array[index].id === repo.id) return array[index].image;
                break;
             case languageColors:
                if (array[index].language === repo.language)

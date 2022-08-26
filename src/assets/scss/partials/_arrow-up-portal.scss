@@ -8,13 +8,12 @@ $dimension: 50px;
    height: $dimension;
    font-size: 1.8em;
    color: rgb(255, 255, 255);
-   background-color: rgba(169, 169, 169, 0.631);
    padding: 2px 20px 0 20px;
    border-radius: 5px;
    transition: all 100ms;
    transform: translateX(-5rem);
    animation: slide-to-right 650ms forwards;
-   animation-delay: 1200ms;
+   animation-delay: 2000ms;
 
    @keyframes slide-to-right {
       from {
@@ -27,7 +26,6 @@ $dimension: 50px;
 
    &:hover {
       color: var(--secondary-color);
-      background-color: rgba(230, 230, 230, 0.5);
       scale: 1.2;
    }
 

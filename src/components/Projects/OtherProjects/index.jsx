@@ -45,6 +45,7 @@ const OtherProjects = () => {
          if (
             !options.includes(repo.language) &&
             repo.language !== 'HTML' &&
+            repo.language !== 'PHP' &&
             repo.language !== null // README
          )
             options.push(repo.language);

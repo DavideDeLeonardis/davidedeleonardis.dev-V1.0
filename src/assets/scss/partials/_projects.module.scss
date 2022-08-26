@@ -107,19 +107,20 @@ $transition-image-time: 200ms;
             top: 50%;
             transform: translateY(-50%);
             width: 60%;
-            background-color: #277dda;
+            background-color: #328bea;
             padding: 20px 25px;
+            border-radius: 10px;
 
-				.featured {
-					display: inline-block;
-					font-size: 0.8em;
-					color: rgb(190, 190, 190);
-					transform: translateY(6px);
-				}
+            .featured {
+               display: inline-block;
+               font-size: 0.8em;
+               color: rgb(190, 190, 190);
+               transform: translateY(6px);
+            }
 
             h2 {
                font-size: 2em;
-               color: #151515;
+               color: #000000;
                padding-bottom: 3px;
                margin-bottom: 15px;
                border-bottom: 2px solid var(--secondary-color);
@@ -134,19 +135,24 @@ $transition-image-time: 200ms;
                   font-size: 1.1rem;
                   padding: 0 15px;
                   margin: 25px 0;
+                  max-height: 90px;
+                  overflow-y: scroll;
 
-                  @media screen and (min-width: $almost-md-bk) {
-                     max-height: 90px;
-                     overflow-y: scroll;
+                  &::-webkit-scrollbar {
+                     width: 5px;
+                  }
 
-                     &::-webkit-scrollbar {
-                        width: 5px;
-                     }
+                  &::-webkit-scrollbar-thumb {
+                     background-color: rgba(0, 0, 0, 0.5);
+                     border-radius: 5px;
+                  }
 
-                     &::-webkit-scrollbar-thumb {
-                        background-color: rgba(0, 0, 0, 0.5);
-                        border-radius: 5px;
-                     }
+                  @media screen and (max-width: 840px) {
+                     max-height: none;
+                  }
+
+                  @media screen and (max-width: 600px) {
+                     max-height: 125px;
                   }
                }
 
@@ -161,6 +167,15 @@ $transition-image-time: 200ms;
 
                .project-links {
                   @include mixin.flex($justify: flex-end, $gap: $links-gap);
+
+                  button {
+                     background-color: var(--secondary-color);
+
+                     &:hover {
+                        background-color: transparent;
+                        border-color: #f88e2a;
+                     }
+                  }
                }
             }
          }
@@ -244,9 +259,9 @@ $transition-image-time: 200ms;
                   width: 90%;
                }
 
-					&::after {
-						display: none;
-					}
+               &::after {
+                  display: none;
+               }
             }
          }
       }

@@ -4,61 +4,51 @@ export const repos = [
    {
       // portfolio V-1.0
       id: 521026706,
-      imageWidth: null,
-      imageHeight: null,
+      image: null,
    },
    {
       // deliveboo
       id: 480318106,
-      imageWidth: require('../images/deliveboo.png'),
-      imageHeight: require('../images/deliveboo-height.png'),
+      image: require('../images/deliveboo.png'),
    },
    {
       // laravel-boolpress
       id: 464647959,
-      imageWidth: require('../images/boolpress.png'),
-      imageHeight: null,
+      image: require('../images/boolpress.png'),
    },
    {
       // react-amazon
       id: 497369439,
-      imageWidth: require('../images/react-amazon.png'),
-      imageHeight: require('../images/react-amazon-height.png'),
+      image: require('../images/react-amazon.png'),
    },
    {
       // react-auth-test
       id: 507615722,
-      imageWidth: require('../images/react-auth-test.png'),
-      imageHeight: null,
+      image: require('../images/react-auth-test.png'),
    },
    {
       // vue-netflix
       id: 449656740,
-      imageWidth: require('../images/vue-netflix.png'),
-      imageHeight: require('../images/vue-netflix-height.png'),
+      image: require('../images/vue-netflix.png'),
    },
    {
       // vue-boolzapp
       id: 440119535,
-      imageWidth: require('../images/vue-boolzapp.png'),
-      imageHeight: null,
+      image: require('../images/vue-boolzapp.png'),
    },
    {
       // vue-instagram
       id: 507411259,
-      imageWidth: require('../images/vue-instagram.png'),
-      imageHeight: null,
+      image: require('../images/vue-instagram.png'),
    },
    {
       // proj-vuejs
       id: 451409349,
-      imageWidth: require('../images/vue-proj-vuejs.png'),
-      imageHeight: null,
+      image: require('../images/vue-proj-vuejs.png'),
    },
    {
       // minefield-game
       id: 434247273,
-      imageWidth: require('../images/minefield-game.png'),
-      imageHeight: null,
+      image: require('../images/minefield-game.png'),
    },
 ];
