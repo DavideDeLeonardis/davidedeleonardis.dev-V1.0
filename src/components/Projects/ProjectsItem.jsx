@@ -11,12 +11,22 @@ import classes from '../../assets/scss/partials/_projects.module.scss';
 
 const ProjectItem = ({ repo, isMain }) => {
    const [details, setDetails] = useState(false);
+   const [scaleDown, setScaleDown] = useState(false);
 
-   const showDetailsHandler = () => setDetails(true);
+   const showDetailsHandler = () => {
+      setDetails(true);
+      setScaleDown(false);
+   };
 
-   const hideDetailsHandler = () => setDetails(false);
+   const hideDetailsHandler = () => {
+      // time for scale down animation to complete
+      setTimeout(() => {
+         setDetails(false);
+      }, 150);
+      setScaleDown(true);
+   };
 
-   // If repo name starts with PHP or other based on GitHub name
+   // If GitHub repo's name starts with PHP or other
    const transformedName = () => {
       if (repo.name.startsWith('php')) {
          return `
@@ -111,7 +121,11 @@ const ProjectItem = ({ repo, isMain }) => {
 
    // Other project's details
    const detailsElement = (
-      <CardPortal backdropIsShown={details} onClose={hideDetailsHandler}>
+      <CardPortal
+         backdropIsShown={details}
+         onClose={hideDetailsHandler}
+         scaleDown={scaleDown}
+      >
          <div className={classes['details-container']}>
             <div
                className={classes['img-container']}

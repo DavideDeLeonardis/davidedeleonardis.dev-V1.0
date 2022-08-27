@@ -4,9 +4,13 @@ import qrcode from '../../assets/images/qrcode.png';
 
 import classes from '../../assets/scss/partials/_resume-portal.module.scss';
 
-const Resume = ({ backdropIsShown, onClose }) => {
+const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
    return (
-      <CardPortal backdropIsShown={backdropIsShown} onClose={onClose}>
+      <CardPortal
+         backdropIsShown={backdropIsShown}
+         onClose={onClose}
+         scaleDown={scaleDown}
+      >
          <div className={classes['resume-container']}>
             <a href={CV} target="_blank" rel="noreferrer">
                See my Resume

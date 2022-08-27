@@ -1,18 +1,38 @@
+$animation-time: 200ms;
+
 .card-portal {
    position: fixed;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%) scale(0.5);
    z-index: 9999;
+   opacity: 0;
    color: #000000;
-   animation: scale 200ms forwards;
+   animation: scale-big $animation-time forwards;
 
-   @keyframes scale {
+   @keyframes scale-big {
       from {
          transform: translate(-50%, -50%) scale(0.5);
+         opacity: 0;
       }
       to {
          transform: translate(-50%, -50%) scale(1);
+         opacity: 1;
+      }
+   }
+}
+
+.scale-down {
+   animation: scale-small $animation-time forwards;
+
+   @keyframes scale-small {
+      from {
+         transform: translate(-50%, -50%) scale(1);
+         opacity: 1;
+      }
+      to {
+         transform: translate(-50%, -50%) scale(0.5);
+         opacity: 0;
       }
    }
 }

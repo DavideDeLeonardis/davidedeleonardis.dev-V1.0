@@ -120,7 +120,7 @@ const OtherProjects = () => {
             pClassName={classes.paragraph}
          />
 
-         <span className={classes.filter}>Filter by language: &nbsp;</span>
+         <span className={classes.filter}>Filter by programming language: &nbsp;</span>
          <SelectLanguage
             className={classes.select}
             options={options}

@@ -15,6 +15,7 @@ const Header = () => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [slideToLeft, setSlideToLeft] = useState(false);
    const [resumeIsShown, setResumeisShown] = useState(false);
+   const [scaleDown, setScaleDown] = useState(false);
    const { width: screenWidth } = useDimensions();
 
    const showMenuHandler = () => {
@@ -25,7 +26,7 @@ const Header = () => {
 
    const hideMenuHandler = () => {
       setSlideToLeft(false);
-      // give to animation the time necessary to complete + 50ms
+      // time to slide nav to complete + 50ms
       setTimeout(() => {
          setMenuIsShown(false);
       }, 350);
@@ -36,9 +37,16 @@ const Header = () => {
       setResumeisShown(true);
       setMenuIsShown(false);
       setTogglerIsShown(true);
+      setScaleDown(false);
    };
 
-   const hideResumeHandler = () => setResumeisShown(false);
+   const hideResumeHandler = () => {
+      setScaleDown(true);
+      // time for scale down animation to complete
+      setTimeout(() => {
+         setResumeisShown(false);
+      }, 150);
+   };
 
    // Actual nav elements
    const navElements = (
@@ -74,6 +82,7 @@ const Header = () => {
             <Resume
                backdropIsShown={resumeIsShown}
                onClose={hideResumeHandler}
+               scaleDown={scaleDown}
             />
          )}
 
