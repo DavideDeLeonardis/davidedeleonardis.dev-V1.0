@@ -26,7 +26,7 @@ const OtherProjects = () => {
 
    const hideReposHandler = () => setReposAreSliced(true);
 
-   // Filter for not showing main projects, readme
+   // Filter for not showing main projects and readme
    const filteredRepos = () => {
       return repos.filter(
          (repo) =>
@@ -120,7 +120,7 @@ const OtherProjects = () => {
             pClassName={classes.paragraph}
          />
 
-         <span className={classes.filter}>Filter by programming language: &nbsp;</span>
+         <span className={classes.filter}>Filter by language: &nbsp;</span>
          <SelectLanguage
             className={classes.select}
             options={options}
