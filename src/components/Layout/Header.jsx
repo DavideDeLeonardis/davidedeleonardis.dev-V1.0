@@ -13,23 +13,17 @@ import '../../assets/scss/partials/_header.scss';
 const Header = () => {
    const [menuIsShown, setMenuIsShown] = useState(false);
    const [togglerIsShown, setTogglerIsShown] = useState(true);
-   const [slideToLeft, setSlideToLeft] = useState(false);
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const { width: screenWidth } = useDimensions();
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
-      setSlideToLeft(true);
       setTogglerIsShown(false);
    };
 
    const hideMenuHandler = () => {
-      setSlideToLeft(false);
-      // time to slide nav to complete + 50ms
-      setTimeout(() => {
-         setMenuIsShown(false);
-      }, 300);
+      setMenuIsShown(false);
       setTogglerIsShown(true);
    };
 
@@ -60,13 +54,7 @@ const Header = () => {
 
    // Nav vertical portal
    const menuPortal = ReactDOM.createPortal(
-      <div
-         className={`header-portal ${
-            slideToLeft ? 'slide-to-left' : 'slide-to-right'
-         }`}
-      >
-         {navElements}
-      </div>,
+      <div className="header-portal">{navElements}</div>,
       document.getElementById('overlays')
    );
 

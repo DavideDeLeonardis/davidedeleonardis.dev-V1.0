@@ -1,5 +1,5 @@
 import CardPortal from '../UI/CardPortal';
-import CV from '../../assets/images/resume.pdf';
+import resume from '../../assets/images/resume.pdf';
 import qrcode from '../../assets/images/qrcode.png';
 
 import classes from '../../assets/scss/partials/_resume-portal.module.scss';
@@ -12,7 +12,7 @@ const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
          scaleDown={scaleDown}
       >
          <div className={classes['resume-container']}>
-            <a href={CV} target="_blank" rel="noreferrer">
+            <a href={resume} target="_blank" rel="noreferrer">
                See my Resume
             </a>
             <span>or</span>

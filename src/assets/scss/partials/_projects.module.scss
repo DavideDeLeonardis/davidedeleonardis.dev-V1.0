@@ -16,8 +16,17 @@ $transition-image-time: 200ms;
       margin-bottom: 50px;
    }
 
-   .h1Main {
-      margin-bottom: 30px;
+   .h1-container {
+      text-align: left;
+
+      .h1Main {
+         font-size: 2.5em;
+         margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: 840px) {
+         text-align: center;
+      }
    }
 
    .paragraph {
@@ -414,7 +423,7 @@ $transition-image-time: 200ms;
 
 // Details other projects
 .details-container {
-   background-color: #ffffff;
+   background-color: rgb(250, 250, 250);
    width: 750px;
 
    .img-container {

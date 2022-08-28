@@ -73,12 +73,22 @@ header {
    width: 250px;
    height: 100%;
    text-align: center;
-	color: #ffffff;
-	background-color: rgba(13, 13, 93, 0.975);
+   color: #ffffff;
+   background-color: rgba(13, 13, 93, 0.975);
+   animation: slide-to-left $menu-slide-time ease-out forwards;
+
+   @keyframes slide-to-left {
+      from {
+         transform: translateX(20rem);
+      }
+      to {
+         transform: translateX(0);
+      }
+   }
 
    .button-close-header {
       font-size: 1.5em;
-		color: #ffffff;
+      color: #ffffff;
       transform: translate(-110px, 5px);
       transition: all 100ms;
 
@@ -177,33 +187,6 @@ header {
 
    &:hover {
       transform: scale(1.2);
-   }
-}
-
-// Animations
-.slide-to-left {
-   animation: slide-to-left $menu-slide-time ease-out forwards;
-
-   @keyframes slide-to-left {
-      from {
-         transform: translateX(20rem);
-      }
-      to {
-         transform: translateX(0);
-      }
-   }
-}
-
-.slide-to-right {
-   animation: slide-to-right $menu-slide-time ease-out forwards;
-
-   @keyframes slide-to-right {
-      from {
-         transform: translateX(0);
-      }
-      to {
-         transform: translateX(20rem);
-      }
    }
 }
 

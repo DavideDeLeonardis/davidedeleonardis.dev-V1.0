@@ -1,7 +1,5 @@
 import dateFormat from 'dateformat';
 
-import react_logo from '../../assets/images/logo-react.png';
-
 import classes from '../../assets/scss/partials/_footer.module.scss';
 
 const Footer = () => {
@@ -10,9 +8,8 @@ const Footer = () => {
    return (
       <footer>
          <div className={classes.top}>
-            Made by<span>&nbsp; Davide De Leonardis&nbsp;</span> with&nbsp;
+            Made by <span>Davide De Leonardis</span>
          </div>
-         <img src={react_logo} alt="React" />
          <div>
             <span className={classes.c}>&#169;</span>
             <span> August 2022 -</span>

@@ -1,19 +1,19 @@
 export const socials = [
-   {
-      socialName: 'github',
-      myLink: 'https://github.com/DavideDeLeonardis',
-		fontAwesomePrefix: 'brands',
-   },
-   {
-      socialName: 'linkedin',
+	{
+		socialName: 'linkedin',
       myLink: 'https://linkedin.com/in/DavideDeLeonardis',
 		fontAwesomePrefix: 'brands',
    },
-   {
-      socialName: 'instagram',
-      myLink: 'https://instagram.com/davidedeleonardis_',
+	{
+		socialName: 'github',
+		myLink: 'https://github.com/DavideDeLeonardis',
 		fontAwesomePrefix: 'brands',
-   },
+	},
+   // {
+   //    socialName: 'instagram',
+   //    myLink: 'https://instagram.com/davidedeleonardis_',
+	// 	fontAwesomePrefix: 'brands',
+   // },
    {
       socialName: 'envelope',
       myLink: 'mailto:davidedeleonardis1711@gmail.com',

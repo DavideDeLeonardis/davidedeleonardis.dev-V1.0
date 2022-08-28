@@ -38,7 +38,7 @@ const ProjectItem = ({ repo, isMain }) => {
       } else {
          return (
             repo.name.charAt(0).toUpperCase() +
-            repo.name.slice(1).replace('-', ' ')
+            repo.name.slice(1).replaceAll('-', ' ')
          );
       }
    };

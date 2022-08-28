@@ -35,7 +35,9 @@ const MainProjects = () => {
 
    return (
       <div className={classes['projects-container']}>
-         <Heading heading={'Some Projects'} h1ClassName={classes.h1Main} />
+         <div className={classes['h1-container']}>
+            <Heading heading={'Some Projects'} h1ClassName={classes.h1Main} />
+         </div>
 
          <ProjectsList
             repos={filterRepos()}

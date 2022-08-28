@@ -7,8 +7,8 @@ import classes from '../../assets/scss/partials/_about.module.scss';
 const About = () => {
    return (
       <section id="about" className={classes.about}>
-         <Heading heading={'About Me'} />
          <Presentation />
+         <Heading heading={'About Me'} h1ClassName={classes.h1Main} />
          <Skills />
       </section>
    );
