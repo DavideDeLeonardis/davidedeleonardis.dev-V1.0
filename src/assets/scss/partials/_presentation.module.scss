@@ -2,9 +2,7 @@ $font-size-name-animation-l: 30px;
 $font-size-name-animation-s: 4.5vw;
 
 .presentation {
-   margin: 30px 0 150px 0;
-
-	// Big name animation
+   // Big name animation
    .name-container {
       position: relative;
       height: calc($font-size-name-animation-l + 10px);
@@ -85,7 +83,7 @@ $font-size-name-animation-s: 4.5vw;
       }
    }
 
-	// Titles animation
+   // Titles animation
    .rotate-words {
       position: relative;
       display: inline;

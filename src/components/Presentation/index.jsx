@@ -2,10 +2,10 @@ import classes from '../../assets/scss/partials/_presentation.module.scss';
 
 const Presentation = () => {
    return (
-      <div className={classes.presentation}>
+      <section className={classes.presentation}>
          <div className={classes['name-container']}>
             <span>Hi, I'm</span>
-            <div className={classes.text} data-text='davide de leonardis'></div>
+            <div className={classes.text} data-text="davide de leonardis"></div>
          </div>
 
          <div className={classes['rotate-words']}>
@@ -17,7 +17,7 @@ const Presentation = () => {
                Salesforce Certifed Platform Developer
             </span>
          </div>
-      </div>
+      </section>
    );
 };
 
