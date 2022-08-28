@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Nav from './Nav';
 import Resume from '../Portals/ResumePortal';
-import Backdrop from '../UI/BackdropPortal';
+import Backdrop from '../UI/Backdrop';
 import Button from '../UI/Button';
 import useDimensions from '../../hooks/useDimensions';
 
-import '../../assets/scss/partials/_header.scss';
+import './_header.scss';
 
 const Header = () => {
    const [menuIsShown, setMenuIsShown] = useState(false);

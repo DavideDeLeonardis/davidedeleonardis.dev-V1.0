@@ -1,4 +1,4 @@
-import classes from '../../assets/scss/partials/_backdrop-portal.module.scss';
+import classes from './_backdrop.module.scss';
 
 const Backdrop = ({ onClose, isBlack }) => {
    return (

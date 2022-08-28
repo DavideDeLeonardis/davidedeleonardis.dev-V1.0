@@ -1,7 +1,7 @@
 import Skills from './Skills';
 import Heading from '../UI/Heading';
 
-import classes from '../../assets/scss/partials/_about.module.scss';
+import classes from './_about.module.scss';
 
 const About = () => {
    return (

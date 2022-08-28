@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import '../../assets/scss/partials/_arrow-up-portal.scss';
+import './_arrow-up-portal.scss';
 
 const ArrowUp = () => {
    return (

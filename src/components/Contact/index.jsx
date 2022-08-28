@@ -8,11 +8,12 @@ import Message from './Message';
 import Button from '../UI/Button';
 import Heading from '../UI/Heading';
 
-import classes from '../../assets/scss/partials/_contact.module.scss';
+import classes from './_contact.module.scss';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
    const [isLoading, setIsLoading] = useState(false);
+   const [isValid, setIsValid] = useState(false);
    const form = useRef();
 
    // Name
@@ -59,11 +60,15 @@ const ContactPage = () => {
          )
          .then(() => {
             setMessage('Message sent!');
+            setIsValid(true);
             setTimeout(() => setMessage(null), 7500);
             setIsLoading(false);
          })
          .catch(() => {
-            setMessage('Something went wrong');
+            setMessage(
+               'Something went wrong, click on mail icon in the right of page'
+            );
+            setIsValid(false);
             setIsLoading(false);
          });
 
@@ -136,7 +141,11 @@ const ContactPage = () => {
             </div>
          </form>
 
-         <Message message={message} onHideMessage={hideMessageHandler} />
+         <Message
+            message={message}
+            isValid={isValid}
+            onHideMessage={hideMessageHandler}
+         />
       </section>
    );
 };

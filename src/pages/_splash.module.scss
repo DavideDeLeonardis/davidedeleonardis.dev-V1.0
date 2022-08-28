@@ -1,4 +1,4 @@
-@use '../mixins' as mixin;
+@use '../assets/scss/mixins' as mixin;
 
 .splash {
    @include mixin.flex();

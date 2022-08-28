@@ -1,14 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import classes from '../../assets/scss/partials/_mail-message.module.scss';
+import classes from './_mail-message.module.scss';
 
-const Message = ({ message, onHideMessage }) => {
+const Message = ({ message, isValid, onHideMessage }) => {
    return (
       <div
          className={`
 					${classes.message} 
 					${message && classes['slide-to-right']}
 				`}
+         style={
+            isValid
+               ? { backgroundColor: '#2ea82e' }
+               : { backgroundColor: '#d00909' }
+         }
       >
          {message}
          <div className={classes.x} onClick={onHideMessage}>

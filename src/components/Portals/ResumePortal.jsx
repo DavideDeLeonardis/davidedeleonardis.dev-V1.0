@@ -2,7 +2,7 @@ import CardPortal from '../UI/CardPortal';
 import resume from '../../assets/images/resume.pdf';
 import qrcode from '../../assets/images/qrcode.png';
 
-import classes from '../../assets/scss/partials/_resume-portal.module.scss';
+import classes from './_resume-portal.module.scss';
 
 const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
    return (

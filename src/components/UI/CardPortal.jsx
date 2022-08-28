@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
-import Backdrop from './BackdropPortal';
+import Backdrop from './Backdrop';
 
-import classes from '../../assets/scss/partials/_card-portal.module.scss';
+import classes from './_card-portal.module.scss';
 
 const CardPortal = ({ children, backdropIsShown, onClose, scaleDown }) => {
    return ReactDOM.createPortal(

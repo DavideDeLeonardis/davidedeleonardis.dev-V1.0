@@ -1,4 +1,4 @@
-import classes from '../../assets/scss/partials/_presentation.module.scss';
+import classes from './_presentation.module.scss';
 
 const Presentation = () => {
    return (

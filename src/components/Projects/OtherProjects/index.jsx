@@ -8,7 +8,7 @@ import Button from '../../UI/Button';
 import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
-import classes from '../../../assets/scss/partials/_projects.module.scss';
+import classes from '../_projects.module.scss';
 
 const OtherProjects = () => {
    const [repos, setRepos] = useState([]);

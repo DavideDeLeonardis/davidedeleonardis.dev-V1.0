@@ -1,4 +1,4 @@
-import classes from '../../assets/scss/partials/_button.module.scss';
+import classes from './_button.module.scss';
 
 const Button = ({ children, className, style, disabled, onClick }) => {
    return (

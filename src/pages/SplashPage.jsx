@@ -1,4 +1,4 @@
-import classes from '../assets/scss/partials/_splash.module.scss';
+import classes from './_splash.module.scss';
 
 const SplashPage = () => {
    return (

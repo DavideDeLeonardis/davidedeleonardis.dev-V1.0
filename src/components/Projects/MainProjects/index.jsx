@@ -5,7 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
-import classes from '../../../assets/scss/partials/_projects.module.scss';
+import classes from '../_projects.module.scss';
 
 const MainProjects = () => {
    const [repos, setRepos] = useState([]);

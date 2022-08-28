@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { links } from '../../assets/config/navLinks';
 
-import '../../assets/scss/partials/_header.scss';
+import './_header.scss';
 
 const Nav = (props) => {
    const linksList = links.map((link, key) => (
