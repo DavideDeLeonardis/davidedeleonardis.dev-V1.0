@@ -106,7 +106,9 @@ const OtherProjects = () => {
 
       return (
          reposAreSliced && (
-            <Button onClick={showAllReposHandler}>SHOW MORE</Button>
+            <Button onClick={showAllReposHandler} style={{ marginTop: '20px' }}>
+               SHOW MORE
+            </Button>
          )
       );
    };

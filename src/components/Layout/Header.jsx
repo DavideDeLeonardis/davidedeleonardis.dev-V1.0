@@ -29,7 +29,7 @@ const Header = () => {
       // time to slide nav to complete + 50ms
       setTimeout(() => {
          setMenuIsShown(false);
-      }, 350);
+      }, 300);
       setTogglerIsShown(true);
    };
 
@@ -61,7 +61,7 @@ const Header = () => {
    // Nav vertical portal
    const menuPortal = ReactDOM.createPortal(
       <div
-         className={`${'header-portal'} ${
+         className={`header-portal ${
             slideToLeft ? 'slide-to-left' : 'slide-to-right'
          }`}
       >
@@ -87,7 +87,9 @@ const Header = () => {
          )}
 
          <div className="container-sm header">
-            <div className="logo-header">Davide</div>
+            <div className="logo-header">
+               <a href="/">Davide</a>
+            </div>
 
             {/* toggler */}
             {togglerIsShown && screenWidth < 769 && (

@@ -63,7 +63,7 @@ const ProjectItem = ({ repo, isMain }) => {
    const image = getProperties(repos);
 
    // Get language
-   const languageColor = getProperties(languageColors);
+   // const languageColor = getProperties(languageColors);
 
    // Project's topics
    const topics = repo.topics.map((topic, index) => (
@@ -157,33 +157,34 @@ const ProjectItem = ({ repo, isMain }) => {
                   <span className={classes.featured}>Featured</span>
                )}
                <h2>{transformedName()}</h2>
+               {!isMain && <br />}
+
+               {isMain && (
+                  <div className={classes.language}>
+                     <span>Main language:</span>
+                     <span className={classes.lang}>
+                        {repo.language}
+                        {/* {!isMain && (
+                           <span
+                              className={classes['color-language']}
+                              style={{
+                                 backgroundColor: languageColor || `#000000`,
+                              }}
+                           ></span>
+                        )} */}
+                     </span>
+                  </div>
+               )}
 
                {isMain && projectInfo}
 
                {!isMain && (
-                  <Fragment>
-                     <div className={classes.language}>
-                        <span>Main language:</span>
-                        <span className={classes.lang}>
-                           {repo.language}
-                           {!isMain && (
-                              <span
-                                 className={classes['color-language']}
-                                 style={{
-                                    backgroundColor: languageColor || `#000000`,
-                                 }}
-                              ></span>
-                           )}
-                        </span>
-                     </div>
-
-                     <Button
-                        className={classes['learn-more']}
-                        onClick={showDetailsHandler}
-                     >
-                        Learn More
-                     </Button>
-                  </Fragment>
+                  <Button
+                     className={classes['learn-more']}
+                     onClick={showDetailsHandler}
+                  >
+                     Learn More
+                  </Button>
                )}
             </div>
          </li>

@@ -73,16 +73,17 @@ header {
    width: 250px;
    height: 100%;
    text-align: center;
-   background-color: #dcdcdc;
+	color: #ffffff;
+	background-color: rgba(13, 13, 93, 0.975);
 
    .button-close-header {
       font-size: 1.5em;
-		color: #505050;
-      transform: translateX(-110px);
+		color: #ffffff;
+      transform: translate(-110px, 5px);
       transition: all 100ms;
 
       &:hover {
-         transform: translateX(-110px) scale(1.2);
+         transform: translate(-110px, 5px) scale(1.2);
       }
    }
 
@@ -114,13 +115,13 @@ header {
    }
 
    @media screen and (max-width: 500px) {
-      width: 170px;
+      width: 200px;
 
       .button-close-header {
-         transform: translateX(-70px);
+         transform: translate(-85px, 5px);
 
          &:hover {
-            transform: translateX(-70px) scale(1.2);
+            transform: translate(-85px, 5px) scale(1.2);
          }
       }
    }
