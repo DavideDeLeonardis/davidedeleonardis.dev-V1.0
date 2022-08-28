@@ -336,7 +336,6 @@ $transition-image-time: 200ms;
                border: 1px solid var(--primary-color);
                opacity: 0;
                transform: translateX(-5rem);
-               transition: all 100ms;
 
                &:hover {
                   background-color: var(--primary-color);
