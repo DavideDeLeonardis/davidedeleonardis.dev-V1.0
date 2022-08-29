@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
-import SelectLanguage from './SelectLanguage';
+import SelectLanguage from '../../UI/SelectLanguage';
 import useFetch from '../../../hooks/useFetch';
 import useDimensions from '../../../hooks/useDimensions';
 import Button from '../../UI/Button';

@@ -3,7 +3,7 @@ import { TextareaAutosize } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
 import useInput from '../../hooks/useInput';
-import Input from './InputContactForm';
+import Input from './Input';
 import Message from './Message';
 import Button from '../UI/Button';
 import Heading from '../UI/Heading';

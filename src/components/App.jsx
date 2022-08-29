@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import SplashPage from '../pages/SplashPage';
-import HomePage from '../pages/HomePage';
-// import MaintenancePage from '../pages/MaintenancePage';
+import Splash from '../pages/Splash';
+import Home from '../pages/Home';
+// import Maintenance from '../pages/Maintenance';
 
 import '../assets/scss/index.scss';
 
@@ -14,8 +14,8 @@ const App = () => {
 
    return (
       <Routes>
-         <Route path="/" element={showHome ? <HomePage /> : <SplashPage />} />
-         {/* <Route path="/" element={<MaintenancePage />} /> */}
+         <Route path="/" element={showHome ? <Home /> : <Splash />} />
+         {/* <Route path="/" element={<Maintenance />} /> */}
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
    );

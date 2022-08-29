@@ -1,7 +1,7 @@
 // install 3d-react-carousal
 import { Carousel } from '3d-react-carousal';
 
-import { slides } from '../../assets/config/carouselSlides';
+import { slides } from '../../../assets/config/carouselSlides';
 
 import './_carousel.scss';
 

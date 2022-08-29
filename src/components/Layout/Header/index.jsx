@@ -2,11 +2,11 @@ import { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Nav from './Nav';
-import Resume from '../Portals/ResumePortal';
-import Backdrop from '../UI/Backdrop';
-import Button from '../UI/Button';
-import useDimensions from '../../hooks/useDimensions';
+import Nav from '../Nav';
+import Resume from '../../Portals/ResumePortal';
+import Backdrop from '../../UI/Backdrop';
+import Button from '../../UI/Button';
+import useDimensions from '../../../hooks/useDimensions';
 
 import './_header.scss';
 
