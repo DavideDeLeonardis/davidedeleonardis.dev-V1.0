@@ -7,23 +7,32 @@
 
    h1 {
       position: relative;
+		padding: 5px 0;
 
-      &::after {
+      &::before,
+      &:after {
          content: '';
          position: absolute;
-         bottom: 0;
          left: 50%;
          transform: translateX(-50%);
          width: 0;
          height: 2px;
          background-color: var(--secondary-color);
-         animation: appear-to-left 750ms forwards;
+         animation: border-appear 750ms forwards;
          animation-delay: 2000ms;
+      }
 
-         @keyframes appear-to-left {
-            to {
-               width: 200%;
-            }
+      &::before {
+         top: 0;
+      }
+
+      &::after {
+         bottom: 0;
+      }
+
+      @keyframes border-appear {
+         to {
+            width: 200%;
          }
       }
    }
