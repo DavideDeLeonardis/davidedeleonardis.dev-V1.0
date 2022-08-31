@@ -3,4 +3,39 @@
 .splash {
    @include mixin.flex();
    height: 100vh;
+   animation: appear 2500ms forwards;
+
+   h1 {
+      position: relative;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 0;
+         height: 2px;
+         background-color: var(--secondary-color);
+         animation: appear-to-left 750ms forwards;
+         animation-delay: 2000ms;
+
+         @keyframes appear-to-left {
+            to {
+               width: 200%;
+            }
+         }
+      }
+   }
+
+   @keyframes appear {
+      from {
+         opacity: 0;
+         transform: scale(0.1);
+      }
+      to {
+         opacity: 1;
+         transform: scale(2);
+      }
+   }
 }
