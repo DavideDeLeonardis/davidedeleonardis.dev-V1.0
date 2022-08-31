@@ -46,7 +46,7 @@ header {
             li {
                transform: translateY(-5rem);
                opacity: 0;
-               animation: slide-bottom $nav-el-time forwards;
+               animation: slide-bottom $nav-el-time ease-in-out forwards;
                animation-delay: 650ms;
 
                &:nth-child(2) {
