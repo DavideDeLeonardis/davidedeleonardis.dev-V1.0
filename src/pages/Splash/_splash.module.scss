@@ -3,11 +3,11 @@
 .splash {
    @include mixin.flex();
    height: 100vh;
-   animation: appear 2500ms forwards;
+   animation: appear 4800ms forwards;
 
    h1 {
       position: relative;
-		padding: 5px 0;
+      padding: 5px 0;
 
       &::before,
       &:after {
@@ -19,7 +19,7 @@
          height: 2px;
          background-color: var(--secondary-color);
          animation: border-appear 750ms forwards;
-         animation-delay: 2000ms;
+         animation-delay: 2500ms;
       }
 
       &::before {
@@ -38,13 +38,17 @@
    }
 
    @keyframes appear {
-      from {
+      0% {
          opacity: 0;
-         transform: scale(0.1);
+         transform: scale(0.75);
       }
-      to {
+      93% {
          opacity: 1;
          transform: scale(2);
+      }
+      100% {
+         opacity: 0;
+         transform: scale(0.1);
       }
    }
 }
