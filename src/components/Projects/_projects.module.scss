@@ -4,7 +4,6 @@ $gap-pojects: 5px;
 $links-gap: 10px;
 $first-bk: 1100px;
 $lg-bk: 992px;
-$almost-md-bk: 840px;
 $md-bk: 768px;
 $transition-image-time: 200ms;
 
@@ -24,7 +23,7 @@ $transition-image-time: 200ms;
          margin-bottom: 40px;
       }
 
-      @media screen and (max-width: 840px) {
+      @media screen and (max-width: $md-bk) {
          text-align: center;
       }
    }
@@ -157,7 +156,7 @@ $transition-image-time: 200ms;
                      border-radius: 5px;
                   }
 
-                  @media screen and (max-width: 840px) {
+                  @media screen and (max-width: $md-bk) {
                      max-height: none;
                   }
 
@@ -247,7 +246,7 @@ $transition-image-time: 200ms;
             }
          }
 
-         @media screen and (max-width: $almost-md-bk) {
+         @media screen and (max-width: $md-bk) {
             position: static;
             @include mixin.flex($wrap: true);
             max-height: none;
@@ -278,10 +277,10 @@ $transition-image-time: 200ms;
 
       // Other projects
       .other-project {
+         position: relative;
          width: calc(25% - $gap-pojects);
-         margin-bottom: 25px;
-         box-shadow: 0px 4px 10px -5px #000000;
          opacity: 0;
+         overflow: hidden;
 
          @media screen and (max-width: calc($lg-bk - 1px)) {
             width: calc(33% - $gap-pojects);
@@ -289,10 +288,13 @@ $transition-image-time: 200ms;
 
          @media screen and (max-width: $md-bk) {
             width: calc(50% - $gap-pojects);
-         }
+            margin-bottom: 35px;
+            box-shadow: 0px 4px 10px -5px #000000;
 
+         }
+			
          @media screen and (max-width: 600px) {
-            width: 100%;
+				width: 100%;
          }
 
          .img-container {
@@ -301,73 +303,106 @@ $transition-image-time: 200ms;
             img {
                display: block;
                width: 100%;
-               height: 100%;
                transition: all 150ms;
             }
          }
 
          // Card content
          .card-content {
-            padding: 10px 10px 0 10px;
+            @media screen and (min-width: calc($md-bk + 1px)) {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               width: 150%;
+               padding: 100px 50px;
+            }
+
+            @media screen and (max-width: $md-bk) {
+               padding: 10px 10px 0 10px;
+            }
 
             h2 {
                display: inline-block;
                color: var(--secondary-color);
                border-bottom: 2px solid var(--primary-color);
+               transform: translateX(8rem);
+               opacity: 0;
+
+               @media screen and (min-width: 1200px) {
+                  font-size: 1.8em;
+               }
+
+               @media screen and (max-width: $md-bk) {
+                  transform: translateX(0);
+                  opacity: 1;
+               }
             }
 
-            // .language {
-            //    @include mixin.flex($justify: center, $gap: 10px, $wrap: true);
-            //    margin: 15px 0;
-
-            //    .lang {
-            //       @media screen and (max-width: 1120px) and (min-width: $lg-bk) {
-            //          width: 100%;
-            //       }
-
-            //       @media screen and (max-width: 890px) and (min-width: calc($md-bk + 1px)) {
-            //          width: 100%;
-            //       }
-            //    }
-            // }
-
             .learn-more {
-               margin: 25px 0;
+               margin-top: 30px;
                border: 1px solid var(--primary-color);
+               transform: translateX(-8rem);
                opacity: 0;
-               transform: translateX(-5rem);
 
                &:hover {
                   background-color: var(--primary-color);
                }
 
                @media screen and (max-width: $md-bk) {
-                  opacity: 1;
                   transform: translateX(0);
-               }
-            }
-         }
-
-         &:hover .img-container img {
-            transform: scale(1.05);
-         }
-
-         &:hover .learn-more {
-            animation: slide-top 350ms ease forwards;
-
-            @keyframes slide-top {
-               from {
-                  opacity: 0;
-                  transform: translateX(-5rem);
-               }
-               to {
+                  margin: 25px 0;
                   opacity: 1;
-                  transform: translateY(0);
+               }
+            }
+         }
+
+         &:hover {
+            .card-content {
+               background-color: rgba(13, 13, 93, 0.95);
+
+               h2 {
+                  animation: slide-left 350ms ease forwards;
+
+                  @keyframes slide-left {
+                     from {
+                        transform: translateX(8rem);
+                        opacity: 0;
+                     }
+                     to {
+                        transform: translateY(0);
+                        opacity: 1;
+                     }
+                  }
+
+                  @media screen and (max-width: $md-bk) {
+                     animation: none;
+                  }
+               }
+
+               .learn-more {
+                  animation: slide-right 350ms ease forwards;
+
+                  @keyframes slide-right {
+                     from {
+                        transform: translateX(-8rem);
+                        opacity: 0;
+                     }
+                     to {
+                        transform: translateY(0);
+                        opacity: 1;
+                     }
+                  }
+
+                  @media screen and (max-width: $md-bk) {
+                     animation: none;
+                  }
                }
             }
 
-            @media screen and (max-width: $md-bk) {
-               animation: none;
+            .img-container img {
+               display: block;
+               transform: scale(1.1);
             }
          }
 

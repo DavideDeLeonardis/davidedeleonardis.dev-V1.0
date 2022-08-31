@@ -96,7 +96,7 @@ $font-size-name-animation-s: 4.5vw;
          padding: 5px;
          opacity: 0;
          transform-origin: 10% 75%;
-         animation: rotateWords 12s var(--d) linear infinite;
+         animation: rotateWords 8s var(--d) linear infinite;
       }
 
       @keyframes rotateWords {

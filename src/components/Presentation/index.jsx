@@ -11,10 +11,7 @@ const Presentation = () => {
          <div className={classes['rotate-words']}>
             <span style={{ '--d': '0s' }}>Full-Stack Web Developer</span>
             <span style={{ '--d': '4s' }}>
-               Salesforce Certifed Administrator
-            </span>
-            <span style={{ '--d': '8s' }}>
-               Salesforce Certifed Platform Developer
+               x2 Salesforce Certifed
             </span>
          </div>
       </section>

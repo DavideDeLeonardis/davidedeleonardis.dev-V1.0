@@ -107,7 +107,7 @@ const OtherProjects = () => {
       return (
          <Button
             onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
-            style={{ marginTop: '40px' }}
+            style={{ marginTop: '50px' }}
          >
             {reposAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
          </Button>
@@ -119,7 +119,6 @@ const OtherProjects = () => {
          <Heading
             heading={'Other Projects'}
             subheading={'Some of my other works.'}
-            sub_subheading={'- hover the cursor on them... -'}
             pClassName={classes.paragraph}
          />
 
