@@ -85,6 +85,10 @@ select {
 section {
    margin-bottom: 175px;
 
+	&:first-child {
+		margin-bottom: 250px;
+	}
+	
    &:last-child {
       margin-bottom: 100px;
    }

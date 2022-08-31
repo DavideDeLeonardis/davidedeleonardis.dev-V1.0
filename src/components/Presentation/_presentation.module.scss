@@ -4,6 +4,8 @@ $font-size-name-animation-l: 30px;
 $font-size-name-animation-s: 4.5vw;
 
 .presentation {
+   margin-top: 40px;
+
    // Big name animation
    .name-container {
       position: relative;
@@ -123,10 +125,20 @@ $font-size-name-animation-s: 4.5vw;
       }
    }
 
+   .hi {
+      display: block;
+      font-size: 1.15em;
+      margin-bottom: 20px;
+		animation: reveal 300ms forwards;
+		animation-delay: 1500ms;
+   }
+
    .name {
       @include mixin.flex($justify: flex-start, $wrap: true);
       font-size: 5em;
       font-weight: bold;
+		animation: reveal 300ms forwards;
+		animation-delay: 1700ms;
 
       div:first-child {
          margin-right: 20px;
@@ -157,8 +169,28 @@ $font-size-name-animation-s: 4.5vw;
       }
    }
 
+   .caption {
+      font-size: 2.15em;
+      color: var(--secondary-color);
+		animation: reveal 300ms forwards;
+		animation-delay: 1900ms;
+
+      @media screen and (max-width: 880px) {
+         font-size: 1.75em;
+      }
+
+      @media screen and (max-width: 500px) {
+         font-size: 1.8em;
+      }
+   }
+
    .description {
       width: 70%;
+      font-size: 1.15em;
+      color: rgb(200, 200, 200);
+      margin: 50px 0 70px 0;
+		animation: reveal 300ms forwards;
+		animation-delay: 2100ms;
 
       @media screen and (max-width: 768px) {
          width: 90%;
@@ -166,6 +198,24 @@ $font-size-name-animation-s: 4.5vw;
 
       @media screen and (max-width: 600px) {
          width: 95%;
+      }
+   }
+
+   button {
+      padding: 10px 40px;
+      text-transform: uppercase;
+		animation: reveal 300ms forwards;
+		animation-delay: 2300ms;
+   }
+
+   @keyframes reveal {
+      from {
+         opacity: 0;
+         transform: translateY(-5rem);
+      }
+      to {
+         opacity: 1;
+         transform: translateY(0);
       }
    }
 }

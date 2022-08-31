@@ -1,3 +1,5 @@
+// when add a social also add animation in SocialPortals/scss
+
 export const socials = [
 	{
 		socialName: 'linkedin',

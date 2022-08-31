@@ -1,25 +1,31 @@
+import Button from '../UI/Button';
+import useDimensions from '../../hooks/useDimensions';
+
 import classes from './_presentation.module.scss';
 
 const Presentation = () => {
+   const { width: screenWidth } = useDimensions();
+
    return (
       <section className={classes.presentation}>
          {/* <div className={classes['name-container']}>
             <span>Hi, I'm</span>
             <div className={classes.text} data-text="davide de leonardis"></div>
-         </div>
-
+			</div>
          <div className={classes['rotate-words']}>
             <span style={{ '--d': '0s' }}>Full-Stack Web Developer</span>
-            <span style={{ '--d': '4s' }}>
-               x2 Salesforce Certifed
-            </span>
+            <span style={{ '--d': '4s' }}>x2 Salesforce Certifed</span>
          </div> */}
-         <span>Hi, my name is</span>
+
+         <span className={classes.hi}>Hi, my name is</span>
          <div className={classes.name}>
             <div>Davide</div>
             <div>De Leonardis</div>
          </div>
-         <h2>Jr. Web Developer</h2>
+         <div className={classes.caption}>
+            Jr. Web Developer &nbsp;|&nbsp; {screenWidth < 768 && <br />}
+            x2 Salesforce Certified
+         </div>
          <p className={classes.description}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
             repellendus deserunt mollitia magnam, consequuntur praesentium, sunt
@@ -30,6 +36,9 @@ const Presentation = () => {
             minima dignissimos deleniti? Quos, non accusamus? Cupiditate labore
             obcaecati perferendis!
          </p>
+         <a href="#about">
+            <Button>Learn More</Button>
+         </a>
       </section>
    );
 };
