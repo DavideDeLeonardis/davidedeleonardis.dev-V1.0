@@ -290,11 +290,10 @@ $transition-image-time: 200ms;
             width: calc(50% - $gap-pojects);
             margin-bottom: 35px;
             box-shadow: 0px 4px 10px -5px #000000;
-
          }
-			
+
          @media screen and (max-width: 600px) {
-				width: 100%;
+            width: 100%;
          }
 
          .img-container {

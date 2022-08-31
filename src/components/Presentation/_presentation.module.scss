@@ -1,3 +1,5 @@
+@use '../../assets/scss/mixins' as mixin;
+
 $font-size-name-animation-l: 30px;
 $font-size-name-animation-s: 4.5vw;
 
@@ -118,6 +120,52 @@ $font-size-name-animation-s: 4.5vw;
             opacity: 0;
             transform: translateY(70px) rotate(10deg);
          }
+      }
+   }
+
+   .name {
+      @include mixin.flex($justify: flex-start, $wrap: true);
+      font-size: 5em;
+      font-weight: bold;
+
+      div:first-child {
+         margin-right: 20px;
+      }
+
+      @media screen and (max-width: 940px) {
+         font-size: 4.5em;
+      }
+
+      @media screen and (max-width: 880px) {
+         font-size: 4em;
+      }
+
+      @media screen and (max-width: 500px) {
+         font-size: 3.5em;
+      }
+
+      @media screen and (max-width: 400px) {
+         font-size: 3em;
+      }
+
+      @media screen and (max-width: 370px) {
+         font-size: 2.5em;
+      }
+
+      @media screen and (max-width: 320px) {
+         font-size: 2em;
+      }
+   }
+
+   .description {
+      width: 70%;
+
+      @media screen and (max-width: 768px) {
+         width: 90%;
+      }
+
+      @media screen and (max-width: 600px) {
+         width: 95%;
       }
    }
 }
