@@ -4,8 +4,9 @@
    transform: translateX(-50%);
    width: 100px;
    height: 100px;
+	margin-top: 50px;
    transform-style: preserve-3d;
-   animation: rotate 100s linear infinite;
+   animation: rotate 25s linear infinite;
 
    .skill {
       position: absolute;
