@@ -128,11 +128,11 @@ $font-size-name-animation-s: 4.5vw;
    .hi {
       display: block;
       font-size: 1.15em;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       transform: translateY(-5rem);
       opacity: 0;
       animation: reveal 500ms forwards;
-      animation-delay: 1500ms;
+      animation-delay: 1400ms;
    }
 
    .name {
@@ -216,7 +216,7 @@ $font-size-name-animation-s: 4.5vw;
       opacity: 0;
 
       animation: reveal 500ms forwards;
-      animation-delay: 2300ms;
+      animation-delay: 2400ms;
    }
 
    @keyframes reveal {
