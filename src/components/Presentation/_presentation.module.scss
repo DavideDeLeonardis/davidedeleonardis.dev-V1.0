@@ -1,150 +1,30 @@
-@use '../../assets/scss/mixins' as mixin;
-
 $font-size-name-animation-l: 30px;
 $font-size-name-animation-s: 4.5vw;
+$presentation-animation: reveal 500ms forwards;
 
 .presentation {
    margin-top: 40px;
 
-   // Big name animation
-   .name-container {
-      position: relative;
-      height: calc($font-size-name-animation-l + 10px);
-
-      span {
-         font-size: 1.5em;
-      }
-
-      .text {
-         font-family: 'Montserrat', sans-serif;
-         text-transform: uppercase;
-         -webkit-text-stroke: 1px #eee;
-         letter-spacing: 5px;
-         color: transparent;
-
-         &::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: $font-size-name-animation-l;
-            color: var(--secondary-color);
-            -webkit-text-stroke: 3px var(--secondary-color);
-            width: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            padding-top: 30px;
-            border-right: 3px solid var(--secondary-color);
-            animation: text-fill-l 2s linear alternate forwards;
-         }
-
-         @keyframes text-fill-l {
-            20% {
-               width: calc($font-size-name-animation-l * 5);
-               /* depends from font-size */
-            }
-
-            55% {
-               width: calc($font-size-name-animation-l * 5);
-               /* depends from font-size */
-            }
-
-            100% {
-               width: 105%;
-               border: none;
-               /* depends from font-size */
-            }
-         }
-      }
-
-      @media screen and (max-width: 650px) {
-         & {
-            height: calc($font-size-name-animation-s + 10px);
-
-            .text:before {
-               font-size: $font-size-name-animation-s;
-               animation: text-fill-s 2s ease-in-out alternate forwards;
-            }
-
-            @keyframes text-fill-s {
-               20% {
-                  width: calc($font-size-name-animation-s * 5);
-                  /* depends from font-size */
-               }
-
-               55% {
-                  width: calc($font-size-name-animation-s * 5);
-                  /* depends from font-size */
-               }
-
-               100% {
-                  width: 105%;
-                  border: none;
-                  /* depends from font-size */
-               }
-            }
-         }
-      }
-   }
-
-   // Titles animation
-   .rotate-words {
-      position: relative;
-      display: inline;
-
-      span {
-         width: max-content;
-         position: absolute;
-         background-color: var(--secondary-color);
-         margin-top: 25px;
-         padding: 5px;
-         opacity: 0;
-         transform-origin: 10% 75%;
-         animation: rotateWords 8s var(--d) linear infinite;
-      }
-
-      @keyframes rotateWords {
-         5% {
-            opacity: 1;
-         }
-
-         10%,
-         20% {
-            opacity: 1;
-            transform: rotate(3deg);
-         }
-
-         15% {
-            transform: rotate(-1deg);
-         }
-
-         50% {
-            opacity: 0;
-            transform: translateY(70px) rotate(10deg);
-         }
-      }
-   }
-
    .hi {
       display: block;
       font-size: 1.15em;
+      color: rgb(200, 200, 200);
       margin-bottom: 10px;
       transform: translateY(-5rem);
       opacity: 0;
-      animation: reveal 500ms forwards;
+      animation: $presentation-animation;
       animation-delay: 1400ms;
    }
 
    .name {
-      @include mixin.flex($justify: flex-start, $wrap: true);
       font-size: 5em;
       font-weight: bold;
       transform: translateY(-5rem);
       opacity: 0;
-      animation: reveal 500ms forwards;
+      animation: $presentation-animation;
       animation-delay: 1700ms;
 
-      div:first-child {
+      span:first-child {
          margin-right: 20px;
       }
 
@@ -178,8 +58,8 @@ $font-size-name-animation-s: 4.5vw;
       color: var(--secondary-color);
       transform: translateY(-5rem);
       opacity: 0;
-      animation: reveal 500ms forwards;
-      animation-delay: 1900ms;
+      animation: $presentation-animation;
+      animation-delay: 2000ms;
 
       @media screen and (max-width: 880px) {
          font-size: 1.75em;
@@ -192,31 +72,44 @@ $font-size-name-animation-s: 4.5vw;
 
    .description {
       width: 70%;
-      font-size: 1.15em;
+      font-size: 1.2em;
+      line-height: 27px;
       color: rgb(200, 200, 200);
       margin: 50px 0 70px 0;
       transform: translateY(-5rem);
       opacity: 0;
-      animation: reveal 500ms forwards;
+      animation: $presentation-animation;
       animation-delay: 2100ms;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 991px) {
+         width: 80%;
+      }
+
+		@media screen and (max-width: 768px) {
          width: 90%;
       }
 
       @media screen and (max-width: 600px) {
          width: 95%;
       }
+
+      .underline {
+         color: var(--light-blue);
+      }
    }
 
    button {
       padding: 10px 40px;
+      color: var(--secondary-color);
       text-transform: uppercase;
       transform: translateY(-5rem);
       opacity: 0;
-
-      animation: reveal 500ms forwards;
+      animation: $presentation-animation;
       animation-delay: 2400ms;
+
+      &:hover {
+         color: #ffffff;
+      }
    }
 
    @keyframes reveal {
@@ -227,6 +120,126 @@ $font-size-name-animation-s: 4.5vw;
       to {
          opacity: 1;
          transform: translateY(0);
+      }
+   }
+}
+
+// NOT ACTIVE
+// Big name animation
+.name-container {
+   position: relative;
+   height: calc($font-size-name-animation-l + 10px);
+
+   span {
+      font-size: 1.5em;
+   }
+
+   .text {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1px #eee;
+      letter-spacing: 5px;
+      color: transparent;
+
+      &::before {
+         content: attr(data-text);
+         position: absolute;
+         top: 0;
+         left: 0;
+         font-size: $font-size-name-animation-l;
+         color: var(--secondary-color);
+         -webkit-text-stroke: 3px var(--secondary-color);
+         width: 0;
+         white-space: nowrap;
+         overflow: hidden;
+         padding-top: 30px;
+         border-right: 3px solid var(--secondary-color);
+         animation: text-fill-l 2s linear alternate forwards;
+      }
+
+      @keyframes text-fill-l {
+         20% {
+            width: calc($font-size-name-animation-l * 5);
+            /* depends from font-size */
+         }
+
+         55% {
+            width: calc($font-size-name-animation-l * 5);
+            /* depends from font-size */
+         }
+
+         100% {
+            width: 105%;
+            border: none;
+            /* depends from font-size */
+         }
+      }
+   }
+
+   @media screen and (max-width: 650px) {
+      & {
+         height: calc($font-size-name-animation-s + 10px);
+
+         .text:before {
+            font-size: $font-size-name-animation-s;
+            animation: text-fill-s 2s ease-in-out alternate forwards;
+         }
+
+         @keyframes text-fill-s {
+            20% {
+               width: calc($font-size-name-animation-s * 5);
+               /* depends from font-size */
+            }
+
+            55% {
+               width: calc($font-size-name-animation-s * 5);
+               /* depends from font-size */
+            }
+
+            100% {
+               width: 105%;
+               border: none;
+               /* depends from font-size */
+            }
+         }
+      }
+   }
+}
+
+// Titles animation
+.rotate-words {
+   position: relative;
+   display: inline;
+
+   span {
+      width: max-content;
+      position: absolute;
+      background-color: var(--secondary-color);
+      margin-top: 25px;
+      padding: 5px;
+      opacity: 0;
+      transform-origin: 10% 75%;
+      animation: rotateWords 8s var(--d) linear infinite;
+   }
+
+   @keyframes rotateWords {
+      5% {
+         opacity: 1;
+      }
+
+      10%,
+      20% {
+         opacity: 1;
+         transform: rotate(3deg);
+      }
+
+      15% {
+         transform: rotate(-1deg);
+      }
+
+      50% {
+         opacity: 0;
+         transform: translateY(70px) rotate(10deg);
       }
    }
 }

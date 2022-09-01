@@ -1,11 +1,8 @@
 import Button from '../UI/Button';
-import useDimensions from '../../hooks/useDimensions';
 
 import classes from './_presentation.module.scss';
 
 const Presentation = () => {
-   const { width: screenWidth } = useDimensions();
-
    return (
       <section className={classes.presentation}>
          {/* <div className={classes['name-container']}>
@@ -19,25 +16,30 @@ const Presentation = () => {
 
          <span className={classes.hi}>Hi, my name is</span>
          <div className={classes.name}>
-            <div>Davide</div>
-            <div>De Leonardis</div>
+            <span>Davide</span>
+            <span>De Leonardis</span>
          </div>
-         <div className={classes.caption}>
-            Jr. Web Developer &nbsp;|&nbsp; {screenWidth < 768 && <br />}
-            x2 Salesforce Certified
-         </div>
+         <div className={classes.caption}>Jr. Full-stack Web Developer</div>
          <p className={classes.description}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
-            repellendus deserunt mollitia magnam, consequuntur praesentium, sunt
-            quo recusandae tenetur quae inventore dolore dignissimos quod magni
-            sit in veniam odit asperiores consectetur! Saepe quas beatae error
-            amet quod aut voluptate quis nam voluptatum illo natus rem expedita
-            quisquam nostrum tempora impedit, corporis molestiae velit aliquid
-            minima dignissimos deleniti? Quos, non accusamus? Cupiditate labore
-            obcaecati perferendis!
+            <div>Nice to have your here!</div>
+            <div>
+               I'm a{' '}
+               <span className={classes.underline}>
+                  &nbsp;Jr. Full-stack Web Developer&nbsp;
+               </span>{' '}
+               and{' '}
+               <span className={classes.underline}>
+                  &nbsp;x2 Salesforce Certified
+               </span>{' '}
+               &nbsp;&nbsp;- not much a designer -
+            </div>
+            <div>
+               I love to build things for the web and I'm always enthusiastic
+               about learning something new, better if linked to <u>tech</u> :)
+            </div>
          </p>
          <a href="#about">
-            <Button>Learn More</Button>
+            <Button>About me</Button>
          </a>
       </section>
    );
