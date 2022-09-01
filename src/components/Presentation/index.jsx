@@ -20,7 +20,7 @@ const Presentation = () => {
             <span>De Leonardis</span>
          </div>
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>
-         <p className={classes.description}>
+         <div className={classes.description}>
             <div>Nice to have your here!</div>
             <div>
                I'm a{' '}
@@ -37,7 +37,7 @@ const Presentation = () => {
                I love to build things for the web and I'm always enthusiastic
                about learning something new, better if linked to <u>tech</u> :)
             </div>
-         </p>
+         </div>
          <a href="#about">
             <Button>About me</Button>
          </a>

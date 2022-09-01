@@ -1,0 +1,43 @@
+.gallery {
+   position: absolute;
+   right: 50%;
+   transform: translateX(-50%);
+   width: 100px;
+   height: 100px;
+   transform-style: preserve-3d;
+   animation: rotate 100s linear infinite;
+
+   .skill {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i) * 20deg)) translateZ(380px);
+      // Xdeg = 360 / skills.length
+
+      img {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+
+      span {
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+			transform: translateX(-50%);
+         color: #000000;
+      }
+   }
+}
+
+@keyframes rotate {
+   from {
+      transform: perspective(1200px) rotateY(0deg);
+   }
+   to {
+      transform: perspective(1200px) rotateY(360deg);
+   }
+}
