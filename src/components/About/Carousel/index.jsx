@@ -3,7 +3,7 @@ import { Carousel } from '3d-react-carousal';
 
 import { slides } from '../../../assets/config/carouselSlides';
 
-import './_carousel.scss';
+import './index.scss';
 
 const CarouselComponent = () => {
    return (

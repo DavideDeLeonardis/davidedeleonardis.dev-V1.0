@@ -1,4 +1,4 @@
-import classes from './_skills.module.scss';
+import classes from './index.module.scss';
 
 const Skills = () => {
    return <div className={classes.skills}>SKILLS</div>;

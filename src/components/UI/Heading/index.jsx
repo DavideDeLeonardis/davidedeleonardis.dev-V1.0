@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import classes from './_heading.module.scss';
+import classes from './index.module.scss';
 
 const Heading = ({
    heading,

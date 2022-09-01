@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Backdrop from '../Backdrop';
 
-import classes from './_card-portal.module.scss';
+import classes from './index.module.scss';
 
 const CardPortal = ({ children, backdropIsShown, onClose, scaleDown }) => {
    return ReactDOM.createPortal(

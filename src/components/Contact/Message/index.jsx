@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import classes from './_mail-message.module.scss';
+import classes from './index.module.scss';
 
 const Message = ({ message, isValid, onHideMessage }) => {
    return (

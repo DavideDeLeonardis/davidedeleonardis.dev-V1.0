@@ -1,4 +1,4 @@
-import classes from '../_contact.module.scss';
+import classes from '../index.module.scss';
 
 const InputForm = ({
    value,

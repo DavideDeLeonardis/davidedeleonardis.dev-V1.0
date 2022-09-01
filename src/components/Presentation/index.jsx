@@ -1,6 +1,6 @@
 import Button from '../UI/Button';
 
-import classes from './_presentation.module.scss';
+import classes from './index.module.scss';
 
 const Presentation = () => {
    return (

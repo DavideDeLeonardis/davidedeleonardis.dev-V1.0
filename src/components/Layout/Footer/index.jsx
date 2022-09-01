@@ -1,6 +1,6 @@
 import dateFormat from 'dateformat';
 
-import classes from './_footer.module.scss';
+import classes from './index.module.scss';
 
 const Footer = () => {
    const date = dateFormat(new Date(), 'mmmm yyyy');

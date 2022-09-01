@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import RepoItem from './ProjectsItem';
 
-import classes from './_projects.module.scss';
+import classes from './index.module.scss';
 
 const ProjectsList = ({ isLoading, error, repos, isMain }) => {
    if (isLoading)

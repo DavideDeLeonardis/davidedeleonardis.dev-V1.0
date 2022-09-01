@@ -8,7 +8,7 @@ import Message from './Message';
 import Button from '../UI/Button';
 import Heading from '../UI/Heading';
 
-import classes from './_contact.module.scss';
+import classes from './index.module.scss';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
