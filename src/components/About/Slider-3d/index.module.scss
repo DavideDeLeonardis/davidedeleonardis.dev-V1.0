@@ -1,44 +1,114 @@
+@use '../../../assets/scss/mixins' as mixin;
+
+$dimension-image: 80px;
+$width-slider: 210px;
+
 .gallery {
    position: absolute;
    right: 50%;
    transform: translateX(-50%);
-   width: 100px;
-   height: 100px;
-	margin-top: 50px;
+   width: $dimension-image;
+   height: $dimension-image;
+   margin-top: 50px;
    transform-style: preserve-3d;
    animation: rotate 25s linear infinite;
 
+   @keyframes rotate {
+      from {
+         transform: perspective(1200px) rotateY(0deg);
+      }
+      to {
+         transform: perspective(1200px) rotateY(-360deg);
+      }
+   }
+
    .skill {
       position: absolute;
+      @include mixin.flex($justify: center, $align: flex-start);
       width: 100%;
       height: 100%;
+      background-color: rgba(211, 211, 211, 0.965);
+      padding-top: 7.5px;
       transform-origin: center;
       transform-style: preserve-3d;
-      transform: rotateY(calc(var(--i) * 20deg)) translateZ(380px);
+      transform: rotateY(calc(var(--i) * (24deg))) translateZ($width-slider);
       // Xdeg = 360 / skills.length
 
       img {
          position: absolute;
-         width: 100%;
-         height: 100%;
+         width: 60%;
          object-fit: cover;
+
+         &.html {
+            width: 57%;
+         }
+
+         &.css {
+            width: 42%;
+         }
+
+         &.sass {
+            width: 65%;
+            top: 12px;
+         }
+
+         &.javascript {
+            width: 55%;
+            top: 10px;
+         }
+
+         &.vue {
+            top: 12.5px;
+         }
+
+         &.react {
+            top: 10px;
+         }
+
+         &.php {
+            top: 18.5px;
+         }
+
+         &.laravel {
+            width: 55%;
+         }
+
+         &.mysql {
+            width: 65%;
+            top: 17.5px;
+         }
+
+         &.apex {
+            width: 80%;
+            bottom: 12.5px;
+         }
+
+         &.salesforce {
+            width: 65%;
+         }
+
+         &.salesforce,
+         &.excel {
+            top: 15px;
+         }
+
+         &.git {
+            width: 52.5%;
+            top: 10px;
+         }
+
+         &.excel {
+            width: 65%;
+         }
       }
 
       span {
          position: absolute;
-         bottom: 0;
+         bottom: 2.5px;
          left: 50%;
-			transform: translateX(-50%);
+         transform: translateX(-50%);
+         font-size: 0.75em;
          color: #000000;
       }
-   }
-}
-
-@keyframes rotate {
-   from {
-      transform: perspective(1200px) rotateY(0deg);
-   }
-   to {
-      transform: perspective(1200px) rotateY(360deg);
    }
 }

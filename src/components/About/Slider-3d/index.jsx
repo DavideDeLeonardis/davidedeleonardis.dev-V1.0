@@ -8,7 +8,11 @@ const Slider3d = () => {
       while (index <= skills.length) {
          const imagesList = skills.map((skill, i) => (
             <div key={i} className={classes.skill} style={{ '--i': i }}>
-               <img src={skill.image} alt="slider-3d" />
+               <img
+                  className={classes[skill.class]}
+                  src={skill.image}
+                  alt={skill.name}
+               />
                <span>{skill.name}</span>
             </div>
          ));

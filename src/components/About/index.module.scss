@@ -1,11 +1,11 @@
 .about {
-   margin-bottom: 400px; // 175default + slider
+   margin-bottom: 400px; // 175default + slider3d
 
    .h1Main {
       font-size: 2.5em;
    }
 
-   @media screen and (max-width: 840px) {
+   @media screen and (max-width: 768px) {
       text-align: center;
    }
 }
