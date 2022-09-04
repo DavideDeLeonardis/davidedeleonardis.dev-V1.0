@@ -6,6 +6,10 @@
    --light-blue: #439eff;
    --secondary-color: #ff7a00;
    --header-height: 80px;
+
+   @media screen and (max-width: 768px) {
+      --header-height: 70px;
+   }
 }
 
 //general
