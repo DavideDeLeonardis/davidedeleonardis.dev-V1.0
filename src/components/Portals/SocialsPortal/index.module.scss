@@ -23,7 +23,7 @@
          border-radius: 50%;
          transform: translateX(5rem);
          animation: slide-left 650ms forwards;
-         animation-delay: 3050ms;
+         animation-delay: 3000ms;
 
          @keyframes slide-left {
             from {
@@ -35,15 +35,15 @@
          }
 
          &.linkedin {
-            animation-delay: 3150ms;
+            animation-delay: 3100ms;
          }
 
          &.github {
-            animation-delay: 3250ms;
+            animation-delay: 3200ms;
          }
 
          &.envelope {
-            animation-delay: 3350ms;
+            animation-delay: 3300ms;
          }
 
          .socialIcon {
