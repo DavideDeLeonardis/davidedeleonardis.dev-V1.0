@@ -22,7 +22,7 @@ header {
    height: var(--header-height);
    background-color: rgba(10, 10, 65, 0.975);
    padding: 20px 0;
-   z-index: 10;
+   z-index: 100;
    box-shadow: 0px 4px 20px -5px #000000;
 
    .header {

@@ -73,7 +73,7 @@ $transition-image-time: 200ms;
             width: 50%;
 
             img {
-               width: 100%;
+               width: 95%;
                z-index: 2;
                transition: filter $transition-image-time;
 
@@ -85,9 +85,9 @@ $transition-image-time: 200ms;
             &::after {
                content: '';
                position: absolute;
-               left: -25px;
-               top: 13px;
-               width: 100%;
+               left: -13px;
+               top: 15px;
+               width: 95%;
                height: 100%;
                border: 2px solid var(--secondary-color);
                z-index: -1;
@@ -101,8 +101,8 @@ $transition-image-time: 200ms;
             }
 
             &::after {
-               left: -15px;
-               top: 5px;
+               left: -5px;
+               top: 8px;
             }
          }
 
@@ -196,13 +196,13 @@ $transition-image-time: 200ms;
                float: right;
 
                &::after {
-                  left: 25px;
-                  top: 14px;
+                  left: 35px;
+                  top: 15px;
                }
             }
 
             &:hover .img-container::after {
-               left: 13px;
+               left: 25px;
                top: 6px;
             }
 

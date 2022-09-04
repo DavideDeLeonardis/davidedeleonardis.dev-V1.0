@@ -35,6 +35,11 @@ export const skills = [
       image: require('../images/skills/vue.png'),
    },
    {
+      name: 'Cypress',
+      class: 'cypress',
+      image: require('../images/skills/cypress.png'),
+   },
+   {
       name: 'PHP',
       class: 'php',
       image: require('../images/skills/php.png'),

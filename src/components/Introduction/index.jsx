@@ -30,7 +30,7 @@ const Presentation = () => {
                and{' '}
                <span className={classes.underline}>
                   &nbsp;x2 Salesforce Certified
-               </span>
+               </span>.
             </div>
             <div>
                I love to build things for the web and I'm always enthusiastic
