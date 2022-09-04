@@ -21,7 +21,7 @@ const Presentation = () => {
          </div>
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>
          <div className={classes.description}>
-            <div>Nice to have your here!</div>
+            <div>Nice to have you here!</div>
             <div>
                I'm a{' '}
                <span className={classes.underline}>

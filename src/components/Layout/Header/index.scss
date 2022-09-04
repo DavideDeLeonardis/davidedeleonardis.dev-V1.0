@@ -19,6 +19,7 @@ header {
    top: 0;
    left: 0;
    width: 100%;
+   height: var(--header-height);
    background-color: rgba(10, 10, 65, 0.975);
    padding: 20px 0;
    z-index: 10;
@@ -50,11 +51,11 @@ header {
                animation-delay: 650ms;
 
                &:nth-child(2) {
-                  animation-delay: 850ms;
+                  animation-delay: 750ms;
                }
 
                &:last-child {
-                  animation-delay: 1100ms;
+                  animation-delay: 850ms;
                }
             }
          }
@@ -62,7 +63,7 @@ header {
          .resume-button {
             transform: translateY(-5rem);
             animation: slide-bottom $nav-el-time ease-in-out forwards;
-            animation-delay: 1350ms;
+            animation-delay: 950ms;
          }
       }
    }

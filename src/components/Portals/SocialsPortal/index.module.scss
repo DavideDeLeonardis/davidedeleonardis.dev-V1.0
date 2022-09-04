@@ -5,7 +5,7 @@
    top: 50%;
    right: 10px;
    transform: translateY(-50%);
-	z-index: 50;
+   z-index: 50;
    @include mixin.flex($direction: column, $gap: 20px);
 
    .container-item {
@@ -23,7 +23,7 @@
          border-radius: 50%;
          transform: translateX(5rem);
          animation: slide-left 650ms forwards;
-			animation-delay: 2550ms;
+         animation-delay: 3050ms;
 
          @keyframes slide-left {
             from {
@@ -35,15 +35,15 @@
          }
 
          &.linkedin {
-            animation-delay: 2700ms;
+            animation-delay: 3150ms;
          }
 
          &.github {
-            animation-delay: 2850ms;
+            animation-delay: 3250ms;
          }
 
          &.envelope {
-            animation-delay: 3050ms;
+            animation-delay: 3350ms;
          }
 
          .socialIcon {

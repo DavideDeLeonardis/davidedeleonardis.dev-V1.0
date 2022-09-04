@@ -5,6 +5,7 @@
    --primary-color: #2a91ff;
    --light-blue: #439eff;
    --secondary-color: #ff7a00;
+   --header-height: 80px;
 }
 
 //general
@@ -32,7 +33,7 @@ html {
 // commons
 .container {
    max-width: 1600px;
-   margin: 30px auto;
+   margin: auto;
    padding: 0 120px;
    overflow: hidden;
 
@@ -84,12 +85,4 @@ select {
 
 section {
    margin-bottom: 175px;
-
-	&:first-child {
-		margin-bottom: 250px;
-	}
-	
-   &:last-child {
-      margin-bottom: 100px;
-   }
 }
