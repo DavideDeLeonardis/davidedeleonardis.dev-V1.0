@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { links } from '../../../assets/config/navLinks';
+import { links } from '../../../../assets/config/navLinks';
 
-import './index.scss';
+import '../index.scss';
 
 const Nav = (props) => {
    const linksList = links.map((link, key) => (

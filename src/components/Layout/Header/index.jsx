@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Nav from './nav';
+import Nav from './Nav';
 import Resume from '../../Portals/ResumePortal';
 import Backdrop from '../../UI/Backdrop';
 import Button from '../../UI/Button';
