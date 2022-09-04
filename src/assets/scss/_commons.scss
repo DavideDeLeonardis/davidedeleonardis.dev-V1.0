@@ -1,0 +1,55 @@
+.container {
+   max-width: 1600px;
+   margin: auto;
+   padding: 0 120px;
+   overflow: hidden;
+
+   @media screen and (max-width: 650px) {
+      padding: 0 45px;
+   }
+}
+
+.container-sm {
+   max-width: 1600px;
+   margin: auto;
+   padding: 0 45px;
+   overflow: hidden;
+
+   @media screen and (max-width: 650px) {
+      padding: 0 30px;
+   }
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+
+   &:hover,
+   &:active,
+   &:focus {
+      color: inherit;
+   }
+}
+
+ul,
+li {
+   list-style-type: none;
+}
+
+button {
+   font-size: initial;
+   background-color: inherit;
+   border: none;
+   cursor: pointer;
+}
+
+input,
+textarea,
+select {
+   border: none;
+   outline: none;
+}
+
+section {
+   margin-bottom: 175px;
+}

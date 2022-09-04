@@ -1,7 +1,6 @@
 @use '../../../assets/scss/mixins' as mixin;
 
 $dimension-image: 80px;
-$width-slider: 210px;
 
 .gallery {
    position: absolute;
@@ -31,8 +30,6 @@ $width-slider: 210px;
       padding-top: 7.5px;
       transform-origin: center;
       transform-style: preserve-3d;
-      transform: rotateY(calc(var(--i) * (24deg))) translateZ($width-slider);
-      // Xdeg = 360 / skills.length
 
       img {
          position: absolute;

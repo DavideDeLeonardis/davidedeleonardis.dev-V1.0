@@ -1,0 +1,12 @@
+:root {
+   --dark-blue: #0a0a41;
+   --primary-color: #2a91ff;
+   --light-blue: #439eff;
+   --secondary-color: #ff7a00;
+   --header-height: 80px;
+   --width-skills-slider: 210px;
+
+   @media screen and (max-width: 768px) {
+      --header-height: 70px;
+   }
+}
