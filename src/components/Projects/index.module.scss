@@ -73,8 +73,7 @@ $transition-image-time: 200ms;
             width: 50%;
 
             img {
-               width: 95%;
-               z-index: 2;
+               width: 90%;
                transition: filter $transition-image-time;
 
                @media screen and (min-width: $md-bk) {
@@ -85,9 +84,9 @@ $transition-image-time: 200ms;
             &::after {
                content: '';
                position: absolute;
-               left: -13px;
+               left: 1px;
                top: 15px;
-               width: 95%;
+               width: 90%;
                height: 100%;
                border: 2px solid var(--secondary-color);
                z-index: -1;
@@ -101,7 +100,7 @@ $transition-image-time: 200ms;
             }
 
             &::after {
-               left: -5px;
+               left: 10px;
                top: 8px;
             }
          }
@@ -196,14 +195,14 @@ $transition-image-time: 200ms;
                float: right;
 
                &::after {
-                  left: 35px;
+                  left: 52.5px;
                   top: 15px;
                }
             }
 
             &:hover .img-container::after {
-               left: 25px;
-               top: 6px;
+               left: 45px;
+               top: 10px;
             }
 
             .card-content {
@@ -279,6 +278,7 @@ $transition-image-time: 200ms;
       .other-project {
          position: relative;
          width: calc(25% - $gap-pojects);
+			border-radius: 3px;
          opacity: 0;
          overflow: hidden;
 

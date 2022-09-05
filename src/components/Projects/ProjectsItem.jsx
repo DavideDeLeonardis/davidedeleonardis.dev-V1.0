@@ -144,6 +144,11 @@ const ProjectItem = ({ repo, isMain }) => {
             className={
                isMain ? classes['main-project'] : classes['other-project']
             }
+            style={
+               repo.id === 521026706 /* Id repo portfolio V-1.0 */
+                  ? { border: '1px solid #646464' }
+                  : null
+            }
          >
             <div className={classes['img-container']}>
                <img

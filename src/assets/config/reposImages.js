@@ -4,7 +4,7 @@ export const repos = [
    {
       // portfolio V-1.0
       id: 521026706,
-      image: null,
+      image: require('../images/portfolio-v1.0.png'),
    },
    {
       // deliveboo

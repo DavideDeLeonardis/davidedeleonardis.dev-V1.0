@@ -1,8 +1,11 @@
 import Button from '../UI/Button';
+import useDimensions from '../../hooks/useDimensions';
 
 import classes from './index.module.scss';
 
 const Presentation = () => {
+   const { width } = useDimensions();
+
    return (
       <section className={classes.presentation}>
          {/* <div className={classes['name-container']}>
@@ -17,6 +20,7 @@ const Presentation = () => {
          <span className={classes.hi}>Hi, my name is</span>
          <div className={classes.name}>
             <span>Davide</span>
+            {width < 805 && <br />}
             <span>De Leonardis</span>
          </div>
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>
@@ -30,7 +34,8 @@ const Presentation = () => {
                and{' '}
                <span className={classes.underline}>
                   &nbsp;x2 Salesforce Certified
-               </span>.
+               </span>
+               .
             </div>
             <div>
                I love to build things for the web and I'm always enthusiastic

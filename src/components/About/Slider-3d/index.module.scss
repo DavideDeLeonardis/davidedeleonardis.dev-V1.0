@@ -1,16 +1,15 @@
 @use '../../../assets/scss/mixins' as mixin;
 
-$dimension-image: 80px;
 
 .gallery {
    position: absolute;
    right: 50%;
    transform: translateX(-50%);
-   width: $dimension-image;
-   height: $dimension-image;
+   width: var(--dimension-images-slider3d);
+   height: var(--dimension-images-slider3d);
    margin-top: 50px;
    transform-style: preserve-3d;
-   animation: rotate 12s linear infinite;
+   animation: rotate 15s linear infinite;
 
    @keyframes rotate {
       from {
@@ -28,8 +27,6 @@ $dimension-image: 80px;
       height: 100%;
       background-color: rgba(211, 211, 211, 0.965);
       padding-top: 7.5px;
-      transform-origin: center;
-      transform-style: preserve-3d;
 
       img {
          position: absolute;
