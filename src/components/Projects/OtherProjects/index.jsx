@@ -107,13 +107,17 @@ const OtherProjects = () => {
             onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
             style={{ marginTop: '50px' }}
          >
-            {reposAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
+            {reposAreSliced ? (
+               'SHOW MORE'
+            ) : (
+               <a href="#other-projects">SHOW LESS</a>
+            )}
          </Button>
       );
    };
 
    return (
-      <div className={classes['projects-container']}>
+      <div id="other-projects" className={classes['projects-container']}>
          <Heading
             heading={'Other Projects'}
             subheading={'Some of my other works.'}

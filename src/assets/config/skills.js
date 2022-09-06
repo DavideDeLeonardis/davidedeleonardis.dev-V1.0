@@ -19,11 +19,11 @@ export const skills = [
       class: 'javascript',
       image: require('../images/skills/js.png'),
    },
-   {
-      name: 'JQuery',
-      class: 'jquery',
-      image: require('../images/skills/jquery.png'),
-   },
+   // {
+   //    name: 'JQuery',
+   //    class: 'jquery',
+   //    image: require('../images/skills/jquery.png'),
+   // },
    {
       name: 'React.js',
       class: 'react',
@@ -54,11 +54,11 @@ export const skills = [
       class: 'mysql',
       image: require('../images/skills/mysql.png'),
    },
-   {
-      name: 'Apex',
-      class: 'apex',
-      image: require('../images/skills/apex.png'),
-   },
+   // {
+   //    name: 'Apex',
+   //    class: 'apex',
+   //    image: require('../images/skills/apex.png'),
+   // },
    {
       name: 'Salesforce',
       class: 'salesforce',

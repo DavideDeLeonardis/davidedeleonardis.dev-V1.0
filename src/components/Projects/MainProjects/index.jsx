@@ -34,7 +34,7 @@ const MainProjects = () => {
    };
 
    return (
-      <div className={classes['projects-container']}>
+      <div id="main-projects" className={classes['projects-container']}>
          <div className={classes['h1-container']}>
             <Heading heading={'Some Projects'} h1ClassName={classes.h1Main} />
          </div>
