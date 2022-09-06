@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import CardPortal from '../UI/CardPortal';
-import Button from '../UI/Button';
-import { repos } from '../../assets/config/reposImages';
-import { languageColors } from '../../assets/config/languageColors';
-import default_image from '../../assets/images/default.png';
+import CardPortal from '../../UI/CardPortal';
+import Button from '../../UI/Button';
+import { repos } from '../../../assets/config/reposImages';
+import { languageColors } from '../../../assets/config/languageColors';
+import default_image from '../../../assets/images/default.png';
 
-import classes from './index.module.scss';
+import classes from '../index.module.scss';
 
 const ProjectItem = ({ repo, isMain }) => {
    const [details, setDetails] = useState(false);

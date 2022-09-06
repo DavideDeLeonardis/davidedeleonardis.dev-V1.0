@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import RepoItem from './ProjectsItem';
+import Project from '../ProjectItem';
 
-import classes from './index.module.scss';
+import classes from '../index.module.scss';
 
 const ProjectsList = ({ isLoading, error, repos, isMain }) => {
    if (isLoading)
@@ -28,7 +28,7 @@ const ProjectsList = ({ isLoading, error, repos, isMain }) => {
       );
 
    const reposList = repos.map((repo, index) => (
-      <RepoItem key={index} repo={repo} isMain={isMain} />
+      <Project key={index} repo={repo} isMain={isMain} />
    ));
 
    return <ul className={classes['repos-container']}>{reposList}</ul>;
