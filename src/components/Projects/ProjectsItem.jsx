@@ -129,9 +129,17 @@ const ProjectItem = ({ repo, isMain }) => {
          <div className={classes['details-container']}>
             <div
                className={classes['img-container']}
-               style={{
-                  backgroundImage: `url('${image || default_image}')`,
-               }}
+               style={
+                  repo.id === 521026706 /* Id repo portfolio V-1.0 */
+                     ? {
+                          backgroundImage: `url('${image || default_image}')`,
+                          backgroundPosition: 'center center',
+                       }
+                     : {
+                          backgroundImage: `url('${image || default_image}')`,
+                          backgroundPosition: 'top center',
+                       }
+               }
             ></div>
             {projectInfo}
          </div>
