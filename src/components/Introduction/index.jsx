@@ -4,7 +4,7 @@ import useDimensions from '../../hooks/useDimensions';
 import classes from './index.module.scss';
 
 const Presentation = () => {
-   const { width } = useDimensions();
+   const { screenWidth } = useDimensions();
 
    return (
       <section className={classes.presentation}>
@@ -20,7 +20,7 @@ const Presentation = () => {
          <span className={classes.hi}>Hi, my name is</span>
          <div className={classes.name}>
             <span>Davide</span>
-            {width < 805 && <br />}
+            {screenWidth < 805 && <br />}
             <span>De Leonardis</span>
          </div>
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>

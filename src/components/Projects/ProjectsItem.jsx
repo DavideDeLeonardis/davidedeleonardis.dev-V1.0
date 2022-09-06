@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../UI/CardPortal';
@@ -139,18 +139,20 @@ const ProjectItem = ({ repo, isMain }) => {
    );
 
    return (
-      <Fragment>
+      <>
          <li
             className={
                isMain ? classes['main-project'] : classes['other-project']
             }
-            style={
-               repo.id === 521026706 /* Id repo portfolio V-1.0 */
-                  ? { border: '1px solid #646464' }
-                  : null
-            }
          >
-            <div className={classes['img-container']}>
+            <div
+               className={classes['img-container']}
+               style={
+                  repo.id === 521026706 /* Id repo portfolio V-1.0 */
+                     ? { border: '1px solid #646464' }
+                     : null
+               }
+            >
                <img
                   src={image || default_image}
                   alt={`${transformedName()} project from Davide De Leonardis`}
@@ -161,15 +163,24 @@ const ProjectItem = ({ repo, isMain }) => {
                {isMain && repo.fork && (
                   <span className={classes.featured}>Featured</span>
                )}
-               <h2>{transformedName()}</h2>
-               {!isMain && <br />}
+
+               <h2
+                  className={
+                     !isMain && transformedName().length >= 18
+                        ? classes['decrease-font']
+                        : null
+                  }
+               >
+                  {transformedName()}
+               </h2>
 
                {isMain && (
-                  <div className={classes.language}>
-                     <span>Main language:</span>
-                     <span className={classes.lang}>
-                        {repo.language}
-                        {/* {!isMain && (
+                  <>
+                     <div className={classes.language}>
+                        <span>Main language:</span>
+                        <span className={classes.lang}>
+                           {repo.language}
+                           {/* {!isMain && (
                            <span
                               className={classes['color-language']}
                               style={{
@@ -177,26 +188,29 @@ const ProjectItem = ({ repo, isMain }) => {
                               }}
                            ></span>
                         )} */}
-                     </span>
-                  </div>
+                        </span>
+                     </div>
+                     {projectInfo}
+                  </>
                )}
 
-               {isMain && projectInfo}
-
                {!isMain && (
-                  <Button
-                     className={classes['learn-more']}
-                     onClick={showDetailsHandler}
-                  >
-                     Learn More
-                  </Button>
+                  <>
+                     <br />
+                     <Button
+                        className={classes['learn-more']}
+                        onClick={showDetailsHandler}
+                     >
+                        Learn More
+                     </Button>
+                  </>
                )}
             </div>
          </li>
 
          {/* Details portal */}
          {details && detailsElement}
-      </Fragment>
+      </>
    );
 };
 

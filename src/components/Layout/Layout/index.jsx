@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from '../Header';
@@ -13,7 +12,7 @@ const Layout = (props) => {
    const arrowUp = ReactDOM.createPortal(<ArrowUpPortal />, overlay);
 
    return (
-      <Fragment>
+      <>
          <Header />
          <main id="page-top" className="container">
             {props.children}
@@ -22,7 +21,7 @@ const Layout = (props) => {
 
          {socials}
          {arrowUp}
-      </Fragment>
+      </>
    );
 };
 

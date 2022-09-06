@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 
 const useDimensions = () => {
    const [dimensions, setDimensions] = useState({
-      height: window.innerHeight,
-      width: window.innerWidth,
+      screenHeight: window.innerHeight,
+      screenWidth: window.innerWidth,
    });
 
    useEffect(() => {
       const handleResize = () => {
          setDimensions({
-            height: window.innerHeight,
-            width: window.innerWidth,
+            screenHeight: window.innerHeight,
+            screenWidth: window.innerWidth,
          });
       };
 

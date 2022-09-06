@@ -14,7 +14,7 @@ const OtherProjects = () => {
    const [repos, setRepos] = useState([]);
    const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
    const [reposAreSliced, setReposAreSliced] = useState(true);
-   const { width: screenWidth } = useDimensions();
+   const { screenWidth } = useDimensions();
 
    const { isLoading, error } = useFetch(
       setRepos,
@@ -63,14 +63,12 @@ const OtherProjects = () => {
          setFilteredReposByLanguage(filteredRepos());
       } else {
          setFilteredReposByLanguage(
-            filteredRepos().filter((repo) => {
-               return repo.language === e.target.value;
-            })
+            filteredRepos().filter((repo) => repo.language === e.target.value)
          );
       }
    };
 
-   // Repos to pass to <ProjectsList />
+   // Repos passed to <ProjectsList />
    const getRepos = () => {
       let otherReposShown = 4;
       if (screenWidth < 992) otherReposShown = 3;

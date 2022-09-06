@@ -278,7 +278,7 @@ $transition-image-time: 200ms;
       .other-project {
          position: relative;
          width: calc(25% - $gap-pojects);
-			border-radius: 3px;
+         border-radius: 3px;
          opacity: 0;
          overflow: hidden;
 
@@ -313,8 +313,9 @@ $transition-image-time: 200ms;
                top: 50%;
                left: 50%;
                transform: translate(-50%, -50%);
-               width: 150%;
-               padding: 100px 50px;
+               width: 105%;
+               padding: 100px 15px;
+               text-align: center;
             }
 
             @media screen and (max-width: $md-bk) {
@@ -335,6 +336,27 @@ $transition-image-time: 200ms;
                @media screen and (max-width: $md-bk) {
                   transform: translateX(0);
                   opacity: 1;
+               }
+
+               &.decrease-font {
+                  font-size: 1.7vw;
+
+                  @media screen and (max-width: $md-bk) {
+                     font-size: 2.5vw;
+                  }
+                  @media screen and (max-width: 651px) {
+                     font-size: 3.2vw;
+                  }
+                  @media screen and (max-width: 601px) {
+                     font-size: 4.75vw;
+                  }
+                  @media screen and (max-width: 450px) {
+                     font-size: 4.8vw;
+                  }
+
+                  @media screen and (min-width: 1200px) {
+                     font-size: 1.4em;
+                  }
                }
             }
 

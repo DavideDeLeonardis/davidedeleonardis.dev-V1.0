@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -15,7 +15,7 @@ const Header = () => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
-   const { width: screenWidth } = useDimensions();
+   const { screenWidth } = useDimensions();
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
@@ -44,12 +44,12 @@ const Header = () => {
 
    // Actual nav elements
    const navElements = (
-      <Fragment>
+      <>
          <Nav onClose={hideMenuHandler} />
          <Button className="resume-button" onClick={showResumeHandler}>
             Resume
          </Button>
-      </Fragment>
+      </>
    );
 
    // Nav vertical portal
