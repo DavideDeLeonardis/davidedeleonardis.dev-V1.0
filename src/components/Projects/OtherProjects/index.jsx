@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
-import SelectLanguage from '../../UI/SelectLanguage';
+import SelectLanguage from '../../ui/SelectLanguage';
+import Button from '../../ui/Button';
+import Heading from '../../ui/Heading';
 import useFetch from '../../../hooks/useFetch';
 import useDimensions from '../../../hooks/useDimensions';
-import Button from '../../UI/Button';
-import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../index.module.scss';

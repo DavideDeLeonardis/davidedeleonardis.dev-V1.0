@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Nav from './Nav';
-import Resume from '../../Portals/ResumePortal';
-import Backdrop from '../../UI/Backdrop';
-import Button from '../../UI/Button';
+import Resume from '../../portals/ResumePortal';
+import Backdrop from '../../ui/Backdrop';
+import Button from '../../ui/Button';
 import useDimensions from '../../../hooks/useDimensions';
 
 import './index.scss';

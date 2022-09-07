@@ -5,8 +5,8 @@ import emailjs from '@emailjs/browser';
 import useInput from '../../hooks/useInput';
 import Input from './Input';
 import Message from './Message';
-import Button from '../UI/Button';
-import Heading from '../UI/Heading';
+import Button from '../ui/Button';
+import Heading from '../ui/Heading';
 
 import classes from './index.module.scss';
 

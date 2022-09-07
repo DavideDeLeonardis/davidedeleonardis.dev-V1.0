@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import CardPortal from '../../UI/CardPortal';
-import Button from '../../UI/Button';
+import CardPortal from '../../ui/CardPortal';
+import Button from '../../ui/Button';
 import { repos } from '../../../assets/config/reposImages';
 import { languageColors } from '../../../assets/config/languageColors';
 import default_image from '../../../assets/images/default.png';

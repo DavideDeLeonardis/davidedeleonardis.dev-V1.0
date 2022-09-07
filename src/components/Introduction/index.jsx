@@ -1,4 +1,4 @@
-import Button from '../UI/Button';
+import Button from '../ui/Button';
 import useDimensions from '../../hooks/useDimensions';
 
 import classes from './index.module.scss';

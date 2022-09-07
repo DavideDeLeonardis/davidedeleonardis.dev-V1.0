@@ -2,8 +2,8 @@ import ReactDOM from 'react-dom';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import SocialsPortal from '../../Portals/SocialsPortal';
-import ArrowUpPortal from '../../Portals/ArrowUpPortal';
+import SocialsPortal from '../../portals/SocialsPortal';
+import ArrowUpPortal from '../../portals/ArrowUpPortal';
 
 const Layout = (props) => {
    const overlay = document.getElementById('overlays');

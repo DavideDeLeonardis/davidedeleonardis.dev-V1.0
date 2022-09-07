@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import ProjectsList from '../ProjectsList';
+import Heading from '../../ui/Heading';
 import useFetch from '../../../hooks/useFetch';
-import Heading from '../../UI/Heading';
 import * as ignoredRepos from '../../../assets/config/ignoredRepos';
 
 import classes from '../index.module.scss';

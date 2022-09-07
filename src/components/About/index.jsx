@@ -1,5 +1,5 @@
 import Skills from './Skills';
-import Heading from '../UI/Heading';
+import Heading from '../ui/Heading';
 
 import classes from './index.module.scss';
 

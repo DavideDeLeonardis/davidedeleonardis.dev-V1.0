@@ -1,4 +1,4 @@
-import CardPortal from '../../UI/CardPortal';
+import CardPortal from '../../ui/CardPortal';
 import resume from '../../../assets/images/resume.pdf';
 import qrcode from '../../../assets/images/qrcode.png';
 
