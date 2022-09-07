@@ -53,3 +53,17 @@ select {
 section {
    margin-bottom: 175px;
 }
+
+.gray-image {
+   img {
+      transition: filter 200ms;
+
+      @media screen and (min-width: 768px) {
+         filter: grayscale(0.9);
+      }
+   }
+
+   &:hover img {
+      filter: grayscale(0);
+   }
+}

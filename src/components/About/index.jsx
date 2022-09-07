@@ -1,5 +1,5 @@
-import Heading from '../ui/Heading';
 import Slider3d from './Slider-3d';
+import Heading from '../ui/Heading';
 import profileImage from '../../assets/images/profile.jpg';
 
 import classes from './index.module.scss';
@@ -10,7 +10,7 @@ const About = () => {
          <Heading heading={'About Me'} h1ClassName={classes.h1Main} />
          <div className={classes['container']}>
             <div className={classes['content']}>
-               <p>
+               <p className={classes['text']}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Ratione sunt inventore aperiam harum alias voluptatum repellat
                   quas soluta excepturi iure necessitatibus laborum cupiditate
@@ -40,7 +40,8 @@ const About = () => {
                   <Slider3d />
                </div>
             </div>
-            <div className={classes['img-container']}>
+
+            <div className={`gray-image ${classes['img-container']}`}>
                <img src={profileImage} alt="Profile" />
             </div>
          </div>

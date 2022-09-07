@@ -119,6 +119,13 @@ const ProjectItem = ({ repo, isMain }) => {
       </div>
    );
 
+   // Background position other projects' details
+   const getPosition = () => {
+      if (repo.id === 521026706 /* Id repo portfolio V-1.0 */)
+         return 'center center';
+      return 'top center';
+   };
+
    // Other project's details
    const detailsElement = (
       <CardPortal
@@ -129,17 +136,21 @@ const ProjectItem = ({ repo, isMain }) => {
          <div className={classes['details-container']}>
             <div
                className={classes['img-container']}
-               style={
-                  repo.id === 521026706 /* Id repo portfolio V-1.0 */
-                     ? {
-                          backgroundImage: `url('${image || default_image}')`,
-                          backgroundPosition: 'center center',
-                       }
-                     : {
-                          backgroundImage: `url('${image || default_image}')`,
-                          backgroundPosition: 'top center',
-                       }
-               }
+               // style={
+               //    repo.id === 521026706 /* Id repo portfolio V-1.0 */
+               //       ? {
+               //            backgroundImage: `url('${image || default_image}')`,
+               //            backgroundPosition: 'center center',
+               //         }
+               //       : {
+               //            backgroundImage: `url('${image || default_image}')`,
+               //            backgroundPosition: 'top center',
+               //         }
+               // }
+               style={{
+                  backgroundImage: `url('${image || default_image}')`,
+                  backgroundPosition: getPosition(),
+               }}
             ></div>
             {projectInfo}
          </div>
@@ -202,7 +213,9 @@ const ProjectItem = ({ repo, isMain }) => {
             </div>
 
             <div
-               className={classes['img-container']}
+               className={`
+						${classes['img-container']}
+						${isMain && 'gray-image'}`}
                style={
                   repo.id === 521026706 /* Id repo portfolio V-1.0 */
                      ? { border: '1px solid #646464' }

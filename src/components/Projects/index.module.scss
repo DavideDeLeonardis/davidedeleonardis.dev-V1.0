@@ -158,15 +158,6 @@ $transition-image-time: 200ms;
 
             img {
                width: 90%;
-               transition: filter $transition-image-time;
-
-               @media screen and (min-width: $md-bk) {
-                  filter: grayscale(0.9);
-               }
-            }
-
-				&:hover img {
-               filter: grayscale(0);
             }
 
             &::after {

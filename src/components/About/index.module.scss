@@ -1,5 +1,7 @@
 @use '../../assets/scss/mixins' as mixin;
 
+$slider-margin-top: 100px;
+
 .about {
    margin-bottom: 300px; // 175default + slider3d
    padding: 0 10%;
@@ -15,30 +17,30 @@
    .container {
       @include mixin.flex();
 
-      .img-container {
-         width: 25%;
-         text-align: right;
-         border: 1px solid red;
-
-         img {
-            width: 100%;
-         }
-      }
-
       .content {
          position: relative;
-         width: 75%;
+         width: 70%;
+         padding: 0 7%
+            calc(var(--dimension-images-slider3d) + $slider-margin-top + 15px) 0;
          border: 1px solid red;
 
          .slider-container {
             position: absolute;
             left: 150px;
-            margin-top: 10px;
+            margin-top: $slider-margin-top;
 
             @media screen and (max-width: 768px) {
                left: 50%;
                transform: translateX(-50%);
             }
+         }
+      }
+
+      .img-container {
+         width: 30%;
+
+         img {
+            width: 100%;
          }
       }
    }
