@@ -165,6 +165,10 @@ $transition-image-time: 200ms;
                }
             }
 
+				&:hover img {
+               filter: grayscale(0);
+            }
+
             &::after {
                content: '';
                position: absolute;
