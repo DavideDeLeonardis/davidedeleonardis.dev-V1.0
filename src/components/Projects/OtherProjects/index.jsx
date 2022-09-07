@@ -102,15 +102,20 @@ const OtherProjects = () => {
          return;
       }
 
-      return reposAreSliced ? (
-         <Button onClick={showAllReposHandler} style={{ marginTop: '50px' }}>
-            SHOW MORE
+      const button = (
+         <Button
+            onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
+            style={{ marginTop: '50px' }}
+         >
+            {reposAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
          </Button>
+      );
+
+      return reposAreSliced ? (
+         button
       ) : (
          <a href="#other-projects" style={{ padding: '10px 0' }}>
-            <Button onClick={hideReposHandler} style={{ marginTop: '50px' }}>
-               SHOW LESS
-            </Button>
+            {button}
          </a>
       );
    };

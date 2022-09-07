@@ -2,12 +2,8 @@
 
 
 .gallery {
-   position: absolute;
-   right: 50%;
-   transform: translateX(-50%);
    width: var(--dimension-images-slider3d);
    height: var(--dimension-images-slider3d);
-   margin-top: 50px;
    transform-style: preserve-3d;
    animation: rotate 15s linear infinite;
 

@@ -67,53 +67,16 @@ $transition-image-time: 200ms;
             clear: both;
          }
 
-         .img-container {
-            float: left;
-            position: relative;
-            width: 50%;
-
-            img {
-               width: 90%;
-               transition: filter $transition-image-time;
-
-               @media screen and (min-width: $md-bk) {
-                  filter: grayscale(0.75);
-               }
-            }
-
-            &::after {
-               content: '';
-               position: absolute;
-               left: 1px;
-               top: 15px;
-               width: 90%;
-               height: 100%;
-               border: 2px solid var(--secondary-color);
-               z-index: -1;
-               transition: all $transition-image-time;
-            }
-         }
-
-         &:hover .img-container {
-            img {
-               filter: grayscale(0);
-            }
-
-            &::after {
-               left: 10px;
-               top: 8px;
-            }
-         }
-
          // Card content
          .card-content {
             float: right;
             position: absolute;
-            text-align: right;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
+            z-index: 1;
             width: 60%;
+            text-align: right;
             background-color: #328bea;
             padding: 20px 25px;
             border-radius: 10px;
@@ -188,23 +151,46 @@ $transition-image-time: 200ms;
             }
          }
 
-         // 2nd/4nd/... card
-         &:nth-child(even) {
-            .img-container {
-               position: relative;
-               float: right;
+         .img-container {
+            float: left;
+            position: relative;
+            width: 50%;
 
-               &::after {
-                  left: 52.5px;
-                  top: 15px;
+            img {
+               width: 90%;
+               transition: filter $transition-image-time;
+
+               @media screen and (min-width: $md-bk) {
+                  filter: grayscale(0.9);
                }
             }
 
-            &:hover .img-container::after {
-               left: 45px;
-               top: 10px;
+            &::after {
+               content: '';
+               position: absolute;
+               left: 1px;
+               top: 15px;
+               width: 90%;
+               height: 100%;
+               border: 2px solid var(--secondary-color);
+               z-index: -1;
+               transition: all $transition-image-time;
+            }
+         }
+
+         .card-content:hover {
+            & ~ .img-container img {
+               filter: grayscale(0);
             }
 
+            & ~ .img-container::after {
+               left: 10px;
+               top: 8px;
+            }
+         }
+
+         // 2nd/4nd/... card
+         &:nth-child(even) {
             .card-content {
                float: left;
                left: 0;
@@ -221,6 +207,20 @@ $transition-image-time: 200ms;
                .project-links {
                   @include mixin.flex($justify: flex-start, $gap: $links-gap);
                }
+            }
+
+            .img-container {
+               float: right;
+
+               &::after {
+                  left: 50px;
+                  top: 15px;
+               }
+            }
+
+            .card-content:hover ~ .img-container::after {
+               left: 45px;
+               top: 10px;
             }
          }
 
@@ -247,7 +247,7 @@ $transition-image-time: 200ms;
 
          @media screen and (max-width: $md-bk) {
             position: static;
-            @include mixin.flex($wrap: true);
+            @include mixin.flex($direction: column-reverse, $wrap: true);
             max-height: none;
             overflow: visible;
 
@@ -278,7 +278,6 @@ $transition-image-time: 200ms;
       .other-project {
          position: relative;
          width: calc(25% - $gap-pojects);
-         border-radius: 3px;
          opacity: 0;
          overflow: hidden;
 
@@ -287,6 +286,7 @@ $transition-image-time: 200ms;
          }
 
          @media screen and (max-width: $md-bk) {
+            @include mixin.flex($direction: column-reverse);
             width: calc(50% - $gap-pojects);
             margin-bottom: 35px;
             box-shadow: 0px 4px 10px -5px #000000;
@@ -297,6 +297,7 @@ $transition-image-time: 200ms;
          }
 
          .img-container {
+            border-radius: 3px;
             overflow: hidden;
 
             img {
@@ -313,6 +314,7 @@ $transition-image-time: 200ms;
                top: 50%;
                left: 50%;
                transform: translate(-50%, -50%);
+               z-index: 1;
                width: 105%;
                padding: 100px 15px;
                text-align: center;

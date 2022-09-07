@@ -1,11 +1,45 @@
+@use '../../assets/scss/mixins' as mixin;
+
 .about {
-   margin-bottom: 400px; // 175default + slider3d
+   margin-bottom: 300px; // 175default + slider3d
+   padding: 0 10%;
+
+   @media screen and (max-width: 768px) {
+      text-align: center;
+   }
 
    .h1Main {
       font-size: 2.5em;
    }
 
-   @media screen and (max-width: 768px) {
-      text-align: center;
+   .container {
+      @include mixin.flex();
+
+      .img-container {
+         width: 25%;
+         text-align: right;
+         border: 1px solid red;
+
+         img {
+            width: 100%;
+         }
+      }
+
+      .content {
+         position: relative;
+         width: 75%;
+         border: 1px solid red;
+
+         .slider-container {
+            position: absolute;
+            left: 150px;
+            margin-top: 10px;
+
+            @media screen and (max-width: 768px) {
+               left: 50%;
+               transform: translateX(-50%);
+            }
+         }
+      }
    }
 }

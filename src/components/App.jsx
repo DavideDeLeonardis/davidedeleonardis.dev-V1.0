@@ -10,11 +10,12 @@ import '../assets/scss/index.scss';
 const App = () => {
    const [showHome, setShowHome] = useState(false);
 
-   setTimeout(() => setShowHome(true), 0); // 5100
+   setTimeout(() => setShowHome(true), 5100);
 
    return (
       <Routes>
-         <Route path="/" element={showHome ? <Home /> : <Splash />} />
+         <Route path="/" element={<Home />} />
+         {/* <Route path="/" element={showHome ? <Home /> : <Splash />} /> */}
          {/* <Route path="/" element={<Maintenance />} /> */}
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>

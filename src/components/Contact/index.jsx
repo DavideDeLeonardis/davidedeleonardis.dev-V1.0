@@ -66,7 +66,7 @@ const ContactPage = () => {
          })
          .catch(() => {
             setMessage(
-               'Something went wrong, click on mail icon in the right of page'
+               'Something went wrong, click on mail icon in the right side of page'
             );
             setIsValid(false);
             setIsLoading(false);
