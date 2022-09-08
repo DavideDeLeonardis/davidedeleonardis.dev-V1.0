@@ -19,7 +19,7 @@ $slider-margin-top: 100px;
 
       .content {
          position: relative;
-         width: 70%;
+         width: 75%;
          padding: 0 7%
             calc(var(--dimension-images-slider3d) + $slider-margin-top + 15px) 0;
          border: 1px solid red;
@@ -37,11 +37,30 @@ $slider-margin-top: 100px;
       }
 
       .img-container {
-         width: 30%;
+         width: 25%;
+         position: relative;
+         border-radius: 50%;
 
          img {
             width: 100%;
          }
+
+         &::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--secondary-color);
+            z-index: -1;
+            transition: all 150ms;
+         }
+
+			&:hover::after {
+				top: 8px;
+				left: 13px;
+			}
       }
    }
 }

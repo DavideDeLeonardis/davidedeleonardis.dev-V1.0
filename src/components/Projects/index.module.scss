@@ -377,7 +377,9 @@ $transition-image-time: 200ms;
 
          &:hover {
             .card-content {
-               background-color: rgba(13, 13, 93, 0.95);
+               @media screen and (min-width: $md-bk) {
+                  background-color: rgba(13, 13, 93, 0.95);
+               }
 
                h2 {
                   animation: slide-left 350ms ease forwards;
