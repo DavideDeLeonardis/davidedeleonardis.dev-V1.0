@@ -1,19 +1,24 @@
-@use '../../../assets/scss/mixins' as mixin;
-
 footer {
    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
    font-size: 0.75em;
    text-align: center;
    padding-bottom: 40px;
 
-   .top {
-      display: inline-block;
-      margin-bottom: 5px;
+   .top span {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      color: #61dafb;
+   }
 
-      span {
-         font-size: 1.1em;
-         text-transform: uppercase;
-         color: #61dafb;
+   .code {
+      display: inline-block;
+      font-size: 0.9em;
+      color: #b5b5b5;
+      margin: 4px 0 10px 0;
+      border-bottom: 1px solid var(--light-blue);
+
+      &:hover {
+         color: var(--light-blue);
       }
    }
 
