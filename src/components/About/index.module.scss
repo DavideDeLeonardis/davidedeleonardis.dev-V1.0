@@ -3,7 +3,8 @@
 $slider-margin-top: 100px;
 
 .about {
-   margin-bottom: 300px; // 175default + slider3d
+   min-height: calc(100vh - var(--header-height));
+   margin-bottom: 175px;
    padding: 0 10%;
 
    @media screen and (max-width: 768px) {
@@ -57,10 +58,10 @@ $slider-margin-top: 100px;
             transition: all 150ms;
          }
 
-			&:hover::after {
-				top: 8px;
-				left: 13px;
-			}
+         &:hover::after {
+            top: 8px;
+            left: 13px;
+         }
       }
    }
 }

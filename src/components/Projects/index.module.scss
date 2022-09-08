@@ -158,6 +158,7 @@ $transition-image-time: 200ms;
 
             img {
                width: 90%;
+               box-shadow: 0px 10px 20px -5px #000000;
             }
 
             &::after {
@@ -382,7 +383,7 @@ $transition-image-time: 200ms;
                }
 
                h2 {
-                  animation: slide-left 350ms ease forwards;
+                  animation: slide-left 500ms ease forwards;
 
                   @keyframes slide-left {
                      from {
@@ -401,7 +402,7 @@ $transition-image-time: 200ms;
                }
 
                .learn-more {
-                  animation: slide-right 350ms ease forwards;
+                  animation: slide-right 500ms ease forwards;
 
                   @keyframes slide-right {
                      from {
