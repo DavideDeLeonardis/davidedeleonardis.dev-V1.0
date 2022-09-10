@@ -51,4 +51,9 @@ export const repos = [
       id: 434247273,
       image: require('../images/minefield-game.png'),
    },
+   {
+      // laravel-comics
+      id: 458602990,
+      image: require('../images/laravel-comics.png'),
+   },
 ];
