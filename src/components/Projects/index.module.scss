@@ -379,17 +379,14 @@ $transition-image-time: 200ms;
          &:hover {
             .card-content {
                @media screen and (min-width: $md-bk) {
-                  background-color: rgba(13, 13, 93, 0.95);
+                  background-color: rgba(13, 13, 93, 0.965);
+                  transition: 200ms;
                }
 
                h2 {
                   animation: slide-left 500ms ease forwards;
 
                   @keyframes slide-left {
-                     from {
-                        transform: translateX(8rem);
-                        opacity: 0;
-                     }
                      to {
                         transform: translateY(0);
                         opacity: 1;
@@ -405,10 +402,6 @@ $transition-image-time: 200ms;
                   animation: slide-right 500ms ease forwards;
 
                   @keyframes slide-right {
-                     from {
-                        transform: translateX(-8rem);
-                        opacity: 0;
-                     }
                      to {
                         transform: translateY(0);
                         opacity: 1;
@@ -512,7 +505,7 @@ $transition-image-time: 200ms;
       }
 
       .project-bottom {
-         @include mixin.flex($justify: space-between);
+         @include mixin.flex($justify: space-between, $wrap: true);
          margin-top: 40px;
 
          .project-links {
@@ -551,15 +544,11 @@ $transition-image-time: 200ms;
    }
 
    @media screen and (max-width: 750px) {
-      width: 450px;
+      width: calc(100vw - 100px);
 
       .img-container {
          height: 200px;
       }
-   }
-
-   @media screen and (max-width: 500px) {
-      width: 350px;
    }
 }
 
