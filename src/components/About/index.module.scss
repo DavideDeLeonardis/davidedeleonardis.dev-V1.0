@@ -16,7 +16,7 @@ $slider-margin-top: 15px;
    }
 
    .container {
-      @include mixin.flex();
+      @include mixin.flex($wrap: true);
 
       .content {
          position: relative;
@@ -77,6 +77,20 @@ $slider-margin-top: 15px;
          &:hover::after {
             top: 8px;
             left: 13px;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         .content {
+            width: 100%;
+            text-align: justify;
+            padding-right: 0;
+            padding-left: 0;
+         }
+
+         .img-container {
+            width: 60%;
+            margin-top: 70px;
          }
       }
    }
