@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import CardPortal from '../../ui/CardPortal';
 import resume from '../../../assets/images/resume.pdf';
 import qrcode from '../../../assets/images/qrcode.png';
@@ -14,6 +16,10 @@ const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
          <div className={classes['resume-container']}>
             <a href={resume} target="_blank" rel="noreferrer">
                See my Resume
+               <FontAwesomeIcon
+                  className={classes.icon}
+                  icon="fa-solid fa-arrow-up-right-from-square"
+               />
             </a>
             <span>or</span>
             <div>
