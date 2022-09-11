@@ -26,21 +26,10 @@ const Presentation = () => {
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>
          <div className={classes.description}>
             <div>Nice to have you here!</div>
-            <div>
-               I'm a{' '}
-               <span className={classes.underline}>
-                  &nbsp;Jr. Full-stack Web Developer&nbsp;
-               </span>{' '}
-               and{' '}
-               <span className={classes.underline}>
-                  &nbsp;x2 Salesforce Certified
-               </span>
-               .
-            </div>
-            <div>
+            <p>
                I love to build things for the web and I'm always enthusiastic
-               about learning something new, better if linked to <u>tech</u> :)
-            </div>
+               about improving my <u>tech</u> skills!
+            </p>
          </div>
          <a href="#about">
             <Button>About me</Button>

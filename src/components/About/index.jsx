@@ -1,6 +1,7 @@
 import Slider3d from './Slider-3d';
 import Heading from '../ui/Heading';
 import profileImage from '../../assets/images/profile.jpg';
+import Certifications from '../../assets/images/Salesforce-Certifications.pdf';
 
 import classes from './index.module.scss';
 
@@ -10,32 +11,39 @@ const About = () => {
          <Heading heading={'About Me'} h1ClassName={classes.h1Main} />
          <div className={classes['container']}>
             <div className={classes['content']}>
-               <p className={classes['text']}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione sunt inventore aperiam harum alias voluptatum repellat
-                  quas soluta excepturi iure necessitatibus laborum cupiditate
-                  aliquam, quis placeat fugiat. Nobis, ullam. Explicabo eaque
-                  architecto quasi, qui assumenda doloremque asperiores
-                  repellendus sapiente iure sunt, quos numquam libero rem
-                  officiis, minima omnis praesentium pariatur. Accusamus libero
-                  soluta enim adipisci possimus porro, in exercitationem
-                  corrupti. Nihil voluptatum sint doloribus veritatis vel!
-                  Fugiat tempora consectetur aperiam adipisci, non atque
-                  voluptatibus quas labore deleniti quibusdam, quia sit!
-                  Veritatis esse a odit, necessitatibus exercitationem incidunt
-                  dicta! Voluptatem ad praesentium ut temporibus magni
-                  consequuntur eligendi voluptatibus vitae maxime deleniti totam
-                  dolore commodi quia, aspernatur asperiores quaerat veritatis,
-                  pariatur illo ab, repellendus minima. Quidem labore corporis
-                  cupiditate sequi laudantium impedit exercitationem
-                  consequuntur eligendi voluptatibus vitae maxime deleniti totam
-                  dolore commodi quia, aspernatur asperiores quaerat veritatis,
-                  pariatur illo ab, repellendus minima. Quidem labore corporis
-                  cupiditate sequi laudantium impedit exercitationem ù
-                  consequuntur eligendi voluptatibus vitae maxime deleniti totam
-                  dolore commodi quia, aspernatur asperiores quaerat veritatis,
-                  pariatur illo ab, repellendus minima
-               </p>
+               <div className={classes['text']}>
+                  <p>
+                     I'm a student attending the second year in a business
+                     school, and besides the interest for finance I'm also a{' '}
+                     <span className={classes.blue}>
+                        &nbsp;Jr. Full-stack Web Developer&nbsp;
+                     </span>{' '}
+                     and &nbsp;
+                     <a
+                        className={classes.blue}
+                        href={Certifications}
+                        target="_blank"
+                        rel="noreferrer"
+                     >
+                        x2 Salesforce Certified
+                     </a>.
+                  </p>
+                  <p>
+                     I constantly improve my programming knowledge both in
+                     front-end and in back-end technologies, developing
+                     responsive and intuitive web application in React/Vue and
+                     PHP, even though now I'm passing to MERN stack.
+                  </p>
+                  <p>
+                     Doesn't matter how challenging the project is, if you've an
+                     idea, {' '}
+                     <a className={classes.blue} href="#contact">
+                        contact me
+                     </a>{' '}
+                     and let's enjoy building it!
+                  </p>
+               </div>
+               <span>Technologies I've worked with:</span>
                <div className={classes['slider-container']}>
                   <Slider3d />
                </div>

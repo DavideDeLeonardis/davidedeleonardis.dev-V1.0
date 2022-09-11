@@ -4,14 +4,4 @@
 
 <br>
 
-## Install dependencies
-
-```
-npm install
-```
-
-## Compile and start server
-
-```
-npm start
-```
+Source code of my <a href="https://davidedeleonardis.dev" tegret="_blank"> personal portfolio website</a>, check it out!

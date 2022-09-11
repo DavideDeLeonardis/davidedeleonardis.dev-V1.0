@@ -1,10 +1,9 @@
 @use '../../assets/scss/mixins' as mixin;
 
-$slider-margin-top: 100px;
+$slider-margin-top: 15px;
 
 .about {
    min-height: calc(100vh - var(--header-height));
-   margin-bottom: 175px;
    padding: 0 10%;
 
    @media screen and (max-width: 768px) {
@@ -13,6 +12,7 @@ $slider-margin-top: 100px;
 
    .h1Main {
       font-size: 2.5em;
+      margin-bottom: 20px;
    }
 
    .container {
@@ -21,13 +21,29 @@ $slider-margin-top: 100px;
       .content {
          position: relative;
          width: 75%;
+         font-size: 1.2em;
          padding: 0 7%
             calc(var(--dimension-images-slider3d) + $slider-margin-top + 15px) 0;
-         border: 1px solid red;
+
+         .text {
+            margin-bottom: 50px;
+
+            & > p {
+               margin-bottom: 15px;
+            }
+
+            .blue {
+               color: var(--light-blue);
+            }
+
+            a.blue:hover {
+               border-bottom: 1px solid var(--light-blue);
+            }
+         }
 
          .slider-container {
             position: absolute;
-            left: 150px;
+            left: 135px;
             margin-top: $slider-margin-top;
 
             @media screen and (max-width: 768px) {

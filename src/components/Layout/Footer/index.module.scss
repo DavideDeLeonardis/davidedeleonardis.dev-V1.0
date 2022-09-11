@@ -4,27 +4,27 @@ footer {
    text-align: center;
    padding-bottom: 40px;
 
-   .top span {
-      font-size: 1.1em;
-      text-transform: uppercase;
-      color: #61dafb;
-   }
+   .top {
+      margin-bottom: 10px;
 
-   .code {
-      display: inline-block;
-      font-size: 0.9em;
-      color: #b5b5b5;
-      margin: 4px 0 10px 0;
-      border-bottom: 1px solid var(--light-blue);
-
-      &:hover {
-         color: var(--light-blue);
+      .name {
+         font-size: 1.1em;
+         text-transform: uppercase;
+         color: #61dafb;
       }
-   }
 
-   img {
-      width: 30px;
-      transform: translate(5px, 10px);
+      .code {
+         display: inline-block;
+         font-size: 0.85em;
+         color: #b5b5b5;
+         margin-left: 10px;
+         border-bottom: 1px solid var(--light-blue);
+         transform: translateY(-2px);
+
+         &:hover {
+            color: var(--light-blue);
+         }
+      }
    }
 
    .c {

@@ -8,21 +8,19 @@ const Footer = () => {
    return (
       <footer>
          <div className={classes.top}>
-            Made by <span>Davide De Leonardis</span>
+            Made by <span className={classes.name}>Davide De Leonardis</span> |
+            <a
+               className={classes.code}
+               href="https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0"
+               target="_blank"
+               rel="noreferrer"
+            >
+               Source code available
+            </a>
          </div>
-         <a
-            className={classes.code}
-            href="https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0"
-            target="_blank"
-            rel="noreferrer"
-         >
-            Source code available
-         </a>
-         <div>
-            <span className={classes.c}>&#169;</span>
-            <span> August 2022 -</span>
-            <span> {date}</span>
-         </div>
+         <span className={classes.c}>&#169;</span>
+         <span> August 2022 -</span>
+         <span> {date}</span>
       </footer>
    );
 };
