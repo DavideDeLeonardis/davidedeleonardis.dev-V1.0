@@ -5,7 +5,7 @@ footer {
    padding-bottom: 40px;
 
    .top {
-      margin-bottom: 10px;
+      margin: 25px 0 4px 0;
 
       .name {
          font-size: 1.1em;
@@ -25,6 +25,16 @@ footer {
             color: var(--light-blue);
          }
       }
+   }
+
+   select {
+      font-size: 0.9rem;
+      color: #ffffff;
+      background-color: transparent;
+      padding: 5px 40px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+      cursor: pointer;
    }
 
    .c {

@@ -9,7 +9,7 @@ import {
    faBars,
    faEnvelope,
    faXmark,
-	faArrowUpRightFromSquare
+   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
 import {
    faLinkedin,
@@ -18,6 +18,7 @@ import {
    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 
+import './i18n.js';
 import App from './components/App';
 
 library.add(
@@ -30,7 +31,7 @@ library.add(
    faGithub,
    faEnvelope,
    faXmark,
-	faArrowUpRightFromSquare
+   faArrowUpRightFromSquare
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
