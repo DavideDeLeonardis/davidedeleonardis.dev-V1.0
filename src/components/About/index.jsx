@@ -26,7 +26,8 @@ const About = () => {
                         rel="noreferrer"
                      >
                         x2 Salesforce Certified
-                     </a>.
+                     </a>
+                     .
                   </p>
                   <p>
                      I constantly improve my programming knowledge both in
@@ -36,7 +37,7 @@ const About = () => {
                   </p>
                   <p>
                      Doesn't matter how challenging the project is, if you've an
-                     idea, {' '}
+                     idea,{' '}
                      <a className={classes.blue} href="#contact">
                         contact me
                      </a>{' '}
