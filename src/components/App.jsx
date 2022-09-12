@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Splash from './pages/Splash';
 import Home from './pages/Home';
-// import Maintenance from './pages/Maintenance';
 
 import '../assets/scss/index.scss';
 
@@ -14,9 +13,7 @@ const App = () => {
 
    return (
       <Routes>
-         <Route path="/" element={<Home />} />
-         {/* <Route path="/" element={showHome ? <Home /> : <Splash />} /> */}
-         {/* <Route path="/" element={<Maintenance />} /> */}
+         <Route path="/" element={showHome ? <Home /> : <Splash />} />
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
    );

@@ -1,6 +1,6 @@
 @use '../../assets/scss/mixins' as mixin;
 
-$slider-margin-top: 15px;
+$slider-margin-top: 10px;
 
 .about {
    min-height: calc(100vh - var(--header-height));
@@ -33,11 +33,11 @@ $slider-margin-top: 15px;
             }
 
             .blue {
-               color: var(--light-blue);
+               color: var(--primary-color);
             }
 
             a.blue:hover {
-               border-bottom: 1px solid var(--light-blue);
+               border-bottom: 1px solid var(--primary-color);
             }
          }
 

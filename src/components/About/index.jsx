@@ -32,8 +32,9 @@ const About = () => {
                   <p>
                      I constantly improve my programming knowledge both in
                      front-end and in back-end technologies, developing
-                     responsive and intuitive web application in React/Vue and
-                     PHP, even though now I'm passing to MERN stack.
+                     responsive and intuitive web application in{' '}
+                     <b>React/Vue</b> and <b>PHP</b>, even though now I'm
+                     switching to <b>MERN stack</b>.
                   </p>
                   <p>
                      Doesn't matter how challenging the project is, if you've an

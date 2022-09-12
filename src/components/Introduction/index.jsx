@@ -27,8 +27,9 @@ const Presentation = () => {
          <div className={classes.description}>
             <div>Nice to have you here!</div>
             <p>
-               I love to build things for the web and I'm always enthusiastic
-               about improving my <u>tech</u> skills!
+               I love to build things for the web and I'm always{' '}
+               <span className={classes.blue}>enthusiastic</span> about
+               improving my tech skills!
             </p>
          </div>
          <a href="#about">
