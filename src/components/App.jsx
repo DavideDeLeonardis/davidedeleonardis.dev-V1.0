@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Splash from './pages/Splash';
@@ -9,7 +9,9 @@ import '../assets/scss/index.scss';
 const App = () => {
    const [showHome, setShowHome] = useState(false);
 
-   setTimeout(() => setShowHome(true), 5200);
+   useEffect(() => {
+      setTimeout(() => setShowHome(true), 5200);
+   }, []);
 
    return (
       <Routes>

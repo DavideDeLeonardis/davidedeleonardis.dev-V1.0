@@ -166,8 +166,13 @@ header {
 
       &:hover,
       &:active,
-      &:focus {
+      &:focus,
+      &.active {
          color: var(--secondary-color);
+
+         &::after {
+            width: 100%;
+         }
       }
 
       &:hover::after,

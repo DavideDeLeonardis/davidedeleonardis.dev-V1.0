@@ -1,12 +1,9 @@
-import { useTranslation, Trans } from 'react-i18next';
-
 import Button from '../ui/Button';
 import useDimensions from '../../hooks/useDimensions';
 
 import classes from './index.module.scss';
 
 const Presentation = () => {
-   const { t } = useTranslation();
    const { screenWidth } = useDimensions();
 
    return (
@@ -20,7 +17,7 @@ const Presentation = () => {
             <span style={{ '--d': '4s' }}>x2 Salesforce Certifed</span>
          </div> */}
 
-         <span className={classes.hi}>{t('hi_intro')}</span>
+         <span className={classes.hi}>Hi, my name is</span>
          <div className={classes.name}>
             <span>Davide</span>
             {screenWidth < 805 && <br />}
@@ -28,11 +25,11 @@ const Presentation = () => {
          </div>
          <div className={classes.caption}>Jr. Full-stack Web Developer</div>
          <div className={classes.description}>
-            <div>{t('nice_intro')}</div>
+            <div>Nice to have you here!</div>
             <p>
-               <Trans components={{ blue: <span className={classes.blue} /> }}>
-                  description_intro
-               </Trans>
+               I love to build things for the web and I'm always{' '}
+               <span className={classes.blue}>enthusiastic</span> about
+               improving my tech skills!
             </p>
          </div>
          <a href="#about">

@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../../ui/CardPortal';
-import resume from '../../../assets/images/resume.pdf';
-import qrcode from '../../../assets/images/qrcode.png';
+import resume from '../../../assets/images/resume/resume-EN.pdf';
+import qrcode from '../../../assets/images/resume/qrcode-EN.png';
 
 import classes from './index.module.scss';
 

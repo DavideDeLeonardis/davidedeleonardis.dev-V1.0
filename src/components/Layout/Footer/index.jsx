@@ -1,4 +1,3 @@
-import i18n from 'i18next';
 import dateFormat from 'dateformat';
 
 import classes from './index.module.scss';
@@ -6,18 +5,8 @@ import classes from './index.module.scss';
 const Footer = () => {
    const date = dateFormat(new Date(), 'mmmm yyyy');
 
-   const onChangeLanguage = (event) => {
-      i18n.changeLanguage(event.target.value);
-   };
-
    return (
       <footer>
-         <div>
-            {/* <select onChange={onChangeLanguage}>
-               <option value="en">English</option>
-               <option value="it">Italiano</option>
-            </select> */}
-         </div>
          <div className={classes.top}>
             Made by <span className={classes.name}>Davide De Leonardis</span> |
             <a

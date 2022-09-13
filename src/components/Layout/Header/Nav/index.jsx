@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { links } from '../../../../assets/config/navLinks';
@@ -5,9 +6,22 @@ import { links } from '../../../../assets/config/navLinks';
 import '../index.scss';
 
 const Nav = ({ onClose }) => {
+   const [isActive, setIsActive] = useState();
+
+   const isActiveHandler = (e, id) => {
+      e.stopPropagation();
+      setIsActive(id);
+   };
+
    const linksList = links.map((link, key) => (
-      <li className="header-nav-element" key={key}>
-         <a href={link.to}>{link.linkName}</a>
+      <li key={key} className="header-nav-element">
+         <a
+            href={`/#${link.to}`}
+            className={link.id === isActive ? 'active' : ''}
+            onClick={(e) => isActiveHandler(e, link.id)}
+         >
+            {link.linkName}
+         </a>
       </li>
    ));
 

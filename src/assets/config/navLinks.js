@@ -1,18 +1,22 @@
 export const links = [
    {
-      to: '#about',
+      id: 1,
+      to: 'about',
       linkName: 'About Me',
    },
    {
-      to: '#projects',
+      id: 2,
+      to: 'projects',
       linkName: 'Projects',
    },
    // {
-   //    to: '#experience',
+   //		id: 3,
+   //    to: 'experience',
    //    linkName: 'Experience',
    // },
    {
-      to: '#contact',
-      linkName: 'Contact Me',
+      id: 4,
+      to: 'contact',
+      linkName: 'Contact me',
    },
 ];

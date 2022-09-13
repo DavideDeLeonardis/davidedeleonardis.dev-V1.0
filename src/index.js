@@ -18,7 +18,6 @@ import {
    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 
-import './i18n.js';
 import App from './components/App';
 
 library.add(
