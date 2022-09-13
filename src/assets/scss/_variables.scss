@@ -6,4 +6,14 @@
    --header-height: 80px;
    --width-skills-slider: 160px;
    --dimension-images-slider3d: 70px;
+
+   @media screen and (max-width: 500px) {
+      --width-skills-slider: 135px;
+      --dimension-images-slider3d: 60px;
+   }
+
+	@media screen and (max-width: 380px) {
+      --width-skills-slider: 110px;
+      --dimension-images-slider3d: 48px;
+   }
 }
