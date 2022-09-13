@@ -5,7 +5,7 @@ $form-elements-padding: 14px;
 
 .contact {
    @include mixin.flex($direction: column, $justify: center);
-	min-height: calc(100vh - var(--header-height));
+   min-height: calc(100vh - var(--header-height));
 
    .h1 {
       font-size: 2.5em;
@@ -41,6 +41,7 @@ $form-elements-padding: 14px;
             font-size: $form-font-size;
             background-color: rgb(210, 210, 210);
             padding: $form-elements-padding;
+            border-radius: 5px;
 
             &::-webkit-input-placeholder {
                color: #717171;
