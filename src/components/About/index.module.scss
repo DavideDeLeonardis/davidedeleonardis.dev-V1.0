@@ -81,6 +81,8 @@ $slider-margin-top: 10px;
       }
 
       @media screen and (max-width: 768px) {
+         @include mixin.flex($direction: column-reverse, $wrap: true);
+
          .content {
             width: 100%;
             text-align: justify;
@@ -90,7 +92,7 @@ $slider-margin-top: 10px;
 
          .img-container {
             width: 60%;
-            margin-top: 70px;
+            margin-bottom: 70px;
          }
       }
    }
