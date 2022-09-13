@@ -1,54 +1,66 @@
 @use '../../../assets/scss/mixins' as mixin;
 
-.splash {
-   @include mixin.flex();
-   height: 100vh;
-   animation: appear 4800ms forwards;
+.container {
+   position: fixed;
+   top: 0;
+   left: 0;
+	
+   .splash {
+      @include mixin.flex();
+      height: 100vh;
+      width: 100vw;
+      animation: appear 4800ms forwards;
 
-   h1 {
-      position: relative;
-      padding: 5px 0;
+      span {
+         position: relative;
+         padding: 5px 0;
 
-      &::before,
-      &:after {
-         content: '';
-         position: absolute;
-         left: 50%;
-         transform: translateX(-50%);
-         width: 0;
-         height: 2px;
-         background-color: var(--secondary-color);
-         animation: border-appear 750ms forwards;
-         animation-delay: 2500ms;
-      }
+         img {
+            display: block;
+            width: 35px;
+         }
 
-      &::before {
-         top: 0;
-      }
+         &::before,
+         &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            animation: border-appear 750ms forwards;
+            animation-delay: 2500ms;
+         }
 
-      &::after {
-         bottom: 0;
-      }
+         &::before {
+            top: 0;
+         }
 
-      @keyframes border-appear {
-         to {
-            width: 200%;
+         &::after {
+            bottom: 0;
+         }
+
+         @keyframes border-appear {
+            to {
+               width: 100%;
+            }
          }
       }
-   }
 
-   @keyframes appear {
-      0% {
-         opacity: 0;
-         transform: scale(0.75);
-      }
-      93% {
-         opacity: 1;
-         transform: scale(2);
-      }
-      100% {
-         opacity: 0;
-         transform: scale(0.1);
+      @keyframes appear {
+         0% {
+            opacity: 0;
+            transform: scale(0.5);
+         }
+         93% {
+            opacity: 1;
+            transform: scale(2.5);
+         }
+         100% {
+            opacity: 0;
+            transform: scale(0.1);
+         }
       }
    }
 }

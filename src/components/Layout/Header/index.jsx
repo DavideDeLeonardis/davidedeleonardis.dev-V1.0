@@ -7,6 +7,7 @@ import Resume from '../../portals/ResumePortal';
 import Backdrop from '../../ui/Backdrop';
 import Button from '../../ui/Button';
 import useDimensions from '../../../hooks/useDimensions';
+import logo from '../../../assets/images/exagon-logo-blue.png';
 
 import './index.scss';
 
@@ -75,9 +76,9 @@ const Header = () => {
          )}
 
          <div className="container-sm header">
-            <div className="logo-header">
-               <a href="/">Davide</a>
-            </div>
+            <a href="/" className="logo-header">
+               <img src={logo} alt="logo" />
+            </a>
 
             {/* toggler */}
             {togglerIsShown && screenWidth < 769 && (

@@ -13,10 +13,10 @@ const Footer = () => {
    return (
       <footer>
          <div>
-            <select onChange={onChangeLanguage}>
+            {/* <select onChange={onChangeLanguage}>
                <option value="en">English</option>
                <option value="it">Italiano</option>
-            </select>
+            </select> */}
          </div>
          <div className={classes.top}>
             Made by <span className={classes.name}>Davide De Leonardis</span> |

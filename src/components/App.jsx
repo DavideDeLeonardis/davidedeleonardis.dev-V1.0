@@ -9,7 +9,7 @@ import '../assets/scss/index.scss';
 const App = () => {
    const [showHome, setShowHome] = useState(false);
 
-   setTimeout(() => setShowHome(true), 5100);
+   setTimeout(() => setShowHome(true), 5300);
 
    return (
       <Routes>

@@ -3,6 +3,7 @@
 $font-size-name-animation-l: 30px;
 $font-size-name-animation-s: 4.5vw;
 $presentation-animation: reveal 500ms forwards;
+$start-delay-animation: 1550ms;
 
 .presentation {
    @include mixin.flex($direction: column, $align: flex-start);
@@ -28,7 +29,7 @@ $presentation-animation: reveal 500ms forwards;
       transform: translateY(-5rem);
       opacity: 0;
       animation: $presentation-animation;
-      animation-delay: 1800ms;
+      animation-delay: $start-delay-animation;
    }
 
    .name {
@@ -37,7 +38,7 @@ $presentation-animation: reveal 500ms forwards;
       transform: translateY(-5rem);
       opacity: 0;
       animation: $presentation-animation;
-      animation-delay: 1950ms;
+      animation-delay: calc($start-delay-animation + 150ms);
 
       span:first-child {
          margin-right: 20px;
@@ -74,7 +75,7 @@ $presentation-animation: reveal 500ms forwards;
       transform: translateY(-5rem);
       opacity: 0;
       animation: $presentation-animation;
-      animation-delay: 2100ms;
+      animation-delay: calc($start-delay-animation + 300ms);
 
       @media screen and (max-width: 880px) {
          font-size: 1.75em;
@@ -94,7 +95,7 @@ $presentation-animation: reveal 500ms forwards;
       transform: translateY(-5rem);
       opacity: 0;
       animation: $presentation-animation;
-      animation-delay: 2250ms;
+      animation-delay: calc($start-delay-animation + 450ms);
 
       @media screen and (max-width: 991px) {
          width: 80%;
@@ -120,7 +121,7 @@ $presentation-animation: reveal 500ms forwards;
       transform: translateY(-5rem);
       opacity: 0;
       animation: $presentation-animation;
-      animation-delay: 2400ms;
+      animation-delay: calc($start-delay-animation + 600ms);
 
       &:hover {
          color: #ffffff;

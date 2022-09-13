@@ -19,9 +19,8 @@ header {
    top: 0;
    left: 0;
    width: 100%;
-   height: var(--header-height);
    background-color: rgba(10, 10, 65, 0.975);
-   padding: 20px 0;
+   padding: 5px 0;
    z-index: 100;
    box-shadow: 0px 4px 20px -5px #000000;
 
@@ -29,13 +28,15 @@ header {
       @include mixin.flex($justify: space-between);
 
       .logo-header {
-         font-size: 1.5em;
-         font-weight: bold;
-         font-style: italic;
          transform: translateY(-5rem);
          opacity: 0;
          animation: slide-bottom $nav-el-time forwards;
          animation-delay: 300ms;
+
+         img {
+            display: block;
+            width: 70px;
+         }
       }
 
       .header-right {
@@ -186,7 +187,7 @@ header {
 
 // Toggler
 .toggler {
-   font-size: 1.4em;
+   font-size: 1.8em;
    color: #ffffff;
    transform: translateY(-5rem);
    opacity: 0;
