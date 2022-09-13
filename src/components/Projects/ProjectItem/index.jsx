@@ -12,6 +12,7 @@ import classes from '../index.module.scss';
 const ProjectItem = ({ repo, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
+   const [isLoaded, setIsLoaded] = useState(false);
 
    const showDetailsHandler = () => {
       setDetails(true);
@@ -25,6 +26,8 @@ const ProjectItem = ({ repo, isMain }) => {
       }, 150);
       setScaleDown(true);
    };
+
+   const setIsLoadedHandler = () => setIsLoaded(true);
 
    // If GitHub repo's name starts with PHP or other
    const transformedName = () => {
@@ -212,8 +215,9 @@ const ProjectItem = ({ repo, isMain }) => {
                }
             >
                <img
-                  src={image || default_image}
+                  src={isLoaded ? image : default_image}
                   alt={`${transformedName()} project from Davide De Leonardis`}
+                  onLoad={setIsLoadedHandler}
                />
             </div>
          </li>

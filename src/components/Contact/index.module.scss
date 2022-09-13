@@ -54,7 +54,7 @@ $form-elements-padding: 14px;
 
             &:hover::-webkit-input-placeholder {
                transform: translateY(-45px);
-               opacity: 1;
+               transition: opacity 1;
             }
          }
 

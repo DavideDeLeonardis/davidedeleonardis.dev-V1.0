@@ -47,9 +47,9 @@ const Header = () => {
    const navElements = (
       <>
          <Nav onClose={hideMenuHandler} />
-         {/* <Button className="resume-button" onClick={showResumeHandler}>
+         <Button className="resume-button" onClick={showResumeHandler}>
             Resume
-         </Button> */}
+         </Button>
       </>
    );
 
