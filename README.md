@@ -1,7 +1,15 @@
-# Davide De Leonardis
+<div align="center">
+<img src="./src/assets/images/exagon-logo-blue.png" width="200" />
 
-## Personal site portfolio V1.0
+<br/>
+<br/>
 
-<br>
+<h1>Personal portfolio website V1.0</h1>
 
-Source code of my <a href="https://davidedeleonardis.dev" tegret="_blank"> personal portfolio website</a>, check it out!
+<span>
+	<a href="https://davidedeleonardis.dev" target="_blank">Check it out!</a>
+</span>
+
+
+<span>Soon: main project's single page, resume, translator</span>
+</div>
