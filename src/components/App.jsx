@@ -10,7 +10,7 @@ const App = () => {
    const [showHome, setShowHome] = useState(false);
 
    useEffect(() => {
-      setTimeout(() => setShowHome(true), 5200);
+      setTimeout(() => setShowHome(true), 5100);
    }, []);
 
    return (

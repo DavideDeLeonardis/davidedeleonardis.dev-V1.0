@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
-import { TextareaAutosize } from '@mui/material';
+import validator from 'validator';
 import emailjs from '@emailjs/browser';
+import { TextareaAutosize } from '@mui/material';
 
 import useInput from '../../hooks/useInput';
 import Input from './Input';
@@ -34,9 +35,7 @@ const ContactPage = () => {
       valueChangeHandler: emailChangeHandler,
       inputBlurHandler: emailBlurHandler,
       reset: resetEmailInput,
-   } = useInput((value) => {
-      return value.includes('@') && value.includes('.');
-   });
+   } = useInput((value) => validator.isEmail(value));
 
    let formIsValid = false;
 

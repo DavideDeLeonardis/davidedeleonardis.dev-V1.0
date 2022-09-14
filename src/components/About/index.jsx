@@ -14,7 +14,7 @@ const About = () => {
                <div className={classes['text']}>
                   <p>
                      I'm a student attending the second year in a business
-                     school, and besides the interest for finance I'm also a{' '}
+                     school, and besides the interest for economics I'm also a{' '}
                      <span className={classes.blue}>
                         &nbsp;Jr. Full-stack Web Developer&nbsp;
                      </span>{' '}
