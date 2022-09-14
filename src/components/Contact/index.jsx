@@ -37,8 +37,15 @@ const ContactPage = () => {
       reset: resetEmailInput,
    } = useInput((value) => validator.isEmail(value));
 
-   let formIsValid = false;
+   // Message
+   const {
+      value: valueTextArea,
+      valueChangeHandler: textareaChangeHandler,
+      reset: resetTextarea,
+   } = useInput((value) => value);
 
+   // Form validation
+   let formIsValid = false;
    if (enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
    // Form submitting
@@ -50,6 +57,13 @@ const ContactPage = () => {
       setMessage(null);
       setIsLoading(true);
 
+      const sendMessage = (message, isValid = true) => {
+         setMessage(message);
+         setIsValid(isValid);
+         setTimeout(() => setMessage(null), 7500);
+         setIsLoading(false);
+      };
+
       emailjs
          .sendForm(
             'service_jlf0fj6',
@@ -58,21 +72,22 @@ const ContactPage = () => {
             '3xD2auX5eX49KmlW8'
          )
          .then(() => {
-            setMessage('Message sent!');
-            setIsValid(true);
-            setTimeout(() => setMessage(null), 7500);
-            setIsLoading(false);
+            sendMessage('Message sent!');
          })
          .catch(() => {
-            setMessage(
-               'Something went wrong, click on mail icon in the right side of page'
+            sendMessage(
+               'Something went wrong, click on mail icon in the right side of page.',
+               false
             );
-            setIsValid(false);
-            setIsLoading(false);
          });
 
+      // Remove blur from any input
+      document.activeElement?.blur && document.activeElement.blur();
+
+      // Reset inputs
       resetNameInput();
       resetEmailInput();
+      resetTextarea();
    };
 
    const hideMessageHandler = () => setMessage(null);
@@ -89,6 +104,7 @@ const ContactPage = () => {
          />
 
          <form ref={form} onSubmit={sendEmail}>
+            {/* Name */}
             <Input
                value={enteredName}
                type="name"
@@ -100,6 +116,7 @@ const ContactPage = () => {
                errorDescription="Name must not be empty."
             />
 
+            {/* Email */}
             <Input
                value={enteredEmail}
                type="email"
@@ -111,8 +128,11 @@ const ContactPage = () => {
                errorDescription="Please enter a valid email."
             />
 
+            {/* Textarea */}
             <div className={classes['input-container']}>
                <TextareaAutosize
+                  value={valueTextArea}
+                  onChange={textareaChangeHandler}
                   aria-label="minimum height"
                   minRows={6}
                   placeholder="Your Message"
@@ -120,6 +140,7 @@ const ContactPage = () => {
                />
             </div>
 
+            {/* Send button */}
             <div className={classes['button-container']}>
                <Button
                   disabled={!formIsValid}
@@ -140,6 +161,7 @@ const ContactPage = () => {
             </div>
          </form>
 
+         {/* Response message */}
          <Message
             message={message}
             isValid={isValid}
