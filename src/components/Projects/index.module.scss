@@ -172,6 +172,11 @@ $transition-image-time: 200ms;
                z-index: -1;
                transition: all $transition-image-time;
             }
+
+            &:hover::after {
+               left: 8px;
+               top: 8px;
+            }
          }
 
          .card-content:hover {
@@ -211,6 +216,11 @@ $transition-image-time: 200ms;
                &::after {
                   left: 50px;
                   top: 15px;
+               }
+
+               &:hover::after {
+                  left: 45px;
+                  top: 10px;
                }
             }
 
