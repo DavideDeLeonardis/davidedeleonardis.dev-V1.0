@@ -52,7 +52,8 @@ $form-elements-padding: 14px;
          .input {
             height: 50px;
 
-            &:hover::-webkit-input-placeholder {
+            &:hover::-webkit-input-placeholder,
+            &:focus::-webkit-input-placeholder {
                transform: translateY(-45px);
                transition: opacity 1;
             }
@@ -67,7 +68,8 @@ $form-elements-padding: 14px;
             transition: all 200ms;
          }
 
-         .input:hover + label {
+         .input:hover + label,
+         .input:focus + label {
             transform: translate(13px, -23px);
             color: var(--primary-color);
          }

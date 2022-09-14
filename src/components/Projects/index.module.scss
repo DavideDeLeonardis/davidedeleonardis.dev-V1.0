@@ -335,27 +335,6 @@ $transition-image-time: 200ms;
                   transform: translateX(0);
                   opacity: 1;
                }
-
-               &.decrease-font {
-                  font-size: 1.7vw;
-
-                  @media screen and (max-width: $md-bk) {
-                     font-size: 2.5vw;
-                  }
-                  @media screen and (max-width: 651px) {
-                     font-size: 3.2vw;
-                  }
-                  @media screen and (max-width: 601px) {
-                     font-size: 4.75vw;
-                  }
-                  @media screen and (max-width: 450px) {
-                     font-size: 4.8vw;
-                  }
-
-                  @media screen and (min-width: 1200px) {
-                     font-size: 1.4em;
-                  }
-               }
             }
 
             .learn-more {
@@ -505,7 +484,7 @@ $transition-image-time: 200ms;
       }
 
       .project-bottom {
-         @include mixin.flex($justify: space-between, $wrap: true);
+         @include mixin.flex($justify: space-between, $gap: 10px, $wrap: true);
          margin-top: 40px;
 
          .project-links {
@@ -550,6 +529,10 @@ $transition-image-time: 200ms;
          height: 200px;
       }
    }
+
+   @media screen and (max-width: 450px) {
+      width: calc(100vw - 20px);
+   }
 }
 
 .lang {
@@ -580,4 +563,24 @@ $transition-image-time: 200ms;
 .loader,
 .loader-text {
    font-size: 1.5em;
+}
+
+.decrease-font {
+   font-size: 1.7vw;
+
+   @media screen and (max-width: $md-bk) {
+      font-size: 2.5vw;
+   }
+   @media screen and (max-width: 651px) {
+      font-size: 3.2vw;
+   }
+   @media screen and (max-width: 601px) {
+      font-size: 4.75vw;
+   }
+   @media screen and (max-width: 450px) {
+      font-size: 4.8vw;
+   }
+   @media screen and (min-width: 1200px) {
+      font-size: 1.45rem !important;
+   }
 }
