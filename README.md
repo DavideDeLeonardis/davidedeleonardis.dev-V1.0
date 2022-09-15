@@ -11,5 +11,5 @@
 </span>
 
 
-<span>Soon: main project's single page, resume, translator</span>
+<span>Soon: main project's single page, translator</span>
 </div>
