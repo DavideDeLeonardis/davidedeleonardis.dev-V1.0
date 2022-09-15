@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import dateFormat from 'dateformat';
 
 import useDimensions from '../../../hooks/useDimensions';
@@ -6,7 +7,8 @@ import classes from './index.module.scss';
 
 const Footer = () => {
    const { screenWidth } = useDimensions();
-	
+   const { t } = useTranslation();
+
    const date = dateFormat(new Date(), 'mmmm yyyy');
 
    return (
@@ -20,12 +22,11 @@ const Footer = () => {
                target="_blank"
                rel="noreferrer"
             >
-               Source code available
+               {t('footer.code')}
             </a>
          </div>
          <span className={classes.c}>&#169;</span>
-         <span> August 2022 -</span>
-         <span> {date}</span>
+         <span> August 2022 - {date}</span>
       </footer>
    );
 };

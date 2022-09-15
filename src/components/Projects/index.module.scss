@@ -136,16 +136,12 @@ $transition-image-time: 200ms;
                   margin-bottom: 40px;
                }
 
-               .project-links {
-                  @include mixin.flex($justify: flex-end, $gap: $links-gap);
+               .project-bottom button {
+                  background-color: var(--secondary-color);
 
-                  button {
-                     background-color: var(--secondary-color);
-
-                     &:hover {
-                        background-color: transparent;
-                        border-color: #f88e2a;
-                     }
+                  &:hover {
+                     background-color: transparent;
+                     border-color: #f88e2a;
                   }
                }
             }
@@ -566,7 +562,7 @@ $transition-image-time: 200ms;
    }
 }
 
-.project-links .icon {
+.project-bottom .icon {
    margin-left: 7px;
 }
 

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import validator from 'validator';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 import { TextareaAutosize } from '@mui/material';
 
 import useInput from '../../hooks/useInput';
@@ -16,6 +17,7 @@ const ContactPage = () => {
    const [isLoading, setIsLoading] = useState(false);
    const [isValid, setIsValid] = useState(false);
    const form = useRef();
+   const { t } = useTranslation();
 
    // Name
    const {
@@ -72,16 +74,13 @@ const ContactPage = () => {
             '3xD2auX5eX49KmlW8'
          )
          .then(() => {
-            sendMessage('Message sent!');
+            sendMessage(t('contact.message_success'));
          })
          .catch(() => {
-            sendMessage(
-               'Something went wrong, click on mail icon in the right side of page.',
-               false
-            );
+            sendMessage(t('contact.message_fail'), false);
          });
 
-      // Remove blur from any input
+      // Remove blur from any inputs
       document.activeElement?.blur && document.activeElement.blur();
 
       // Reset inputs
@@ -95,11 +94,9 @@ const ContactPage = () => {
    return (
       <section id="contact" className={classes.contact}>
          <Heading
-            heading={'Get In Touch!'}
+            heading={t('contact.heading')}
             h1ClassName={classes.h1}
-            subheading={
-               'Feel free to reach out if you want to collaborate with me or just to say hi!'
-            }
+            subheading={t('contact.paragraph')}
             pClassName={classes.text}
          />
 
@@ -111,9 +108,9 @@ const ContactPage = () => {
                name="user_name"
                onChange={nameChangedHandler}
                onBlur={nameBlurHandler}
-               label="Name"
+               label={t('contact.labelName')}
                error={nameInputHasError}
-               errorDescription="Name must not be empty."
+               errorDescription={t('contact.errorName')}
             />
 
             {/* Email */}
@@ -125,22 +122,22 @@ const ContactPage = () => {
                onBlur={emailBlurHandler}
                label="Email"
                error={emailInputHasError}
-               errorDescription="Please enter a valid email."
+               errorDescription={t('contact.errorEmail')}
             />
 
-            {/* Textarea */}
+				{/* Textarea */}
             <div className={classes['input-container']}>
                <TextareaAutosize
                   value={valueTextArea}
                   onChange={textareaChangeHandler}
-                  aria-label="minimum height"
-                  minRows={6}
-                  placeholder="Your Message"
                   name="message"
+                  placeholder={t('contact.placeholderMessage')}
+                  minRows={6}
+                  aria-label="minimum height"
                />
             </div>
 
-            {/* Send button */}
+				{/* Send button */}
             <div className={classes['button-container']}>
                <Button
                   disabled={!formIsValid}
@@ -155,13 +152,13 @@ const ContactPage = () => {
                         : { cursor: 'pointer' }
                   }
                >
-                  {isLoading ? 'Sending...' : 'Send'}
+                  {isLoading ? t('contact.sending') : t('contact.send')}
                   <span />
                </Button>
             </div>
          </form>
 
-         {/* Response message */}
+			{/* Response message */}
          <Message
             message={message}
             isValid={isValid}

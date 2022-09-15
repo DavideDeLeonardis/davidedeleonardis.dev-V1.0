@@ -4,8 +4,9 @@ import Header from '../Header';
 import Footer from '../Footer';
 import SocialsPortal from '../../portals/SocialsPortal';
 import ArrowUpPortal from '../../portals/ArrowUpPortal';
+import { Outlet } from 'react-router-dom';
 
-const Layout = (props) => {
+const Layout = () => {
    const overlay = document.getElementById('overlays');
 
    const socials = ReactDOM.createPortal(<SocialsPortal />, overlay);
@@ -15,7 +16,7 @@ const Layout = (props) => {
       <>
          <Header />
          <main id="page-top" className="container">
-            {props.children}
+            <Outlet />
          </main>
          <Footer />
 

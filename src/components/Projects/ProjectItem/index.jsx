@@ -1,15 +1,14 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../../ui/CardPortal';
 import Button from '../../ui/Button';
-import { repos } from '../../../assets/config/reposImages';
-import { languageColors } from '../../../assets/config/languageColors';
 import default_image from '../../../assets/images/default.png';
 
 import classes from '../index.module.scss';
 
-const ProjectItem = ({ repo, isMain }) => {
+const ProjectItem = ({ project, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
@@ -29,47 +28,8 @@ const ProjectItem = ({ repo, isMain }) => {
 
    const setIsLoadedHandler = () => setIsLoaded(true);
 
-   // If GitHub repo's name starts with PHP or other
-   const transformedName = () => {
-      if (repo.name.startsWith('php')) {
-         return `
-				${repo.name.charAt(0).toUpperCase()}
-				${repo.name.charAt(1).toUpperCase()}
-				${repo.name.charAt(2).toUpperCase()}
-				${repo.name.slice(3).replace('-', ' ')}
-			`;
-      } else {
-         return (
-            repo.name.charAt(0).toUpperCase() +
-            repo.name.slice(1).replaceAll('-', ' ')
-         );
-      }
-   };
-
-   // Function for taking repo's image or language
-   const getProperties = (array) => {
-      for (let index = 0; index < array.length; index++) {
-         // eslint-disable-next-line default-case
-         switch (array) {
-            case repos:
-               if (array[index].id === repo.id) return array[index].image;
-               break;
-            case languageColors:
-               if (array[index].language === repo.language)
-                  return array[index].color;
-               break;
-         }
-      }
-   };
-
-   // Get image
-   const image = getProperties(repos);
-
-   // Get language
-   // const languageColor = getProperties(languageColors);
-
    // Project's topics
-   const topics = repo.topics.map((topic, index) => (
+   const topics = project.topics.map((topic, index) => (
       <li key={index} className={classes.topic}>
          {topic}
       </li>
@@ -78,45 +38,66 @@ const ProjectItem = ({ repo, isMain }) => {
    // All projects' info
    const projectInfo = (
       <div className={classes['info-container']}>
-         {!isMain && <h2>{transformedName()}</h2>}
+         {!isMain && <h2>{project.name}</h2>}
 
-         <p>{repo.description}</p>
+         <p>{project.description}</p>
 
          <ul className={classes['topic-container']}>{topics}</ul>
 
          <div className={classes['project-bottom']}>
-            <div className={classes['project-links']}>
-               {repo.homepage !== '' &&
-                  repo.id !== 521026706 /* Id repo portfolio V-1.0 */ && (
-                     <a href={repo.homepage} target="_blank" rel="noreferrer">
+            {isMain ? (
+               <Link to={`/projects/${project.name}`} state={project}>
+                  <Button>
+                     Show Details
+                     <FontAwesomeIcon
+                        className={classes.icon}
+                        icon="fa-solid fa-arrow-up-right-from-square"
+                     />
+                  </Button>
+               </Link>
+            ) : (
+               <>
+                  <div className={classes['project-links']}>
+                     {project.homepage !== '' &&
+                        project.id !==
+                           521026706 /* Id project portfolio V-1.0 */ && (
+                           <a
+                              href={project.homepage}
+                              target="_blank"
+                              rel="noreferrer"
+                           >
+                              <Button>
+                                 See Demo
+                                 <FontAwesomeIcon
+                                    className={classes.icon}
+                                    icon="fa-solid fa-arrow-up-right-from-square"
+                                 />
+                              </Button>
+                           </a>
+                        )}
+
+                     <a
+                        href={project.html_url}
+                        target="_blank"
+                        rel="noreferrer"
+                     >
                         <Button>
-                           See Demo
+                           See on GitHub
                            <FontAwesomeIcon
                               className={classes.icon}
-                              icon="fa-solid fa-arrow-up-right-from-square"
+                              icon="fa-brands fa-github"
                            />
                         </Button>
                      </a>
-                  )}
+                  </div>
 
-               <a href={repo.html_url} target="_blank" rel="noreferrer">
-                  <Button>
-                     See on GitHub
+                  <button onClick={hideDetailsHandler}>
                      <FontAwesomeIcon
-                        className={classes.icon}
-                        icon="fa-brands fa-github"
+                        className={classes['info-close']}
+                        icon="fa-solid fa-xmark"
                      />
-                  </Button>
-               </a>
-            </div>
-
-            {!isMain && (
-               <button onClick={hideDetailsHandler}>
-                  <FontAwesomeIcon
-                     className={classes['info-close']}
-                     icon="fa-solid fa-xmark"
-                  />
-               </button>
+                  </button>
+               </>
             )}
          </div>
       </div>
@@ -124,7 +105,7 @@ const ProjectItem = ({ repo, isMain }) => {
 
    // Background position other projects' details
    const getPosition = () => {
-      if (repo.id === 521026706 /* Id repo portfolio V-1.0 */)
+      if (project.id === 521026706 /* Id project portfolio V-1.0 */)
          return 'center center';
       return 'top center';
    };
@@ -140,7 +121,7 @@ const ProjectItem = ({ repo, isMain }) => {
             <div
                className={classes['img-container']}
                style={{
-                  backgroundImage: `url('${image || default_image}')`,
+                  backgroundImage: `url('${project.image || default_image}')`,
                   backgroundPosition: getPosition(),
                }}
             ></div>
@@ -157,41 +138,29 @@ const ProjectItem = ({ repo, isMain }) => {
             }
          >
             <div className={classes['card-content']}>
-               {isMain && repo.fork && (
+               {isMain && project.fork && (
                   <span className={classes.featured}>Featured</span>
                )}
 
                <h2
                   className={
-                     !isMain && transformedName().length >= 18
+                     !isMain && project.name.length >= 18
                         ? classes['decrease-font']
                         : null
                   }
                >
-                  {transformedName()}
+                  {project.name}
                </h2>
 
-               {isMain && (
+               {isMain ? (
                   <>
                      <div className={classes.language}>
                         <span>Main language:</span>
-                        <span className={classes.lang}>
-                           {repo.language}
-                           {/* {!isMain && (
-                           <span
-                              className={classes['color-language']}
-                              style={{
-                                 backgroundColor: languageColor || `#000000`,
-                              }}
-                           ></span>
-                        )} */}
-                        </span>
+                        <span className={classes.lang}>{project.language}</span>
                      </div>
                      {projectInfo}
                   </>
-               )}
-
-               {!isMain && (
+               ) : (
                   <>
                      <br />
                      <Button
@@ -209,14 +178,14 @@ const ProjectItem = ({ repo, isMain }) => {
 						${classes['img-container']}
 						${isMain && 'gray-image'}`}
                style={
-                  repo.id === 521026706 /* Id repo portfolio V-1.0 */
+                  project.id === 521026706 /* Id project portfolio V-1.0 */
                      ? { border: '1px solid #646464' }
                      : null
                }
             >
                <img
-                  src={isLoaded ? image : default_image}
-                  alt={`${transformedName()} project from Davide De Leonardis`}
+                  src={isLoaded ? project.image : default_image}
+                  alt={`${project.name} project from Davide De Leonardis`}
                   onLoad={setIsLoadedHandler}
                />
             </div>

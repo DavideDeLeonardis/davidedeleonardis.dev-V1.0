@@ -1,116 +1,96 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ProjectsList from '../ProjectsList';
 import SelectLanguage from '../../ui/SelectLanguage';
 import Button from '../../ui/Button';
 import Heading from '../../ui/Heading';
-import useFetch from '../../../hooks/useFetch';
 import useDimensions from '../../../hooks/useDimensions';
-import * as ignoredRepos from '../../../assets/config/ignoredRepos';
+import projects from '../../../assets/config/projects';
+import { programmingLanguages } from '../../../assets/config/selectElements';
 
 import classes from '../index.module.scss';
 
 const OtherProjects = () => {
-   const [repos, setRepos] = useState([]);
-   const [filteredReposByLanguage, setFilteredReposByLanguage] = useState([]);
-   const [reposAreSliced, setReposAreSliced] = useState(true);
-   const { screenWidth } = useDimensions();
-
-   const { isLoading, error } = useFetch(
-      setRepos,
-      'https://api.github.com/user/repos?type=public',
-      `Bearer ${process.env.REACT_APP_TOKEN_GH}`
+   const projectsInfo = projects();
+   const [filteredProjectsByLanguage, setFilteredProjectsByLanguage] = useState(
+      []
    );
+   const [projectsAreSliced, setProjectsAreSliced] = useState(true);
+   const { screenWidth } = useDimensions();
+   const { t } = useTranslation();
 
-   const showAllReposHandler = () => setReposAreSliced(false);
+   const showAllProjectsHandler = () => setProjectsAreSliced(false);
 
-   const hideReposHandler = () => setReposAreSliced(true);
+   const hideProjectsHandler = () => setProjectsAreSliced(true);
 
-   // Filter for not showing main projects and readme
-   const filteredRepos = () => {
-      return repos.filter(
-         (repo) =>
-            repo.owner.login === process.env.REACT_APP_GITHUB_NAME &&
-            repo.name !== process.env.REACT_APP_GITHUB_NAME && // README
-            repo.name !== ignoredRepos.PROJECT_1 &&
-            repo.name !== ignoredRepos.PROJECT_2 &&
-            repo.name !== ignoredRepos.PROJECT_3
-      );
-   };
+   // Filter projects NOT main
+   const filteredProjects = projectsInfo.filter((project) => !project.isMain);
 
-   // Set select tag options
-   let options = [];
-   const setOptionsHandler = () => {
-      repos.forEach((repo) => {
-         if (
-            !options.includes(repo.language) &&
-            repo.language !== 'HTML' &&
-            repo.language !== null // README
-         )
-            options.push(repo.language);
-      });
-
-      return options;
-   };
-   setOptionsHandler();
-
-   // Set repos to show when value in select changes
+   // Set projects to show when value in select changes
    const setValueHandler = (e) => {
-      hideReposHandler();
+      hideProjectsHandler();
 
       if (e.target.value === 'All') {
-         setFilteredReposByLanguage(filteredRepos());
+         setFilteredProjectsByLanguage(filteredProjects);
       } else {
-         setFilteredReposByLanguage(
-            filteredRepos().filter((repo) => repo.language === e.target.value)
+         setFilteredProjectsByLanguage(
+            filteredProjects.filter(
+               (project) => project.language === e.target.value
+            )
          );
       }
    };
 
-   // Repos passed to <ProjectsList />
-   const getRepos = () => {
-      let otherReposShown = 4;
-      if (screenWidth < 992) otherReposShown = 3;
-      if (screenWidth < 769) otherReposShown = 2;
+   // Projects passed to <ProjectsList />
+   const getProjects = () => {
+      let otherProjectsShown = 4;
+      if (screenWidth < 992) otherProjectsShown = 3;
+      if (screenWidth < 769) otherProjectsShown = 2;
 
-      if (filteredReposByLanguage.length === 0) {
-         if (!reposAreSliced) return filteredRepos();
+      if (filteredProjectsByLanguage.length === 0) {
+         if (!projectsAreSliced) return filteredProjects;
 
-         return filteredRepos().slice(0, otherReposShown);
+         return filteredProjects.slice(0, otherProjectsShown);
       }
 
-      if (!reposAreSliced) return filteredReposByLanguage;
+      if (!projectsAreSliced) return filteredProjectsByLanguage;
 
-      return filteredReposByLanguage.slice(0, otherReposShown);
+      return filteredProjectsByLanguage.slice(0, otherProjectsShown);
    };
 
    // Show more button's conditions
    const showMoreProjectsButton = () => {
       if (
-         (reposAreSliced &&
+         (projectsAreSliced &&
             screenWidth > 991 &&
-            (getRepos().length < 4 || filteredReposByLanguage.length === 4)) ||
-         (reposAreSliced &&
+            (getProjects().length < 4 ||
+               filteredProjectsByLanguage.length === 4)) ||
+         (projectsAreSliced &&
             screenWidth < 992 &&
             screenWidth > 768 &&
-            (getRepos().length < 3 || filteredReposByLanguage.length === 3)) ||
-         (reposAreSliced &&
+            (getProjects().length < 3 ||
+               filteredProjectsByLanguage.length === 3)) ||
+         (projectsAreSliced &&
             screenWidth < 769 &&
-            (getRepos().length < 2 || filteredReposByLanguage.length === 2))
+            (getProjects().length < 2 ||
+               filteredProjectsByLanguage.length === 2))
       ) {
          return;
       }
 
       const button = (
          <Button
-            onClick={reposAreSliced ? showAllReposHandler : hideReposHandler}
+            onClick={
+               projectsAreSliced ? showAllProjectsHandler : hideProjectsHandler
+            }
             style={{ marginTop: '50px' }}
          >
-            {reposAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
+            {projectsAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
          </Button>
       );
 
-      return reposAreSliced ? (
+      return projectsAreSliced ? (
          button
       ) : (
          <a href="#other-projects" style={{ padding: '10px 0' }}>
@@ -127,19 +107,17 @@ const OtherProjects = () => {
             pClassName={classes.paragraph}
          />
 
-         <span className={classes.filter}>Filter by language: &nbsp;</span>
+         <span className={classes.filter}>
+            {t('other_projects.filter_text')} &nbsp;
+         </span>
          <SelectLanguage
             className={classes.select}
-            options={options}
-            onChangeValue={setValueHandler}
+            selectElements={programmingLanguages}
+            onChange={setValueHandler}
+            allPresent
          />
 
-         <ProjectsList
-            repos={getRepos()}
-            isLoading={isLoading}
-            error={error}
-            isMain={false}
-         />
+         <ProjectsList projects={getProjects()} isMain={false} />
 
          {showMoreProjectsButton()}
       </div>

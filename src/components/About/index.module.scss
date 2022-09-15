@@ -1,7 +1,5 @@
 @use '../../assets/scss/mixins' as mixin;
 
-$slider-margin-top: 10px;
-
 .about {
    min-height: calc(100vh - var(--header-height));
    padding: 0 10%;
@@ -22,8 +20,7 @@ $slider-margin-top: 10px;
          position: relative;
          width: 75%;
          font-size: 1.2em;
-         padding: 0 7%
-            calc(var(--dimension-images-slider3d) + $slider-margin-top + 15px) 0;
+         padding-right: 7%;
 
          .text {
             margin-bottom: 50px;
@@ -41,16 +38,7 @@ $slider-margin-top: 10px;
             }
          }
 
-         .slider-container {
-            position: absolute;
-            left: 135px;
-            margin-top: $slider-margin-top;
-
-            @media screen and (max-width: 768px) {
-               left: 50%;
-               transform: translateX(-50%);
-            }
-         }
+         
       }
 
       .img-container {

@@ -55,8 +55,12 @@ header {
                   animation-delay: 750ms;
                }
 
-               &:last-child {
+               &:nth-child(3) {
                   animation-delay: 850ms;
+               }
+
+               &:last-child {
+                  animation-delay: 950ms;
                }
             }
          }
@@ -64,7 +68,7 @@ header {
          .resume-button {
             transform: translateY(-5rem);
             animation: slide-bottom $nav-el-time ease-in-out forwards;
-            animation-delay: 950ms;
+            animation-delay: 1050ms;
          }
       }
    }
@@ -113,8 +117,12 @@ header {
          animation-delay: $menu-slide-time;
       }
 
-      &:last-child {
+      &:nth-child(3) {
          animation-delay: $menu-slide-time + 50ms;
+      }
+
+      &:last-child {
+         animation-delay: $menu-slide-time + 100ms;
       }
    }
 
@@ -123,7 +131,7 @@ header {
       margin-top: 30px;
       transform: translateX(20rem);
       animation: slide-to-left $menu-slide-time ease-out forwards;
-      animation-delay: $menu-slide-time + 100ms;
+      animation-delay: $menu-slide-time + 150ms;
 
       &:hover {
          color: #ffffff;
@@ -151,6 +159,7 @@ header {
       position: relative;
       text-transform: uppercase;
       padding: 10px 0;
+      color: #b4b4b4;
       transition: all $transition-time-nav-elements;
 
       &::after {
@@ -179,6 +188,21 @@ header {
       &:active::after,
       &:focus::after {
          width: 100%;
+      }
+   }
+
+   select {
+      width: 90px;
+      height: 37.5px;
+      font-size: 1em;
+      color: #b4b4b4;
+      background-color: transparent;
+      padding-left: 5px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+
+      &:hover {
+         color: var(--light-blue);
       }
    }
 }

@@ -19,6 +19,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import App from './components/App';
+import './i18n';
 
 library.add(
    faAngleUp,

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Trans, useTranslation } from 'react-i18next';
 
 import Nav from './Nav';
 import Resume from '../../portals/ResumePortal';
@@ -17,6 +18,7 @@ const Header = () => {
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const { screenWidth } = useDimensions();
+   const { t } = useTranslation();
 
    const showMenuHandler = () => {
       setMenuIsShown(true);
@@ -47,8 +49,15 @@ const Header = () => {
    const navElements = (
       <>
          <Nav onClose={hideMenuHandler} />
+
          <Button className="resume-button" onClick={showResumeHandler}>
-            Resume
+            <Trans
+               components={{
+                  span: <span style={{ padding: '0 20px' }} />,
+               }}
+            >
+               {t('header.curriculum')}
+            </Trans>
          </Button>
       </>
    );
