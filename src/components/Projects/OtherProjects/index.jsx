@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ProjectsList from '../ProjectsList';
-import SelectLanguage from '../../ui/SelectLanguage';
 import Button from '../../ui/Button';
 import Heading from '../../ui/Heading';
+import useActive from '../../../hooks/useActive';
 import useDimensions from '../../../hooks/useDimensions';
 import projects from '../../../assets/config/projects';
 
@@ -12,92 +12,96 @@ import classes from '../index.module.scss';
 
 const OtherProjects = () => {
    const projectsInfo = projects();
-   const [filteredProjectsByLanguage, setFilteredProjectsByLanguage] = useState(
-      []
-   );
+   const [projectsByLanguage, setProjectsByLanguage] = useState([]);
    const [projectsAreSliced, setProjectsAreSliced] = useState(true);
+   const { isActive, isActiveHandler } = useActive('All');
    const { screenWidth } = useDimensions();
    const { t } = useTranslation();
-
-   const showAllProjectsHandler = () => setProjectsAreSliced(false);
-
-   const hideProjectsHandler = () => setProjectsAreSliced(true);
 
    // Filter projects NOT main
    const filteredProjects = projectsInfo.filter((project) => !project.isMain);
 
-   // Get salest options from projects languages property
-   const getOptionsValues = () => {
-      let programmingLanguages = [];
+   // Show button
+   const showAllProjectsHandler = () => setProjectsAreSliced(false);
+
+   // Hide button
+   const hideProjectsHandler = () => setProjectsAreSliced(true);
+
+   // Get programming languages name
+   const getLanguages = () => {
+      let programmingLanguages = [t('other_projects.selectAll') /* All */];
       filteredProjects.forEach((project) => {
-         programmingLanguages.push({
-            option: project.language,
-            value: project.language,
-         });
+         if (!programmingLanguages.includes(project.language)) {
+            programmingLanguages.push(project.language);
+         }
       });
 
-      // Remove duplicates
-      return programmingLanguages.reduce((unique, o) => {
-         if (
-            !unique.some(
-               (obj) => obj.option === o.option && obj.value === o.value
-            )
-         )
-            unique.push(o);
-
-         console.log(unique);
-         return unique;
-      }, []);
+      return programmingLanguages;
    };
 
-   // Set projects to show when value in select changes
-   const setValueHandler = (e) => {
+   // Filter projects by language
+   const filterProject = (language) => {
       hideProjectsHandler();
 
-      if (e.target.value === 'All') {
-         setFilteredProjectsByLanguage(filteredProjects);
+      if (language === 'All') {
+         setProjectsByLanguage(filteredProjects);
       } else {
-         setFilteredProjectsByLanguage(
-            filteredProjects.filter(
-               (project) => project.language === e.target.value
-            )
+         setProjectsByLanguage(
+            filteredProjects.filter((project) => project.language === language)
          );
       }
    };
 
-   // Projects passed to <ProjectsList />
+   // Display languages name
+   const languages = () => {
+      const languages = getLanguages();
+
+      return languages.map((language, key) => (
+         <span
+            className={`${classes['f-language']} ${
+               language === isActive ? classes['active'] : ''
+            }`}
+            key={key}
+            onClick={(e) => {
+               filterProject(language);
+               isActiveHandler(e, language);
+            }}
+         >
+            {language}
+         </span>
+      ));
+   };
+
+   // Display actual projects based on show more button actions
    const getProjects = () => {
       let otherProjectsShown = 4;
       if (screenWidth < 992) otherProjectsShown = 3;
       if (screenWidth < 769) otherProjectsShown = 2;
 
-      if (filteredProjectsByLanguage.length === 0) {
+      if (projectsByLanguage.length === 0) {
          if (!projectsAreSliced) return filteredProjects;
 
          return filteredProjects.slice(0, otherProjectsShown);
       }
 
-      if (!projectsAreSliced) return filteredProjectsByLanguage;
+      if (!projectsAreSliced) return projectsByLanguage;
 
-      return filteredProjectsByLanguage.slice(0, otherProjectsShown);
+      return projectsByLanguage.slice(0, otherProjectsShown);
    };
 
-   // Show more button's conditions
+   // Show more button conditions
    const showMoreProjectsButton = () => {
       if (
          (projectsAreSliced &&
             screenWidth > 991 &&
-            (getProjects().length < 4 ||
-               filteredProjectsByLanguage.length === 4)) ||
+            (getProjects().length < 4 || projectsByLanguage.length === 4)) ||
          (projectsAreSliced &&
             screenWidth < 992 &&
             screenWidth > 768 &&
-            (getProjects().length < 3 ||
-               filteredProjectsByLanguage.length === 3)) ||
+            (getProjects().length < 3 || projectsByLanguage.length === 3)) ||
          (projectsAreSliced &&
             screenWidth < 769 &&
-            (getProjects().length < 2 ||
-               filteredProjectsByLanguage.length === 2))
+            (getProjects().length < 2 || projectsByLanguage.length === 2))
       ) {
          return;
       }
@@ -130,15 +134,7 @@ const OtherProjects = () => {
             pClassName={classes.paragraph}
          />
 
-         <span className={classes.filter}>
-            {t('other_projects.filter_text')} &nbsp;
-         </span>
-         <SelectLanguage
-            className={classes.select}
-            selectElements={getOptionsValues()}
-            onChange={setValueHandler}
-            allPresent
-         />
+         <div className={classes['filter-languages']}>{languages()}</div>
 
          <ProjectsList projects={getProjects()} isMain={false} />
 

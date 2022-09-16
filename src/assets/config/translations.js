@@ -39,7 +39,6 @@ export const translationsEn = {
       },
    },
    other_projects: {
-      filter_text: 'Filter by language: ',
       selectAll: 'All',
       portfolio_d: 'Portfolio website V1.0 made with React.js.',
    },
@@ -102,7 +101,6 @@ export const translationsIt = {
       },
    },
    other_projects: {
-      filter_text: 'Filtra per linguaggio: ',
       selectAll: 'Tutti',
       portfolio_d: 'Sito portfolio V1.0 costruito in React.js.',
    },

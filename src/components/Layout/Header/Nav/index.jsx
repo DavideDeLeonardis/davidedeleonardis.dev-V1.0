@@ -1,22 +1,16 @@
-import { useState } from 'react';
 import i18next from 'i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SelectLanguage from '../../../ui/SelectLanguage';
-import { languages } from '../../../../assets/config/languages';
+import useActive from '../../../../hooks/useActive';
 import { useNavTranslate } from '../../../../assets/config/navLinks';
+import { languages } from '../../../../assets/config/languages';
 
 import '../index.scss';
 
 const Nav = ({ onClose }) => {
-   const [isActive, setIsActive] = useState();
    const links = useNavTranslate();
-
-   // Class active on single link
-   const isActiveHandler = (e, id) => {
-      e.stopPropagation();
-      setIsActive(id);
-   };
+   const { isActiveHandler, isActive } = useActive();
 
    const linksList = links.map((link, key) => (
       <li key={key} className="header-nav-element">
