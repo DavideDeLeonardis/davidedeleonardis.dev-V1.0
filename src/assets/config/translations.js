@@ -21,7 +21,11 @@ export const translationsEn = {
       p3: "Doesn't matter how challenging the project is, if you've an idea, <a>contact me</a> and let's enjoy developing it!",
       tech_work: "Some technologies I've worked with:",
    },
-   main_projects: {
+   main_projects: {},
+   other_projects: {
+      selectAll: 'All',
+   },
+   projects: {
       deliveboo: {
          short_d:
             'Deliveboo is a food delivery web app that allows customers to order from their favorite restaurants inserting only the data necessary for delivery. Restaurateurs can register in the platform and create, modify and delete dishes based also on the statistics displayed in the personal area.',
@@ -37,10 +41,14 @@ export const translationsEn = {
             "Fully functioning Netflix home page's clone; select a category and search your favourite movies! Hover cards to see movie's details.",
          long_d: 'Long description netflix',
       },
-   },
-   other_projects: {
-      selectAll: 'All',
-      portfolio_d: 'Portfolio website V1.0 made with React.js.',
+      portfolio: { short_d: 'Portfolio website V1.0 made with React.js.' },
+      react_amazon: { short_d: 'Description' },
+      react_auth_test: { short_d: 'Description' },
+      vue_boolzapp: { short_d: 'Description' },
+      vue_instagram: { short_d: 'Description' },
+      avada_consultant: { short_d: 'Description' },
+      minefield_game: { short_d: 'Description' },
+      laravel_comics: { short_d: 'Description' },
    },
    contact: {
       heading: 'Get In Touch!',
@@ -85,7 +93,11 @@ export const translationsIt = {
       p3: "Non importa quanto impegnativo sia il progetto, se hai un'idea, <a>contattami</a> e divertiamoci a svilupparla!",
       tech_work: 'Alcune tecnologie con cui ho lavorato:',
    },
-   main_projects: {
+   main_projects: {},
+   other_projects: {
+      selectAll: 'Tutti',
+   },
+   projects: {
       // cambiare in IT
       deliveboo: {
          short_d: 'Corta descrizione deliveboo',
@@ -99,10 +111,14 @@ export const translationsIt = {
          short_d: 'Corta descrizione netflix',
          long_d: 'Lunga descrizione netflix',
       },
-   },
-   other_projects: {
-      selectAll: 'Tutti',
-      portfolio_d: 'Sito portfolio V1.0 costruito in React.js.',
+      portfolio: { short_d: 'Sito portfolio V1.0 costruito in React.js.' },
+      react_amazon: { short_d: 'Descrizione' },
+      react_auth_test: { short_d: 'Descrizione' },
+      vue_boolzapp: { short_d: 'Descrizione' },
+      vue_instagram: { short_d: 'Descrizione' },
+      avada_consultant: { short_d: 'Descrizione' },
+      minefield_game: { short_d: 'Descrizione' },
+      laravel_comics: { short_d: 'Descrizione' },
    },
    contact: {
       heading: 'Contattami!',
