@@ -14,9 +14,11 @@ const OtherProjects = () => {
    const projectsInfo = projects();
    const [projectsByLanguage, setProjectsByLanguage] = useState([]);
    const [projectsAreSliced, setProjectsAreSliced] = useState(true);
-   const { isActive, isActiveHandler } = useActive('All');
    const { screenWidth } = useDimensions();
    const { t } = useTranslation();
+   const { isActive, isActiveHandler } = useActive(
+      t('other_projects.selectAll')
+   );
 
    // Filter projects NOT main
    const filteredProjects = projectsInfo.filter((project) => !project.isMain);
@@ -43,7 +45,7 @@ const OtherProjects = () => {
    const filterProject = (language) => {
       hideProjectsHandler();
 
-      if (language === 'All') {
+      if (language === t('other_projects.selectAll')) {
          setProjectsByLanguage(filteredProjects);
       } else {
          setProjectsByLanguage(

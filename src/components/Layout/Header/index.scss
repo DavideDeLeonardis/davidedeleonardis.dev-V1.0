@@ -58,16 +58,20 @@ header {
                &:nth-child(3) {
                   animation-delay: 850ms;
                }
-
-               &:last-child {
-                  animation-delay: 950ms;
-               }
             }
          }
 
+         .language-select,
          .resume-button {
             transform: translateY(-5rem);
             animation: slide-bottom $nav-el-time ease-in-out forwards;
+         }
+
+         .resume-button {
+            animation-delay: 950ms;
+         }
+
+         .language-select {
             animation-delay: 1050ms;
          }
       }
@@ -118,24 +122,29 @@ header {
       }
 
       &:nth-child(3) {
-         animation-delay: $menu-slide-time + 50ms;
-      }
-
-      &:last-child {
          animation-delay: $menu-slide-time + 100ms;
       }
    }
 
+   .resume-button,
+   .language-select {
+      animation: slide-to-left $menu-slide-time ease-out forwards;
+      transform: translateX(20rem);
+      margin-top: 30px;
+   }
+
    .resume-button {
       color: var(--secondary-color);
-      margin-top: 30px;
-      transform: translateX(20rem);
-      animation: slide-to-left $menu-slide-time ease-out forwards;
-      animation-delay: $menu-slide-time + 150ms;
+      animation-delay: $menu-slide-time + 200ms;
 
       &:hover {
          color: #ffffff;
       }
+   }
+
+   .language-select {
+      display: block;
+      animation-delay: $menu-slide-time + 300ms;
    }
 
    @media screen and (max-width: 500px) {
@@ -190,21 +199,6 @@ header {
          width: 100%;
       }
    }
-
-   select {
-      width: 90px;
-      height: 37.5px;
-      font-size: 1em;
-      color: #b4b4b4;
-      background-color: transparent;
-      padding-left: 5px;
-      border: 1px solid var(--primary-color);
-      border-radius: 5px;
-
-      &:hover {
-         color: var(--light-blue);
-      }
-   }
 }
 
 // Resume
@@ -212,6 +206,22 @@ header {
    font-size: $font-size-nav-elements;
    text-transform: uppercase;
    transition: $transition-time-nav-elements;
+}
+
+// Language select
+.language-select select {
+   width: 96.5px;
+   height: 37.5px;
+   font-size: 0.9em;
+   color: #b4b4b4;
+   background-color: transparent;
+   padding-left: 5px;
+   border: 1px solid var(--primary-color);
+   border-radius: 5px;
+
+   &:hover {
+      color: var(--light-blue);
+   }
 }
 
 // Toggler

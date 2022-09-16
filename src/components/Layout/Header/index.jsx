@@ -1,5 +1,9 @@
+import i18next from 'i18next';
 import { useState } from 'react';
 import ReactDOM from 'react-dom';
+import SelectLanguage from '../../ui/SelectLanguage';
+import { languages } from '../../../assets/config/languages';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, useTranslation } from 'react-i18next';
 
@@ -44,6 +48,10 @@ const Header = () => {
          setResumeisShown(false);
       }, 150);
    };
+   // Change site language
+   const onChangeLanguage = (event) => {
+      i18next.changeLanguage(event.target.value);
+   };
 
    // Actual nav elements
    const navElements = (
@@ -59,6 +67,13 @@ const Header = () => {
                {t('header.curriculum')}
             </Trans>
          </Button>
+
+         <span className="language-select">
+            <SelectLanguage
+               selectElements={languages}
+               onChange={onChangeLanguage}
+            />
+         </span>
       </>
    );
 

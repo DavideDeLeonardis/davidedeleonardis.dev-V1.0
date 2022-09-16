@@ -1,10 +1,7 @@
-import i18next from 'i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import SelectLanguage from '../../../ui/SelectLanguage';
 import useActive from '../../../../hooks/useActive';
 import { useNavTranslate } from '../../../../assets/config/navLinks';
-import { languages } from '../../../../assets/config/languages';
 
 import '../index.scss';
 
@@ -24,25 +21,12 @@ const Nav = ({ onClose }) => {
       </li>
    ));
 
-   // Change site language
-   const onChangeLanguage = (event) => {
-      i18next.changeLanguage(event.target.value);
-   };
-
    return (
       <nav>
          <button className="button-close-header" onClick={onClose}>
             <FontAwesomeIcon icon="fa-solid fa-xmark" />
          </button>
-         <ul className="list-elements">
-            {linksList}
-            <li className="header-nav-element">
-               <SelectLanguage
-                  selectElements={languages}
-                  onChange={onChangeLanguage}
-               />
-            </li>
-         </ul>
+         <ul className="list-elements">{linksList}</ul>
       </nav>
    );
 };
