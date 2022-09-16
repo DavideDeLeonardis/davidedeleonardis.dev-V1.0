@@ -33,7 +33,7 @@ $transition-image-time: 200ms;
    }
 
    .filter-languages {
-      @include mixin.flex($gap: 20px);
+      @include mixin.flex($gap: 2%);
       margin: 50px 0 25px 0;
 
       .f-language {
@@ -48,11 +48,39 @@ $transition-image-time: 200ms;
             color: #ffffff;
             border: 1px solid var(--secondary-color);
          }
+
+         @media screen and (max-width: 450px) {
+            font-size: 0.75em;
+            padding: 5px;
+         }
+
+         @media screen and (max-width: 400px) {
+            font-size: 0.65em;
+            padding: 5px;
+         }
+      }
+
+      @media screen and (max-width: 550px) {
+         gap: 5px;
+
+         .f-language {
+            padding: 5px 10px;
+         }
       }
 
       .f-language.active {
          color: #ffffff;
          background-color: var(--secondary-color);
+      }
+
+      @media screen and (max-width: 350px) {
+         padding-left: 50px;
+         padding-bottom: 10px;
+         overflow-x: scroll;
+      }
+
+      @media screen and (max-width: 300px) {
+         padding-left: 110px;
       }
    }
 

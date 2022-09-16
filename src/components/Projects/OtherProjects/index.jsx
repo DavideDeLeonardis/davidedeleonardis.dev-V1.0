@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import projects from '../../../assets/config/projects';
 import ProjectsList from '../ProjectsList';
-import Button from '../../ui/Button';
 import Heading from '../../ui/Heading';
+import Button from '../../ui/Button';
 import useActive from '../../../hooks/useActive';
 import useDimensions from '../../../hooks/useDimensions';
-import projects from '../../../assets/config/projects';
 
 import classes from '../index.module.scss';
 
