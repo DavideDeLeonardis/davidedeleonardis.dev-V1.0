@@ -9,7 +9,6 @@ export const skills = [
    //    class: 'css',
    //    image: require('../images/skills/css.png'),
    // },
-
    {
       name: 'JavaScript',
       class: 'javascript',

@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SelectLanguage from '../../../ui/SelectLanguage';
-import { languages } from '../../../../assets/config/selectElements';
+import { languages } from '../../../../assets/config/languages';
 import { useNavTranslate } from '../../../../assets/config/navLinks';
 
 import '../index.scss';

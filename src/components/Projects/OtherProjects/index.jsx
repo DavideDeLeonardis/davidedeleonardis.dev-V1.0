@@ -7,7 +7,6 @@ import Button from '../../ui/Button';
 import Heading from '../../ui/Heading';
 import useDimensions from '../../../hooks/useDimensions';
 import projects from '../../../assets/config/projects';
-import { programmingLanguages } from '../../../assets/config/selectElements';
 
 import classes from '../index.module.scss';
 
@@ -26,6 +25,30 @@ const OtherProjects = () => {
 
    // Filter projects NOT main
    const filteredProjects = projectsInfo.filter((project) => !project.isMain);
+
+   // Get salest options from projects languages property
+   const getOptionsValues = () => {
+      let programmingLanguages = [];
+      filteredProjects.forEach((project) => {
+         programmingLanguages.push({
+            option: project.language,
+            value: project.language,
+         });
+      });
+
+      // Remove duplicates
+      return programmingLanguages.reduce((unique, o) => {
+         if (
+            !unique.some(
+               (obj) => obj.option === o.option && obj.value === o.value
+            )
+         )
+            unique.push(o);
+
+         console.log(unique);
+         return unique;
+      }, []);
+   };
 
    // Set projects to show when value in select changes
    const setValueHandler = (e) => {
@@ -112,7 +135,7 @@ const OtherProjects = () => {
          </span>
          <SelectLanguage
             className={classes.select}
-            selectElements={programmingLanguages}
+            selectElements={getOptionsValues()}
             onChange={setValueHandler}
             allPresent
          />

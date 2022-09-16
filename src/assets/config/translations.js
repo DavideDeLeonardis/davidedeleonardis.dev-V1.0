@@ -5,6 +5,9 @@ export const translationsEn = {
       curriculum: 'Resume',
       qr_code: require('../images/resume/qrcode-EN.png'),
       resume: require('../images/resume/resume-EN.pdf'),
+      resume_p_rext: 'See my Resume',
+      resume_o: 'or',
+      resume_p_scan: 'Scan me!',
    },
    intro: {
       hi_intro: 'Hi, my name is',
@@ -38,6 +41,7 @@ export const translationsEn = {
    other_projects: {
       filter_text: 'Filter by language: ',
       selectAll: 'All',
+      portfolio_d: 'Portfolio website V1.0 made with React.js.',
    },
    contact: {
       heading: 'Get In Touch!',
@@ -66,6 +70,9 @@ export const translationsIt = {
       curriculum: '<span>CV</span>',
       qr_code: require('../images/resume/qrcode-EN.png'), // cambiare in IT
       resume: require('../images/resume/resume-EN.pdf'), // cambiare in IT
+      resume_p_rext: 'Visualizza CV',
+      resume_o: 'oppure',
+      resume_p_scan: 'Scannerizzami!',
    },
    intro: {
       hi_intro: 'Ciao, mi chiamo',
@@ -97,6 +104,7 @@ export const translationsIt = {
    other_projects: {
       filter_text: 'Filtra per linguaggio: ',
       selectAll: 'Tutti',
+      portfolio_d: 'Sito portfolio V1.0 costruito in React.js.',
    },
    contact: {
       heading: 'Contattami!',

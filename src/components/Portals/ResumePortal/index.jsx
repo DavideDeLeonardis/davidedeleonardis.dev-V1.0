@@ -16,20 +16,22 @@ const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
       >
          <div className={classes['resume-container']}>
             <a href={t('header.resume')} target="_blank" rel="noreferrer">
-               See my Resume
+               {t('header.resume_p_rext')}
                <FontAwesomeIcon
                   className={classes.icon}
                   icon="fa-solid fa-arrow-up-right-from-square"
                />
             </a>
-            <span>or</span>
+            <span>{t('header.resume_o')}</span>
             <div>
                <img
                   width="200"
                   src={t('header.qr_code')}
                   alt="qrcode of curriculum vitae"
                />
-               <span className={classes['scan-text']}>Scan Me!</span>
+               <span className={classes['scan-text']}>
+                  {t('header.resume_p_scan')}
+               </span>
             </div>
          </div>
       </CardPortal>

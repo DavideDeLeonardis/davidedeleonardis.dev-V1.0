@@ -58,37 +58,33 @@ const ProjectItem = ({ project, isMain }) => {
             ) : (
                <>
                   <div className={classes['project-links']}>
-                     {project.homepage !== '' &&
-                        project.id !==
-                           521026706 /* Id project portfolio V-1.0 */ && (
-                           <a
-                              href={project.homepage}
-                              target="_blank"
-                              rel="noreferrer"
-                           >
-                              <Button>
-                                 See Demo
-                                 <FontAwesomeIcon
-                                    className={classes.icon}
-                                    icon="fa-solid fa-arrow-up-right-from-square"
-                                 />
-                              </Button>
-                           </a>
-                        )}
+                     {project.url !== null && (
+                        <a href={project.url} target="_blank" rel="noreferrer">
+                           <Button>
+                              See Demo
+                              <FontAwesomeIcon
+                                 className={classes.icon}
+                                 icon="fa-solid fa-arrow-up-right-from-square"
+                              />
+                           </Button>
+                        </a>
+                     )}
 
-                     <a
-                        href={project.html_url}
-                        target="_blank"
-                        rel="noreferrer"
-                     >
-                        <Button>
-                           See on GitHub
-                           <FontAwesomeIcon
-                              className={classes.icon}
-                              icon="fa-brands fa-github"
-                           />
-                        </Button>
-                     </a>
+                     {project.github_url !== null && (
+                        <a
+                           href={project.github_url}
+                           target="_blank"
+                           rel="noreferrer"
+                        >
+                           <Button>
+                              See on GitHub
+                              <FontAwesomeIcon
+                                 className={classes.icon}
+                                 icon="fa-brands fa-github"
+                              />
+                           </Button>
+                        </a>
+                     )}
                   </div>
 
                   <button onClick={hideDetailsHandler}>
@@ -138,7 +134,7 @@ const ProjectItem = ({ project, isMain }) => {
             }
          >
             <div className={classes['card-content']}>
-               {isMain && project.fork && (
+               {isMain && project.isFeatured && (
                   <span className={classes.featured}>Featured</span>
                )}
 
