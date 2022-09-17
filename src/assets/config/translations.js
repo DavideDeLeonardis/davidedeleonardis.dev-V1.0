@@ -1,3 +1,5 @@
+// FINIRE DESCRIZIONI projects IN IT E EN
+
 export const translationsEn = {
    header: {
       projects: 'Projects',
@@ -21,9 +23,18 @@ export const translationsEn = {
       p3: "Doesn't matter how challenging the project is, if you've an idea, <a>contact me</a> and let's enjoy developing it!",
       tech_work: "Some technologies I've worked with:",
    },
-   main_projects: {},
+   main_projects: {
+      heading: 'Some Projects',
+      main_l: 'Main language:',
+      go_back: 'Go Back',
+   },
    other_projects: {
+      heading: 'Other Projects',
+      p: 'Some of my other works.',
+      show_more: 'Show more',
+      show_less: 'Show less',
       selectAll: 'All',
+      learn_more: 'Learn More',
    },
    projects: {
       deliveboo: {
@@ -49,6 +60,9 @@ export const translationsEn = {
       avada_consultant: { short_d: 'Description' },
       minefield_game: { short_d: 'Description' },
       laravel_comics: { short_d: 'Description' },
+      show_details: 'Show Details',
+      see_demo: 'See Demo',
+      see_github: 'See on GitHub',
    },
    contact: {
       heading: 'Get In Touch!',
@@ -93,12 +107,20 @@ export const translationsIt = {
       p3: "Non importa quanto impegnativo sia il progetto, se hai un'idea, <a>contattami</a> e divertiamoci a svilupparla!",
       tech_work: 'Alcune tecnologie con cui ho lavorato:',
    },
-   main_projects: {},
+   main_projects: {
+      heading: 'Alcuni progetti',
+      main_l: 'Linguaggio principale:',
+      go_back: 'Indietro',
+   },
    other_projects: {
+      heading: 'Altri Progetti',
+      p: 'Alcuni dei miei altri lavori.',
+      show_more: 'Mostra di più',
+      show_less: 'Mostra di meno',
       selectAll: 'Tutti',
+      learn_more: 'Scopri di più',
    },
    projects: {
-      // cambiare in IT
       deliveboo: {
          short_d: 'Corta descrizione deliveboo',
          long_d: 'Lunga descrizione deliveboo',
@@ -119,6 +141,9 @@ export const translationsIt = {
       avada_consultant: { short_d: 'Descrizione' },
       minefield_game: { short_d: 'Descrizione' },
       laravel_comics: { short_d: 'Descrizione' },
+      show_details: 'Mostra Dettagli',
+      see_demo: 'Vai al Sito',
+      see_github: 'Vedi su GitHub',
    },
    contact: {
       heading: 'Contattami!',

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../../ui/CardPortal';
@@ -12,6 +13,7 @@ const ProjectItem = ({ project, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
+   const { t } = useTranslation();
 
    const showDetailsHandler = () => {
       setDetails(true);
@@ -48,7 +50,7 @@ const ProjectItem = ({ project, isMain }) => {
             {isMain ? (
                <Link to={`/projects/${project.name}`} state={project}>
                   <Button>
-                     Show Details
+                     {t('projects.show_details')}
                      <FontAwesomeIcon
                         className={classes.icon}
                         icon="fa-solid fa-arrow-up-right-from-square"
@@ -61,7 +63,7 @@ const ProjectItem = ({ project, isMain }) => {
                      {project.url !== null && (
                         <a href={project.url} target="_blank" rel="noreferrer">
                            <Button>
-                              See Demo
+                              {t('projects.see_demo')}
                               <FontAwesomeIcon
                                  className={classes.icon}
                                  icon="fa-solid fa-arrow-up-right-from-square"
@@ -77,7 +79,7 @@ const ProjectItem = ({ project, isMain }) => {
                            rel="noreferrer"
                         >
                            <Button>
-                              See on GitHub
+                              {t('projects.see_github')}
                               <FontAwesomeIcon
                                  className={classes.icon}
                                  icon="fa-brands fa-github"
@@ -151,7 +153,7 @@ const ProjectItem = ({ project, isMain }) => {
                {isMain ? (
                   <>
                      <div className={classes.language}>
-                        <span>Main language:</span>
+                        <span>{t('main_projects.main_l')}</span>
                         <span className={classes.lang}>{project.language}</span>
                      </div>
                      {projectInfo}
@@ -163,7 +165,7 @@ const ProjectItem = ({ project, isMain }) => {
                         className={classes['learn-more']}
                         onClick={showDetailsHandler}
                      >
-                        Learn More
+                        {t('other_projects.learn_more')}
                      </Button>
                   </>
                )}

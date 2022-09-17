@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../../ui/Button';
 import default_image from '../../../assets/images/default.png';
 
+import classes from './index.module.scss';
+
 const Project = () => {
    const { state: project } = useLocation();
    const navigate = useNavigate();
-   console.log(project);
+   const { t } = useTranslation();
 
    useEffect(() => {
       if (project === null) navigate('/');
@@ -17,20 +20,22 @@ const Project = () => {
 
    return (
       project && (
-         <>
-            <h1>{project.name}</h1>
-            <p>{project.long_description}</p>
-            <img
-               width="200"
-               src={project.image || default_image}
-               alt={`${project.name} project from Davide De Leonardis`}
-            />
-            <br />
+         <div
+            className={classes.container}
+            style={{
+               backgroundImage: `url('${project.image || default_image}')`,
+            }}
+         >
+            <div className={classes.content}>
+               <h1>{project.name}</h1>
+               <p>{project.long_description}</p>
+               <br />
 
-            <Link onClick={reloadPage} to="/">
-               <Button>Go back</Button>
-            </Link>
-         </>
+               <Link onClick={reloadPage} to="/">
+                  <Button>{t('main_projects.go_back')}</Button>
+               </Link>
+            </div>
+         </div>
       )
    );
 };

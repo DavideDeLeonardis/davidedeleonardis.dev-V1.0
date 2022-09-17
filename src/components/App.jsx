@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Splash from './pages/Splash';
 import Home from './pages/Home';
 import Project from './pages/MainProject';
+// import Archive from './pages/Archive';
 import Layout from './layout/Layout';
 
 import '../assets/scss/index.scss';
@@ -22,6 +23,7 @@ const App = () => {
                <Route path="/" element={<Layout />}>
                   <Route index element={<Home />} />
                   <Route path="projects/:project" element={<Project />} />
+                  {/* <Route path="archive" element={<Archive />} /> */}
                </Route>
                <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>

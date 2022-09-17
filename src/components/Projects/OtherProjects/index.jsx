@@ -110,12 +110,14 @@ const OtherProjects = () => {
 
       const button = (
          <Button
+            className={classes['show-more-button']}
             onClick={
                projectsAreSliced ? showAllProjectsHandler : hideProjectsHandler
             }
-            style={{ marginTop: '50px' }}
          >
-            {projectsAreSliced ? 'SHOW MORE' : 'SHOW LESS'}
+            {projectsAreSliced
+               ? t('other_projects.show_more')
+               : t('other_projects.show_less')}
          </Button>
       );
 
@@ -131,8 +133,8 @@ const OtherProjects = () => {
    return (
       <div id="other-projects" className={classes['projects-container']}>
          <Heading
-            heading={'Other Projects'}
-            subheading={'Some of my other works.'}
+            heading={t('other_projects.heading')}
+            subheading={t('other_projects.p')}
             pClassName={classes.paragraph}
          />
 

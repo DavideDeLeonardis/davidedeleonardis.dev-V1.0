@@ -10,7 +10,6 @@ $start-animation-delay: 2700ms;
    z-index: 50;
    @include mixin.flex($direction: column, $gap: 20px);
    height: 100%;
-   background-color: var(--dark-blue);
    padding-right: 10px;
 
    .container-item {

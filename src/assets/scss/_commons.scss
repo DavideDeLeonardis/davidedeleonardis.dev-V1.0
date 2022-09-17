@@ -1,12 +1,6 @@
 .container {
    max-width: 1600px;
    margin: auto;
-   padding: 0 120px;
-   overflow: hidden;
-
-   @media screen and (max-width: 650px) {
-      padding: 0 45px;
-   }
 }
 
 .container-sm {
@@ -17,6 +11,15 @@
 
    @media screen and (max-width: 650px) {
       padding: 0 30px;
+   }
+}
+
+#home {
+   padding: 0 120px;
+   overflow: hidden;
+
+   @media screen and (max-width: 650px) {
+      padding: 0 45px;
    }
 }
 
