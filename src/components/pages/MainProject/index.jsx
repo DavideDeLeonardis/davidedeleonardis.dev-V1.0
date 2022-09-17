@@ -14,7 +14,7 @@ const Project = () => {
    const { t } = useTranslation();
 
    useEffect(() => {
-      // If state doesn't exists when searched in URL => redirect to /
+      // If state doesn't exists when project in manually searched in URL => redirect to /
       if (project === null) navigate('/');
       // Scroll to top on load
       window.scrollTo(0, 0);
