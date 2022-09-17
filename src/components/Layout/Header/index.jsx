@@ -16,7 +16,7 @@ import logo from '../../../assets/images/exagon-logo-blue.png';
 
 import './index.scss';
 
-const Header = () => {
+const Header = ({ isHome }) => {
    const [menuIsShown, setMenuIsShown] = useState(false);
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [resumeIsShown, setResumeisShown] = useState(false);
@@ -56,24 +56,28 @@ const Header = () => {
    // Actual nav elements
    const navElements = (
       <>
-         <Nav onClose={hideMenuHandler} />
+         <Nav onClose={hideMenuHandler} isHome={isHome} />
 
-         <Button className="resume-button" onClick={showResumeHandler}>
-            <Trans
-               components={{
-                  span: <span style={{ padding: '0 20px' }} />,
-               }}
-            >
-               {t('header.curriculum')}
-            </Trans>
-         </Button>
+         {isHome && (
+            <>
+               <Button className="resume-button" onClick={showResumeHandler}>
+                  <Trans
+                     components={{
+                        span: <span style={{ padding: '0 20px' }} />,
+                     }}
+                  >
+                     {t('header.curriculum')}
+                  </Trans>
+               </Button>
 
-         <span className="language-select">
-            <SelectLanguage
-               selectElements={languages}
-               onChange={onChangeLanguage}
-            />
-         </span>
+               <span className="language-select">
+                  <SelectLanguage
+                     selectElements={languages}
+                     onChange={onChangeLanguage}
+                  />
+               </span>
+            </>
+         )}
       </>
    );
 

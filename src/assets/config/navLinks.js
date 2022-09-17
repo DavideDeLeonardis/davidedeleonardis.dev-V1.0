@@ -5,24 +5,29 @@ export const useNavTranslate = () => {
 
    return [
       {
-			id: 1,
+         id: 1,
          to: 'about',
          linkName: 'About Me',
       },
       {
-			id: 2,
+         id: 2,
          to: 'projects',
          linkName: t('header.projects'),
       },
       // {
-		//		id: 3,
+      //		id: 3,
       //    to: '#experience',
       //    linkName: 'Experience',
       // },
       {
-			id: 4,
+         id: 4,
          to: 'contact',
          linkName: t('header.contact'),
+      },
+      {
+         id: 5,
+         to: 'home',
+         linkName: 'Home',
       },
    ];
 };

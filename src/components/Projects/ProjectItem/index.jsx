@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -48,6 +49,7 @@ const ProjectItem = ({ project, isMain }) => {
 
          <div className={classes['project-bottom']}>
             {isMain ? (
+               // Show details main projects button
                <Link to={`/projects/${project.name}`} state={project}>
                   <Button>
                      {t('projects.show_details')}
@@ -60,6 +62,7 @@ const ProjectItem = ({ project, isMain }) => {
             ) : (
                <>
                   <div className={classes['project-links']}>
+                     {/* See demo button  */}
                      {project.url !== null && (
                         <a href={project.url} target="_blank" rel="noreferrer">
                            <Button>
@@ -72,6 +75,7 @@ const ProjectItem = ({ project, isMain }) => {
                         </a>
                      )}
 
+                     {/* See on GitHub button */}
                      {project.github_url !== null && (
                         <a
                            href={project.github_url}
@@ -89,6 +93,7 @@ const ProjectItem = ({ project, isMain }) => {
                      )}
                   </div>
 
+                  {/* Close details other project button */}
                   <button onClick={hideDetailsHandler}>
                      <FontAwesomeIcon
                         className={classes['info-close']}

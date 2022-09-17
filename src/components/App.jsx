@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Splash from './pages/Splash';
 import Home from './pages/Home';
 import Project from './pages/MainProject';
-// import Archive from './pages/Archive';
+import Archive from './pages/Archive';
 import Layout from './layout/Layout';
 
 import '../assets/scss/index.scss';
@@ -16,21 +16,38 @@ const App = () => {
       setTimeout(() => setShowHome(true), 0); // 5100
    }, []);
 
-   return (
-      <>
-         {showHome ? (
-            <Routes>
-               <Route path="/" element={<Layout />}>
-                  <Route index element={<Home />} />
-                  <Route path="projects/:project" element={<Project />} />
-                  {/* <Route path="archive" element={<Archive />} /> */}
-               </Route>
-               <Route path="*" element={<Navigate replace to="/" />} />
-            </Routes>
-         ) : (
-            <Splash />
-         )}
-      </>
+   return showHome ? (
+      <Routes>
+         <Route path="/">
+            <Route
+               index
+               element={
+                  <Layout isHome>
+                     <Home />
+                  </Layout>
+               }
+            />
+            <Route
+               path="projects/:project/"
+               element={
+                  <Layout isHome={false}>
+                     <Project />
+                  </Layout>
+               }
+            />
+            <Route
+               path="archive"
+               element={
+                  <Layout home={false}>
+                     <Archive />
+                  </Layout>
+               }
+            />
+         </Route>
+         <Route path="*" element={<Navigate replace to="/" />} />
+      </Routes>
+   ) : (
+      <Splash />
    );
 };
 

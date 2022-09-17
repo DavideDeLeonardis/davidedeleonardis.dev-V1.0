@@ -232,6 +232,7 @@ header {
    opacity: 0;
    transition: all 100ms;
    animation: slide-bottom $nav-el-time forwards;
+   animation-delay: 550ms;
 
    &:hover {
       scale: 1.2;
