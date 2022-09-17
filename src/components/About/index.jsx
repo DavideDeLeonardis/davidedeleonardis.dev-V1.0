@@ -48,7 +48,7 @@ const About = () => {
                   </p>
                </div>
                <span>{t('about.tech_work')}</span>
-					<Skills />
+               <Skills />
             </div>
 
             <div className={`gray-image ${classes['img-container']}`}>

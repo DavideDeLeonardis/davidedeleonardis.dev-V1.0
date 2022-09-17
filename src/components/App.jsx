@@ -28,7 +28,7 @@ const App = () => {
                }
             />
             <Route
-               path="projects/:project/"
+               path="projects/:project"
                element={
                   <Layout isHome={false}>
                      <Project />
