@@ -1,4 +1,4 @@
-import Slider3d from './Slider-3d';
+import Skills from './Skills';
 import Heading from '../ui/Heading';
 import profileImage from '../../assets/images/profile.jpg';
 import Certifications from '../../assets/images/Salesforce-Certifications.pdf';
@@ -46,9 +46,7 @@ const About = () => {
                   </p>
                </div>
                <span>Technologies I've worked with:</span>
-               <div className={classes['slider-container']}>
-                  <Slider3d />
-               </div>
+               <Skills />
             </div>
 
             <div className={`gray-image ${classes['img-container']}`}>

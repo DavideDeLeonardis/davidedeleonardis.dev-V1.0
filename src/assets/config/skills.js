@@ -1,19 +1,14 @@
 export const skills = [
-   {
-      name: 'HTML',
-      class: 'html',
-      image: require('../images/skills/html.png'),
-   },
-   {
-      name: 'CSS',
-      class: 'css',
-      image: require('../images/skills/css.png'),
-   },
-   {
-      name: 'SASS',
-      class: 'sass',
-      image: require('../images/skills/sass.png'),
-   },
+   // {
+   //    name: 'HTML',
+   //    class: 'html',
+   //    image: require('../images/skills/html.png'),
+   // },
+   // {
+   //    name: 'CSS',
+   //    class: 'css',
+   //    image: require('../images/skills/css.png'),
+   // },
    {
       name: 'JavaScript',
       class: 'javascript',
@@ -40,6 +35,11 @@ export const skills = [
       image: require('../images/skills/cypress.png'),
    },
    {
+      name: 'SASS',
+      class: 'sass',
+      image: require('../images/skills/sass.png'),
+   },
+   {
       name: 'PHP',
       class: 'php',
       image: require('../images/skills/php.png'),
@@ -59,24 +59,24 @@ export const skills = [
    //    class: 'apex',
    //    image: require('../images/skills/apex.png'),
    // },
-   {
-      name: 'Salesforce',
-      class: 'salesforce',
-      image: require('../images/skills/salesforce.png'),
-   },
-   {
-      name: 'Git',
-      class: 'git',
-      image: require('../images/skills/git.png'),
-   },
-   {
-      name: 'GitHub',
-      class: 'github',
-      image: require('../images/skills/github.png'),
-   },
-   {
-      name: 'Excel',
-      class: 'excel',
-      image: require('../images/skills/excel.png'),
-   },
+   // {
+   //    name: 'Salesforce',
+   //    class: 'salesforce',
+   //    image: require('../images/skills/salesforce.png'),
+   // },
+   // {
+   //    name: 'Git',
+   //    class: 'git',
+   //    image: require('../images/skills/git.png'),
+   // },
+   // {
+   //    name: 'GitHub',
+   //    class: 'github',
+   //    image: require('../images/skills/github.png'),
+   // },
+   // {
+   //    name: 'Excel',
+   //    class: 'excel',
+   //    image: require('../images/skills/excel.png'),
+   // },
 ];
