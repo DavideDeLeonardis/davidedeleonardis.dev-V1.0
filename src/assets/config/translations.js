@@ -43,7 +43,7 @@ export const translationsEn = {
       },
       boolpress: {
          short_d:
-            'Content Management System made with Laravel, possibility of authentication and registration with multiple privileges; viewable, editable or deletable posts.',
+            'Content Management System made with Laravel and MVC pattern, possibility of authentication and registration with multiple privileges; viewable, editable or deletable posts.',
          // FINIRE
          long_d: 'Long description boolpress',
       },

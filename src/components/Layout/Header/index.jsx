@@ -57,7 +57,7 @@ const Header = ({ isHome }) => {
    const navElements = (
       <>
          <Nav onClose={hideMenuHandler} isHome={isHome} />
-			
+
          <Button className="resume-button" onClick={showResumeHandler}>
             <Trans
                components={{
