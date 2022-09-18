@@ -1,5 +1,3 @@
-// FINIRE DESCRIZIONI projects IN IT E EN
-
 export const translationsEn = {
    header: {
       projects: 'Projects',
@@ -36,6 +34,7 @@ export const translationsEn = {
       selectAll: 'All',
       learn_more: 'Learn More',
    },
+	// Finire Descrizioni
    projects: {
       deliveboo: {
          short_d:
@@ -120,6 +119,7 @@ export const translationsIt = {
       selectAll: 'Tutti',
       learn_more: 'Scopri di più',
    },
+   // Finire Descrizioni
    projects: {
       deliveboo: {
          short_d: 'Corta descrizione deliveboo',

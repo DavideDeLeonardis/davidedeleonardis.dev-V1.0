@@ -57,26 +57,24 @@ const Header = ({ isHome }) => {
    const navElements = (
       <>
          <Nav onClose={hideMenuHandler} isHome={isHome} />
+			
+         <Button className="resume-button" onClick={showResumeHandler}>
+            <Trans
+               components={{
+                  span: <span style={{ padding: '0 20px' }} />,
+               }}
+            >
+               {t('header.curriculum')}
+            </Trans>
+         </Button>
 
          {isHome && (
-            <>
-               <Button className="resume-button" onClick={showResumeHandler}>
-                  <Trans
-                     components={{
-                        span: <span style={{ padding: '0 20px' }} />,
-                     }}
-                  >
-                     {t('header.curriculum')}
-                  </Trans>
-               </Button>
-
-               <span className="language-select">
-                  <SelectLanguage
-                     selectElements={languages}
-                     onChange={onChangeLanguage}
-                  />
-               </span>
-            </>
+            <span className="language-select">
+               <SelectLanguage
+                  selectElements={languages}
+                  onChange={onChangeLanguage}
+               />
+            </span>
          )}
       </>
    );
