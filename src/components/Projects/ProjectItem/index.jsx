@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../../ui/CardPortal';
@@ -43,7 +43,16 @@ const ProjectItem = ({ project, isMain }) => {
       <div className={classes['info-container']}>
          {!isMain && <h2>{project.name}</h2>}
 
-         <p>{project.description}</p>
+         <p>
+            <Trans
+               components={{
+                  technicals: <span className={classes['d-technicals']} />,
+                  blue: <span style={{ color: 'var(--primary-color)' }} />,
+               }}
+            >
+               {project.description}
+            </Trans>
+         </p>
 
          <ul className={classes['topic-container']}>{topics}</ul>
 

@@ -34,7 +34,7 @@ export const translationsEn = {
       selectAll: 'All',
       learn_more: 'Learn More',
    },
-	// Finire Descrizioni
+   // Finire Descrizioni
    projects: {
       deliveboo: {
          short_d:
@@ -52,13 +52,22 @@ export const translationsEn = {
          long_d: 'Long description netflix',
       },
       portfolio: { short_d: 'Portfolio website V1.0 made with React.js.' },
-      react_amazon: { short_d: 'Description' },
-      react_auth_test: { short_d: 'Description' },
+      react_amazon: {
+         short_d:
+            'Amazon home page clone made with <blue>React.js</blue>. Add to cart products you choose, insert your data and order! Soon product details. <technicals>- Cart actions are defined by a <blue>Context provider</blue> and requests are handled by a Firebase database.</technicals>',
+      },
+      react_auth_test: {
+         short_d:
+            'Authentication test app made with <blue>React.js</blue>, possibility of log in, log out and change password. <technicals>- Authentication is handled with <blue>Firebase auth</blue> and a <blue>Context provider</blue> manages requests and <blue>store locally</blue> the auth token.</technicals>',
+      },
       vue_boolzapp: { short_d: 'Description' },
       vue_instagram: { short_d: 'Description' },
       avada_consultant: { short_d: 'Description' },
       minefield_game: { short_d: 'Description' },
-      laravel_comics: { short_d: 'Description' },
+      laravel_comics: {
+         short_d:
+            "Clone of DC-comics' homepage made with <blue>Laravel</blue>, click on single comic to see details. <technicals>- Data represented in <blue>Blade pages</blue> and routes completely defined in routes directory.</technicals>",
+      },
       show_details: 'Show Details',
       see_demo: 'See Demo',
       see_github: 'See on GitHub',
