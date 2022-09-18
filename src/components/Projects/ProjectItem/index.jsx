@@ -47,7 +47,7 @@ const ProjectItem = ({ project, isMain }) => {
             <Trans
                components={{
                   technicals: <span className={classes['d-technicals']} />,
-                  blue: <span style={{ color: 'var(--primary-color)' }} />,
+                  blue: <span className="blue" />,
                }}
             >
                {project.description}

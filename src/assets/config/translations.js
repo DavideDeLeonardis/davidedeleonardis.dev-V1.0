@@ -34,39 +34,63 @@ export const translationsEn = {
       selectAll: 'All',
       learn_more: 'Learn More',
    },
-   // Finire Descrizioni
    projects: {
       deliveboo: {
          short_d:
             'Deliveboo is a food delivery web app that allows customers to order from their favorite restaurants inserting only the data necessary for delivery. Restaurateurs can register in the platform and create, modify and delete dishes based also on the statistics displayed in the personal area.',
+         // FINIRE
          long_d: 'Long description deliveboo',
       },
       boolpress: {
          short_d:
-            'Content Management System with possibility of authentication and registration with multiple privileges; viewable, editable or deletable posts.',
+            'Content Management System made with Laravel, possibility of authentication and registration with multiple privileges; viewable, editable or deletable posts.',
+         // FINIRE
          long_d: 'Long description boolpress',
       },
       netflix: {
          short_d:
-            "Fully functioning Netflix home page's clone; select a category and search your favourite movies! Hover cards to see movie's details.",
+            "Netflix home page clone in Vue.js; select a category and search your favourite movies! Possibility of see movie's details.",
+         // FINIRE
          long_d: 'Long description netflix',
       },
-      portfolio: { short_d: 'Portfolio website V1.0 made with React.js.' },
+      portfolio: {
+         short_d:
+            'Portfolio website V1.0 made with React.js. <technicals>- Portfolio previous version fetched GitHub API in order to render my repositories (branch still visible), actually projects are defined in a custom hook for translator integration.</technicals>',
+         long_d: null,
+      },
       react_amazon: {
          short_d:
-            'Amazon home page clone made with <blue>React.js</blue>. Add to cart products you choose, insert your data and order! Soon product details. <technicals>- Cart actions are defined by a <blue>Context provider</blue> and requests are handled by a Firebase database.</technicals>',
+            'Amazon home page clone made with React.js. <blue>Add to cart</blue> products you choose, <blue>insert your data and order!</blue> Soon product details. <technicals>- Cart actions are defined by a Context provider and requests are handled by a Firebase database.</technicals>',
+         long_d: null,
       },
       react_auth_test: {
          short_d:
-            'Authentication test app made with <blue>React.js</blue>, possibility of log in, log out and change password. <technicals>- Authentication is handled with <blue>Firebase auth</blue> and a <blue>Context provider</blue> manages requests and <blue>store locally</blue> the auth token.</technicals>',
+            'Authentication test app made with React.js, possibility of <blue>log in, log out and change password</blue>. <technicals>- Authentication is handled with Firebase auth API, a Context provider defines requests, stores and retrieves the auth token.</technicals>',
+         long_d: null,
       },
-      vue_boolzapp: { short_d: 'Description' },
-      vue_instagram: { short_d: 'Description' },
-      avada_consultant: { short_d: 'Description' },
-      minefield_game: { short_d: 'Description' },
+      vue_boolzapp: {
+         short_d:
+            'Whatsapp Web home page made with Vue.js CDN. <blue>Start the chat</blue> and wait for the automatic reply, <blue>delete messages or entire chats</blue>, <blue>increase/decrease font size</blue> and <blue>switch day/night mode</blue>. <technicals>- Functions are defined in only one Vue instance and messages are send through a counter that changes for every chat.</technicals>',
+         long_d: null,
+      },
+      vue_instagram: {
+         short_d:
+            'Instagram web home page made with Vue.js; possibility of <blue>show stories</blue>, <blue>like posts</blue>, <blue>add comments</blue> and <blue>show all comments</blue>.',
+         long_d: null,
+      },
+      avada_consultant: {
+         short_d: 'Static consulting company site made with Vue.js.',
+         long_d: null,
+      },
+      minefield_game: {
+         short_d:
+            'Minefield game in JS plain. <blue>Select the difficulty level</blue>, <blue>click the play button</blue> and try to not hit bombs! Bombs are 5 in easy mode, 10 in medium and 15 in impossible.',
+         long_d: null,
+      },
       laravel_comics: {
          short_d:
-            "Clone of DC-comics' homepage made with <blue>Laravel</blue>, click on single comic to see details. <technicals>- Data represented in <blue>Blade pages</blue> and routes completely defined in routes directory.</technicals>",
+            'Clone of DC-comics homepage made with Laravel, <blue>click on single comic</blue> to see details. <technicals>- Data represented in Blade pages and routes are completely defined in routes directory.</technicals>',
+         long_d: null,
       },
       show_details: 'Show Details',
       see_demo: 'See Demo',
@@ -128,28 +152,65 @@ export const translationsIt = {
       selectAll: 'Tutti',
       learn_more: 'Scopri di più',
    },
-   // Finire Descrizioni
    projects: {
       deliveboo: {
-         short_d: 'Corta descrizione deliveboo',
-         long_d: 'Lunga descrizione deliveboo',
+         short_d:
+            "Deliveboo è una web app che permette di ordinare dai propri ristoranti preferiti inserendo solamente i dati necessari per la consegna. I ristoratori possono registrarsi sulla piattaforma e creare, modificare e eliminare i piatti, basandosi anche sulle statistiche mostrate nell'area personale.",
+         // FINIRE
+         long_d: 'Corta descrizione deliveboo',
       },
       boolpress: {
-         short_d: 'Corta descrizione boolpress',
+         short_d:
+            'Content Management System creato con Laravel e pattern MVC, possibilità di autenticazione e registrazione con privilegi multipli; post visitabili, modificabili e eliminabili in base al roulo stabilito.',
+         // FINIRE
          long_d: 'Lunga descrizione boolpress',
       },
       netflix: {
-         short_d: 'Corta descrizione netflix',
+         short_d:
+            'Homepage di Netflix in Vue.js; seleziona una categoria e cerca i tuoi film preferiti! Possibilità di vedere i dettagli del singolo film.',
+         // FINIRE
          long_d: 'Lunga descrizione netflix',
       },
-      portfolio: { short_d: 'Sito portfolio V1.0 costruito in React.js.' },
-      react_amazon: { short_d: 'Descrizione' },
-      react_auth_test: { short_d: 'Descrizione' },
-      vue_boolzapp: { short_d: 'Descrizione' },
-      vue_instagram: { short_d: 'Descrizione' },
-      avada_consultant: { short_d: 'Descrizione' },
-      minefield_game: { short_d: 'Descrizione' },
-      laravel_comics: { short_d: 'Descrizione' },
+      portfolio: {
+         short_d:
+            "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub per renderizzare le mie repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook per poter integrare l'hook del traduttore.</technicals>",
+         long_d: null,
+      },
+      react_amazon: {
+         short_d:
+            'Clone della homepage di Amazon in React.js. <blue>Aggiungi al carrello</blue> prodotti a tua scelta, <blue>inserisci i tuoi dati e ordina!</blue> Dettagli del signolo prodotto SOON. <technicals>- Le azioni/funzioni per il carrello sono definite da un Context provider e le varie richieste sono gestite da un database Firebase.</technicals>',
+         long_d: null,
+      },
+      react_auth_test: {
+         short_d:
+            "App di autenticazione creata con React.js, possibilità di <blue>log in, log out e cambio password</blue>. <technicals>- L'autenticazione è gestita tramite API di Firebase auth, un Context provider definisce le richieste, immagazzina e recupera il token di autenticazione.</technicals>",
+         long_d: null,
+      },
+      vue_boolzapp: {
+         short_d:
+            "Homepage di Whatsapp Web creata con la CDN di Vue.js. <blue>Inizia la chat</blue> e attendi per la risposta automatica, <blue>elimina messaggi o intere chat</blue>, <blue>aumenta/diminuisci la grandezza del font</blue> e <blue>cambia modalità giorno/notte</blue>. <technicals>- Le funzioni sono definite in un'unica istanza di Vue e i messaggi sono inviati tramite un contatore che cambia per ogni chat.</technicals>",
+         long_d: null,
+      },
+      vue_instagram: {
+         short_d:
+            'Homepage di Instagram Web creata con Vue.js; possibiltà di <blue>mostare stories</blue>, <blue>mettere like ai post</blue>, <blue>lasciare commenti e mostrarli tutti</blue>.',
+         long_d: null,
+      },
+      avada_consultant: {
+         short_d:
+            'Sito statico di una società di consulenza, creato in Vue.js.',
+         long_d: null,
+      },
+      minefield_game: {
+         short_d:
+            'Gioco del campo minato in JS plain. <blue>Seleziona la difficoltà</blue>, <blue>premi play</blue> e prova a non colpire le bombe! Le bombe sono 5 in modalità facile, 10 in modalità media e 15 in modalità impossibile.',
+         long_d: null,
+      },
+      laravel_comics: {
+         short_d:
+            'Clone della homepage del sito della DC-comics creato in Laravel, <blue>clicca sui comics</blue> per vederne i dettagli. <technicals>- I dati sono rappresentati in pagine Blade e tutte le rotte sono definite nella routes directory.</technicals>',
+         long_d: null,
+      },
       show_details: 'Mostra Dettagli',
       see_demo: 'Vai al Sito',
       see_github: 'Vedi su GitHub',
