@@ -20,7 +20,7 @@ const Footer = () => {
    const date = dateFormat(new Date(), 'mmmm yyyy');
 
    return (
-      <footer>
+      <footer id="footer">
          <div className={classes.top}>
             <div>
                <SelectLanguage
