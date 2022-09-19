@@ -61,18 +61,10 @@ header {
             }
          }
 
-         .language-select,
          .resume-button {
             transform: translateY(-5rem);
             animation: slide-bottom $nav-el-time ease-in-out forwards;
-         }
-
-         .resume-button {
             animation-delay: 950ms;
-         }
-
-         .language-select {
-            animation-delay: 1050ms;
          }
       }
    }
@@ -126,25 +118,16 @@ header {
       }
    }
 
-   .resume-button,
-   .language-select {
-      animation: slide-to-left $menu-slide-time ease-out forwards;
-      transform: translateX(20rem);
-      margin-top: 30px;
-   }
-
    .resume-button {
       color: var(--secondary-color);
+      margin-top: 30px;
+      transform: translateX(20rem);
       animation-delay: $menu-slide-time + 200ms;
+      animation: slide-to-left $menu-slide-time ease-out forwards;
 
       &:hover {
          color: #ffffff;
       }
-   }
-
-   .language-select {
-      display: block;
-      animation-delay: $menu-slide-time + 300ms;
    }
 
    @media screen and (max-width: 500px) {
@@ -206,22 +189,6 @@ header {
    font-size: $font-size-nav-elements;
    text-transform: uppercase;
    transition: $transition-time-nav-elements;
-}
-
-// Language select
-.language-select select {
-   width: 96.5px;
-   height: 37.5px;
-   font-size: 0.9em;
-   color: #b4b4b4;
-   background-color: transparent;
-   padding-left: 5px;
-   border: 1px solid var(--primary-color);
-   border-radius: 5px;
-
-   &:hover {
-      color: var(--light-blue);
-   }
 }
 
 // Toggler

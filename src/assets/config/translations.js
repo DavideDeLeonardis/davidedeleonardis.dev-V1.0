@@ -43,7 +43,7 @@ export const translationsEn = {
       },
       boolpress: {
          short_d:
-            'Content Management System made with Laravel and MVC pattern, possibility of authentication and registration with multiple privileges; viewable, editable or deletable posts.',
+            "Content Management System made with Laravel and MVC pattern, possibility of authentication and registration with multiple privileges; posts are viewable, editable or deletable based on the user's role.",
          // FINIRE
          long_d: 'Long description boolpress',
       },
@@ -161,7 +161,7 @@ export const translationsIt = {
       },
       boolpress: {
          short_d:
-            'Content Management System creato con Laravel e pattern MVC, possibilità di autenticazione e registrazione con privilegi multipli; post visitabili, modificabili e eliminabili in base al roulo stabilito.',
+            'Content Management System creato con Laravel e pattern MVC, possibilità di autenticazione e registrazione con privilegi multipli; i post sono visitabili, modificabili e eliminabili in base al roulo stabilito.',
          // FINIRE
          long_d: 'Lunga descrizione boolpress',
       },
@@ -173,7 +173,7 @@ export const translationsIt = {
       },
       portfolio: {
          short_d:
-            "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub per renderizzare le mie repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook per poter integrare l'hook del traduttore.</technicals>",
+            "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub renderizzando le mie repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook per poter integrare l'hook del traduttore.</technicals>",
          long_d: null,
       },
       react_amazon: {
@@ -183,12 +183,12 @@ export const translationsIt = {
       },
       react_auth_test: {
          short_d:
-            "App di autenticazione creata con React.js, possibilità di <blue>log in, log out e cambio password</blue>. <technicals>- L'autenticazione è gestita tramite API di Firebase auth, un Context provider definisce le richieste, immagazzina e recupera il token di autenticazione.</technicals>",
+            "App di autenticazione creata con React.js, possibilità di <blue>log in, log out e cambio password</blue>. <technicals>- L'autenticazione è gestita tramite API di Firebase auth, un Context provider definisce le richieste, immagazzinando e recuperando il token di autenticazione.</technicals>",
          long_d: null,
       },
       vue_boolzapp: {
          short_d:
-            "Homepage di Whatsapp Web creata con la CDN di Vue.js. <blue>Inizia la chat</blue> e attendi per la risposta automatica, <blue>elimina messaggi o intere chat</blue>, <blue>aumenta/diminuisci la grandezza del font</blue> e <blue>cambia modalità giorno/notte</blue>. <technicals>- Le funzioni sono definite in un'unica istanza di Vue e i messaggi sono inviati tramite un contatore che cambia per ogni chat.</technicals>",
+            "Homepage di Whatsapp Web creata con la CDN di Vue.js. <blue>Inizia la chat</blue> e attendi la risposta automatica, <blue>elimina messaggi o intere chat</blue>, <blue>aumenta/diminuisci la grandezza del font</blue> e <blue>cambia modalità giorno/notte</blue>. <technicals>- Le funzioni sono definite in un'unica istanza di Vue e i messaggi sono inviati tramite un contatore che cambia per ogni chat.</technicals>",
          long_d: null,
       },
       vue_instagram: {
