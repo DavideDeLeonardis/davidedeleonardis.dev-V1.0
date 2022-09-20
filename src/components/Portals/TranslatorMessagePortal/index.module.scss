@@ -1,8 +1,41 @@
 .container {
-	position: fixed;
-   bottom: 15px;
+   position: fixed;
+   bottom: 30px;
    right: 15px;
    z-index: 50;
-	padding: 10px 50px;
-	background-color: white;
+   padding: 10px 20px;
+   color: #ffffff;
+   background-color: var(--primary-color);
+   transform: translateX(20rem);
+   animation: slide 400ms ease-in-out forwards;
+   animation-delay: 3000ms;
+
+   @keyframes slide {
+      from {
+         transform: translateX(20rem);
+      }
+      to {
+         transform: translateX(0);
+      }
+   }
+
+   .icon {
+      margin-right: 7.5px;
+      transition: 200ms;
+   }
+
+   &:hover .icon {
+      scale: 1.3;
+   }
+
+   .x {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      color: #000000;
+      background-color: #ffffff;
+      padding: 0 5px;
+      border-radius: 50%;
+      cursor: pointer;
+   }
 }

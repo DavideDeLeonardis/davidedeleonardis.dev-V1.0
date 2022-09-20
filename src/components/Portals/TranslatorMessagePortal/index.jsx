@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Portal from '../index';
 
@@ -9,14 +10,24 @@ const TranslatorMessagePortal = (showHome = false) => {
 
    useEffect(() => {
       setMessageIsVisible(true);
-      setTimeout(() => setMessageIsVisible(false), 5000);
+      setTimeout(() => setMessageIsVisible(false), 6500); // 3000ms for animation-delay
    }, [showHome]);
+
+   const hideMessageHandler = () => {
+      setMessageIsVisible(false);
+   };
 
    return messageIsvisible ? (
       <Portal>
          <div className={classes.container}>
-            Translator at the bottom <br />
-            <a href="#footer">VAI</a>
+            <FontAwesomeIcon
+               icon="fa-solid fa-arrow-down"
+               className={classes.icon}
+            />
+            <a href="#footer">Go to translator</a>
+            <div className={classes.x} onClick={hideMessageHandler}>
+               <FontAwesomeIcon icon="fa-solid fa-xmark" />
+            </div>
          </div>
       </Portal>
    ) : null;

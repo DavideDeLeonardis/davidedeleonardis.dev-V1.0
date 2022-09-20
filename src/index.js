@@ -10,6 +10,7 @@ import {
    faEnvelope,
    faXmark,
    faArrowUpRightFromSquare,
+   faArrowDown,
 } from '@fortawesome/free-solid-svg-icons';
 import {
    faLinkedin,
@@ -31,7 +32,8 @@ library.add(
    faGithub,
    faEnvelope,
    faXmark,
-   faArrowUpRightFromSquare
+   faArrowUpRightFromSquare,
+   faArrowDown
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

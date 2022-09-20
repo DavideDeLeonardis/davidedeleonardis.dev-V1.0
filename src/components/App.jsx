@@ -42,7 +42,7 @@ const App = () => {
             <Route
                path="archive"
                element={
-                  <Layout home={false}>
+                  <Layout isHome={false}>
                      <Archive />
                   </Layout>
                }
