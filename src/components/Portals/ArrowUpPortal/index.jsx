@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Portal from '../../ui/Portal';
+import Portal from '../';
 
 import './index.scss';
 

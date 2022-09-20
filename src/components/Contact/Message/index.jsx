@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Portal from '../../ui/Portal';
-
+import Portal from '../../portals';
 import classes from './index.module.scss';
 
 const Message = ({ message, isValid, onHideMessage }) => {

@@ -1,4 +1,4 @@
-import Portal from '../Portal';
+import Portal from '../../portals';
 import Backdrop from '../Backdrop';
 
 import classes from './index.module.scss';

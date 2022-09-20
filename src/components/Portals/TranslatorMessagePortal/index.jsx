@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Portal from '../../ui/Portal';
+import Portal from '../index';
 
 import classes from './index.module.scss';
 
