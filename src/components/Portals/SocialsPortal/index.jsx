@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Portal from '../../ui/Portal';
 import { socials } from '../../../assets/config/mySocials';
 
 import classes from './index.module.scss';
@@ -21,7 +22,11 @@ const SocialsPortal = () => {
       </div>
    ));
 
-   return <div className={classes['aside-container']}>{socialList}</div>;
+   return (
+      <Portal>
+         <div className={classes['aside-container']}>{socialList}</div>
+      </Portal>
+   );
 };
 
 export default SocialsPortal;

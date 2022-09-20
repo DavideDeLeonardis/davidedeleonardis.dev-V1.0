@@ -1,12 +1,11 @@
-import ReactDOM from 'react-dom';
-
+import Portal from '../Portal';
 import Backdrop from '../Backdrop';
 
 import classes from './index.module.scss';
 
 const CardPortal = ({ children, backdropIsShown, onClose, scaleDown }) => {
-   return ReactDOM.createPortal(
-      <>
+   return (
+      <Portal>
          {backdropIsShown && <Backdrop onClose={onClose} isBlack />}
          <div
             className={`
@@ -15,8 +14,7 @@ const CardPortal = ({ children, backdropIsShown, onClose, scaleDown }) => {
          >
             {children}
          </div>
-      </>,
-      document.getElementById('overlays')
+      </Portal>
    );
 };
 

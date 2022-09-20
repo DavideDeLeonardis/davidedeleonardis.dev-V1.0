@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import Portal from '../../ui/Portal';
+
 import classes from './index.module.scss';
 
 const TranslatorMessagePortal = (showHome = false) => {
@@ -11,10 +13,12 @@ const TranslatorMessagePortal = (showHome = false) => {
    }, [showHome]);
 
    return messageIsvisible ? (
-      <div className={classes.container}>
-         Translator at the bottom <br />
-         <a href="#footer">VAI</a>
-      </div>
+      <Portal>
+         <div className={classes.container}>
+            Translator at the bottom <br />
+            <a href="#footer">VAI</a>
+         </div>
+      </Portal>
    ) : null;
 };
 

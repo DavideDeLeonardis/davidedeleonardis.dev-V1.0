@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Splash from './pages/Splash';
@@ -8,6 +7,7 @@ import Project from './pages/MainProject';
 import Archive from './pages/Archive';
 import Layout from './layout/Layout';
 import PopUpMessage from './portals/TranslatorMessagePortal';
+import ArrowUp from './portals/ArrowUpPortal';
 
 import '../assets/scss/index.scss';
 
@@ -18,11 +18,6 @@ const App = () => {
       setTimeout(() => setShowHome(true), 1); // 5100
    }, []);
 
-   const translatorPopUp = ReactDOM.createPortal(
-      <PopUpMessage showHome={showHome} />,
-      document.getElementById('overlays')
-   );
-
    return showHome ? (
       <Routes>
          <Route path="/">
@@ -30,8 +25,9 @@ const App = () => {
                index
                element={
                   <Layout isHome>
-                     {translatorPopUp}
                      <Home />
+                     <PopUpMessage showHome={showHome} />
+                     <ArrowUp />
                   </Layout>
                }
             />

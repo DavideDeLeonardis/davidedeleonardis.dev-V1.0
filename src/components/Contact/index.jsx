@@ -125,7 +125,7 @@ const ContactPage = () => {
                errorDescription={t('contact.errorEmail')}
             />
 
-				{/* Textarea */}
+            {/* Textarea */}
             <div className={classes['input-container']}>
                <TextareaAutosize
                   value={valueTextArea}
@@ -137,7 +137,7 @@ const ContactPage = () => {
                />
             </div>
 
-				{/* Send button */}
+            {/* Send button */}
             <div className={classes['button-container']}>
                <Button
                   disabled={!formIsValid}
@@ -158,7 +158,7 @@ const ContactPage = () => {
             </div>
          </form>
 
-			{/* Response message */}
+         {/* Response message */}
          <Message
             message={message}
             isValid={isValid}
