@@ -19,12 +19,14 @@ const TranslatorMessagePortal = (showHome = false) => {
 
    return messageIsvisible ? (
       <Portal>
-         <div className={classes.container}>
-            <FontAwesomeIcon
-               icon="fa-solid fa-arrow-down"
-               className={classes.icon}
-            />
-            <a href="#footer">Go to translator</a>
+         <div className={classes.container} onClick={hideMessageHandler}>
+            <a href="#footer">
+               <FontAwesomeIcon
+                  icon="fa-solid fa-arrow-down"
+                  className={classes.icon}
+               />
+               Go to translator
+            </a>
             <div className={classes.x} onClick={hideMessageHandler}>
                <FontAwesomeIcon icon="fa-solid fa-xmark" />
             </div>

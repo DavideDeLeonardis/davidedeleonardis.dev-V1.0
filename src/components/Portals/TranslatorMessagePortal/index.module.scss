@@ -3,7 +3,6 @@
    bottom: 30px;
    right: 15px;
    z-index: 50;
-   padding: 10px 20px;
    color: #ffffff;
    background-color: var(--primary-color);
    transform: translateX(20rem);
@@ -19,18 +18,25 @@
       }
    }
 
-   .icon {
-      margin-right: 7.5px;
-      transition: 200ms;
+   a {
+      display: inline-block;
+      padding: 10px 20px;
+		
+		.icon {
+			margin-right: 7.5px;
+			transition: 200ms;
+		}
+	
+		&:hover .icon {
+			scale: 1.3;
+		}
    }
 
-   &:hover .icon {
-      scale: 1.3;
-   }
 
    .x {
       position: absolute;
       top: -8px;
+      z-index: 100;
       right: -8px;
       color: #000000;
       background-color: #ffffff;

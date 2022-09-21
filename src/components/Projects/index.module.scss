@@ -315,13 +315,9 @@ $transition-image-time: 200ms;
       // Other projects
       .other-project {
          position: relative;
-         width: calc(25% - $gap-pojects);
+         width: calc(33% - $gap-pojects);
          opacity: 0;
          overflow: hidden;
-
-         @media screen and (max-width: calc($lg-bk - 1px)) {
-            width: calc(33% - $gap-pojects);
-         }
 
          @media screen and (max-width: $md-bk) {
             @include mixin.flex($direction: column-reverse);
@@ -354,7 +350,7 @@ $transition-image-time: 200ms;
                transform: translate(-50%, -50%);
                z-index: 1;
                width: 105%;
-               padding: 100px 15px;
+               padding: 100% 15px;
                text-align: center;
             }
 
@@ -443,6 +439,7 @@ $transition-image-time: 200ms;
 
          // Reveal animation
          animation: reveal 500ms forwards;
+			animation-delay: 10ms;
 
          &:nth-child(2) {
             animation-delay: 50ms;

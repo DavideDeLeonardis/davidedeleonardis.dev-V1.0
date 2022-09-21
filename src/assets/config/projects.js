@@ -19,11 +19,12 @@ const useProjects = () => {
             'Braintree',
             'SCSS',
          ],
-         language: 'PHP',
+         languages: ['PHP / ', 'Vue'],
          url: 'https://lit-atoll-37130.herokuapp.com',
          github_url: 'https://github.com/DavideDeLeonardis/deliveboo',
          isFeatured: true,
          isMain: true,
+			isArchived: false
       },
       {
          // laravel-boolpress
@@ -40,11 +41,12 @@ const useProjects = () => {
             'Authentication',
             'SCSS',
          ],
-         language: 'PHP',
+         languages: ['PHP / ', 'Vue'],
          url: 'https://limitless-basin-36680.herokuapp.com',
          github_url: 'https://github.com/DavideDeLeonardis/laravel-boolpress',
          isFeatured: false,
          isMain: true,
+			isArchived: false
       },
       {
          // vue-netflix
@@ -54,11 +56,12 @@ const useProjects = () => {
          description: t('projects.vue_netflix.short_d'),
          long_description: t('projects.vue_netflix.long_d'),
          topics: ['Vuejs', 'SCSS', 'API'],
-         language: 'Vue',
+         languages: ['Vue'],
          url: 'https://vue-boolflix.web.app',
          github_url: 'https://github.com/DavideDeLeonardis/vue-netflix',
          isFeatured: false,
          isMain: true,
+			isArchived: false
       },
       {
          // react-amazon
@@ -68,68 +71,12 @@ const useProjects = () => {
          description: t('projects.react_amazon.short_d'),
          long_description: null,
          topics: ['React', 'React context', 'SCSS', 'Firebase database'],
-         language: 'React',
+         languages: ['React'],
          url: 'https://react--clone-d9242.web.app/',
          github_url: 'https://github.com/DavideDeLeonardis/amazon-react',
          isFeatured: false,
          isMain: false,
-      },
-      {
-         // portfolio V-1.0
-         id: 521026706,
-         name: 'DavideDeLeonardis.dev V1.0',
-         image: require('../images/projects/portfolio-v1.0.png'),
-         description: t('projects.portfolio.short_d'),
-         long_description: null,
-         topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
-         language: 'React',
-         url: null,
-         github_url:
-            'https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0',
-         isFeatured: false,
-         isMain: false,
-      },
-      {
-         // vue-instagram
-         id: 507411259,
-         name: 'Vue Instagram',
-         image: require('../images/projects/vue-instagram.png'),
-         description: t('projects.vue_instagram.short_d'),
-         long_description: null,
-         topics: ['Vue.js', 'SCSS'],
-         language: 'Vue',
-         url: 'https://vue-boolgram.web.app/',
-         github_url: 'https://github.com/DavideDeLeonardis/vue-instagram',
-         isFeatured: false,
-         isMain: false,
-      },
-      {
-         // avada-consultant
-         id: 451409349,
-         name: 'Avada Consultant',
-         image: require('../images/projects/vue-proj-vuejs.png'),
-         description: t('projects.avada_consultant.short_d'),
-         long_description: null,
-         topics: ['Vue.js', 'SCSS'],
-         language: 'Vue',
-         url: 'https://proj-vuejs.web.app/',
-         github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
-         isFeatured: false,
-         isMain: false,
-      },
-      {
-         // vue-boolzapp
-         id: 440119535,
-         name: 'Vue Boolzapp',
-         image: require('../images/projects/vue-boolzapp.png'),
-         description: t('projects.vue_boolzapp.short_d'),
-         long_description: null,
-         topics: ['HTML', 'CSS', 'Vue.js'],
-         language: 'Vue',
-         url: 'https://vue-boolzapp.firebaseapp.com',
-         github_url: 'https://github.com/DavideDeLeonardis/boolzapp-vue',
-         isFeatured: false,
-         isMain: false,
+			isArchived: false
       },
       {
          // react-auth-test
@@ -139,11 +86,89 @@ const useProjects = () => {
          description: t('projects.react_auth_test.short_d'),
          long_description: null,
          topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
-         language: 'React',
+         languages: ['React'],
          url: null,
          github_url: 'https://github.com/DavideDeLeonardis/react-auth',
          isFeatured: false,
          isMain: false,
+			isArchived: false
+      },
+      {
+         // avada-consultant
+         id: 451409349,
+         name: 'Avada Consultant',
+         image: require('../images/projects/vue-proj-vuejs.png'),
+         description: t('projects.avada_consultant.short_d'),
+         long_description: null,
+         topics: ['Vue.js', 'SCSS'],
+         languages: ['Vue'],
+         url: 'https://proj-vuejs.web.app/',
+         github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
+         isFeatured: false,
+         isMain: false,
+			isArchived: false
+      },
+      {
+         // vue-instagram
+         id: 507411259,
+         name: 'Vue Instagram',
+         image: require('../images/projects/vue-instagram.png'),
+         description: t('projects.vue_instagram.short_d'),
+         long_description: null,
+         topics: ['Vue.js', 'SCSS'],
+         languages: ['Vue'],
+         url: 'https://vue-boolgram.web.app/',
+         github_url: 'https://github.com/DavideDeLeonardis/vue-instagram',
+         isFeatured: false,
+         isMain: false,
+			isArchived: false
+      },
+      {
+         // portfolio V-1.0
+         id: 521026706,
+         name: 'DavideDeLeonardis.dev V1.0',
+         image: require('../images/projects/portfolio-v1.0.png'),
+         description: t('projects.portfolio.short_d'),
+         long_description: null,
+         topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
+         languages: ['React'],
+         url: null,
+         github_url:
+            'https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0',
+         isFeatured: false,
+         isMain: false,
+			isArchived: false
+      },
+      {
+         // react-TS-select-component
+         id: 34117123,
+         name: 'React TS Select Component',
+         image: null,
+         description: t('projects.react_ts_select_component.short_d'),
+         long_description: null,
+         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
+         languages: ['React', 'TS'],
+         url: null,
+         github_url:
+            'https://github.com/DavideDeLeonardis/react-TS-select-component',
+         isFeatured: false,
+         isMain: false,
+			isArchived: false
+      },
+      {
+         // vue-boolzapp
+         id: 440119535,
+         name: 'Vue Boolzapp',
+         image: require('../images/projects/vue-boolzapp.png'),
+         description: t('projects.vue_boolzapp.short_d'),
+         long_description: null,
+         topics: ['HTML', 'CSS', 'Vue.js'],
+         languages: ['Vue'],
+         url: 'https://vue-boolzapp.firebaseapp.com',
+         github_url: 'https://github.com/DavideDeLeonardis/boolzapp-vue',
+         isFeatured: false,
+         isMain: false,
+			isArchived: false
       },
       {
          // laravel-comics
@@ -153,25 +178,27 @@ const useProjects = () => {
          description: t('projects.laravel_comics.short_d'),
          long_description: null,
          topics: ['Laravel', 'Blade'],
-         language: 'Laravel',
+         languages: ['Laravel'],
          url: 'https://ancient-spire-31420.herokuapp.com/',
          github_url: 'https://github.com/DavideDeLeonardis/laravel-comics',
          isFeatured: false,
          isMain: false,
+			isArchived: false
       },
       {
          // minefield-game
          id: 434247273,
-         name: 'Minefield game',
+         name: 'JS Minefield game',
          image: require('../images/projects/minefield-game.png'),
          description: t('projects.minefield_game.short_d'),
          long_description: null,
          topics: ['HTML', 'CSS', 'JavaScript'],
-         language: 'JavaScript',
+         languages: ['JS'],
          url: 'https://minefield-game-4f94b.web.app/',
          github_url: 'https://github.com/DavideDeLeonardis/minefield-game',
          isFeatured: false,
          isMain: false,
+			isArchived: false
       },
    ];
 };

@@ -31,12 +31,14 @@ const ProjectItem = ({ project, isMain }) => {
 
    const setIsLoadedHandler = () => setIsLoaded(true);
 
-   // Project's topics
-   const topics = project.topics.map((topic, index) => (
-      <li key={index} className={classes.topic}>
-         {topic}
-      </li>
-   ));
+   // Display topics and languages
+   const displayMaps = (array, className) => {
+      return project[array].map((element, key) => (
+         <li key={key} className={className}>
+            {element}
+         </li>
+      ));
+   };
 
    // All projects' info
    const projectInfo = (
@@ -54,7 +56,9 @@ const ProjectItem = ({ project, isMain }) => {
             </Trans>
          </p>
 
-         <ul className={classes['topic-container']}>{topics}</ul>
+         <ul className={classes['topic-container']}>
+            {displayMaps('topics', classes.topic)}
+         </ul>
 
          <div className={classes['project-bottom']}>
             {isMain ? (
@@ -143,8 +147,14 @@ const ProjectItem = ({ project, isMain }) => {
                {isMain ? (
                   <>
                      <div className={classes.language}>
-                        <span>{t('main_projects.main_l')}</span>
-                        <span className={classes.lang}>{project.language}</span>
+                        <span>
+                           {project.languages.length <= 1
+                              ? t('main_projects.main_ls')
+                              : t('main_projects.main_lp')}
+                        </span>
+                        <ul className={classes.lang}>
+                           {displayMaps('languages')}
+                        </ul>
                      </div>
                      {projectInfo}
                   </>
@@ -172,7 +182,9 @@ const ProjectItem = ({ project, isMain }) => {
                }
             >
                <img
-                  src={isLoaded ? project.image : default_image}
+                  src={
+                     isLoaded ? project.image || default_image : default_image
+                  }
                   alt={`${project.name} project from Davide De Leonardis`}
                   onLoad={setIsLoadedHandler}
                />

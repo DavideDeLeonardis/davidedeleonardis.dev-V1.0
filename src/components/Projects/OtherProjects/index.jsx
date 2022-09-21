@@ -19,6 +19,7 @@ const OtherProjects = () => {
    const { isActive, isActiveHandler } = useActive(
       t('other_projects.selectAll')
    );
+   const JSTS = 'JS / TS';
 
    // Filter projects NOT main
    const filteredProjects = projectsInfo.filter((project) => !project.isMain);
@@ -33,10 +34,27 @@ const OtherProjects = () => {
    const getLanguages = () => {
       let programmingLanguages = [t('other_projects.selectAll') /* All */];
       filteredProjects.forEach((project) => {
-         if (!programmingLanguages.includes(project.language)) {
-            programmingLanguages.push(project.language);
+         // Creation new mix JS / TS
+         if (
+            project.languages.includes('JS' || 'TS') &&
+            !programmingLanguages.includes(JSTS)
+         )
+            programmingLanguages.push(JSTS);
+
+         for (const language of project.languages) {
+            if (
+               language !== 'JS' &&
+               language !== 'TS' &&
+               !programmingLanguages.includes(language)
+            ) {
+               programmingLanguages.push(language);
+            }
          }
       });
+
+      // Move Laravel at the end
+      programmingLanguages.splice(3, 1);
+      programmingLanguages.push('Laravel');
 
       return programmingLanguages;
    };
@@ -45,11 +63,21 @@ const OtherProjects = () => {
    const filterProject = (language) => {
       hideProjectsHandler();
 
-      if (language === t('other_projects.selectAll')) {
+      if (language === t('other_projects.selectAll' /* All */)) {
          setProjectsByLanguage(filteredProjects);
+      } else if (language === JSTS) {
+         setProjectsByLanguage(
+            filteredProjects.filter(
+               (project) =>
+                  project.languages.includes('JS') ||
+                  project.languages.includes('TS')
+            )
+         );
       } else {
          setProjectsByLanguage(
-            filteredProjects.filter((project) => project.language === language)
+            filteredProjects.filter((project) =>
+               project.languages.includes(language)
+            )
          );
       }
    };
@@ -76,8 +104,7 @@ const OtherProjects = () => {
 
    // Display actual projects based on show more button actions
    const getProjects = () => {
-      let otherProjectsShown = 4;
-      if (screenWidth < 992) otherProjectsShown = 3;
+      let otherProjectsShown = 3;
       if (screenWidth < 769) otherProjectsShown = 2;
 
       if (projectsByLanguage.length === 0) {
@@ -95,10 +122,6 @@ const OtherProjects = () => {
    const showMoreProjectsButton = () => {
       if (
          (projectsAreSliced &&
-            screenWidth > 991 &&
-            (getProjects().length < 4 || projectsByLanguage.length === 4)) ||
-         (projectsAreSliced &&
-            screenWidth < 992 &&
             screenWidth > 768 &&
             (getProjects().length < 3 || projectsByLanguage.length === 3)) ||
          (projectsAreSliced &&
