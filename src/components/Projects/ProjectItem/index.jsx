@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import CardPortal from '../../ui/CardPortal';
 import Button from '../../ui/Button';
+import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
 import default_image from '../../../assets/images/default.png';
 
 import classes from '../index.module.scss';
@@ -71,35 +71,11 @@ const ProjectItem = ({ project, isMain }) => {
             ) : (
                <>
                   <div className={classes['project-links']}>
-                     {/* See demo button  */}
-                     {project.url !== null && (
-                        <a href={project.url} target="_blank" rel="noreferrer">
-                           <Button>
-                              {t('projects.see_demo')}
-                              <FontAwesomeIcon
-                                 className={classes.icon}
-                                 icon="fa-solid fa-arrow-up-right-from-square"
-                              />
-                           </Button>
-                        </a>
-                     )}
-
-                     {/* See on GitHub button */}
-                     {project.github_url !== null && (
-                        <a
-                           href={project.github_url}
-                           target="_blank"
-                           rel="noreferrer"
-                        >
-                           <Button>
-                              {t('projects.see_github')}
-                              <FontAwesomeIcon
-                                 className={classes.icon}
-                                 icon="fa-brands fa-github"
-                              />
-                           </Button>
-                        </a>
-                     )}
+                     {/* Buttons see demo and see gitHub */}
+                     <SeeDemoGitHubButtons
+                        project={project}
+                        className={classes.icon}
+                     />
                   </div>
 
                   {/* Close details other project button */}

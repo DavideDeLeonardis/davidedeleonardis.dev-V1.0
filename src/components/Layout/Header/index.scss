@@ -122,8 +122,8 @@ header {
       color: var(--secondary-color);
       margin-top: 30px;
       transform: translateX(20rem);
-      animation-delay: $menu-slide-time + 200ms;
       animation: slide-to-left $menu-slide-time ease-out forwards;
+      animation-delay: $menu-slide-time + 200ms;
 
       &:hover {
          color: #ffffff;

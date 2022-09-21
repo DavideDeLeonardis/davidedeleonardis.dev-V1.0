@@ -31,14 +31,17 @@ const App = () => {
                   </Layout>
                }
             />
-            <Route
-               path="projects/:project"
-               element={
-                  <Layout isHome={false}>
-                     <Project />
-                  </Layout>
-               }
-            />
+            <Route path="projects/">
+               <Route
+                  path=":project"
+                  element={
+                     <Layout isHome={false}>
+                        <Project />
+                     </Layout>
+                  }
+               />
+               <Route index element={<Navigate replace to="/" />} />
+            </Route>
             <Route
                path="archive"
                element={

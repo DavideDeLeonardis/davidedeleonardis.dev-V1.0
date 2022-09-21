@@ -37,17 +37,18 @@ export const translationsEn = {
    projects: {
       deliveboo: {
          short_d:
-            'Deliveboo is a food delivery web app that allows customers to order from their favorite restaurants inserting only the data necessary for delivery. Restaurateurs can register in the platform and create, modify and delete dishes based also on the statistics displayed in the personal area.',
+            'Food delivery web app made with Laravel and Vue.js; customers can order from their favourite restaurants through a simulated Braintree payment gateway, and restaurateurs can register and insert dishes based also on the statistics displayed in their personal area.',
          // FINIRE
-         long_d: 'Long description deliveboo',
+         long_d:
+            'Deliveboo is a food delivery web app that allows customers to order from their favorite restaurants inserting only the data necessary for delivery. Restaurateurs can register in the platform and create, modify and delete dishes based also on the statistics displayed in the personal area and the history of orders. Customers can simulate payment through a Braintree payment integration and restaurateurs can view statistics of their activiy from a chart made with Chart.js. The entire app is build with Laravel fetching a MySQL database, while pages are created with Blade for the back-office and Vue.js for the front-office.',
       },
-      boolpress: {
+      laravel_boolpress: {
          short_d:
             "Content Management System made with Laravel and MVC pattern, possibility of authentication and registration with multiple privileges; posts are viewable, editable or deletable based on the user's role.",
          // FINIRE
-         long_d: 'Long description boolpress',
+         long_d: 'Long description laravel-boolpress',
       },
-      netflix: {
+      vue_netflix: {
          short_d:
             "Netflix home page clone in Vue.js; select a category and search your favourite movies! Possibility of see movie's details.",
          // FINIRE
@@ -157,15 +158,15 @@ export const translationsIt = {
          short_d:
             "Deliveboo è una web app che permette di ordinare dai propri ristoranti preferiti inserendo solamente i dati necessari per la consegna. I ristoratori possono registrarsi sulla piattaforma e creare, modificare e eliminare i piatti, basandosi anche sulle statistiche mostrate nell'area personale.",
          // FINIRE
-         long_d: 'Corta descrizione deliveboo',
+         long_d: 'Lunga descrizione deliveboo',
       },
-      boolpress: {
+      laravel_boolpress: {
          short_d:
             'Content Management System creato con Laravel e pattern MVC, possibilità di autenticazione e registrazione con privilegi multipli; i post sono visitabili, modificabili e eliminabili in base al roulo stabilito.',
          // FINIRE
-         long_d: 'Lunga descrizione boolpress',
+         long_d: 'Lunga descrizione laravel-boolpress',
       },
-      netflix: {
+      vue_netflix: {
          short_d:
             'Homepage di Netflix in Vue.js; seleziona una categoria e cerca i tuoi film preferiti! Possibilità di vedere i dettagli del singolo film.',
          // FINIRE
