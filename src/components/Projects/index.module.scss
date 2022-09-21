@@ -382,6 +382,7 @@ $transition-image-time: 200ms;
             .lang {
                scale: 0.1;
                opacity: 0;
+               color: #b4b4b4;
                margin-top: 7.5px;
                font-size: 1.1em;
 
@@ -610,7 +611,7 @@ $transition-image-time: 200ms;
       &.slash::after {
          content: '/';
          position: absolute;
-         right: -9.5px;
+         right: -1px;
       }
    }
 }

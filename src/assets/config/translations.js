@@ -56,6 +56,7 @@ export const translationsEn = {
          long_d: 'Long description netflix',
       },
       portfolio: {
+         // FINIRE
          short_d:
             'Portfolio website V1.0 made with React.js. <technicals>- Portfolio previous version fetched GitHub API in order to render my repositories (branch still visible), actually projects are defined in a custom hook for translator integration.</technicals>',
          long_d: null,
@@ -95,6 +96,7 @@ export const translationsEn = {
          long_d: null,
       },
       react_ts_select_component: {
+         // FINIRE
          short_d: '',
          long_d: null,
       },
@@ -179,6 +181,7 @@ export const translationsIt = {
          long_d: 'Lunga descrizione netflix',
       },
       portfolio: {
+         // FINIRE
          short_d:
             "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub renderizzando le mie repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook per poter integrare l'hook del traduttore.</technicals>",
          long_d: null,
@@ -219,8 +222,8 @@ export const translationsIt = {
          long_d: null,
       },
       react_ts_select_component: {
-         short_d:
-            '',
+         // FINIRE
+         short_d: '',
          long_d: null,
       },
       show_details: 'Mostra Dettagli',

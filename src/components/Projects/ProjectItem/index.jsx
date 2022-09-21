@@ -34,17 +34,18 @@ const ProjectItem = ({ project, isMain }) => {
    // Display topics and languages
    const displayMaps = (array, className) => {
       return project[array].map((element, key) => (
-         <>
-            <li
-               key={key}
-               className={`${className} ${
-                  project[array].length > 1 && classes.slash
-               }`}
-            >
-               {array === 'languages' ? element.toUpperCase() : element}
-            </li>
-            {array === 'languages' && <>&nbsp;</>}
-         </>
+         <li
+            key={key}
+            className={`${className} ${
+               project[array].length > 1 && classes.slash
+            }`}
+         >
+            {array === 'languages' ? (
+               <>{element.toUpperCase()}&nbsp;&nbsp;</>
+            ) : (
+               element
+            )}
+         </li>
       ));
    };
 
