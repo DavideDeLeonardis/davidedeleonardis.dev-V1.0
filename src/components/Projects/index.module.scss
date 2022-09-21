@@ -319,14 +319,18 @@ $transition-image-time: 200ms;
          opacity: 0;
          overflow: hidden;
 
-         @media screen and (max-width: $md-bk) {
-            @include mixin.flex($direction: column-reverse);
+         @media screen and (max-width: 900px) {
+            @include mixin.flex($direction: column-reverse, $justify: flex-end);
             width: calc(50% - $gap-pojects);
-            margin-bottom: 35px;
+            // margin-bottom: 35px;
             box-shadow: 0px 4px 10px -5px #000000;
          }
 
-         @media screen and (max-width: 600px) {
+         @media screen and (max-width: $md-bk) {
+            margin-bottom: 35px;
+         }
+
+         @media screen and (max-width: 550px) {
             width: 100%;
          }
 
@@ -355,7 +359,7 @@ $transition-image-time: 200ms;
             }
 
             @media screen and (max-width: $md-bk) {
-               padding: 10px 10px 0 10px;
+               padding: 20px 5px 0 5px;
             }
 
             h2 {
@@ -371,6 +375,22 @@ $transition-image-time: 200ms;
 
                @media screen and (max-width: $md-bk) {
                   transform: translateX(0);
+                  opacity: 1;
+               }
+            }
+
+            .lang {
+               scale: 0.1;
+               opacity: 0;
+               margin-top: 7.5px;
+               font-size: 1.1em;
+
+               li {
+                  display: inline-block;
+               }
+
+               @media screen and (max-width: $md-bk) {
+                  scale: 1;
                   opacity: 1;
                }
             }
@@ -400,7 +420,8 @@ $transition-image-time: 200ms;
                   transition: 200ms;
                }
 
-               h2 {
+               h2,
+               .learn-more {
                   animation: slide-left 500ms ease forwards;
 
                   @keyframes slide-left {
@@ -415,12 +436,12 @@ $transition-image-time: 200ms;
                   }
                }
 
-               .learn-more {
-                  animation: slide-right 500ms ease forwards;
+               .lang {
+                  animation: scale 350ms forwards;
 
-                  @keyframes slide-right {
+                  @keyframes scale {
                      to {
-                        transform: translateY(0);
+                        scale: 1;
                         opacity: 1;
                      }
                   }
@@ -439,7 +460,7 @@ $transition-image-time: 200ms;
 
          // Reveal animation
          animation: reveal 500ms forwards;
-			animation-delay: 10ms;
+         animation-delay: 10ms;
 
          &:nth-child(2) {
             animation-delay: 50ms;
@@ -583,12 +604,15 @@ $transition-image-time: 200ms;
 .lang {
    @include mixin.flex($justify: center, $gap: 5px);
 
-   // .color-language {
-   //    display: inline-block;
-   //    width: 25px;
-   //    height: 25px;
-   //    border-radius: 50%;
-   // }
+   li:first-child {
+      position: relative;
+
+      &.slash::after {
+         content: '/';
+         position: absolute;
+         right: -9.5px;
+      }
+   }
 }
 
 .topic-container {

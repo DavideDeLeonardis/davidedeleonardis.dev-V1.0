@@ -105,7 +105,7 @@ const OtherProjects = () => {
    // Display actual projects based on show more button actions
    const getProjects = () => {
       let otherProjectsShown = 3;
-      if (screenWidth < 769) otherProjectsShown = 2;
+      if (screenWidth < 901) otherProjectsShown = 2;
 
       if (projectsByLanguage.length === 0) {
          if (!projectsAreSliced) return filteredProjects;
@@ -122,10 +122,10 @@ const OtherProjects = () => {
    const showMoreProjectsButton = () => {
       if (
          (projectsAreSliced &&
-            screenWidth > 768 &&
+            screenWidth > 900 &&
             (getProjects().length < 3 || projectsByLanguage.length === 3)) ||
          (projectsAreSliced &&
-            screenWidth < 769 &&
+            screenWidth < 901 &&
             (getProjects().length < 2 || projectsByLanguage.length === 2))
       ) {
          return;

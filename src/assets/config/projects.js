@@ -19,12 +19,12 @@ const useProjects = () => {
             'Braintree',
             'SCSS',
          ],
-         languages: ['PHP / ', 'Vue'],
+         languages: ['PHP', 'Vue'],
          url: 'https://lit-atoll-37130.herokuapp.com',
          github_url: 'https://github.com/DavideDeLeonardis/deliveboo',
          isFeatured: true,
          isMain: true,
-			isArchived: false
+         isArchived: false,
       },
       {
          // laravel-boolpress
@@ -41,12 +41,12 @@ const useProjects = () => {
             'Authentication',
             'SCSS',
          ],
-         languages: ['PHP / ', 'Vue'],
+         languages: ['PHP', 'Vue'],
          url: 'https://limitless-basin-36680.herokuapp.com',
          github_url: 'https://github.com/DavideDeLeonardis/laravel-boolpress',
          isFeatured: false,
          isMain: true,
-			isArchived: false
+         isArchived: false,
       },
       {
          // vue-netflix
@@ -61,7 +61,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/vue-netflix',
          isFeatured: false,
          isMain: true,
-			isArchived: false
+         isArchived: false,
       },
       {
          // react-amazon
@@ -76,7 +76,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/amazon-react',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
       },
       {
          // react-auth-test
@@ -91,7 +91,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/react-auth',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
       },
       {
          // avada-consultant
@@ -106,7 +106,39 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
+      },
+      {
+         // portfolio V-1.0
+         id: 521026706,
+         name: 'Portfolio V1.0',
+         image: require('../images/projects/portfolio-v1.0.png'),
+         description: t('projects.portfolio.short_d'),
+         long_description: null,
+         topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
+         languages: ['React'],
+         url: null,
+         github_url:
+            'https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0',
+         isFeatured: false,
+         isMain: false,
+         isArchived: false,
+      },
+      {
+         // react-TS-select-component
+         id: 34117123,
+         name: 'Custom Select Component',
+         image: require('../images/projects/select-component.png'),
+         description: t('projects.react_ts_select_component.short_d'),
+         long_description: null,
+         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
+         languages: ['React', 'TS'],
+         url: 'https://react-ts-custom-select.web.app',
+         github_url:
+            'https://github.com/DavideDeLeonardis/react-TS-select-component',
+         isFeatured: false,
+         isMain: false,
+         isArchived: false,
       },
       {
          // vue-instagram
@@ -121,39 +153,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/vue-instagram',
          isFeatured: false,
          isMain: false,
-			isArchived: false
-      },
-      {
-         // portfolio V-1.0
-         id: 521026706,
-         name: 'DavideDeLeonardis.dev V1.0',
-         image: require('../images/projects/portfolio-v1.0.png'),
-         description: t('projects.portfolio.short_d'),
-         long_description: null,
-         topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
-         languages: ['React'],
-         url: null,
-         github_url:
-            'https://github.com/DavideDeLeonardis/davidedeleonardis.dev-V1.0',
-         isFeatured: false,
-         isMain: false,
-			isArchived: false
-      },
-      {
-         // react-TS-select-component
-         id: 34117123,
-         name: 'React TS Select Component',
-         image: null,
-         description: t('projects.react_ts_select_component.short_d'),
-         long_description: null,
-         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
-         languages: ['React', 'TS'],
-         url: null,
-         github_url:
-            'https://github.com/DavideDeLeonardis/react-TS-select-component',
-         isFeatured: false,
-         isMain: false,
-			isArchived: false
+         isArchived: false,
       },
       {
          // vue-boolzapp
@@ -168,7 +168,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/boolzapp-vue',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
       },
       {
          // laravel-comics
@@ -183,7 +183,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/laravel-comics',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
       },
       {
          // minefield-game
@@ -198,7 +198,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/minefield-game',
          isFeatured: false,
          isMain: false,
-			isArchived: false
+         isArchived: false,
       },
    ];
 };

@@ -34,9 +34,17 @@ const ProjectItem = ({ project, isMain }) => {
    // Display topics and languages
    const displayMaps = (array, className) => {
       return project[array].map((element, key) => (
-         <li key={key} className={className}>
-            {element}
-         </li>
+         <>
+            <li
+               key={key}
+               className={`${className} ${
+                  project[array].length > 1 && classes.slash
+               }`}
+            >
+               {array === 'languages' ? element.toUpperCase() : element}
+            </li>
+            {array === 'languages' && <>&nbsp;</>}
+         </>
       ));
    };
 
@@ -122,6 +130,10 @@ const ProjectItem = ({ project, isMain }) => {
       </CardPortal>
    );
 
+   const languages = (
+      <ul className={classes.lang}>{displayMaps('languages')}</ul>
+   );
+
    return (
       <>
          <li
@@ -152,15 +164,13 @@ const ProjectItem = ({ project, isMain }) => {
                               ? t('main_projects.main_ls')
                               : t('main_projects.main_lp')}
                         </span>
-                        <ul className={classes.lang}>
-                           {displayMaps('languages')}
-                        </ul>
+                        {languages}
                      </div>
                      {projectInfo}
                   </>
                ) : (
                   <>
-                     <br />
+                     {languages}
                      <Button
                         className={classes['learn-more']}
                         onClick={showDetailsHandler}
