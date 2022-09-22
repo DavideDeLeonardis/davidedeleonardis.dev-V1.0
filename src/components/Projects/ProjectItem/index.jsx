@@ -106,7 +106,10 @@ const ProjectItem = ({ project, isMain }) => {
 
    // Background position other projects' details
    const getPosition = () => {
-      if (project.id === 521026706 /* Id project portfolio V-1.0 */)
+      if (
+         project.id === 521026706 /* portfolio */ ||
+         project.id === 34117123 /* custom-select */
+      )
          return 'center center';
       return 'top center';
    };

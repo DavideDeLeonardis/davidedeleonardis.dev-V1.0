@@ -36,15 +36,15 @@ const OtherProjects = () => {
       filteredProjects.forEach((project) => {
          // Creation new mix JS / TS
          if (
-            project.languages.includes('JS' || 'TS') &&
+            project.languages.includes('JavaScript' || 'TypeScript') &&
             !programmingLanguages.includes(JSTS)
          )
             programmingLanguages.push(JSTS);
 
          for (const language of project.languages) {
             if (
-               language !== 'JS' &&
-               language !== 'TS' &&
+               language !== 'JavaScript' &&
+               language !== 'TypeScript' &&
                !programmingLanguages.includes(language)
             ) {
                programmingLanguages.push(language);
@@ -53,8 +53,9 @@ const OtherProjects = () => {
       });
 
       // Move Laravel at the end
+      const laravel = programmingLanguages[3];
       programmingLanguages.splice(3, 1);
-      programmingLanguages.push('Laravel');
+      programmingLanguages.push(laravel);
 
       return programmingLanguages;
    };
@@ -69,8 +70,8 @@ const OtherProjects = () => {
          setProjectsByLanguage(
             filteredProjects.filter(
                (project) =>
-                  project.languages.includes('JS') ||
-                  project.languages.includes('TS')
+                  project.languages.includes('JavaScript') ||
+                  project.languages.includes('TypeScript')
             )
          );
       } else {

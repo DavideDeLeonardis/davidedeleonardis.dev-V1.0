@@ -56,9 +56,8 @@ export const translationsEn = {
          long_d: 'Long description netflix',
       },
       portfolio: {
-         // FINIRE
          short_d:
-            'Portfolio website V1.0 made with React.js. <technicals>- Portfolio previous version fetched GitHub API in order to render my repositories (branch still visible), actually projects are defined in a custom hook for translator integration.</technicals>',
+            'Portfolio website V1.0 made with React.js. <technicals>- Portfolio previous version fetched GitHub API in order to render repositories (branch still visible), actually projects are defined in a custom hook, also main and other project are the same component with different props and conditions.</technicals>',
          long_d: null,
       },
       react_amazon: {
@@ -96,8 +95,8 @@ export const translationsEn = {
          long_d: null,
       },
       react_ts_select_component: {
-         // FINIRE
-         short_d: '',
+         short_d:
+            'Custom select component made with React.js and TypeScript. <blue>Accessibility commands</blue> through keyboard interactions are available both in <blue>single and multiple selection</blue>. <technicals>Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.</technicals>',
          long_d: null,
       },
       show_details: 'Show Details',
@@ -181,9 +180,8 @@ export const translationsIt = {
          long_d: 'Lunga descrizione netflix',
       },
       portfolio: {
-         // FINIRE
          short_d:
-            "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub renderizzando le mie repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook per poter integrare l'hook del traduttore.</technicals>",
+            "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub renderizzando le repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook e per renderizzare tutti i progetti è stato usato un solo componente con diverse props e condizioni.</technicals>",
          long_d: null,
       },
       react_amazon: {
@@ -222,8 +220,8 @@ export const translationsIt = {
          long_d: null,
       },
       react_ts_select_component: {
-         // FINIRE
-         short_d: '',
+         short_d:
+            "Componente custom di selezione <blue>singola o multipla</blue> creato con React.js e TypeScript; possibilità di navigare fra gli elementi della pagina e selezionarli tramite <blue>interazione con la tastiera</blue>.<technicals>I comandi di accessibilità sono implementati tramite un custom hook e un'useRef hook; si noti che il componente select è stato creato completamente a mano.</technicals>",
          long_d: null,
       },
       show_details: 'Mostra Dettagli',

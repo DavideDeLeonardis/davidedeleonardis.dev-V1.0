@@ -10,7 +10,7 @@ const TranslatorMessagePortal = (showHome = false) => {
 
    useEffect(() => {
       setMessageIsVisible(true);
-      setTimeout(() => setMessageIsVisible(false), 7000); // 3000ms for animation-delay, 4000ms screen time
+      setTimeout(() => setMessageIsVisible(false), 8000); // 3000ms for animation-delay, 5000ms screen time
    }, [showHome]);
 
    const hideMessageHandler = () => {

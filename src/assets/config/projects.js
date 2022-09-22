@@ -132,7 +132,7 @@ const useProjects = () => {
          description: t('projects.react_ts_select_component.short_d'),
          long_description: null,
          topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
-         languages: ['React', 'TS'],
+         languages: ['React', 'TypeScript'],
          url: 'https://react-ts-custom-select.web.app',
          github_url:
             'https://github.com/DavideDeLeonardis/react-TS-select-component',
@@ -193,7 +193,7 @@ const useProjects = () => {
          description: t('projects.minefield_game.short_d'),
          long_description: null,
          topics: ['HTML', 'CSS', 'JavaScript'],
-         languages: ['JS'],
+         languages: ['JavaScript'],
          url: 'https://minefield-game-4f94b.web.app/',
          github_url: 'https://github.com/DavideDeLeonardis/minefield-game',
          isFeatured: false,
