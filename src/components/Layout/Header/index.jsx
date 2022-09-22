@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import Resume from '../../portals/ResumePortal';
 import Backdrop from '../../ui/Backdrop';
 import Button from '../../ui/Button';
 import useDimensions from '../../../hooks/useDimensions';
+import useWindowScroll from '../../../hooks/useWindowScroll';
 import logo from '../../../assets/images/exagon-logo-blue.png';
 
 import './index.scss';
@@ -17,15 +18,17 @@ const Header = ({ isHome }) => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
+   const [isHover, setIsHover] = useState(false);
+   const { scroll, isGoingDown, setIsGoingDown } = useWindowScroll(false);
    const { screenWidth } = useDimensions();
    const { t } = useTranslation();
 
-   const showMenuHandler = () => {
+   const openMenuHandler = () => {
       setMenuIsShown(true);
       setTogglerIsShown(false);
    };
 
-   const hideMenuHandler = () => {
+   const closeMenuHandler = () => {
       setMenuIsShown(false);
       setTogglerIsShown(true);
    };
@@ -45,10 +48,28 @@ const Header = ({ isHome }) => {
       }, 150);
    };
 
+   const isHoverHandler = () => setIsHover(true);
+
+   const isNotHoverHandler = () => setIsHover(false);
+
+   // Hide menu in Y every 5 seconds
+   useEffect(() => {
+      setTimeout(() => setIsGoingDown(true), 5000);
+   }, [scroll, setIsGoingDown]);
+
+   // Header scroll in Y aniamations
+   const headerClasses = () => {
+      if (!isHome && !isHover && isGoingDown) {
+         return 'scroll-up-header';
+      } else {
+         return 'scroll-down-header';
+      }
+   };
+
    // Actual nav elements
    const navElements = (
       <>
-         <Nav onClose={hideMenuHandler} isHome={isHome} />
+         <Nav onClose={closeMenuHandler} isHome={isHome} />
 
          <Button className="resume-button" onClick={showResumeHandler}>
             <Trans
@@ -69,10 +90,14 @@ const Header = ({ isHome }) => {
    );
 
    return (
-      <header>
+      <header
+         className={headerClasses()}
+         onMouseOver={isHoverHandler}
+         onMouseOut={isNotHoverHandler}
+      >
          {/* backdrop menu vertical */}
          {menuIsShown && screenWidth < 769 && (
-            <Backdrop onClose={hideMenuHandler} isBlack={false} />
+            <Backdrop onClose={closeMenuHandler} isBlack={false} />
          )}
 
          {/* resume portal */}
@@ -91,7 +116,7 @@ const Header = ({ isHome }) => {
 
             {/* toggler */}
             {togglerIsShown && screenWidth < 769 && (
-               <button className="toggler" onClick={showMenuHandler}>
+               <button className="toggler" onClick={openMenuHandler}>
                   <FontAwesomeIcon icon="fa-solid fa-bars" />
                </button>
             )}

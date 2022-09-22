@@ -25,7 +25,7 @@ const Project = () => {
    }, [project, navigate]);
 
    const scrollToBottomHandler = () =>
-      window.scrollTo(0, window.innerHeight - 80 /* header height */);
+      window.scrollTo(0, window.innerHeight);
 
    // Start arrow bounce
    setTimeout(() => setBounce(true), 2000);
@@ -41,13 +41,6 @@ const Project = () => {
             >
                <div className={`main-project-content ${classes.content}`}>
                   <h1>{project.name}</h1>
-                  <p>
-                     {t(
-                        `projects.${project.name
-                           .replace(' ', '_')
-                           .toLowerCase()}.short_d`
-                     )}
-                  </p>
                   <div
                      className={`${classes.down} ${
                         bounce && classes['animation-arrow']

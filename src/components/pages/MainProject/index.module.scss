@@ -3,7 +3,7 @@
 .container-image {
    position: relative;
    width: 100%;
-   height: calc(100vh - var(--header-height));
+   height: 100vh;
    background-size: cover;
    background-position: top center;
    background-repeat: no-repeat;
@@ -55,10 +55,7 @@
 
       h1 {
          font-size: 2.5em;
-      }
-
-      p {
-         margin: 10px 0 25px 0;
+         margin-bottom: 20px;
       }
 
       .down {

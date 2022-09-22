@@ -15,14 +15,24 @@ $nav-el-time: 500ms;
 
 // Header horizontal
 header {
-   position: sticky;
+   position: fixed;
    top: 0;
    left: 0;
+   z-index: 100;
    width: 100%;
    background-color: rgba(10, 10, 65, 0.95);
    padding: 5px 0;
-   z-index: 100;
    box-shadow: 0px 4px 20px -5px #000000;
+
+   &.scroll-up-header {
+      translate: 0 -100px;
+      transition: $menu-slide-time;
+   }
+
+   &.scroll-down-header {
+      translate: 0;
+      transition: $menu-slide-time;
+   }
 
    .header {
       @include mixin.flex($justify: space-between);
