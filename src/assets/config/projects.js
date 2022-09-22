@@ -9,6 +9,7 @@ const useProjects = () => {
          id: 480318106,
          name: 'Deliveboo',
          image: require('../images/projects/deliveboo.png'),
+         video: null,
          description: t('projects.deliveboo.short_d'),
          long_description: t('projects.deliveboo.long_d'),
          topics: [
@@ -31,6 +32,7 @@ const useProjects = () => {
          id: 464647959,
          name: 'Laravel Boolpress',
          image: require('../images/projects/boolpress.png'),
+         video: require('../images/projects/boolpress-video.mov'),
          description: t('projects.laravel_boolpress.short_d'),
          long_description: t('projects.laravel_boolpress.long_d'),
          topics: [
@@ -53,6 +55,7 @@ const useProjects = () => {
          id: 449656740,
          name: 'Vue Netflix',
          image: require('../images/projects/vue-netflix.png'),
+         video: null,
          description: t('projects.vue_netflix.short_d'),
          long_description: t('projects.vue_netflix.long_d'),
          topics: ['Vuejs', 'SCSS', 'API'],

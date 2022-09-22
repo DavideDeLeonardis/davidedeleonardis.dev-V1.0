@@ -24,21 +24,37 @@ const Project = () => {
       window.scrollTo(0, 0);
    }, [project, navigate]);
 
-   const scrollToBottomHandler = () =>
-      window.scrollTo(0, window.innerHeight);
+   const scrollToBottomHandler = () => window.scrollTo(0, window.innerHeight);
 
    // Start arrow bounce
    setTimeout(() => setBounce(true), 2000);
+
+   // Start video onLoad
+   useEffect(() => {
+      document.getElementById('video').play();
+   }, []);
 
    return (
       project && (
          <>
             <div
                className={classes['container-image']}
-               style={{
-                  backgroundImage: `url('${project.image || default_image}')`,
-               }}
+               style={
+                  project.video === null
+                     ? {
+                          backgroundImage: `url('${
+                             project.image || default_image
+                          }')`,
+                          height: '100vh',
+                       }
+                     : {}
+               }
             >
+               <video id="video" autoplay muted loop>
+                  <source src={project.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+               </video>
+
                <div className={`main-project-content ${classes.content}`}>
                   <h1>{project.name}</h1>
                   <div
