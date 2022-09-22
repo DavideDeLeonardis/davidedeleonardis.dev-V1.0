@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../ui/Button';
 import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
 import default_image from '../../../assets/images/default.png';
+import boolpress from '../../../assets/images/projects/boolpress-big.png';
 
 import classes from './index.module.scss';
 
@@ -30,9 +31,7 @@ const Project = () => {
    setTimeout(() => setBounce(true), 2000);
 
    // Start video onLoad
-   useEffect(() => {
-      document.getElementById('video').play();
-   }, []);
+   // useEffect(() => document.getElementById('video').play(), []);
 
    return (
       project && (
@@ -50,10 +49,11 @@ const Project = () => {
                      : {}
                }
             >
-               <video id="video" autoplay muted loop>
+               {/* <video id="video" className="container" autoplay muted loop>
                   <source src={project.video} type="video/mp4" />
                   Your browser does not support the video tag.
-               </video>
+					</video> */}
+               <img className={`container ${classes.bool}`} src={boolpress} alt="" />
 
                <div className={`main-project-content ${classes.content}`}>
                   <h1>{project.name}</h1>
