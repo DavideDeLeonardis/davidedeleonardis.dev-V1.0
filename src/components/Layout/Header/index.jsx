@@ -54,16 +54,15 @@ const Header = ({ isHome }) => {
 
    // Hide menu in Y every 5 seconds
    useEffect(() => {
-      setTimeout(() => setIsGoingDown(true), 5000);
-   }, [scroll, setIsGoingDown]);
+      !isHome && setTimeout(() => setIsGoingDown(true), 5000);
+   }, [isHome, scroll, setIsGoingDown]);
 
    // Header scroll in Y aniamations
    const headerClasses = () => {
-      if (!isHome && !isHover && isGoingDown) {
-         return 'scroll-up-header';
-      } else {
-         return 'scroll-down-header';
-      }
+      if (screenWidth < 550) return;
+
+      if (!isHover && isGoingDown) return 'scroll-up-header';
+      else return 'scroll-down-header';
    };
 
    // Actual nav elements

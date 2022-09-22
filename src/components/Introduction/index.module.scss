@@ -7,18 +7,19 @@ $start-delay-animation: 1550ms;
 
 .presentation {
    @include mixin.flex($direction: column, $align: flex-start);
-   min-height: calc(100vh - var(--header-height));
+   min-height: calc(100vh + var(--header-height));
 
    @media screen and (max-height: 550px) {
-      margin: 75px 0 175px 0;
+      margin: 100px 0 175px 0;
    }
 
-   @media screen and (max-width: 380px) {
-      margin: 75px 0 200px 0;
+   @media screen and (max-width: 400px) {
+      min-height: 100vh;
+      margin: 85px 0 200px 0;
    }
 
    @media screen and (max-width: 320px) {
-      margin: 100px 0 200px 0;
+      margin: 0 0 200px 0;
    }
 
    .hi {
