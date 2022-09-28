@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Skills from './Skills';
 import Heading from '../ui/Heading';
@@ -6,6 +7,7 @@ import profileImage from '../../assets/images/profile.jpg';
 import Certifications from '../../assets/images/Salesforce-Certifications.pdf';
 
 import classes from './index.module.scss';
+import Button from '../ui/Button';
 
 const About = () => {
    const { t } = useTranslation();
@@ -49,6 +51,16 @@ const About = () => {
                </div>
                <span>{t('about.tech_work')}</span>
                <Skills />
+
+               <a className={classes.button} href="#projects">
+                  <Button>
+                     Projects
+                     <FontAwesomeIcon
+                        icon="fa-solid fa-arrow-down"
+                        className={classes.icon}
+                     />
+                  </Button>
+               </a>
             </div>
 
             <div className={`gray-image ${classes['img-container']}`}>

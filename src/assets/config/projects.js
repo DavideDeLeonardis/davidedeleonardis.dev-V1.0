@@ -82,19 +82,21 @@ const useProjects = () => {
          isArchived: false,
       },
       {
-         // react-auth-test
-         id: 507615722,
-         name: 'React Auth',
-         image: require('../images/projects/react-auth-test.png'),
-         description: t('projects.react_auth_test.short_d'),
+         // react-TS-select-component
+         id: 34117123,
+         name: 'Custom Select Component',
+         image: require('../images/projects/select-component.png'),
+         description: t('projects.react_ts_select_component.short_d'),
          long_description: null,
-         topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
-         languages: ['React'],
-         url: null,
-         github_url: 'https://github.com/DavideDeLeonardis/react-auth',
+         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
+         languages: ['React', 'TypeScript'],
+         url: 'https://react-ts-custom-select.web.app',
+         github_url:
+            'https://github.com/DavideDeLeonardis/react-TS-select-component',
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: true,
       },
       {
          // avada-consultant
@@ -126,19 +128,19 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: true,
       },
       {
-         // react-TS-select-component
-         id: 34117123,
-         name: 'Custom Select Component',
-         image: require('../images/projects/select-component.png'),
-         description: t('projects.react_ts_select_component.short_d'),
+         // react-auth-test
+         id: 507615722,
+         name: 'React Auth',
+         image: require('../images/projects/react-auth-test.png'),
+         description: t('projects.react_auth_test.short_d'),
          long_description: null,
-         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
-         languages: ['React', 'TypeScript'],
-         url: 'https://react-ts-custom-select.web.app',
-         github_url:
-            'https://github.com/DavideDeLeonardis/react-TS-select-component',
+         topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
+         languages: ['React'],
+         url: null,
+         github_url: 'https://github.com/DavideDeLeonardis/react-auth',
          isFeatured: false,
          isMain: false,
          isArchived: false,

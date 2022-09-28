@@ -50,11 +50,27 @@
                }
             }
          }
+
+         button {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            padding: 10px 35px;
+            margin-top: 70px;
+
+            &:hover {
+               color: #ffffff;
+            }
+
+            .icon {
+               margin-left: 12.5px;
+            }
+         }
       }
 
       .img-container {
-         width: 25%;
          position: relative;
+         width: 25%;
+         text-align: center;
          border-radius: 50%;
 
          img {
@@ -79,7 +95,7 @@
          }
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 991px) {
          @include mixin.flex($direction: column-reverse, $wrap: true);
 
          .content {
@@ -90,8 +106,14 @@
          }
 
          .img-container {
-            width: 60%;
+            width: 50%;
             margin-bottom: 70px;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         .button {
+            @include mixin.flex();
          }
       }
    }

@@ -98,6 +98,10 @@ $transition-image-time: 200ms;
          max-height: 650px;
          margin-bottom: 115px;
 
+         &:last-child {
+            margin-bottom: 150px;
+         }
+
          &::after {
             content: '';
             display: table;

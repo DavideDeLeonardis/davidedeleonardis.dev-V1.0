@@ -42,7 +42,12 @@
       background-color: #ffffff;
       padding: 0 5px;
       border-radius: 50%;
+		transition: all 200ms;
       cursor: pointer;
+
+		&:hover {
+			color: #808080;
+		}
    }
 
    @media screen and (max-width: 650px) {

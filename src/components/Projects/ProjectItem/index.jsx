@@ -70,35 +70,37 @@ const ProjectItem = ({ project, isMain }) => {
          </ul>
 
          <div className={classes['project-bottom']}>
-            {isMain ? (
+            {isMain || project.hasDetails ? (
                // Show details main projects button
-               <Link to={`/projects/${project.name}`} state={project}>
-                  <Button>
-                     {t('projects.show_details')}
-                     <FontAwesomeIcon
-                        className={classes.icon}
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                     />
-                  </Button>
-               </Link>
+               <div className={classes['project-links']}>
+                  <Link to={`/projects/${project.name}`} state={project}>
+                     <Button>
+                        {t('projects.show_details')}
+                        <FontAwesomeIcon
+                           className={classes.icon}
+                           icon="fa-solid fa-arrow-up-right-from-square"
+                        />
+                     </Button>
+                  </Link>
+               </div>
             ) : (
-               <>
-                  <div className={classes['project-links']}>
-                     {/* Buttons see demo and see gitHub */}
-                     <SeeDemoGitHubButtons
-                        project={project}
-                        className={classes.icon}
-                     />
-                  </div>
+               <div className={classes['project-links']}>
+                  {/* Buttons see demo and see gitHub */}
+                  <SeeDemoGitHubButtons
+                     project={project}
+                     className={classes.icon}
+                  />
+               </div>
+            )}
 
-                  {/* Close details other project button */}
-                  <button onClick={hideDetailsHandler}>
-                     <FontAwesomeIcon
-                        className={classes['info-close']}
-                        icon="fa-solid fa-xmark"
-                     />
-                  </button>
-               </>
+            {!isMain && (
+               // Close details other project button
+               <button onClick={hideDetailsHandler}>
+                  <FontAwesomeIcon
+                     className={classes['info-close']}
+                     icon="fa-solid fa-xmark"
+                  />
+               </button>
             )}
          </div>
       </div>

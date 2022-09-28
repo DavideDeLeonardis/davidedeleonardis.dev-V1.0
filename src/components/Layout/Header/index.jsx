@@ -43,18 +43,16 @@ const Header = ({ isHome }) => {
    const hideResumeHandler = () => {
       setScaleDown(true);
       // time for scale down animation to complete
-      setTimeout(() => {
-         setResumeisShown(false);
-      }, 150);
+      setTimeout(() => setResumeisShown(false), 150);
    };
 
    const isHoverHandler = () => setIsHover(true);
 
    const isNotHoverHandler = () => setIsHover(false);
 
-   // Hide menu in Y every 5 seconds
+   // Hide menu in Y every 7 seconds
    useEffect(() => {
-      !isHome && setTimeout(() => setIsGoingDown(true), 5000);
+      !isHome && setTimeout(() => setIsGoingDown(true), 7000);
    }, [isHome, scroll, setIsGoingDown]);
 
    // Header scroll in Y aniamations
