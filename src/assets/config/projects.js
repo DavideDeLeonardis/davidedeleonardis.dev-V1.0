@@ -26,6 +26,25 @@ const useProjects = () => {
          isFeatured: true,
          isMain: true,
          isArchived: false,
+         hasDetails: false,
+      },
+      {
+         // react-TS-select-component
+         id: 34117123,
+         name: 'Custom Select Component',
+         image: require('../images/projects/select-component.png'),
+         video: null,
+         description: t('projects.custom_select_component.short_d'),
+         long_description: t('projects.custom_select_component.long_d'),
+         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
+         languages: ['React', 'TypeScript'],
+         url: 'https://react-ts-custom-select.web.app',
+         github_url:
+            'https://github.com/DavideDeLeonardis/react-TS-select-component',
+         isFeatured: false,
+         isMain: true,
+         isArchived: false,
+         hasDetails: false,
       },
       {
          // laravel-boolpress
@@ -49,22 +68,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: true,
          isArchived: false,
-      },
-      {
-         // vue-netflix
-         id: 449656740,
-         name: 'Vue Netflix',
-         image: require('../images/projects/vue-netflix.png'),
-         video: null,
-         description: t('projects.vue_netflix.short_d'),
-         long_description: t('projects.vue_netflix.long_d'),
-         topics: ['Vuejs', 'SCSS', 'API'],
-         languages: ['Vue'],
-         url: 'https://vue-boolflix.web.app',
-         github_url: 'https://github.com/DavideDeLeonardis/vue-netflix',
-         isFeatured: false,
-         isMain: true,
-         isArchived: false,
+         hasDetails: false,
       },
       {
          // react-amazon
@@ -80,38 +84,39 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
-         // react-TS-select-component
-         id: 34117123,
-         name: 'Custom Select Component',
-         image: require('../images/projects/select-component.png'),
-         description: t('projects.react_ts_select_component.short_d'),
+         // react-auth-test
+         id: 507615722,
+         name: 'React Auth',
+         image: require('../images/projects/react-auth-test.png'),
+         description: t('projects.react_auth_test.short_d'),
          long_description: null,
-         topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
-         languages: ['React', 'TypeScript'],
-         url: 'https://react-ts-custom-select.web.app',
-         github_url:
-            'https://github.com/DavideDeLeonardis/react-TS-select-component',
+         topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
+         languages: ['React'],
+         url: null,
+         github_url: 'https://github.com/DavideDeLeonardis/react-auth',
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: true,
+         hasDetails: false,
       },
       {
-         // avada-consultant
-         id: 451409349,
-         name: 'Avada Consultant',
-         image: require('../images/projects/vue-proj-vuejs.png'),
-         description: t('projects.avada_consultant.short_d'),
-         long_description: null,
-         topics: ['Vue.js', 'SCSS'],
+         // vue-netflix
+         id: 449656740,
+         name: 'Vue Netflix',
+         image: require('../images/projects/vue-netflix.png'),
+         description: t('projects.vue_netflix.short_d'),
+         long_description: t('projects.vue_netflix.long_d'),
+         topics: ['Vuejs', 'SCSS', 'API'],
          languages: ['Vue'],
-         url: 'https://proj-vuejs.web.app/',
-         github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
+         url: 'https://vue-boolflix.web.app',
+         github_url: 'https://github.com/DavideDeLeonardis/vue-netflix',
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
          // portfolio V-1.0
@@ -131,19 +136,20 @@ const useProjects = () => {
          hasDetails: true,
       },
       {
-         // react-auth-test
-         id: 507615722,
-         name: 'React Auth',
-         image: require('../images/projects/react-auth-test.png'),
-         description: t('projects.react_auth_test.short_d'),
+         // avada-consultant
+         id: 451409349,
+         name: 'Avada Consultant',
+         image: require('../images/projects/vue-proj-vuejs.png'),
+         description: t('projects.avada_consultant.short_d'),
          long_description: null,
-         topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
-         languages: ['React'],
-         url: null,
-         github_url: 'https://github.com/DavideDeLeonardis/react-auth',
+         topics: ['Vue.js', 'SCSS'],
+         languages: ['Vue'],
+         url: 'https://proj-vuejs.web.app/',
+         github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
          // vue-instagram
@@ -159,6 +165,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
          // vue-boolzapp
@@ -174,6 +181,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
          // laravel-comics
@@ -189,6 +197,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
       {
          // minefield-game
@@ -204,6 +213,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetails: false,
       },
    ];
 };

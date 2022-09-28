@@ -32,6 +32,222 @@ $transition-image-time: 200ms;
       margin-top: 20px;
    }
 
+   // Main projects
+   .main-project {
+      position: relative;
+      max-height: 650px;
+      margin-bottom: 150px;
+
+      &::after {
+         content: '';
+         display: table;
+         clear: both;
+      }
+
+      // Card content
+      .card-content {
+         float: right;
+         position: absolute;
+         right: 0;
+         top: 50%;
+         transform: translateY(-50%);
+         z-index: 1;
+         width: 60%;
+         text-align: right;
+         background-color: #328bea;
+         padding: 20px 25px;
+         border-radius: 10px;
+         box-shadow: 0px 10px 20px -5px #000000;
+
+         .featured {
+            display: inline-block;
+            font-size: 0.8em;
+            color: rgb(190, 190, 190);
+         }
+
+         h2 {
+            font-size: 2em;
+            color: #000000;
+            padding-bottom: 3px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+         }
+
+         .language {
+            @include mixin.flex($justify: flex-end, $gap: 10px, $wrap: true);
+         }
+
+         .info-container {
+            p {
+               font-size: 1.1rem;
+               padding: 0 15px;
+               margin: 25px 0;
+               max-height: 90px;
+               overflow-y: scroll;
+
+               &::-webkit-scrollbar {
+                  width: 5px;
+               }
+
+               &::-webkit-scrollbar-thumb {
+                  background-color: rgba(0, 0, 0, 0.5);
+                  border-radius: 5px;
+               }
+
+               @media screen and (max-width: $md-bk) {
+                  max-height: none;
+               }
+
+               @media screen and (max-width: 600px) {
+                  max-height: 125px;
+               }
+            }
+
+            .topic-container {
+               @include mixin.flex($justify: flex-end, $gap: 5px, $wrap: true);
+               margin-bottom: 40px;
+            }
+
+            .project-bottom button {
+               background-color: var(--secondary-color);
+
+               &:hover {
+                  background-color: transparent;
+                  border-color: #f88e2a;
+               }
+            }
+         }
+      }
+
+      .img-container {
+         float: left;
+         position: relative;
+         width: 50%;
+
+         img {
+            width: 90%;
+            box-shadow: 0px 10px 20px -5px #000000;
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 1px;
+            top: 15px;
+            width: 90%;
+            height: 100%;
+            border: 2px solid var(--secondary-color);
+            z-index: -1;
+            transition: all $transition-image-time;
+         }
+
+         &:hover::after {
+            left: 8px;
+            top: 8px;
+         }
+      }
+
+      .card-content:hover {
+         & ~ .img-container img {
+            filter: grayscale(0);
+         }
+
+         & ~ .img-container::after {
+            left: 8px;
+            top: 8px;
+         }
+      }
+
+      // 2nd/4nd/... card
+      &:nth-child(even) {
+         .card-content {
+            float: left;
+            left: 0;
+            text-align: left;
+
+            .language {
+               @include mixin.flex($justify: flex-start, $gap: 10px);
+            }
+
+            .topic-container {
+               @include mixin.flex($justify: flex-start, $gap: 5px);
+            }
+
+            .project-links {
+               @include mixin.flex($justify: flex-start, $gap: $links-gap);
+            }
+         }
+
+         .img-container {
+            float: right;
+
+            &::after {
+               left: 45px;
+               top: 15px;
+            }
+
+            &:hover::after {
+               left: 40px;
+               top: 10px;
+            }
+         }
+
+         .card-content:hover ~ .img-container::after {
+            left: 40px;
+            top: 10px;
+         }
+      }
+
+      // Media queries single project
+      @media screen and (max-width: $first-bk) {
+         .img-container {
+            width: 60%;
+         }
+
+         .card-content {
+            width: 70%;
+         }
+      }
+
+      @media screen and (max-width: $lg-bk) {
+         .img-container {
+            width: 73%;
+         }
+
+         .card-content {
+            width: 75%;
+         }
+      }
+
+      @media screen and (max-width: $md-bk) {
+         position: static;
+         @include mixin.flex($direction: column-reverse, $wrap: true);
+         max-height: none;
+         overflow: visible;
+
+         .img-container,
+         .card-content {
+            float: none;
+            position: static;
+            transform: translate(0);
+            width: 100%;
+         }
+
+         .img-container {
+            max-height: 350px;
+            overflow: hidden;
+
+            img {
+               width: 90%;
+            }
+
+            &::after {
+               display: none;
+            }
+         }
+      }
+   }
+
    .filter-languages {
       @include mixin.flex($gap: 2%);
       margin: 50px 0 25px 0;
@@ -84,237 +300,13 @@ $transition-image-time: 200ms;
       }
    }
 
-   .repos-container {
+   &#other-projects .repos-container {
       @include mixin.flex(
          $justify: flex-start,
          $align: stretch,
          $gap: $gap-pojects,
          $wrap: true
       );
-
-      // Main projects
-      .main-project {
-         position: relative;
-         max-height: 650px;
-         margin-bottom: 115px;
-
-         &:last-child {
-            margin-bottom: 150px;
-         }
-
-         &::after {
-            content: '';
-            display: table;
-            clear: both;
-         }
-
-         // Card content
-         .card-content {
-            float: right;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-            width: 60%;
-            text-align: right;
-            background-color: #328bea;
-            padding: 20px 25px;
-            border-radius: 10px;
-            box-shadow: 0px 10px 20px -5px #000000;
-
-            .featured {
-               display: inline-block;
-               font-size: 0.8em;
-               color: rgb(190, 190, 190);
-            }
-
-            h2 {
-               font-size: 2em;
-               color: #000000;
-               padding-bottom: 3px;
-               margin-bottom: 15px;
-               border-bottom: 2px solid var(--secondary-color);
-            }
-
-            .language {
-               @include mixin.flex($justify: flex-end, $gap: 10px, $wrap: true);
-            }
-
-            .info-container {
-               p {
-                  font-size: 1.1rem;
-                  padding: 0 15px;
-                  margin: 25px 0;
-                  max-height: 90px;
-                  overflow-y: scroll;
-
-                  &::-webkit-scrollbar {
-                     width: 5px;
-                  }
-
-                  &::-webkit-scrollbar-thumb {
-                     background-color: rgba(0, 0, 0, 0.5);
-                     border-radius: 5px;
-                  }
-
-                  @media screen and (max-width: $md-bk) {
-                     max-height: none;
-                  }
-
-                  @media screen and (max-width: 600px) {
-                     max-height: 125px;
-                  }
-               }
-
-               .topic-container {
-                  @include mixin.flex(
-                     $justify: flex-end,
-                     $gap: 5px,
-                     $wrap: true
-                  );
-                  margin-bottom: 40px;
-               }
-
-               .project-bottom button {
-                  background-color: var(--secondary-color);
-
-                  &:hover {
-                     background-color: transparent;
-                     border-color: #f88e2a;
-                  }
-               }
-            }
-         }
-
-         .img-container {
-            float: left;
-            position: relative;
-            width: 50%;
-
-            img {
-               width: 90%;
-               box-shadow: 0px 10px 20px -5px #000000;
-            }
-
-            &::after {
-               content: '';
-               position: absolute;
-               left: 1px;
-               top: 15px;
-               width: 90%;
-               height: 100%;
-               border: 2px solid var(--secondary-color);
-               z-index: -1;
-               transition: all $transition-image-time;
-            }
-
-            &:hover::after {
-               left: 8px;
-               top: 8px;
-            }
-         }
-
-         .card-content:hover {
-            & ~ .img-container img {
-               filter: grayscale(0);
-            }
-
-            & ~ .img-container::after {
-               left: 8px;
-               top: 8px;
-            }
-         }
-
-         // 2nd/4nd/... card
-         &:nth-child(even) {
-            .card-content {
-               float: left;
-               left: 0;
-               text-align: left;
-
-               .language {
-                  @include mixin.flex($justify: flex-start, $gap: 10px);
-               }
-
-               .topic-container {
-                  @include mixin.flex($justify: flex-start, $gap: 5px);
-               }
-
-               .project-links {
-                  @include mixin.flex($justify: flex-start, $gap: $links-gap);
-               }
-            }
-
-            .img-container {
-               float: right;
-
-               &::after {
-                  left: 50px;
-                  top: 15px;
-               }
-
-               &:hover::after {
-                  left: 45px;
-                  top: 10px;
-               }
-            }
-
-            .card-content:hover ~ .img-container::after {
-               left: 45px;
-               top: 10px;
-            }
-         }
-
-         // Media queries single project
-         @media screen and (max-width: $first-bk) {
-            .img-container {
-               width: 60%;
-            }
-
-            .card-content {
-               width: 70%;
-            }
-         }
-
-         @media screen and (max-width: $lg-bk) {
-            .img-container {
-               width: 73%;
-            }
-
-            .card-content {
-               width: 75%;
-            }
-         }
-
-         @media screen and (max-width: $md-bk) {
-            position: static;
-            @include mixin.flex($direction: column-reverse, $wrap: true);
-            max-height: none;
-            overflow: visible;
-
-            .img-container,
-            .card-content {
-               float: none;
-               position: static;
-               transform: translate(0);
-               width: 100%;
-            }
-
-            .img-container {
-               max-height: 350px;
-               overflow: hidden;
-
-               img {
-                  width: 90%;
-               }
-
-               &::after {
-                  display: none;
-               }
-            }
-         }
-      }
 
       // Other projects
       .other-project {
@@ -326,7 +318,6 @@ $transition-image-time: 200ms;
          @media screen and (max-width: 900px) {
             @include mixin.flex($direction: column-reverse, $justify: flex-end);
             width: calc(50% - $gap-pojects);
-            // margin-bottom: 35px;
             box-shadow: 0px 4px 10px -5px #000000;
          }
 

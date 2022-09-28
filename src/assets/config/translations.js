@@ -49,11 +49,16 @@ export const translationsEn = {
          // FINIRE
          long_d: 'Long description laravel-boolpress',
       },
+      custom_select_component: {
+         short_d:
+            'Custom select component made with React.js and TypeScript. Accessibility commands through keyboard interactions are available both in single and multiple selection. Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.',
+         // 'Custom select component made with React.js and TypeScript. <blue>Accessibility commands</blue> through keyboard interactions are available both in <blue>single and multiple selection</blue>. <technicals>Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.</technicals>',
+         long_d: 'Long description TS',
+      },
       vue_netflix: {
          short_d:
             "Netflix home page clone in Vue.js; select a category and search your favourite movies! Possibility of see movie's details.",
-         // FINIRE
-         long_d: 'Long description netflix',
+         long_d: null,
       },
       portfolio: {
          short_d:
@@ -92,11 +97,6 @@ export const translationsEn = {
       laravel_comics: {
          short_d:
             'Clone of DC-comics homepage made with Laravel, <blue>click on single comic</blue> to see details. <technicals>- Data represented in Blade pages and routes are completely defined in routes directory.</technicals>',
-         long_d: null,
-      },
-      react_ts_select_component: {
-         short_d:
-            'Custom select component made with React.js and TypeScript. <blue>Accessibility commands</blue> through keyboard interactions are available both in <blue>single and multiple selection</blue>. <technicals>Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.</technicals>',
          long_d: null,
       },
       show_details: 'Show Details',
@@ -173,11 +173,17 @@ export const translationsIt = {
          // FINIRE
          long_d: 'Lunga descrizione laravel-boolpress',
       },
+      custom_select_component: {
+         short_d:
+            'Componente custom di selezione singola o multipla creato con React.js e TypeScript; possibilità di navigare fra gli elementi della pagina e selezionarli tramite interazione con la tastiera. I comandi di accessibilità sono implementati tramite un custom hook e un useRef hook; si noti che il componente select è stato creato completamente a mano.',
+         // 'Componente custom di selezione <blue>singola o multipla</blue> creato con React.js e TypeScript; possibilità di navigare fra gli elementi della pagina e selezionarli tramite <blue>interazione con la tastiera</blue>. <technicals>I comandi di accessibilità sono implementati tramite un custom hook e un useRef hook; si noti che il componente select è stato creato completamente a mano.</technicals>',
+         // FINIRE
+         long_d: 'Descrizione lunga TS',
+      },
       vue_netflix: {
          short_d:
             'Homepage di Netflix in Vue.js; seleziona una categoria e cerca i tuoi film preferiti! Possibilità di vedere i dettagli del singolo film.',
-         // FINIRE
-         long_d: 'Lunga descrizione netflix',
+         long_d: null,
       },
       portfolio: {
          short_d:
@@ -217,11 +223,6 @@ export const translationsIt = {
       laravel_comics: {
          short_d:
             'Clone della homepage del sito della DC-comics creato in Laravel, <blue>clicca sui comics</blue> per vederne i dettagli. <technicals>- I dati sono rappresentati in pagine Blade e tutte le rotte sono definite nella routes directory.</technicals>',
-         long_d: null,
-      },
-      react_ts_select_component: {
-         short_d:
-            "Componente custom di selezione <blue>singola o multipla</blue> creato con React.js e TypeScript; possibilità di navigare fra gli elementi della pagina e selezionarli tramite <blue>interazione con la tastiera</blue>.<technicals>I comandi di accessibilità sono implementati tramite un custom hook e un useRef hook; si noti che il componente select è stato creato completamente a mano.</technicals>",
          long_d: null,
       },
       show_details: 'Mostra Dettagli',

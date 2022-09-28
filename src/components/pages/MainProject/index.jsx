@@ -72,7 +72,7 @@ const Project = () => {
                   <p>
                      {t(
                         `projects.${project.name
-                           .replace(' ', '_')
+                           .replaceAll(' ', '_')
                            .toLowerCase()}.long_d`
                      )}
                   </p>
