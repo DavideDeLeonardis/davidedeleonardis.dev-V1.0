@@ -155,7 +155,10 @@ const OtherProjects = () => {
    };
 
    return (
-      <div id={classes['other-projects']} className={classes['projects-container']}>
+      <div
+         id="other-projects"
+         className={`${classes['other-projects']} ${classes['projects-container']}`}
+      >
          <Heading
             heading={t('other_projects.heading')}
             subheading={t('other_projects.p')}

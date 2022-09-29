@@ -6,7 +6,7 @@ $first-bk: 1100px;
 $lg-bk: 992px;
 $md-bk: 768px;
 $transition-image-time: 200ms;
-$translate-fade-animation: 500px;
+$translate-fade-animation: 50vw;
 
 .projects-container {
    text-align: center;
@@ -33,14 +33,17 @@ $translate-fade-animation: 500px;
       margin-top: 20px;
    }
 
-   // Main projects
+   // Main project item
    .main-project {
       position: relative;
       max-height: 650px;
       margin-bottom: 150px;
-      translate: $translate-fade-animation;
-      opacity: 0;
-      transition: 450ms;
+
+      @media screen and (min-width: 768px) {
+         translate: $translate-fade-animation;
+         opacity: 0;
+         transition: all 400ms ease;
+      }
 
       &::after {
          content: '';
@@ -164,7 +167,9 @@ $translate-fade-animation: 500px;
 
       // 2nd/4nd/... card
       &:nth-child(even) {
-         translate: -$translate-fade-animation;
+         @media screen and (min-width: 768px) {
+            translate: -$translate-fade-animation;
+         }
 
          .card-content {
             float: left;
@@ -250,7 +255,7 @@ $translate-fade-animation: 500px;
             overflow: hidden;
 
             img {
-               width: 90%;
+               width: 95%;
             }
 
             &::after {
@@ -312,7 +317,8 @@ $translate-fade-animation: 500px;
       }
    }
 
-   &#other-projects .repos-container {
+   // Other projects
+   &.other-projects .repos-container {
       @include mixin.flex(
          $justify: flex-start,
          $align: stretch,
@@ -320,7 +326,7 @@ $translate-fade-animation: 500px;
          $wrap: true
       );
 
-      // Other projects
+		// Other project item
       .other-project {
          position: relative;
          width: calc(33% - $gap-pojects);

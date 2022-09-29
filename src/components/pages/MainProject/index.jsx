@@ -32,6 +32,7 @@ const Project = () => {
    return (
       project && (
          <>
+            {/* Video and overlay */}
             <div
                className={classes['container-image']}
                style={
@@ -49,7 +50,7 @@ const Project = () => {
                   Your browser does not support the video tag.
                </video>
 
-					{/* Overlay video */}
+               {/* Overlay video */}
                <div className={`main-project-content ${classes.content}`}>
                   <h1>{project.name}</h1>
                   <div
@@ -63,6 +64,7 @@ const Project = () => {
                </div>
             </div>
 
+            {/* Details */}
             <div
                className={`main-project-content ${classes['bottom-main-project']}`}
             >

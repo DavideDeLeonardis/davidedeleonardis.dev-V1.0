@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CardPortal from '../../ui/CardPortal';
 import Button from '../../ui/Button';
 import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
+import useFadeOnScroll from '../../../hooks/useFadeOnScroll';
 import default_image from '../../../assets/images/default.png';
 
 import classes from '../index.module.scss';
@@ -14,6 +15,7 @@ const ProjectItem = ({ project, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
+   useFadeOnScroll(classes['in-page']);
    const { t } = useTranslation();
 
    const showDetailsHandler = () => {
@@ -54,6 +56,7 @@ const ProjectItem = ({ project, isMain }) => {
       <div className={classes['info-container']}>
          {!isMain && <h2>{project.name}</h2>}
 
+         {/* Description */}
          <p>
             <Trans
                components={{
@@ -65,6 +68,7 @@ const ProjectItem = ({ project, isMain }) => {
             </Trans>
          </p>
 
+         {/* Topics */}
          <ul className={classes['topic-container']}>
             {displayMaps('topics', classes.topic)}
          </ul>
@@ -116,7 +120,7 @@ const ProjectItem = ({ project, isMain }) => {
       return 'top center';
    };
 
-   // Other project's details
+   // Other project details portal
    const detailsElement = (
       <CardPortal
          backdropIsShown={details}
@@ -136,24 +140,10 @@ const ProjectItem = ({ project, isMain }) => {
       </CardPortal>
    );
 
+   // Project languages
    const languages = (
       <ul className={classes.lang}>{displayMaps('languages')}</ul>
    );
-
-   // Animation fade on scroll
-   const callback = (items) => {
-      items.forEach((item) => {
-         if (item.isIntersecting) item.target.classList.add(classes['in-page']);
-         // else item.target.classList.remove(classes['in-page']);
-      });
-   };
-
-   let observer = new IntersectionObserver(callback, { threshold: 0.25 });
-
-   document
-      .querySelectorAll('.watch')
-      .forEach((element) => observer.observe(element));
-   // / Animation fade on scroll
 
    return (
       <>
