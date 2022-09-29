@@ -140,11 +140,28 @@ const ProjectItem = ({ project, isMain }) => {
       <ul className={classes.lang}>{displayMaps('languages')}</ul>
    );
 
+   // Animation fade on scroll
+   const callback = (items) => {
+      items.forEach((item) => {
+         if (item.isIntersecting) item.target.classList.add(classes['in-page']);
+         // else item.target.classList.remove(classes['in-page']);
+      });
+   };
+
+   let observer = new IntersectionObserver(callback, { threshold: 0.25 });
+
+   document
+      .querySelectorAll('.watch')
+      .forEach((element) => observer.observe(element));
+   // / Animation fade on scroll
+
    return (
       <>
          <li
             className={
-               isMain ? classes['main-project'] : classes['other-project']
+               isMain
+                  ? `${classes['main-project']} watch`
+                  : classes['other-project']
             }
          >
             <div className={classes['card-content']}>
@@ -190,7 +207,8 @@ const ProjectItem = ({ project, isMain }) => {
             <div
                className={`
 						${classes['img-container']}
-						${isMain && 'gray-image'}`}
+						${isMain && 'gray-image'}
+					`}
                style={
                   project.id === 521026706 /* Id project portfolio V-1.0 */
                      ? { border: '1px solid #646464' }

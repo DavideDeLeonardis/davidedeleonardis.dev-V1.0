@@ -6,6 +6,7 @@ $first-bk: 1100px;
 $lg-bk: 992px;
 $md-bk: 768px;
 $transition-image-time: 200ms;
+$translate-fade-animation: 500px;
 
 .projects-container {
    text-align: center;
@@ -37,6 +38,9 @@ $transition-image-time: 200ms;
       position: relative;
       max-height: 650px;
       margin-bottom: 150px;
+      translate: $translate-fade-animation;
+      opacity: 0;
+      transition: 450ms;
 
       &::after {
          content: '';
@@ -160,6 +164,8 @@ $transition-image-time: 200ms;
 
       // 2nd/4nd/... card
       &:nth-child(even) {
+         translate: -$translate-fade-animation;
+
          .card-content {
             float: left;
             left: 0;
@@ -196,6 +202,12 @@ $transition-image-time: 200ms;
             left: 40px;
             top: 10px;
          }
+      }
+
+      // Animation fade on scroll
+      &.in-page {
+         translate: 0;
+         opacity: 1;
       }
 
       // Media queries single project
