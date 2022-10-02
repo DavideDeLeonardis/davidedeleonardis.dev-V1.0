@@ -15,7 +15,7 @@ const ProjectItem = ({ project, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
-   useFadeOnScroll(classes['in-page']);
+   useFadeOnScroll(classes['in-page'], true);
    const { t } = useTranslation();
 
    const showDetailsHandler = () => {
@@ -76,17 +76,15 @@ const ProjectItem = ({ project, isMain }) => {
          <div className={classes['project-bottom']}>
             {isMain || project.hasDetails ? (
                // Show details main projects button
-               <div className={classes['project-links']}>
-                  <Link to={`/projects/${project.name}`} state={project}>
-                     <Button>
-                        {t('projects.show_details')}
-                        <FontAwesomeIcon
-                           className={classes.icon}
-                           icon="fa-solid fa-arrow-up-right-from-square"
-                        />
-                     </Button>
-                  </Link>
-               </div>
+               <Link to={`/projects/${project.name}`} state={project}>
+                  <Button onClick={() => window.scrollTo(0, 0)}>
+                     {t('projects.show_details')}
+                     <FontAwesomeIcon
+                        className={classes.icon}
+                        icon="fa-solid fa-arrow-up-right-from-square"
+                     />
+                  </Button>
+               </Link>
             ) : (
                <div className={classes['project-links']}>
                   {/* Buttons see demo and see gitHub */}

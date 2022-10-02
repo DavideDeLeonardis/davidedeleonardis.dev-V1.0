@@ -3,18 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Skills from './Skills';
 import Heading from '../ui/Heading';
+import Button from '../ui/Button';
+import useFadeOnScroll from '../../hooks/useFadeOnScroll';
 import profileImage from '../../assets/images/profile.jpg';
 import Certifications from '../../assets/images/Salesforce-Certifications.pdf';
 
 import classes from './index.module.scss';
-import Button from '../ui/Button';
 
 const About = () => {
+   useFadeOnScroll(classes['in-page']);
    const { t } = useTranslation();
 
    return (
       /* eslint-disable jsx-a11y/anchor-has-content */
-      <section id="about" className={classes.about}>
+      <section id="about" className={`${classes.about} watch`}>
          <Heading heading={'About Me'} h1ClassName={classes.h1Main} />
          <div className={classes['container']}>
             <div className={classes['content']}>
@@ -63,7 +65,7 @@ const About = () => {
                </a>
             </div>
 
-            <div className={`gray-image ${classes['img-container']}`}>
+            <div className={`${classes['img-container']} gray-image`}>
                <img src={profileImage} alt="Profile" />
             </div>
          </div>

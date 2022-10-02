@@ -1,8 +1,9 @@
-const useFadeOnScroll = (classToAdd) => {
+const useFadeOnScroll = (classToAdd, removeClass = false) => {
    const callback = (items) => {
       items.forEach((item) => {
          if (item.isIntersecting) item.target.classList.add(classToAdd);
-         else item.target.classList.remove(classToAdd);
+         if (!item.isIntersecting && removeClass)
+            item.target.classList.remove(classToAdd);
       });
    };
 

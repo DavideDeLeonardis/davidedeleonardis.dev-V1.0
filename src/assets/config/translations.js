@@ -42,18 +42,22 @@ export const translationsEn = {
          // FINIRE
          long_d:
             'Deliveboo is a food delivery web app that allows customers to order from their favorite restaurants inserting only the data necessary for delivery. Restaurateurs can register in the platform and create, modify and delete dishes based also on the statistics displayed in the personal area and the history of orders. Customers can simulate payment through a Braintree payment integration and restaurateurs can view statistics of their activiy from a chart made with Chart.js. The entire app is build with Laravel fetching a MySQL database, while pages are created with Blade for the back-office and Vue.js for the front-office.',
+         intro: null,
       },
       laravel_boolpress: {
          short_d:
             "Content Management System made with Laravel and MVC pattern, possibility of authentication and registration with multiple privileges; posts are viewable, editable or deletable based on the user's role.",
          // FINIRE
          long_d: 'Long description laravel-boolpress',
+         intro: 'Content Management System',
       },
       custom_select_component: {
          short_d:
             'Custom select component made with React.js and TypeScript. Accessibility commands through keyboard interactions are available both in single and multiple selection. Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.',
          // 'Custom select component made with React.js and TypeScript. <blue>Accessibility commands</blue> through keyboard interactions are available both in <blue>single and multiple selection</blue>. <technicals>Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.</technicals>',
+         // FINIRE
          long_d: 'Long description TS',
+         intro: null,
       },
       vue_netflix: {
          short_d:
@@ -63,6 +67,7 @@ export const translationsEn = {
       portfolio: {
          short_d:
             'Portfolio website V1.0 made with React.js. <technicals>- Portfolio previous version fetched GitHub API in order to render repositories (branch still visible), actually projects are defined in a custom hook, also main and other project are the same component with different props and conditions.</technicals>',
+         // FINIRE
          long_d: null,
       },
       react_amazon: {
@@ -166,12 +171,14 @@ export const translationsIt = {
             "Deliveboo è una web app che permette di ordinare dai propri ristoranti preferiti inserendo solamente i dati necessari per la consegna. I ristoratori possono registrarsi sulla piattaforma e creare, modificare e eliminare i piatti, basandosi anche sulle statistiche mostrate nell'area personale.",
          // FINIRE
          long_d: 'Lunga descrizione deliveboo',
+         intro: null,
       },
       laravel_boolpress: {
          short_d:
             'Content Management System creato con Laravel e pattern MVC, possibilità di autenticazione e registrazione con privilegi multipli; i post sono visitabili, modificabili e eliminabili in base al roulo stabilito.',
          // FINIRE
          long_d: 'Lunga descrizione laravel-boolpress',
+         intro: 'Content Management System',
       },
       custom_select_component: {
          short_d:
@@ -179,6 +186,7 @@ export const translationsIt = {
          // 'Componente custom di selezione <blue>singola o multipla</blue> creato con React.js e TypeScript; possibilità di navigare fra gli elementi della pagina e selezionarli tramite <blue>interazione con la tastiera</blue>. <technicals>I comandi di accessibilità sono implementati tramite un custom hook e un useRef hook; si noti che il componente select è stato creato completamente a mano.</technicals>',
          // FINIRE
          long_d: 'Descrizione lunga TS',
+         intro: null,
       },
       vue_netflix: {
          short_d:
@@ -188,6 +196,7 @@ export const translationsIt = {
       portfolio: {
          short_d:
             "Sito portfolio V1.0 costruito in React.js. <technicals>- La versione precedente chiamava le API di GitHub renderizzando le repository (branch ancora visibile), nell'attuale versione i dati di ogni progetto sono definiti in un custom hook e per renderizzare tutti i progetti è stato usato un solo componente con diverse props e condizioni.</technicals>",
+         // FINIRE
          long_d: null,
       },
       react_amazon: {

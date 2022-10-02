@@ -18,10 +18,8 @@ const Project = () => {
    const { state: project } = useLocation();
 
    useEffect(() => {
-      // If state doesn't exists when project is manually searched in URL => redirect to /
+      // If state is empty => redirect
       if (project === null) navigate('/');
-      // Scroll to top on load
-      window.scrollTo(0, 0);
    }, [project, navigate]);
 
    const scrollToBottomHandler = () => window.scrollTo(0, window.innerHeight);
@@ -36,7 +34,7 @@ const Project = () => {
             <div
                className={classes['container-image']}
                style={
-                  project.video === null
+                  project.video === null || !project.video
                      ? {
                           backgroundImage: `url('${
                              project.image || default_image
@@ -53,6 +51,13 @@ const Project = () => {
                {/* Overlay video */}
                <div className={`main-project-content ${classes.content}`}>
                   <h1>{project.name}</h1>
+                  <p>
+                     {t(
+                        `projects.${project.name
+                           .replaceAll(' ', '_')
+                           .toLowerCase()}.intro`
+                     )}
+                  </p>
                   <div
                      className={`${classes.down} ${
                         bounce && classes['animation-arrow']
@@ -78,6 +83,12 @@ const Project = () => {
                            .toLowerCase()}.long_d`
                      )}
                   </p>
+
+                  <ul>
+                     {project.topics.map((topic, key) => (
+                        <li key={key}>{topic}</li>
+                     ))}
+                  </ul>
 
                   <div>
                      <SeeDemoGitHubButtons

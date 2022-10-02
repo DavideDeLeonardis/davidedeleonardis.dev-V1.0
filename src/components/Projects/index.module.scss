@@ -183,10 +183,6 @@ $translate-fade-animation: 50vw;
             .topic-container {
                @include mixin.flex($justify: flex-start, $gap: 5px);
             }
-
-            .project-links {
-               @include mixin.flex($justify: flex-start, $gap: $links-gap);
-            }
          }
 
          .img-container {
@@ -326,7 +322,7 @@ $translate-fade-animation: 50vw;
          $wrap: true
       );
 
-		// Other project item
+      // Other project item
       .other-project {
          position: relative;
          width: calc(33% - $gap-pojects);

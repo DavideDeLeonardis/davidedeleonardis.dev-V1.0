@@ -13,9 +13,8 @@ const Footer = () => {
    const { t } = useTranslation();
 
    // Change site language
-   const onChangeLanguage = (event) => {
+   const onChangeLanguage = (event) =>
       i18next.changeLanguage(event.target.value);
-   };
 
    const date = dateFormat(new Date(), 'mmmm yyyy');
 

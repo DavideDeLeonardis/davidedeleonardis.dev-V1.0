@@ -72,6 +72,9 @@
          width: 25%;
          text-align: center;
          border-radius: 50%;
+         translate: 500px;
+         opacity: 0;
+         transition: all 400ms ease;
 
          img {
             width: 100%;
@@ -116,5 +119,11 @@
             @include mixin.flex();
          }
       }
+   }
+
+	// Animation fade on scroll
+   &.in-page .img-container {
+      translate: 0;
+      opacity: 1;
    }
 }
