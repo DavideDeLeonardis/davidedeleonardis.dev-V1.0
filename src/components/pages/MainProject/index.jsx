@@ -16,11 +16,18 @@ const Project = () => {
    let navigate = useNavigate();
    // State passed with router Link doesn't update when language changes
    const { state: project } = useLocation();
+   console.log(project);
 
+   // If state is empty => redirect
    useEffect(() => {
-      // If state is empty => redirect
       if (project === null) navigate('/');
    }, [project, navigate]);
+
+   // Scroll to top and set scroll behavior on load
+   useEffect(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+      window.scrollTo(0, 0);
+   }, []);
 
    const scrollToBottomHandler = () => window.scrollTo(0, window.innerHeight);
 

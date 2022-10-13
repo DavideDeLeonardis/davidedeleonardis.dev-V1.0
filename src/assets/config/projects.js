@@ -121,9 +121,9 @@ const useProjects = () => {
       {
          // portfolio V-1.0
          id: 521026706,
-         name: 'Portfolio V1.0',
+         name: 'Portfolio V1',
          image: require('../images/projects/portfolio-v1.0.png'),
-         description: t('projects.portfolio.short_d'),
+         description: t('projects.portfolio_v1.short_d'),
          long_description: null,
          topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
          languages: ['React'],

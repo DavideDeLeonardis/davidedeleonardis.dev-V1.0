@@ -15,8 +15,8 @@ const ProjectItem = ({ project, isMain }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
-   useFadeOnScroll(classes['in-page'], true);
    const { t } = useTranslation();
+   useFadeOnScroll(classes['in-page'], true);
 
    const showDetailsHandler = () => {
       setDetails(true);
@@ -73,18 +73,32 @@ const ProjectItem = ({ project, isMain }) => {
             {displayMaps('topics', classes.topic)}
          </ul>
 
+			{/* Project buttons */}
          <div className={classes['project-bottom']}>
             {isMain || project.hasDetails ? (
-               // Show details main projects button
-               <Link to={`/projects/${project.name}`} state={project}>
-                  <Button onClick={() => window.scrollTo(0, 0)}>
-                     {t('projects.show_details')}
-                     <FontAwesomeIcon
-                        className={classes.icon}
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                     />
-                  </Button>
-               </Link>
+               // Show details page button
+               <div className={classes['project-links']}>
+                  <Link
+                     to={`/projects/${project.name}`}
+                     state={project}
+                     onMouseEnter={() =>
+                        (document.documentElement.style.scrollBehavior =
+                           'initial')
+                     }
+                     onMouseLeave={() =>
+                        (document.documentElement.style.scrollBehavior =
+                           'smooth')
+                     }
+                  >
+                     <Button>
+                        {t('projects.show_details')}
+                        <FontAwesomeIcon
+                           className={classes.icon}
+                           icon="fa-solid fa-arrow-up-right-from-square"
+                        />
+                     </Button>
+                  </Link>
+               </div>
             ) : (
                <div className={classes['project-links']}>
                   {/* Buttons see demo and see gitHub */}
@@ -96,7 +110,7 @@ const ProjectItem = ({ project, isMain }) => {
             )}
 
             {!isMain && (
-               // Close details other project button
+               // Close details portal other project button
                <button onClick={hideDetailsHandler}>
                   <FontAwesomeIcon
                      className={classes['info-close']}
@@ -108,7 +122,7 @@ const ProjectItem = ({ project, isMain }) => {
       </div>
    );
 
-   // Background position other projects' details
+   // Background position other projects details
    const getPosition = () => {
       if (
          project.id === 521026706 /* portfolio */ ||
@@ -146,6 +160,7 @@ const ProjectItem = ({ project, isMain }) => {
    return (
       <>
          <li
+            id={project.name.replaceAll(' ', '-')}
             className={
                isMain
                   ? `${classes['main-project']} watch`
