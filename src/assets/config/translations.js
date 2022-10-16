@@ -134,8 +134,8 @@ export const translationsIt = {
       projects: 'Progetti',
       contact: 'Contatti',
       curriculum: '<span>CV</span>',
-      qr_code: require('../images/resume/qrcode-EN.png'), // cambiare in IT
-      resume: require('../images/resume/resume-EN.pdf'), // cambiare in IT
+      qr_code: require('../images/resume/qrcode-IT.png'),
+      resume: require('../images/resume/resume-IT.pdf'),
       resume_p_rext: 'Visualizza CV',
       resume_o: 'oppure',
       resume_p_scan: 'Scannerizzami!',

@@ -34,11 +34,11 @@ export const skills = [
       class: 'cypress',
       image: require('../images/skills/cypress.png'),
    },
-   {
-      name: 'SASS',
-      class: 'sass',
-      image: require('../images/skills/sass.png'),
-   },
+   // {
+   //    name: 'SASS',
+   //    class: 'sass',
+   //    image: require('../images/skills/sass.png'),
+   // },
    {
       name: 'PHP',
       class: 'php',
@@ -59,11 +59,11 @@ export const skills = [
    //    class: 'apex',
    //    image: require('../images/skills/apex.png'),
    // },
-   // {
-   //    name: 'Salesforce',
-   //    class: 'salesforce',
-   //    image: require('../images/skills/salesforce.png'),
-   // },
+   {
+      name: 'Salesforce',
+      class: 'salesforce',
+      image: require('../images/skills/salesforce.png'),
+   },
    // {
    //    name: 'Git',
    //    class: 'git',

@@ -23,15 +23,13 @@ const Resume = ({ backdropIsShown, onClose, scaleDown }) => {
                />
             </a>
             <span>{t('header.resume_o')}</span>
-            <div>
+            <div className={classes.qr}>
                <img
                   width="200"
                   src={t('header.qr_code')}
                   alt="qrcode of curriculum vitae"
                />
-               <span className={classes['scan-text']}>
-                  {t('header.resume_p_scan')}
-               </span>
+               <span>{t('header.resume_p_scan')}</span>
             </div>
          </div>
       </CardPortal>
