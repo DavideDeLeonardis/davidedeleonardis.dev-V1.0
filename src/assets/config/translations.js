@@ -16,7 +16,7 @@ export const translationsEn = {
          "I love to build things for the web and I'm always <blue>enthusiastic</blue> about improving my tech skills!",
    },
    about: {
-      p1: "I'm a student attending the second year in a business school, and besides the interest for economics I'm also a <span>Jr. Full-stack Web Developer </span> and <a>x2 Salesforce Certified</a> .",
+      p1: "I'm a <span>Jr. Full-stack Web Developer </span> and <a>x2 Salesforce Certified</a> , I'm attending the first year of Computer Science at the University of Pisa but before discovering the passion for programming I studied Economics and Business Administration for two years.",
       p2: "I constantly improve my programming knowledge both in front-end and in back-end technologies, developing responsive and intuitive web application in <b>React/Vue</b> and <b>PHP</b>, even though now I'm switching to <b>MERN stack</b>.",
       p3: "Doesn't matter how challenging the project is, if you've an idea, <a>contact me</a> and let's enjoy developing it!",
       tech_work: "Some technologies I've worked with:",
@@ -147,8 +147,8 @@ export const translationsIt = {
          'Adoro creare cose per il web e sono sempre <blue>entusiasta</blue> di migliorare le mie competenze informatiche!',
    },
    about: {
-      p1: "Frequento il secondo anno in una facoltà di economia, e oltre all'interesse per quest'ultima sono anche un <span>Jr. Full-stack Web Developer </span> e <a>x2 Salesforce Certified</a> .",
-      p2: 'Miglioro costantemente le mie conoscenze di programmazione sia nelle tecnologie front-end che back-end, sviluppando applicazioni web adattive e intuitive in <b>React/Vue</b> e <b>PHP</b>, anche se in questo momento sto passando allo <b>stack MERN</b>.',
+      p1: "Sono un <span>Jr. Full-stack Web Developer </span> e <a>x2 Salesforce Certified</a> , frequento il primo anno di Informatica all'Università di Pisa ma prima di scoprire la passione per la programmazione ho studiato per due anni Economia e Gestione Aziendale.",
+      p2: 'Miglioro costantemente le mie conoscenze informatiche sia nelle tecnologie front-end che back-end, sviluppando applicazioni web adattive e intuitive in <b>React/Vue</b> e <b>PHP</b>, anche se in questo momento sto passando allo <b>stack MERN</b>.',
       p3: "Non importa quanto impegnativo sia il progetto, se hai un'idea, <a>contattami</a> e divertiamoci a svilupparla!",
       tech_work: 'Alcune tecnologie con cui ho lavorato:',
    },
