@@ -167,7 +167,7 @@ const OtherProjects = () => {
 
          <div className={classes['filter-languages']}>{languages()}</div>
 
-         <ProjectsList projects={getProjects()} isMain={false} />
+         <ProjectsList projects={getProjects()} hasMainStyle={false} />
 
          {showMoreProjectsButton()}
       </div>

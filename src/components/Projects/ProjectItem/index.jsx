@@ -11,7 +11,7 @@ import default_image from '../../../assets/images/default.png';
 
 import classes from '../index.module.scss';
 
-const ProjectItem = ({ project, isMain }) => {
+const ProjectItem = ({ project, hasMainStyle }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
    const [isLoaded, setIsLoaded] = useState(false);
@@ -54,7 +54,7 @@ const ProjectItem = ({ project, isMain }) => {
    // All projects' info
    const projectInfo = (
       <div className={classes['info-container']}>
-         {!isMain && <h2>{project.name}</h2>}
+         {!hasMainStyle && <h2>{project.name}</h2>}
 
          {/* Description */}
          <p>
@@ -75,7 +75,7 @@ const ProjectItem = ({ project, isMain }) => {
 
 			{/* Project buttons */}
          <div className={classes['project-bottom']}>
-            {isMain || project.hasDetails ? (
+            {hasMainStyle || project.hasDetails ? (
                // Show details page button
                <div className={classes['project-links']}>
                   <Link
@@ -109,7 +109,7 @@ const ProjectItem = ({ project, isMain }) => {
                </div>
             )}
 
-            {!isMain && (
+            {!hasMainStyle && (
                // Close details portal other project button
                <button onClick={hideDetailsHandler}>
                   <FontAwesomeIcon
@@ -162,19 +162,19 @@ const ProjectItem = ({ project, isMain }) => {
          <li
             id={project.name.replaceAll(' ', '-')}
             className={
-               isMain
+               hasMainStyle
                   ? `${classes['main-project']} watch`
                   : classes['other-project']
             }
          >
             <div className={classes['card-content']}>
-               {isMain && project.isFeatured && (
+               {hasMainStyle && project.isFeatured && (
                   <span className={classes.featured}>Featured</span>
                )}
 
                <h2
                   className={
-                     !isMain && project.name.length >= 18
+                     !hasMainStyle && project.name.length >= 18
                         ? classes['decrease-font']
                         : null
                   }
@@ -182,7 +182,7 @@ const ProjectItem = ({ project, isMain }) => {
                   {project.name}
                </h2>
 
-               {isMain ? (
+               {hasMainStyle ? (
                   <>
                      <div className={classes.language}>
                         <span>
@@ -210,7 +210,7 @@ const ProjectItem = ({ project, isMain }) => {
             <div
                className={`
 						${classes['img-container']}
-						${isMain && 'gray-image'}
+						${hasMainStyle && 'gray-image'}
 					`}
                style={
                   project.id === 521026706 /* Id project portfolio V-1.0 */

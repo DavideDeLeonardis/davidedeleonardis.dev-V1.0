@@ -21,7 +21,7 @@ const MainProjects = () => {
             />
          </div>
 
-         <ProjectsList projects={filteredProjects} isMain={true} />
+         <ProjectsList projects={filteredProjects} hasMainStyle={true} />
       </div>
    );
 };
