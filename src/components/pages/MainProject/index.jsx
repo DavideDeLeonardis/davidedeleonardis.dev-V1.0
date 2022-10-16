@@ -11,11 +11,11 @@ import default_image from '../../../assets/images/default.png';
 import classes from './index.module.scss';
 
 const Project = () => {
+	// State passed with router Link doesn't update when language changes
+   const { state: project } = useLocation();
+   let navigate = useNavigate();
    const [bounce, setBounce] = useState();
    const { t } = useTranslation();
-   let navigate = useNavigate();
-   // State passed with router Link doesn't update when language changes
-   const { state: project } = useLocation();
 
    // If state is empty => redirect
    useEffect(() => {
