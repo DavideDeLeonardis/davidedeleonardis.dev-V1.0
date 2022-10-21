@@ -23,9 +23,9 @@ const Project = () => {
    }, [project, navigate]);
 
    useEffect(() => {
+      window.scrollTo(0, 0);
 		// Set <html> scroll behavior previously on initial due to hover on show details page button
       document.documentElement.style.scrollBehavior = 'smooth';
-      window.scrollTo(0, 0);
    }, []);
 
    const scrollToBottomHandler = () => window.scrollTo(0, window.innerHeight);
