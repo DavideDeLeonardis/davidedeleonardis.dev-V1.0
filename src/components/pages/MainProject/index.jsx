@@ -103,7 +103,17 @@ const Project = () => {
                      />
                   </div>
 
-                  <HashLink to="/#projects">
+                  <HashLink
+                     to="/#projects"
+                     onMouseEnter={() =>
+                        (document.documentElement.style.scrollBehavior =
+                           'initial')
+                     }
+                     onMouseLeave={() =>
+                        (document.documentElement.style.scrollBehavior =
+                           'smooth')
+                     }
+                  >
                      <Button>{t('main_projects.go_back')}</Button>
                   </HashLink>
                </div>

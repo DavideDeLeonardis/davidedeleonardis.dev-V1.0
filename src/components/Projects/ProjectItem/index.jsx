@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,13 +25,19 @@ const ProjectItem = ({ project, hasMainStyle }) => {
 
    const hideDetailsHandler = () => {
       // time for scale down animation to complete
-      setTimeout(() => {
-         setDetails(false);
-      }, 150);
+      setTimeout(() => setDetails(false), 150);
       setScaleDown(true);
    };
 
    const setIsLoadedHandler = () => setIsLoaded(true);
+
+   // Set <html> scroll behavior previously on initial due to hover on return to main page button on project details page
+   useEffect(() => {
+      setTimeout(
+         () => (document.documentElement.style.scrollBehavior = 'smooth'),
+         200
+      );
+   }, []);
 
    // Display topics and languages
    const displayMaps = (array, className) => {
@@ -73,7 +79,7 @@ const ProjectItem = ({ project, hasMainStyle }) => {
             {displayMaps('topics', classes.topic)}
          </ul>
 
-			{/* Project buttons */}
+         {/* Project buttons */}
          <div className={classes['project-bottom']}>
             {hasMainStyle || project.hasDetails ? (
                // Show details page button
