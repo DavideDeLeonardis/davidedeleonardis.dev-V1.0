@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { TextareaAutosize } from '@mui/material';
 
 import useInput from '../../hooks/useInput';
+import useFadeOnScroll from '../../hooks/useFadeOnScroll';
 import Input from './Input';
 import Message from './Message';
 import Button from '../ui/Button';
@@ -18,6 +19,7 @@ const ContactPage = () => {
    const [isValid, setIsValid] = useState(false);
    const form = useRef();
    const { t } = useTranslation();
+   useFadeOnScroll(classes['in-page']);
 
    // Name
    const {
@@ -92,7 +94,7 @@ const ContactPage = () => {
    const hideMessageHandler = () => setMessage(null);
 
    return (
-      <section id="contact" className={classes.contact}>
+      <section id="contact" className={`${classes.contact} watch`}>
          <Heading
             heading={t('contact.heading')}
             h1ClassName={classes.h1}
