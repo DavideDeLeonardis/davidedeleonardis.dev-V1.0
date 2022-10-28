@@ -41,21 +41,14 @@ const OtherProjects = () => {
          )
             programmingLanguages.push(JSTS);
 
-         for (const language of project.languages) {
+         for (const language of project.languages)
             if (
                language !== 'JavaScript' &&
                language !== 'TypeScript' &&
                !programmingLanguages.includes(language)
-            ) {
+            )
                programmingLanguages.push(language);
-            }
-         }
       });
-
-      // Move Laravel at the end
-      const laravel = programmingLanguages[3];
-      programmingLanguages.splice(3, 1);
-      programmingLanguages.push(laravel);
 
       return programmingLanguages;
    };
@@ -64,9 +57,9 @@ const OtherProjects = () => {
    const filterProject = (language) => {
       hideProjectsHandler();
 
-      if (language === t('other_projects.selectAll' /* All */)) {
+      if (language === t('other_projects.selectAll' /* All */))
          setProjectsByLanguage(filteredProjects);
-      } else if (language === JSTS) {
+      else if (language === JSTS)
          setProjectsByLanguage(
             filteredProjects.filter(
                (project) =>
@@ -74,13 +67,12 @@ const OtherProjects = () => {
                   project.languages.includes('TypeScript')
             )
          );
-      } else {
+      else
          setProjectsByLanguage(
             filteredProjects.filter((project) =>
                project.languages.includes(language)
             )
          );
-      }
    };
 
    // Display languages name
@@ -128,17 +120,21 @@ const OtherProjects = () => {
          (projectsAreSliced &&
             screenWidth < 901 &&
             (getProjects().length < 2 || projectsByLanguage.length === 2))
-      ) {
+      )
          return;
-      }
+
+      const onClick = () => {
+         document.documentElement.style.scrollBehavior = 'initial';
+         setTimeout(
+            () => (document.documentElement.style.scrollBehavior = 'smooth'),
+            100
+         );
+
+         projectsAreSliced ? showAllProjectsHandler() : hideProjectsHandler();
+      };
 
       const button = (
-         <Button
-            className={classes['show-more-button']}
-            onClick={
-               projectsAreSliced ? showAllProjectsHandler : hideProjectsHandler
-            }
-         >
+         <Button className={classes['show-more-button']} onClick={onClick}>
             {projectsAreSliced
                ? t('other_projects.show_more')
                : t('other_projects.show_less')}

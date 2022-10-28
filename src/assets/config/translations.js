@@ -60,6 +60,7 @@ export const translationsEn = {
          intro: 'INTRO EN',
       },
       vue_netflix: {
+			// Aggiungere technicals
          short_d:
             "Netflix home page clone in Vue.js; select a category and search your favourite movies! Possibility of see movie's details.",
          long_d: null,
@@ -190,6 +191,7 @@ export const translationsIt = {
          intro: 'INTRO IT',
       },
       vue_netflix: {
+			// Aggiungere technicals
          short_d:
             'Homepage di Netflix in Vue.js; seleziona una categoria e cerca i tuoi film preferiti! Possibilità di vedere i dettagli del singolo film.',
          long_d: null,
