@@ -15,7 +15,7 @@ const App = () => {
    const [showHome, setShowHome] = useState(false);
 
    useEffect(() => {
-      setTimeout(() => setShowHome(true), 1); // 5100
+      setTimeout(() => setShowHome(true), 5100); // 5100
    }, []);
 
    return showHome ? (

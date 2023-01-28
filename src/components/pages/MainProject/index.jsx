@@ -11,7 +11,7 @@ import default_image from '../../../assets/images/default.png';
 import classes from './index.module.scss';
 
 const Project = () => {
-	// State passed with router Link doesn't update when language changes
+   // State passed with router Link doesn't update when language changes
    const { state: project } = useLocation();
    let navigate = useNavigate();
    const [bounce, setBounce] = useState();
@@ -24,7 +24,7 @@ const Project = () => {
 
    useEffect(() => {
       window.scrollTo(0, 0);
-		// Set <html> scroll behavior previously on initial due to hover on show details page button
+      // Set <html> scroll behavior previously on initial due to hover on show details page button
       document.documentElement.style.scrollBehavior = 'smooth';
    }, []);
 
