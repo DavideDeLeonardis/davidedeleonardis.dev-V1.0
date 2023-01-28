@@ -11,5 +11,5 @@
 </span>
 
 
-<span>Soon: main project single page, translator</span>
+<span>Soon: main project single page, projects archive, complete english translations, experiences section</span>
 </div>
