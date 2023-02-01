@@ -1,14 +1,13 @@
-// Libraries
 import { useEffect } from 'react';
 
-// Components
-import ProjectsList from '../../Projects/ProjectsList';
+import ArchiveProjects from '../../Projects/ArchiveProjects';
 
-// Assets
 import projects from '../../../assets/config/projects';
 
+import classes from './index.module.scss';
+
 const ArchivePage = () => {
-   const archivedProject = projects().filter((project) => project.isArchived);
+   const filteredProjects = projects().filter((project) => project.isArchived);
 
    useEffect(() => {
       // Scroll to top page and set <html> scroll behavior previously on initial due to hover on show page details button
@@ -16,11 +15,30 @@ const ArchivePage = () => {
       document.documentElement.style.scrollBehavior = 'smooth';
    }, []);
 
+   const archiveProjects = filteredProjects.map((project, index) => (
+      <ArchiveProjects key={index} project={project} />
+   ));
+
    return (
-      <>
+      <div className={classes['archive-container']}>
          <h1>Archive</h1>
-         <ProjectsList projects={archivedProject} hasMainStyle={false} />
-      </>
+         <ul>
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+            {archiveProjects}
+         </ul>
+      </div>
    );
 };
 
