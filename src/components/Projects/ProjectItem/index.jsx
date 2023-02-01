@@ -1,14 +1,21 @@
+// Libraries
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Custom hooks
+import useFadeOnScroll from '../../../hooks/useFadeOnScroll';
+
+// UI
 import CardPortal from '../../ui/CardPortal';
 import Button from '../../ui/Button';
+import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
 import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
-import useFadeOnScroll from '../../../hooks/useFadeOnScroll';
+
+// Assets
 import default_image from '../../../assets/images/default.png';
 
+// SCSS
 import classes from '../index.module.scss';
 
 const ProjectItem = ({ project, hasMainStyle }) => {
@@ -18,10 +25,7 @@ const ProjectItem = ({ project, hasMainStyle }) => {
    const { t } = useTranslation();
    useFadeOnScroll(classes['in-page'], true);
 
-   const showDetailsHandler = () => {
-      setDetails(true);
-      setScaleDown(false);
-   };
+   const showDetailsHandler = () => setDetails(true) && setScaleDown(false);
 
    const hideDetailsHandler = () => {
       // time for scale down animation to complete
@@ -57,6 +61,17 @@ const ProjectItem = ({ project, hasMainStyle }) => {
       ));
    };
 
+   // Display "show details" button
+   const showDetailsButton = (
+      <Button>
+         {t('projects.show_details')}
+         <FontAwesomeIcon
+            className={classes.icon}
+            icon="fa-solid fa-arrow-up-right-from-square"
+         />
+      </Button>
+   );
+
    // All projects' info
    const projectInfo = (
       <div className={classes['info-container']}>
@@ -84,26 +99,11 @@ const ProjectItem = ({ project, hasMainStyle }) => {
             {hasMainStyle || project.hasDetailsPage ? (
                // Show details page button
                <div className={classes['project-links']}>
-                  <Link
-                     to={`/projects/${project.name}`}
+                  <LinkWithScrollOnTop
+                     endpoint={`/projects/${project.name}`}
                      state={project}
-                     onMouseEnter={() =>
-                        (document.documentElement.style.scrollBehavior =
-                           'initial')
-                     }
-                     onMouseLeave={() =>
-                        (document.documentElement.style.scrollBehavior =
-                           'smooth')
-                     }
-                  >
-                     <Button>
-                        {t('projects.show_details')}
-                        <FontAwesomeIcon
-                           className={classes.icon}
-                           icon="fa-solid fa-arrow-up-right-from-square"
-                        />
-                     </Button>
-                  </Link>
+                     content={showDetailsButton}
+                  />
                </div>
             ) : (
                <div className={classes['project-links']}>

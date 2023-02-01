@@ -1,3 +1,5 @@
+// Add or remove css class when user visually intersect an element
+
 const useFadeOnScroll = (classToAdd, removeClass = false) => {
    const callback = (items) => {
       items.forEach((item) => {

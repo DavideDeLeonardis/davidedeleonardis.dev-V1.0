@@ -1,16 +1,25 @@
+// Libraries
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Components
 import Nav from './Nav';
 import Resume from '../../portals/ResumePortal';
+
+// UI
 import Backdrop from '../../ui/Backdrop';
 import Button from '../../ui/Button';
+
+// Custom hooks
 import useDimensions from '../../../hooks/useDimensions';
 import useWindowScroll from '../../../hooks/useWindowScroll';
+
+// Assets
 import logo from '../../../assets/images/exagon-logo-blue.png';
 
+// SCSS
 import './index.scss';
 
 const Header = ({ isHome }) => {

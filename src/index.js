@@ -1,7 +1,11 @@
+// Libraries
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
+import './i18n';
 
+// Fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
    faAngleUp,
@@ -19,9 +23,6 @@ import {
    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 
-import App from './components/App';
-import './i18n';
-
 library.add(
    faAngleUp,
    faSpinner,
@@ -36,6 +37,7 @@ library.add(
    faArrowDown
 );
 
+// Render
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <StrictMode>

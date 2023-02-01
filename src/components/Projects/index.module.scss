@@ -29,10 +29,6 @@ $translate-fade-animation: 50vw;
       }
    }
 
-   .paragraph {
-      margin-top: 20px;
-   }
-
    // Main project item
    .main-project {
       position: relative;
@@ -608,6 +604,15 @@ $translate-fade-animation: 50vw;
 
    @media screen and (max-width: 450px) {
       width: calc(100vw - 20px);
+   }
+}
+
+.paragraph {
+   margin-top: 20px;
+   padding-bottom: 5px;
+
+   &:hover {
+      text-decoration: underline;
    }
 }
 

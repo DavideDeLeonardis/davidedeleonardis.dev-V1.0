@@ -1,6 +1,8 @@
+// Libraries
 import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+// Components
 import Splash from './pages/Splash';
 import Home from './pages/Home';
 import Project from './pages/MainProject';
@@ -9,6 +11,7 @@ import Layout from './layout/Layout';
 import PopUpMessage from './portals/TranslatorMessagePortal';
 import ArrowUp from './portals/ArrowUpPortal';
 
+// SCSS
 import '../assets/scss/index.scss';
 
 const App = () => {

@@ -1,13 +1,18 @@
+// Libraries
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Button from '../../ui/Button';
-import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
+// Assets
 import default_image from '../../../assets/images/default.png';
 
+// UI
+import Button from '../../ui/Button';
+import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
+
+// SCSS
 import classes from './index.module.scss';
 
 const Project = () => {
@@ -28,7 +33,7 @@ const Project = () => {
       document.documentElement.style.scrollBehavior = 'smooth';
    }, []);
 
-   const scrollToBottomHandler = () => window.scrollTo(0, window.innerHeight);
+   const bounceToBottomHandler = () => window.scrollTo(0, window.innerHeight);
 
    // Start arrow bounce
    setTimeout(() => setBounce(true), 2000);
@@ -68,7 +73,7 @@ const Project = () => {
                      className={`${classes.down} ${
                         bounce && classes['animation-arrow']
                      }`}
-                     onClick={scrollToBottomHandler}
+                     onClick={bounceToBottomHandler}
                   >
                      <FontAwesomeIcon icon="fa-solid fa-arrow-down" />
                   </div>

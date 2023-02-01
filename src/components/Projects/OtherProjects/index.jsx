@@ -1,13 +1,23 @@
+// Libraries
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import projects from '../../../assets/config/projects';
+// Components
 import ProjectsList from '../ProjectsList';
+
+// Assets
+import projects from '../../../assets/config/projects';
+
+// UI
+import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
 import Heading from '../../ui/Heading';
 import Button from '../../ui/Button';
+
+// Custom hooks
 import useActive from '../../../hooks/useActive';
 import useDimensions from '../../../hooks/useDimensions';
 
+// SCSS
 import classes from '../index.module.scss';
 
 const OtherProjects = () => {
@@ -35,15 +45,15 @@ const OtherProjects = () => {
    // Get programming languages name
    const getLanguages = () => {
       let programmingLanguages = [t('other_projects.selectAll') /* All */];
-      filteredProjects.forEach((project) => {
+      filteredProjects.forEach(({ languages }) => {
          // Creation new mix JS / TS
          if (
-            project.languages.includes('JavaScript' || 'TypeScript') &&
+            languages.includes('JavaScript' || 'TypeScript') &&
             !programmingLanguages.includes(JSTS)
          )
             programmingLanguages.push(JSTS);
 
-         for (const language of project.languages)
+         for (const language of languages)
             if (
                language !== 'JavaScript' &&
                language !== 'TypeScript' &&
@@ -64,15 +74,15 @@ const OtherProjects = () => {
       else if (language === JSTS)
          setProjectsByLanguage(
             filteredProjects.filter(
-               (project) =>
-                  project.languages.includes('JavaScript') ||
-                  project.languages.includes('TypeScript')
+               ({ languages }) =>
+                  languages.includes('JavaScript') ||
+                  languages.includes('TypeScript')
             )
          );
       else
          setProjectsByLanguage(
-            filteredProjects.filter((project) =>
-               project.languages.includes(language)
+            filteredProjects.filter(({ languages }) =>
+               languages.includes(language)
             )
          );
    };
@@ -113,7 +123,7 @@ const OtherProjects = () => {
       return projectsByLanguage.slice(0, otherProjectsShown);
    };
 
-   // Show more button conditions
+   // Show more button display and conditions
    const showMoreProjectsButton = () => {
       if (
          (projectsAreSliced &&
@@ -135,7 +145,7 @@ const OtherProjects = () => {
          projectsAreSliced ? showAllProjectsHandler() : hideProjectsHandler();
       };
 
-      const button = (
+      const buttonShowMore = (
          <Button className={classes['show-more-button']} onClick={onClick}>
             {projectsAreSliced
                ? t('other_projects.show_more')
@@ -144,10 +154,10 @@ const OtherProjects = () => {
       );
 
       return projectsAreSliced ? (
-         button
+         buttonShowMore
       ) : (
          <a href="#other-projects" style={{ padding: '10px 0' }}>
-            {button}
+            {buttonShowMore}
          </a>
       );
    };
@@ -159,7 +169,12 @@ const OtherProjects = () => {
       >
          <Heading
             heading={t('other_projects.heading')}
-            subheading={t('other_projects.p')}
+            subheading={
+               <LinkWithScrollOnTop
+                  endpoint={'archive'}
+                  content={t('other_projects.go_to_archive_link')}
+               />
+            }
             pClassName={classes.paragraph}
          />
 

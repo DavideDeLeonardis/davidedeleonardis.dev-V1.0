@@ -1,11 +1,18 @@
+// Libraries
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import dateFormat from 'dateformat';
 
+// UI
 import SelectLanguage from '../../ui/SelectLanguage';
+
+// Custom hooks
 import useDimensions from '../../../hooks/useDimensions';
+
+// Assets
 import { languages } from '../../../assets/config/languages';
 
+// SCSS
 import classes from './index.module.scss';
 
 const Footer = () => {

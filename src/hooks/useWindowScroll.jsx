@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 
 const useWindowScroll = (bool) => {
+	// Do something when user scrolls the page
    const [scroll, setScroll] = useState(window.scrollY);
    const [isGoingDown, setIsGoingDown] = useState(bool);
 

@@ -1,16 +1,23 @@
+// Libraries
 import { useRef, useState } from 'react';
 import validator from 'validator';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 import { TextareaAutosize } from '@mui/material';
 
-import useInput from '../../hooks/useInput';
-import useFadeOnScroll from '../../hooks/useFadeOnScroll';
+// Components
 import Input from './Input';
 import Message from './Message';
+
+// UI
 import Button from '../ui/Button';
 import Heading from '../ui/Heading';
 
+// Custom hooks
+import useInput from '../../hooks/useInput';
+import useFadeOnScroll from '../../hooks/useFadeOnScroll';
+
+// SCSS
 import classes from './index.module.scss';
 
 const ContactPage = () => {
