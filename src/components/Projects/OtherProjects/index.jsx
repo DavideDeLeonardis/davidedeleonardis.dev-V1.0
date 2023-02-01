@@ -21,13 +21,15 @@ const OtherProjects = () => {
    );
    const JSTS = 'JS / TS';
 
-   // Filter projects NOT main
-   const filteredProjects = projectsInfo.filter((project) => !project.isMain);
+   // Filter projects NOT main and NOT archived
+   const filteredProjects = projectsInfo.filter(
+      (project) => !project.isMain && !project.isArchived
+   );
 
-   // Show button
+   // Show "show more projects" button
    const showAllProjectsHandler = () => setProjectsAreSliced(false);
 
-   // Hide button
+   // Hide "show more projects" button
    const hideProjectsHandler = () => setProjectsAreSliced(true);
 
    // Get programming languages name

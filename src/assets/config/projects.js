@@ -26,7 +26,7 @@ const useProjects = () => {
          isFeatured: true,
          isMain: true,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: true,
       },
       {
          // react-TS-select-component
@@ -44,7 +44,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: true,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: true,
       },
       {
          // laravel-boolpress
@@ -68,7 +68,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: true,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: true,
       },
       {
          // react-amazon
@@ -84,7 +84,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // react-auth-test
@@ -100,7 +100,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // vue-netflix
@@ -116,7 +116,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // portfolio V-1.0
@@ -133,7 +133,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: true,
+         hasDetailsPage: true,
       },
       {
          // avada-consultant
@@ -148,8 +148,8 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
          isFeatured: false,
          isMain: false,
-         isArchived: false,
-         hasDetails: false,
+         isArchived: true,
+         hasDetailsPage: false,
       },
       {
          // vue-instagram
@@ -165,7 +165,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // vue-boolzapp
@@ -181,7 +181,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // laravel-comics
@@ -197,7 +197,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
       {
          // minefield-game
@@ -213,7 +213,7 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
-         hasDetails: false,
+         hasDetailsPage: false,
       },
    ];
 };

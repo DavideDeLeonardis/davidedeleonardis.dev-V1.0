@@ -10,7 +10,10 @@ const MainProjects = () => {
    const projectsInfo = projects();
    const { t } = useTranslation();
 
-   const filteredProjects = projectsInfo.filter((project) => project.isMain);
+   // Filter projects main and NOT archived
+   const filteredProjects = projectsInfo.filter(
+      (project) => project.isMain && !project.isArchived
+   );
 
    return (
       <div id="main-projects" className={classes['projects-container']}>

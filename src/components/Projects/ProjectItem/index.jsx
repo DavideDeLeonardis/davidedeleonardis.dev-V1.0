@@ -81,7 +81,7 @@ const ProjectItem = ({ project, hasMainStyle }) => {
 
          {/* Project buttons */}
          <div className={classes['project-bottom']}>
-            {hasMainStyle || project.hasDetails ? (
+            {hasMainStyle || project.hasDetailsPage ? (
                // Show details page button
                <div className={classes['project-links']}>
                   <Link
