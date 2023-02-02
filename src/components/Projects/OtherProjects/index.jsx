@@ -9,7 +9,7 @@ import ProjectsList from '../ProjectsList';
 import projects from '../../../assets/config/projects';
 
 // UI
-import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
+// import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
 import Heading from '../../ui/Heading';
 import Button from '../../ui/Button';
 
@@ -170,10 +170,12 @@ const OtherProjects = () => {
          <Heading
             heading={t('other_projects.heading')}
             subheading={
-               <LinkWithScrollOnTop
-                  endpoint={'archive'}
-                  content={t('other_projects.go_to_archive_link')}
-               />
+					t('other_projects.p')
+					// <LinkWithScrollOnTop
+					//    endpoint={'archive'}
+					//    content={t('other_projects.go_to_archive_link')}
+					// />
+					// change also scss .paragraph {}
             }
             pClassName={classes.paragraph}
          />

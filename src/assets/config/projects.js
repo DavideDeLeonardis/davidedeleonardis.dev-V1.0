@@ -148,7 +148,7 @@ const useProjects = () => {
          github_url: 'https://github.com/DavideDeLeonardis/avada-consultant',
          isFeatured: false,
          isMain: false,
-         isArchived: true,
+         isArchived: false,
          hasDetailsPage: false,
       },
       {
@@ -213,6 +213,22 @@ const useProjects = () => {
          isFeatured: false,
          isMain: false,
          isArchived: false,
+         hasDetailsPage: false,
+      },
+      {
+         // test-project
+         id: 1111147273,
+         name: 'Test project',
+         image: 'https://picsum.photos/200/200',
+         description: t('projects.test_project.short_d'),
+         long_description: null,
+         topics: null,
+         languages: null,
+         url: 'https://',
+         github_url: 'https://',
+         isFeatured: false,
+         isMain: false,
+         isArchived: true,
          hasDetailsPage: false,
       },
    ];

@@ -109,6 +109,10 @@ export const translationsEn = {
             'Clone of DC-comics homepage made with Laravel, <blue>click on single comic</blue> to see details. <technicals>- Data represented in Blade pages and routes are completely defined in routes directory.</technicals>',
          long_d: null,
       },
+      test_project: {
+         short_d: 'Description',
+         long_d: null,
+      },
       show_details: 'Show Details',
       see_demo: 'See Demo',
       see_github: 'See on GitHub',
@@ -243,6 +247,10 @@ export const translationsIt = {
       laravel_comics: {
          short_d:
             'Clone della homepage del sito della DC-comics creato in Laravel, <blue>clicca sui comics</blue> per vederne i dettagli. <technicals>- I dati sono rappresentati in pagine Blade e tutte le rotte sono definite nella routes directory.</technicals>',
+         long_d: null,
+      },
+      test_project: {
+         short_d: 'Descrizione',
          long_d: null,
       },
       show_details: 'Mostra Dettagli',
