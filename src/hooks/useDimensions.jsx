@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const useDimensions = () => {
-	// Do something when resizing in height and width the page
+   // Detect window dimensions and return dimensions based on resizing
+
    const [dimensions, setDimensions] = useState({
       screenHeight: window.innerHeight,
       screenWidth: window.innerWidth,
@@ -17,9 +18,7 @@ const useDimensions = () => {
 
       window.addEventListener('resize', handleResize);
 
-      return (_) => {
-         window.removeEventListener('resize', handleResize);
-      };
+      return (_) => window.removeEventListener('resize', handleResize);
    });
 
    return dimensions;

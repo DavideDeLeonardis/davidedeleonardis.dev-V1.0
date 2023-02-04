@@ -1,15 +1,16 @@
-// Add or remove css class when user visually intersect an element
-
 const useFadeOnScroll = (classToAdd, removeClass = false) => {
-   const callback = (items) => {
-      items.forEach((item) => {
-         if (item.isIntersecting) item.target.classList.add(classToAdd);
-         if (!item.isIntersecting && removeClass)
-            item.target.classList.remove(classToAdd);
-      });
-   };
+   // Add or remove css class when user visually intersect an element in the page
 
-   let observer = new IntersectionObserver(callback, { threshold: 0.25 });
+   let observer = new IntersectionObserver(
+      (items) => {
+         items.forEach(({ isIntersecting, target }) => {
+            if (isIntersecting) target.classList.add(classToAdd);
+            if (!isIntersecting && removeClass)
+               target.classList.remove(classToAdd);
+         });
+      },
+      { threshold: 0.25 }
+   );
 
    document
       .querySelectorAll('.watch')

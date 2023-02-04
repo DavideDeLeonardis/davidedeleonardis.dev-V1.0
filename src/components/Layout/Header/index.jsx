@@ -59,12 +59,12 @@ const Header = ({ isHome }) => {
 
    const isNotHoverHandler = () => setIsHover(false);
 
-   // Hide menu in Y every 7 seconds
+   // In NOT home pages, hide header every 7 seconds
    useEffect(() => {
       !isHome && setTimeout(() => setIsGoingDown(true), 7000);
    }, [isHome, scroll, setIsGoingDown]);
 
-   // Header scroll in Y aniamations
+   // Header scroll in Y animations
    const headerClasses = () => {
       if (screenWidth < 550) return;
 
@@ -79,9 +79,7 @@ const Header = ({ isHome }) => {
 
          <Button className="resume-button" onClick={showResumeHandler}>
             <Trans
-               components={{
-                  span: <span style={{ padding: '0 20px' }} />,
-               }}
+               components={{ span: <span style={{ padding: '0 20px' }} /> }}
             >
                {t('header.curriculum')}
             </Trans>
@@ -117,22 +115,22 @@ const Header = ({ isHome }) => {
 
          <div className="container-sm header">
             <a href="/" className="logo-header">
-               <img src={logo} alt="logo" />
+               <img src={logo} alt="D logo" />
             </a>
 
-            {/* toggler */}
+            {/* menu toggler */}
             {togglerIsShown && screenWidth < 769 && (
                <button className="toggler" onClick={openMenuHandler}>
                   <FontAwesomeIcon icon="fa-solid fa-bars" />
                </button>
             )}
 
-            {/* nav horizontal */}
+            {/* nav horizontal (displayed when vw > 768px) */}
             {screenWidth > 768 && (
                <div className="header-right">{navElements}</div>
             )}
 
-            {/* nav vertical */}
+            {/* nav vertical (displayed when vw < 769px) */}
             {menuIsShown && screenWidth < 769 && menuPortal}
          </div>
       </header>

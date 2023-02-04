@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Project from './pages/MainProject';
 import Archive from './pages/Archive';
 import Layout from './layout/Layout';
+
+// Utilities
 import PopUpMessage from './portals/TranslatorMessagePortal';
 import ArrowUp from './portals/ArrowUpPortal';
 
@@ -18,7 +20,7 @@ const App = () => {
    const [showHome, setShowHome] = useState(false);
 
    useEffect(() => {
-      setTimeout(() => setShowHome(true), 5100); // 5100
+      setTimeout(() => setShowHome(true), 1); // 5100
    }, []);
 
    return showHome ? (
