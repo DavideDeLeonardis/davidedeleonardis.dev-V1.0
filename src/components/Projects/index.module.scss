@@ -317,13 +317,32 @@ $translate-fade-animation: 50vw;
          $gap: $gap-pojects,
          $wrap: true
       );
+      transform-style: preserve-3d;
+      perspective: 500px;
+
+      @media screen and (min-width: 551px) {
+         // card 3D moving on hover
+         &:hover .other-project {
+            transform: rotateY(25deg);
+         }
+         & .other-project:hover ~ .other-project {
+            transform: rotateY(-25deg);
+         }
+         & .other-project:hover {
+            transform: rotateY(0deg) scale(1.1);
+            z-index: 100;
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+         }
+      }
 
       // Other project item
       .other-project {
          position: relative;
          width: calc(33% - $gap-pojects);
          opacity: 0;
+         transform-style: preserve-3d;
          overflow: hidden;
+         transition: 0.5s;
 
          @media screen and (max-width: 900px) {
             @include mixin.flex($direction: column-reverse, $justify: flex-end);
@@ -423,7 +442,7 @@ $translate-fade-animation: 50vw;
             .card-content {
                @media screen and (min-width: $md-bk) {
                   background-color: rgba(13, 13, 93, 0.965);
-                  transition: 200ms;
+                  // transition: 200ms;
                }
 
                h2,
