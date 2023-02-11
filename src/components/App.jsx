@@ -52,6 +52,7 @@ const App = () => {
                element={
                   <Layout isHome={false}>
                      <Archive />
+                     <ArrowUp />
                   </Layout>
                }
             />

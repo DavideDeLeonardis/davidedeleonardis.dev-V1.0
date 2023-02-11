@@ -32,16 +32,19 @@ const Header = ({ isHome }) => {
    const { screenWidth } = useDimensions();
    const { t } = useTranslation();
 
+   // Open menu function
    const openMenuHandler = () => {
       setMenuIsShown(true);
       setTogglerIsShown(false);
    };
 
+   // Close menu function
    const closeMenuHandler = () => {
       setMenuIsShown(false);
       setTogglerIsShown(true);
    };
 
+	// Show CV function
    const showResumeHandler = () => {
       setResumeisShown(true);
       setMenuIsShown(false);
@@ -49,6 +52,7 @@ const Header = ({ isHome }) => {
       setScaleDown(false);
    };
 
+	// Hide CV function
    const hideResumeHandler = () => {
       setScaleDown(true);
       // time for scale down animation to complete

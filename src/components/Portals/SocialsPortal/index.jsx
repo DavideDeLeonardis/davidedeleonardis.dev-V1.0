@@ -1,26 +1,33 @@
+// Libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Portal from '../index';
+// Components
+import Portal from '../';
+
+// Assets
 import { socials } from '../../../assets/config/mySocials';
 
+// SCSS
 import classes from './index.module.scss';
 
 const SocialsPortal = () => {
-   const socialList = socials.map((social, index) => (
-      <div key={index} className={classes['container-item']}>
-         <a href={social.myLink} target="_blank" rel="noreferrer">
-            <div
-               className={`${classes['social-item']} 
-				${classes[social.socialName]}`}
-            >
-               <FontAwesomeIcon
-                  icon={`fa-${social.fontAwesomePrefix} fa-${social.socialName}`}
-                  className={classes.socialIcon}
-               />
-            </div>
-         </a>
-      </div>
-   ));
+   const socialList = socials.map(
+      ({ myLink, socialName, fontAwesomePrefix }, index) => (
+         <div key={index} className={classes['container-item']}>
+            <a href={myLink} target="_blank" rel="noreferrer">
+               <div
+                  className={`${classes['social-item']} 
+				${classes[socialName]}`}
+               >
+                  <FontAwesomeIcon
+                     icon={`fa-${fontAwesomePrefix} fa-${socialName}`}
+                     className={classes.socialIcon}
+                  />
+               </div>
+            </a>
+         </div>
+      )
+   );
 
    return (
       <Portal>

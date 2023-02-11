@@ -1,5 +1,7 @@
+// Assets
 import logo from '../../../assets/images/exagon-logo-blue.png';
 
+// SCSS
 import classes from './index.module.scss';
 
 const SplashPage = () => {

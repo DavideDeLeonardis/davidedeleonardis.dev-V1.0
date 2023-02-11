@@ -1,8 +1,13 @@
+// Libraries
 import { useTranslation, Trans } from 'react-i18next';
 
+// UI
 import Button from '../ui/Button';
+
+// Custom hooks
 import useDimensions from '../../hooks/useDimensions';
 
+// SCSS
 import classes from './index.module.scss';
 
 const Presentation = () => {

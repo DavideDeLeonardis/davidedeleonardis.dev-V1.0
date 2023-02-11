@@ -28,7 +28,7 @@ const ContactPage = () => {
    const { t } = useTranslation();
    useFadeOnScroll(classes['in-page']);
 
-   // Name
+   // Custom hook for NAME
    const {
       value: enteredName,
       isValid: enteredNameIsValid,
@@ -38,7 +38,7 @@ const ContactPage = () => {
       reset: resetNameInput,
    } = useInput((value) => value.trim() !== '');
 
-   // Email
+   // Custom hook for EMAIL
    const {
       value: enteredEmail,
       isValid: enteredEmailIsValid,
@@ -48,7 +48,7 @@ const ContactPage = () => {
       reset: resetEmailInput,
    } = useInput((value) => validator.isEmail(value));
 
-   // Message
+   // Custom hook for TEXTAREA
    const {
       value: valueTextArea,
       valueChangeHandler: textareaChangeHandler,
@@ -59,7 +59,7 @@ const ContactPage = () => {
    let formIsValid = false;
    if (enteredNameIsValid && enteredEmailIsValid) formIsValid = true;
 
-   // Form submitting
+   // Form submitting with message send
    const sendEmail = (e) => {
       e.preventDefault();
 
@@ -75,6 +75,7 @@ const ContactPage = () => {
          setIsLoading(false);
       };
 
+		// EmailJS
       emailjs
          .sendForm(
             'service_jlf0fj6',

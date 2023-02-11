@@ -1,8 +1,11 @@
+// Libraries
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// UI
 import CardPortal from '../../ui/CardPortal';
 
+// SCSS
 import classes from './index.module.scss';
 
 const Resume = ({ backdropIsShown, onClose, scaleDown }) => {

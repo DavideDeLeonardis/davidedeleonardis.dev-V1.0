@@ -1,15 +1,16 @@
+// Libraries
 import { useEffect, useState, useCallback } from 'react';
 
 const useWindowScroll = (bool) => {
-   // Detect page scroll movement and pass scroll data
+   // Detect page scroll movement and return scroll data
+
    const [scroll, setScroll] = useState(window.scrollY);
    const [isGoingDown, setIsGoingDown] = useState(bool);
 
    const scrollHandler = useCallback(
       (e) => {
-         const window = e.currentTarget;
-         scroll > window.scrollY ? setIsGoingDown(false) : setIsGoingDown(true);
-         setScroll(window.scrollY);
+         scroll > e.currentTarget.scrollY ? setIsGoingDown(false) : setIsGoingDown(true);
+         setScroll(e.currentTarget.scrollY);
       },
       [scroll]
    );

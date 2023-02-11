@@ -1,7 +1,10 @@
+// Libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Components
 import Portal from '../';
 
+// SCSS
 import './index.scss';
 
 const ArrowUp = () => {

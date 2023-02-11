@@ -1,23 +1,28 @@
+// Libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Custom hooks
 import useActive from '../../../../hooks/useActive';
+
+// Assets
 import { useNavTranslate } from '../../../../assets/config/navLinks';
 
+// SCSS
 import '../index.scss';
 
 const Nav = ({ onClose, isHome }) => {
    const links = useNavTranslate();
    const { isActiveHandler, isActive } = useActive();
 
-   const linkElement = (key, link) => {
+   const linkElement = ({ to, id, linkName }, key) => {
       return (
          <li key={key} className="header-nav-element">
             <a
-               href={`/#${link.to}`}
-               className={link.id === isActive ? 'active' : ''}
-               onClick={(e) => isActiveHandler(e, link.id)}
+               href={`/#${to}`}
+               className={id === isActive ? 'active' : ''}
+               onClick={(e) => isActiveHandler(e, id)}
             >
-               {link.linkName}
+               {linkName}
             </a>
          </li>
       );
@@ -25,8 +30,8 @@ const Nav = ({ onClose, isHome }) => {
 
    const linksList = links.map((link, key) =>
       isHome
-         ? link.linkName !== 'Home' && linkElement(key, link)
-         : link.linkName === 'Home' && linkElement(key, link)
+         ? link.linkName !== 'Home' && linkElement(link, key)
+         : link.linkName === 'Home' && linkElement(link, key)
    );
 
    return (

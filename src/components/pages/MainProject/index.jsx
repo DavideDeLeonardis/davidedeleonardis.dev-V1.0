@@ -33,6 +33,7 @@ const Project = () => {
       document.documentElement.style.scrollBehavior = 'smooth';
    }, []);
 
+	// Go to description button function
    const bounceToBottomHandler = () => window.scrollTo(0, window.innerHeight);
 
    // Start arrow bounce

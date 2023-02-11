@@ -1,5 +1,3 @@
-const Experience = () => {
-   return <section>Experience</section>;
-};
+const Experience = () => <section>Experience</section>;
 
 export default Experience;

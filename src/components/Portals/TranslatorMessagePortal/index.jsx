@@ -1,8 +1,11 @@
+// Libraries
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Portal from '../index';
+// Components
+import Portal from '../';
 
+// SCSS
 import classes from './index.module.scss';
 
 const TranslatorMessagePortal = (showHome = false) => {
@@ -13,9 +16,7 @@ const TranslatorMessagePortal = (showHome = false) => {
       setTimeout(() => setMessageIsVisible(false), 8000); // 3000ms for animation-delay, 5000ms screen time
    }, [showHome]);
 
-   const hideMessageHandler = () => {
-      setMessageIsVisible(false);
-   };
+   const hideMessageHandler = () => setMessageIsVisible(false);
 
    return messageIsvisible ? (
       <Portal>

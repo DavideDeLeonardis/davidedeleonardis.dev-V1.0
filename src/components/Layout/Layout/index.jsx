@@ -1,3 +1,4 @@
+// Components
 import Header from '../Header';
 import Footer from '../Footer';
 import SocialsPortal from '../../portals/SocialsPortal';
