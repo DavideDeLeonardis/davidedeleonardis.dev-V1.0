@@ -1,7 +1,7 @@
 const SelectLanguage = ({ className, selectElements, onChange }) => {
-   const optionsList = selectElements.map((element, index) => (
-      <option value={element.value} key={index}>
-         {element.option}
+   const optionsList = selectElements.map(({ value, option }, index) => (
+      <option value={value} key={index}>
+         {option}
       </option>
    ));
 

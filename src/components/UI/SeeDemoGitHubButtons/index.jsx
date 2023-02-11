@@ -1,6 +1,8 @@
+// Libraries
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// UI
 import Button from '../Button';
 
 const SeeDemoGitHubButtons = ({ project, className }) => {

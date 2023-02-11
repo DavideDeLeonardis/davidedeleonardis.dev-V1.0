@@ -1,3 +1,4 @@
+// SCSS
 import classes from './index.module.scss';
 
 const Backdrop = ({ onClose, isBlack }) => {
