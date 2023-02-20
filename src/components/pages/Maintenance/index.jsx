@@ -1,6 +1,13 @@
+// Assets
+import logo from '../../../assets/images/exagon-logo-blue.png';
+
+// SCSS
+import classes from './index.module.scss';
+
 const MaintenancePage = () => {
    return (
-      <div style={{ textAlign: 'center', marginTop: '50vh' }}>
+      <div className={classes.container}>
+         <img className={classes.image} src={logo} alt="D-logo" />
          <h2>SITE'S IN MAINTENANCE!</h2>
       </div>
    );
