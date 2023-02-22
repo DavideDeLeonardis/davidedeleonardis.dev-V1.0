@@ -23,7 +23,7 @@ const SeeDemoGitHubButtons = ({ project, className }) => {
             </a>
          )}
 
-         {/* See on GitHub button */}
+         {/* See GitHub button */}
          {project.github_url !== null && (
             <a href={project.github_url} target="_blank" rel="noreferrer">
                <Button>

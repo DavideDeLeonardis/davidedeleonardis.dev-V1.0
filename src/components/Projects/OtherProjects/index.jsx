@@ -37,7 +37,7 @@ const OtherProjects = () => {
 
    // Display actual projects based on show more button actions
    const getProjects = () => {
-      let otherProjectsShown = 3;
+		let otherProjectsShown = 3;
       if (screenWidth < 901) otherProjectsShown = 2;
 
       if (projectsByLanguage.length === 0) {
@@ -60,7 +60,11 @@ const OtherProjects = () => {
             heading={t('other_projects.heading')}
             subheading={
                t('other_projects.p')
-               // Archive link and remember to change also in scss .paragraph
+
+               /**
+                * Archive link
+                * Remember to change also in scss .paragraph
+                */
                // <LinkWithScrollOnTop
                //    endpoint={'archive'}
                //    content={t('other_projects.go_to_archive_link')}

@@ -23,7 +23,9 @@ const App = () => {
       setTimeout(() => setShowHome(true), 1); // 5100
    }, []);
 
-   return showHome ? (
+   if (!showHome) return <Splash />;
+
+   return (
       <Routes>
          <Route path="/">
             <Route
@@ -59,8 +61,6 @@ const App = () => {
          </Route>
          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
-   ) : (
-      <Splash />
    );
 };
 

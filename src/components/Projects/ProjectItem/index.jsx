@@ -21,7 +21,7 @@ import classes from '../index.module.scss';
 const ProjectItem = ({ project, hasMainStyle }) => {
    const [details, setDetails] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
-   const [isLoaded, setIsLoaded] = useState(false);
+   const [imageIsLoaded, setImageIsLoaded] = useState(false);
    const { t } = useTranslation();
    useFadeOnScroll(classes['in-page'], true);
 
@@ -33,7 +33,7 @@ const ProjectItem = ({ project, hasMainStyle }) => {
       setScaleDown(true);
    };
 
-   const setIsLoadedHandler = () => setIsLoaded(true);
+   const setImageIsLoadedHandler = () => setImageIsLoaded(true);
 
    // Set <html> scroll behavior previously on initial due to hover on return to main page button on project details page
    useEffect(() => {
@@ -61,7 +61,7 @@ const ProjectItem = ({ project, hasMainStyle }) => {
       ));
    };
 
-   // Background position other projects details
+   // Handle css background position of other projects details
    const getPosition = () => {
       if (
          project.id === 521026706 /* portfolio */ ||
@@ -172,10 +172,10 @@ const ProjectItem = ({ project, hasMainStyle }) => {
             >
                <img
                   src={
-                     isLoaded ? project.image || default_image : default_image
+                     imageIsLoaded ? project.image || default_image : default_image
                   }
                   alt={`${project.name} project from Davide De Leonardis`}
-                  onLoad={setIsLoadedHandler}
+                  onLoad={setImageIsLoadedHandler}
                />
             </div>
          </li>

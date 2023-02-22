@@ -39,7 +39,7 @@ const LanguagesFilter = ({
       return programmingLanguages;
    };
 
-   // Filter projects by language
+   // Condition of filter projects by language
    const filterProject = (language) => {
       hideProjectsHandler();
 

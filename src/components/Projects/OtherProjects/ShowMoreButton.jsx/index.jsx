@@ -1,5 +1,5 @@
 // Libraries
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 
 // Custom hooks
 import useDimensions from '../../../../hooks/useDimensions';
@@ -21,7 +21,7 @@ const ShowMoreButton = ({
    // Show "show more" button
    const showAllProjectsHandler = () => setProjectsAreSliced(false);
 
-   // "Show more" button display conditions
+   // Display "Show more" button based on viewport width
    if (
       (projectsAreSliced &&
          screenWidth > 900 &&
@@ -32,8 +32,8 @@ const ShowMoreButton = ({
    )
       return;
 
+   // Prevent glitch in scrolling up and change button text
    const onClick = () => {
-      // Prevent glitch in scroll up
       document.documentElement.style.scrollBehavior = 'initial';
       setTimeout(
          () => (document.documentElement.style.scrollBehavior = 'smooth'),
@@ -43,7 +43,7 @@ const ShowMoreButton = ({
       projectsAreSliced ? showAllProjectsHandler() : hideProjectsHandler();
    };
 
-   // Actual button
+   // Display actual button
    const buttonShowMore = (
       <Button className={classes['show-more-button']} onClick={onClick}>
          {projectsAreSliced
