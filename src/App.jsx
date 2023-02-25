@@ -6,6 +6,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Splash from './components/pages/Splash';
 import Home from './components/pages/Home';
 import Project from './components/pages/MainProject';
+import Maintenance from './components/pages/Maintenance';
 import Archive from './components/pages/Archive';
 import Layout from './components/layout/Layout';
 
@@ -17,6 +18,8 @@ import ArrowUp from './components/portals/ArrowUpPortal';
 import './assets/scss/index.scss';
 
 const App = () => {
+	return <Maintenance />
+	
    const [showHome, setShowHome] = useState(false);
 
    useEffect(() => {
