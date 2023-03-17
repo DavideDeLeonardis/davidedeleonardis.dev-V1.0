@@ -4,14 +4,14 @@ const useProjects = () => {
    const { t } = useTranslation();
 
    return [
+      // deliveboo
       {
-         // deliveboo
          id: 480318106,
          name: 'Deliveboo',
          image: require('../images/projects/deliveboo.png'),
          video: null,
-         description: t('projects.deliveboo.short_d'),
-         long_description: t('projects.deliveboo.long_d'),
+         description: t('projects.deliveboo.short_d'), //
+         long_description: t('projects.deliveboo.long_d'), //
          topics: [
             'Laravel',
             'MySQL',
@@ -28,14 +28,14 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: true,
       },
+      // react-TS-select-component
       {
-         // react-TS-select-component
          id: 34117123,
          name: 'Custom Select Component',
          image: require('../images/projects/select-component.png'),
          video: null,
-         description: t('projects.custom_select_component.short_d'),
-         long_description: t('projects.custom_select_component.long_d'),
+         description: t('projects.custom_select_component.short_d'), //
+         long_description: t('projects.custom_select_component.long_d'), //
          topics: ['React', 'TypeScript', 'Accessibility', 'SCSS'],
          languages: ['React', 'TypeScript'],
          url: 'https://react-ts-custom-select.web.app',
@@ -46,14 +46,31 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: true,
       },
+      // No-wait-Chat-GPT
       {
-         // laravel-boolpress
+         id: 394333548,
+         name: 'No-wait ChatGPT',
+         image: require('../images/default.png'), //
+         video: null,
+         description: t('projects.no_wait_chatgpt.short_d'), //
+         long_description: null,
+         topics: ['React', 'TypeScript', 'AI', 'Accessibility', 'SCSS'],
+         languages: ['React', 'TypeScript'],
+         url: 'https://ts-chatgpt.web.app/',
+         github_url: 'https://github.com/DavideDeLeonardis/No-wait-ChatGPT',
+         isFeatured: false,
+         isMain: false,
+         isArchived: false,
+         hasDetailsPage: false,
+      },
+      // laravel-boolpress
+      {
          id: 464647959,
          name: 'Laravel Boolpress',
          image: require('../images/projects/boolpress.png'),
          video: require('../images/projects/boolpress-video.mov'),
-         description: t('projects.laravel_boolpress.short_d'),
-         long_description: t('projects.laravel_boolpress.long_d'),
+         description: t('projects.laravel_boolpress.short_d'), //
+         long_description: t('projects.laravel_boolpress.long_d'), //
          topics: [
             'Laravel',
             'Blade',
@@ -70,8 +87,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: true,
       },
+      // react-amazon
       {
-         // react-amazon
          id: 497369439,
          name: 'React Amazon',
          image: require('../images/projects/react-amazon.png'),
@@ -86,8 +103,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // react-auth-test
       {
-         // react-auth-test
          id: 507615722,
          name: 'React Auth',
          image: require('../images/projects/react-auth-test.png'),
@@ -102,8 +119,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // vue-netflix
       {
-         // vue-netflix
          id: 449656740,
          name: 'Vue Netflix',
          image: require('../images/projects/vue-netflix.png'),
@@ -118,13 +135,13 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // portfolio V-1.0
       {
-         // portfolio V-1.0
          id: 521026706,
          name: 'Portfolio V1',
          image: require('../images/projects/portfolio-v1.0.png'),
-         description: t('projects.portfolio_v1.short_d'),
-         long_description: null,
+         description: t('projects.portfolio_v1.short_d'), //
+         long_description: t('projects.portfolio_v1.long_d'), //
          topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
          languages: ['React'],
          url: null,
@@ -135,8 +152,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: true,
       },
+      // avada-consultant
       {
-         // avada-consultant
          id: 451409349,
          name: 'Avada Consultant',
          image: require('../images/projects/vue-proj-vuejs.png'),
@@ -151,8 +168,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // vue-instagram
       {
-         // vue-instagram
          id: 507411259,
          name: 'Vue Instagram',
          image: require('../images/projects/vue-instagram.png'),
@@ -167,8 +184,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // vue-boolzapp
       {
-         // vue-boolzapp
          id: 440119535,
          name: 'Vue Boolzapp',
          image: require('../images/projects/vue-boolzapp.png'),
@@ -183,8 +200,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // laravel-comics
       {
-         // laravel-comics
          id: 458602990,
          name: 'Laravel Comics',
          image: require('../images/projects/laravel-comics.png'),
@@ -199,8 +216,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // minefield-game
       {
-         // minefield-game
          id: 434247273,
          name: 'JS Minefield game',
          image: require('../images/projects/minefield-game.png'),
@@ -215,8 +232,8 @@ const useProjects = () => {
          isArchived: false,
          hasDetailsPage: false,
       },
+      // test-project
       {
-         // test-project
          id: 1111147273,
          name: 'Test project',
          image: 'https://picsum.photos/200/200',

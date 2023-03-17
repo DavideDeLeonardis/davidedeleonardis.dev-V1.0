@@ -25,8 +25,13 @@ const ProjectItem = ({ project, hasMainStyle }) => {
    const { t } = useTranslation();
    useFadeOnScroll(classes['in-page'], true);
 
-   const showDetailsHandler = () => setDetails(true) && setScaleDown(false);
+   // Show card portal
+   const showDetailsHandler = () => {
+      setDetails(true);
+      setScaleDown(false);
+   };
 
+   // Hide card portal
    const hideDetailsHandler = () => {
       // time for scale down animation to complete
       setTimeout(() => setDetails(false), 150);
@@ -172,7 +177,9 @@ const ProjectItem = ({ project, hasMainStyle }) => {
             >
                <img
                   src={
-                     imageIsLoaded ? project.image || default_image : default_image
+                     imageIsLoaded
+                        ? project.image || default_image
+                        : default_image
                   }
                   alt={`${project.name} project from Davide De Leonardis`}
                   onLoad={setImageIsLoadedHandler}

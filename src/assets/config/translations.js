@@ -53,6 +53,11 @@ export const translationsEn = {
             'EN - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis doloribus id sunt iure rerum alias voluptates tempora. Veritatis ad, facilis cum dolorum provident expedita minima deserunt corporis saepe quidem odit eum rem corrupti, delectus aperiam atque temporibus quo ipsam obcaecati porro! Amet perspiciatis tenetur est maxime at porro mollitia ducimus provident a. Temporibus suscipit commodi alias est, voluptatem nulla beatae molestias dignissimos cupiditate omnis, eligendi numquam culpa! Enim perferendis earum cupiditate aperiam obcaecati incidunt vitae, animi dolorem explicabo ea qui voluptatum nobis illo, alias quo quidem. Amet culpa beatae, sapiente cumque veniam est totam quaerat. Quas pariatur consequatur eos nostrum aliquam, cum dicta ipsum dolores optio dolore neque, soluta culpa recusandae vero id a. Autem itaque harum quas eos, excepturi neque! Maxime saepe iusto cum libero optio, delectus, asperiores ut est dicta voluptates eligendi quod beatae inventore. Harum laboriosam ab necessitatibus obcaecati possimus exercitationem dicta omnis quod ratione nemo. Blanditiis eos, iste quibusdam sed similique, laboriosam laudantium nihil vel nemo non quaerat a eaque quas pariatur sint error architecto mollitia illum. Inventore illo delectus laborum consequatur esse quasi nesciunt beatae fugit nisi? Veniam numquam sed error adipisci ad laborum, atque placeat possimus quibusdam? Ut ipsa, esse voluptatum quae voluptas inventore!',
          intro: 'Content Management System',
       },
+      no_wait_chatgpt: {
+			short_d: 'Description', // FINIRE
+         long_d: null,
+         intro: 'INTRO EN',
+      },
       custom_select_component: {
          short_d:
             'Custom select component made with React.js and TypeScript. Accessibility commands through keyboard interactions are available both in single and multiple selection. Accessibility commands are inserted through a custom hook and a useRef hook; notice that select component are completely manually created.',
@@ -191,6 +196,11 @@ export const translationsIt = {
          long_d:
             'IT - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis doloribus id sunt iure rerum alias voluptates tempora. Veritatis ad, facilis cum dolorum provident expedita minima deserunt corporis saepe quidem odit eum rem corrupti, delectus aperiam atque temporibus quo ipsam obcaecati porro! Amet perspiciatis tenetur est maxime at porro mollitia ducimus provident a. Temporibus suscipit commodi alias est, voluptatem nulla beatae molestias dignissimos cupiditate omnis, eligendi numquam culpa! Enim perferendis earum cupiditate aperiam obcaecati incidunt vitae, animi dolorem explicabo ea qui voluptatum nobis illo, alias quo quidem. Amet culpa beatae, sapiente cumque veniam est totam quaerat. Quas pariatur consequatur eos nostrum aliquam, cum dicta ipsum dolores optio dolore neque, soluta culpa recusandae vero id a. Autem itaque harum quas eos, excepturi neque! Maxime saepe iusto cum libero optio, delectus, asperiores ut est dicta voluptates eligendi quod beatae inventore. Harum laboriosam ab necessitatibus obcaecati possimus exercitationem dicta omnis quod ratione nemo. Blanditiis eos, iste quibusdam sed similique, laboriosam laudantium nihil vel nemo non quaerat a eaque quas pariatur sint error architecto mollitia illum. Inventore illo delectus laborum consequatur esse quasi nesciunt beatae fugit nisi? Veniam numquam sed error adipisci ad laborum, atque placeat possimus quibusdam? Ut ipsa, esse voluptatum quae voluptas inventore!',
          intro: 'Content Management System',
+      },
+      no_wait_chatgpt: {
+         short_d: 'Descrizione', // FINIRE
+         long_d: null,
+         intro: 'INTRO IT',
       },
       custom_select_component: {
          short_d:
