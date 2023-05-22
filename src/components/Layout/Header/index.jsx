@@ -27,7 +27,8 @@ const Header = ({ isHome }) => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
-   const [isHover, setIsHover] = useState(false);
+	const [isHover, setIsHover] = useState(false);
+	
    const { scroll, isGoingDown, setIsGoingDown } = useWindowScroll(false);
    const { screenWidth } = useDimensions();
    const { t } = useTranslation();
