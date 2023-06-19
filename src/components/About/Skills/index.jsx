@@ -1,5 +1,5 @@
 // Assets
-import { skills } from '../../../assets/config/skills';
+import { skills } from '../../../constants/skills';
 
 // SCSS
 import classes from './index.module.scss';

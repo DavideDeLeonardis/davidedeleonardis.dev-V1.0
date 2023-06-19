@@ -8,7 +8,7 @@ const useProjects = () => {
       {
          id: 480318106,
          name: 'Deliveboo',
-         image: require('../images/projects/deliveboo.png'),
+         image: require('../assets/images/projects/deliveboo.png'),
          video: null,
          description: t('projects.deliveboo.short_d'), //
          long_description: t('projects.deliveboo.long_d'), //
@@ -32,7 +32,7 @@ const useProjects = () => {
       {
          id: 34117123,
          name: 'Custom Select Component',
-         image: require('../images/projects/select-component.png'),
+         image: require('../assets/images/projects/select-component.png'),
          video: null,
          description: t('projects.custom_select_component.short_d'), //
          long_description: t('projects.custom_select_component.long_d'), //
@@ -50,7 +50,7 @@ const useProjects = () => {
       {
          id: 394333548,
          name: 'No-wait ChatGPT',
-         image: require('../images/default.png'), //
+         image: require('../assets/images/default.png'), //
          video: null,
          description: t('projects.no_wait_chatgpt.short_d'), //
          long_description: null,
@@ -67,8 +67,8 @@ const useProjects = () => {
       {
          id: 464647959,
          name: 'Laravel Boolpress',
-         image: require('../images/projects/boolpress.png'),
-         video: require('../images/projects/boolpress-video.mov'),
+         image: require('../assets/images/projects/boolpress.png'),
+         video: require('../assets/images/projects/boolpress-video.mov'),
          description: t('projects.laravel_boolpress.short_d'), //
          long_description: t('projects.laravel_boolpress.long_d'), //
          topics: [
@@ -91,7 +91,7 @@ const useProjects = () => {
       {
          id: 497369439,
          name: 'React Amazon',
-         image: require('../images/projects/react-amazon.png'),
+         image: require('../assets/images/projects/react-amazon.png'),
          description: t('projects.react_amazon.short_d'),
          long_description: null,
          topics: ['React', 'React context', 'SCSS', 'Firebase database'],
@@ -107,7 +107,7 @@ const useProjects = () => {
       {
          id: 507615722,
          name: 'React Auth',
-         image: require('../images/projects/react-auth-test.png'),
+         image: require('../assets/images/projects/react-auth-test.png'),
          description: t('projects.react_auth_test.short_d'),
          long_description: null,
          topics: ['React', 'React context', 'SCSS', 'Firebase auth'],
@@ -123,7 +123,7 @@ const useProjects = () => {
       {
          id: 449656740,
          name: 'Vue Netflix',
-         image: require('../images/projects/vue-netflix.png'),
+         image: require('../assets/images/projects/vue-netflix.png'),
          description: t('projects.vue_netflix.short_d'),
          long_description: t('projects.vue_netflix.long_d'),
          topics: ['Vuejs', 'SCSS', 'API'],
@@ -139,7 +139,7 @@ const useProjects = () => {
       {
          id: 521026706,
          name: 'Portfolio V1',
-         image: require('../images/projects/portfolio-v1.0.png'),
+         image: require('../assets/images/projects/portfolio-v1.0.png'),
          description: t('projects.portfolio_v1.short_d'), //
          long_description: t('projects.portfolio_v1.long_d'), //
          topics: ['React', 'Custom hooks', 'SCSS', 'Portfolio'],
@@ -156,7 +156,7 @@ const useProjects = () => {
       {
          id: 451409349,
          name: 'Avada Consultant',
-         image: require('../images/projects/vue-proj-vuejs.png'),
+         image: require('../assets/images/projects/vue-proj-vuejs.png'),
          description: t('projects.avada_consultant.short_d'),
          long_description: null,
          topics: ['Vue.js', 'SCSS'],
@@ -172,7 +172,7 @@ const useProjects = () => {
       {
          id: 507411259,
          name: 'Vue Instagram',
-         image: require('../images/projects/vue-instagram.png'),
+         image: require('../assets/images/projects/vue-instagram.png'),
          description: t('projects.vue_instagram.short_d'),
          long_description: null,
          topics: ['Vue.js', 'SCSS'],
@@ -188,7 +188,7 @@ const useProjects = () => {
       {
          id: 440119535,
          name: 'Vue Boolzapp',
-         image: require('../images/projects/vue-boolzapp.png'),
+         image: require('../assets/images/projects/vue-boolzapp.png'),
          description: t('projects.vue_boolzapp.short_d'),
          long_description: null,
          topics: ['HTML', 'CSS', 'Vue.js'],
@@ -204,7 +204,7 @@ const useProjects = () => {
       {
          id: 458602990,
          name: 'Laravel Comics',
-         image: require('../images/projects/laravel-comics.png'),
+         image: require('../assets/images/projects/laravel-comics.png'),
          description: t('projects.laravel_comics.short_d'),
          long_description: null,
          topics: ['Laravel', 'Blade'],
@@ -220,7 +220,7 @@ const useProjects = () => {
       {
          id: 434247273,
          name: 'JS Minefield game',
-         image: require('../images/projects/minefield-game.png'),
+         image: require('../assets/images/projects/minefield-game.png'),
          description: t('projects.minefield_game.short_d'),
          long_description: null,
          topics: ['HTML', 'CSS', 'JavaScript'],

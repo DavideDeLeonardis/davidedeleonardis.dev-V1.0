@@ -1,4 +1,3 @@
-// Libraries
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -22,7 +21,6 @@ import {
    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 
-// App
 import App from './App';
 
 library.add(

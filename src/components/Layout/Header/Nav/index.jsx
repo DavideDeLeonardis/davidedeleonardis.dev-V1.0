@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useActive from '../../../../hooks/useActive';
 
 // Assets
-import { useNavTranslate } from '../../../../assets/config/navLinks';
+import { useNavTranslate } from '../../../../constants/navLinks';
 
 // SCSS
 import '../index.scss';

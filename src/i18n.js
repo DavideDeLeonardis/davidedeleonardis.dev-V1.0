@@ -1,9 +1,7 @@
-// Libraries
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Assets
-import { translationsEn, translationsIt } from './assets/config/translations';
+import { translationsEn, translationsIt } from './constants/translations';
 
 i18next.use(initReactI18next).init({
    resources: {

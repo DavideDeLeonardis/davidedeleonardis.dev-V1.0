@@ -8,7 +8,7 @@ import LanguagesFilter from './LanguagesFilter';
 import ShowMoreButton from './ShowMoreButton.jsx';
 
 // Assets
-import projects from '../../../assets/config/projects';
+import projects from '../../../constants/projects';
 
 // Custom hooks
 import useDimensions from '../../../hooks/useDimensions';

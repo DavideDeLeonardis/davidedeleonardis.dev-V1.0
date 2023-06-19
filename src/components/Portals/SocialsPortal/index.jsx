@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Portal from '../';
 
 // Assets
-import { socials } from '../../../assets/config/mySocials';
+import { socials } from '../../../constants/mySocials';
 
 // SCSS
 import classes from './index.module.scss';

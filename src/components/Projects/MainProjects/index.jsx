@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import ProjectsList from '../ProjectsList';
 
 // Assets
-import projects from '../../../assets/config/projects';
+import projects from '../../../constants/projects';
 
 // UI
 import Heading from '../../ui/Heading';

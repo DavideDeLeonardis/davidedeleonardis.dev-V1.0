@@ -10,7 +10,7 @@ import SelectLanguage from '../../ui/SelectLanguage';
 import useDimensions from '../../../hooks/useDimensions';
 
 // Assets
-import { languages } from '../../../assets/config/languages';
+import { languages } from '../../../constants/languages';
 
 // SCSS
 import classes from './index.module.scss';
