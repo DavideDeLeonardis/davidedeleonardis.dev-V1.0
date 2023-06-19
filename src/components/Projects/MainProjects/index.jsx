@@ -1,16 +1,9 @@
-// Libraries
 import { useTranslation } from 'react-i18next';
 
-// Components
 import ProjectsList from '../ProjectsList';
-
-// Assets
 import projects from '../../../constants/projects';
-
-// UI
 import Heading from '../../ui/Heading';
 
-// SCSS
 import classes from '../index.module.scss';
 
 const MainProjects = () => {

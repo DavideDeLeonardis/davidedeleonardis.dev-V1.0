@@ -1,4 +1,3 @@
-// SCSS
 import classes from './index.module.scss';
 
 const ArchiveProjects = ({ project }) => {

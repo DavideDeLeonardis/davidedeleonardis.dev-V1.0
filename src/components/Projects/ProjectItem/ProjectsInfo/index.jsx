@@ -1,16 +1,12 @@
 // ALL PROJECTS INFO
 
-
-// Libraries
 import { Trans } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// UI
 import Button from '../../../ui/Button';
 import LinkWithScrollOnTop from '../../../ui/LinkWithScrollOnTop';
 import SeeDemoGitHubButtons from '../../../ui/SeeDemoGitHubButtons';
 
-// SCSS
 import classes from '../../index.module.scss';
 
 const ProjectsInfo = ({
@@ -18,9 +14,8 @@ const ProjectsInfo = ({
    hasMainStyle,
    hideDetailsHandler,
    displayMaps,
-	t
+   t,
 }) => {
-
    // Display "show details" button
    const showDetailsButton = (
       <Button>

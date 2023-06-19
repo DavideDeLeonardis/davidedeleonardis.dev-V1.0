@@ -1,21 +1,12 @@
-// Libraries
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-// Components
 import ProjectsInfo from './ProjectsInfo';
-
-// Custom hooks
-import useFadeOnScroll from '../../../hooks/useFadeOnScroll';
-
-// UI
 import CardPortal from '../../ui/CardPortal';
 import Button from '../../ui/Button';
+import useFadeOnScroll from '../../../hooks/useFadeOnScroll';
 
-// Assets
 import default_image from '../../../assets/images/default.png';
-
-// SCSS
 import classes from '../index.module.scss';
 
 const ProjectItem = ({ project, hasMainStyle }) => {

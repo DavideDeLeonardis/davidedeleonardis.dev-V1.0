@@ -1,23 +1,14 @@
-// Libraries
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-// Components
 import ProjectsList from '../ProjectsList';
 import LanguagesFilter from './LanguagesFilter';
 import ShowMoreButton from './ShowMoreButton.jsx';
-
-// Assets
 import projects from '../../../constants/projects';
-
-// Custom hooks
-import useScreenDimensions from '../../../hooks/useScreenDimensions';
-
-// UI
 // import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
 import Heading from '../../ui/Heading';
+import useScreenDimensions from '../../../hooks/useScreenDimensions';
 
-// SCSS
 import classes from '../index.module.scss';
 
 const OtherProjects = () => {
@@ -37,7 +28,7 @@ const OtherProjects = () => {
 
    // Display actual projects based on show more button actions
    const getProjects = () => {
-		let otherProjectsShown = 3;
+      let otherProjectsShown = 3;
       if (screenWidth < 901) otherProjectsShown = 2;
 
       if (projectsByLanguage.length === 0) {
@@ -62,13 +53,15 @@ const OtherProjects = () => {
                t('other_projects.p')
 
                /**
-                * Archive link
-                * Remember to change also in scss .paragraph
-                */
-               // <LinkWithScrollOnTop
-               //    endpoint={'archive'}
-               //    content={t('other_projects.go_to_archive_link')}
-               // />
+                * Go-to-archive LINK
+					 * 
+					 * Remove above t('other_projects.p')
+                * Change also in scss .paragraph
+					*/
+					// <LinkWithScrollOnTop
+					// 	endpoint={'archive'}
+					// 	content={t('other_projects.go_to_archive_link')}
+					// />
             }
             pClassName={classes.paragraph}
          />

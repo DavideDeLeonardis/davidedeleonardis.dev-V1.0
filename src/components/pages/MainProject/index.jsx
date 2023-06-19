@@ -1,18 +1,13 @@
-// Libraries
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// Assets
-import default_image from '../../../assets/images/default.png';
-
-// UI
 import Button from '../../ui/Button';
 import SeeDemoGitHubButtons from '../../ui/SeeDemoGitHubButtons';
 
-// SCSS
+import default_image from '../../../assets/images/default.png';
 import classes from './index.module.scss';
 
 const Project = () => {
@@ -33,7 +28,7 @@ const Project = () => {
       document.documentElement.style.scrollBehavior = 'smooth';
    }, []);
 
-	// Go to description button function
+   // Go to description button function
    const bounceToBottomHandler = () => window.scrollTo(0, window.innerHeight);
 
    // Start arrow bounce

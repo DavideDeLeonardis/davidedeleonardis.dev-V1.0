@@ -1,7 +1,5 @@
-// Components
 import Project from '../ProjectItem';
 
-// SCSS
 import classes from '../index.module.scss';
 
 const ProjectsList = ({ projects, hasMainStyle }) => {
