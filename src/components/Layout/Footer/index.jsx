@@ -1,22 +1,15 @@
-// Libraries
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import dateFormat from 'dateformat';
 
-// UI
 import SelectLanguage from '../../ui/SelectLanguage';
-
-// Custom hooks
-import useDimensions from '../../../hooks/useDimensions';
-
-// Assets
+import useScreenDimensions from '../../../hooks/useScreenDimensions';
 import { languages } from '../../../constants/languages';
 
-// SCSS
 import classes from './index.module.scss';
 
 const Footer = () => {
-   const { screenWidth } = useDimensions();
+   const { screenWidth } = useScreenDimensions();
    const { t } = useTranslation();
 
    // Change site language

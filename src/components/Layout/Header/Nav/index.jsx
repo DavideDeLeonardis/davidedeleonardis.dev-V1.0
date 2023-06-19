@@ -1,13 +1,8 @@
-// Libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// Custom hooks
 import useActive from '../../../../hooks/useActive';
-
-// Assets
 import { useNavTranslate } from '../../../../constants/navLinks';
 
-// SCSS
 import '../index.scss';
 
 const Nav = ({ onClose, isHome }) => {

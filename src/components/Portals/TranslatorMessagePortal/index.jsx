@@ -1,11 +1,8 @@
-// Libraries
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// Components
 import Portal from '../';
 
-// SCSS
 import classes from './index.module.scss';
 
 const TranslatorMessagePortal = (showHome = false) => {

@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Portal from '../../portals';
+
 import classes from './index.module.scss';
 
 const Message = ({ message, isValid, onHideMessage }) => {
+   const bgColor = { valid: '#2ea82e', invalid: '#d00909' };
+
    return (
       <Portal>
          <div
@@ -11,11 +14,9 @@ const Message = ({ message, isValid, onHideMessage }) => {
 					${classes.message} 
 					${message && classes['slide-to-right']}
 				`}
-            style={
-               isValid
-                  ? { backgroundColor: '#2ea82e' }
-                  : { backgroundColor: '#d00909' }
-            }
+            style={{
+               backgroundColor: `${isValid ? bgColor.valid : bgColor.invalid}`,
+            }}
          >
             {message}
             <div className={classes.x} onClick={onHideMessage}>

@@ -1,8 +1,6 @@
-// UI
 import Portal from '../../portals';
 import Backdrop from '../Backdrop';
 
-// SCSS
 import classes from './index.module.scss';
 
 const CardPortal = ({ children, backdropIsShown, onClose, scaleDown }) => {

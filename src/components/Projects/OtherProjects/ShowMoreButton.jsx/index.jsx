@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 
 // Custom hooks
-import useDimensions from '../../../../hooks/useDimensions';
+import useScreenDimensions from '../../../../hooks/useScreenDimensions';
 
 // UI
 import Button from '../../../ui/Button';
@@ -15,7 +15,7 @@ const ShowMoreButton = ({
    hideProjectsHandler,
    classes,
 }) => {
-   const { screenWidth } = useDimensions();
+   const { screenWidth } = useScreenDimensions();
    const { t } = useTranslation();
 
    // Show "show more" button

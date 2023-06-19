@@ -1,22 +1,13 @@
-// Libraries
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// Components
 import Skills from './Skills';
-
-// UI
 import Heading from '../ui/Heading';
 import Button from '../ui/Button';
-
-// Custom hooks
 import useFadeOnScroll from '../../hooks/useFadeOnScroll';
 
-// Assets
 import profileImage from '../../assets/images/profile.jpg';
 import Certifications from '../../assets/images/Salesforce-Certifications.pdf';
-
-// SCSS
 import classes from './index.module.scss';
 
 const About = () => {

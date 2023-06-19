@@ -1,25 +1,16 @@
-// Libraries
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// Components
 import Nav from './Nav';
 import Resume from '../../portals/ResumePortal';
-
-// UI
 import Backdrop from '../../ui/Backdrop';
 import Button from '../../ui/Button';
-
-// Custom hooks
-import useDimensions from '../../../hooks/useDimensions';
+import useScreenDimensions from '../../../hooks/useScreenDimensions';
 import useWindowScroll from '../../../hooks/useWindowScroll';
 
-// Assets
 import logo from '../../../assets/images/exagon-logo-blue.png';
-
-// SCSS
 import './index.scss';
 
 const Header = ({ isHome }) => {
@@ -27,10 +18,10 @@ const Header = ({ isHome }) => {
    const [togglerIsShown, setTogglerIsShown] = useState(true);
    const [resumeIsShown, setResumeisShown] = useState(false);
    const [scaleDown, setScaleDown] = useState(false);
-	const [isHover, setIsHover] = useState(false);
-	
+   const [isHover, setIsHover] = useState(false);
+
    const { scroll, isGoingDown, setIsGoingDown } = useWindowScroll(false);
-   const { screenWidth } = useDimensions();
+   const { screenWidth } = useScreenDimensions();
    const { t } = useTranslation();
 
    // Open menu function
@@ -45,7 +36,7 @@ const Header = ({ isHome }) => {
       setTogglerIsShown(true);
    };
 
-	// Show CV function
+   // Show CV function
    const showResumeHandler = () => {
       setResumeisShown(true);
       setMenuIsShown(false);
@@ -53,7 +44,7 @@ const Header = ({ isHome }) => {
       setScaleDown(false);
    };
 
-	// Hide CV function
+   // Hide CV function
    const hideResumeHandler = () => {
       setScaleDown(true);
       // time for scale down animation to complete

@@ -1,30 +1,23 @@
-// Libraries
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import validator from 'validator';
 import emailjs from '@emailjs/browser';
-import { useTranslation } from 'react-i18next';
 import { TextareaAutosize } from '@mui/material';
 
-// Components
 import Input from './Input';
 import Message from './Message';
-
-// UI
 import Button from '../ui/Button';
 import Heading from '../ui/Heading';
-
-// Custom hooks
 import useInput from '../../hooks/useInput';
 import useFadeOnScroll from '../../hooks/useFadeOnScroll';
 
-// SCSS
 import classes from './index.module.scss';
 
 const ContactPage = () => {
    const [message, setMessage] = useState(null);
    const [isLoading, setIsLoading] = useState(false);
    const [isValid, setIsValid] = useState(false);
-   const form = useRef();
+   const formRef = useRef();
    const { t } = useTranslation();
    useFadeOnScroll(classes['in-page']);
 
@@ -75,12 +68,12 @@ const ContactPage = () => {
          setIsLoading(false);
       };
 
-		// EmailJS
+      // EmailJS
       emailjs
          .sendForm(
             'service_jlf0fj6',
             'template_84b8ugn',
-            form.current,
+            formRef.current,
             '3xD2auX5eX49KmlW8'
          )
          .then(() => {
@@ -110,7 +103,7 @@ const ContactPage = () => {
             pClassName={classes.text}
          />
 
-         <form ref={form} onSubmit={sendEmail}>
+         <form ref={formRef} onSubmit={sendEmail}>
             {/* Name */}
             <Input
                value={enteredName}

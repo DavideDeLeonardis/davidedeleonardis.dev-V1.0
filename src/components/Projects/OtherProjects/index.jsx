@@ -11,7 +11,7 @@ import ShowMoreButton from './ShowMoreButton.jsx';
 import projects from '../../../constants/projects';
 
 // Custom hooks
-import useDimensions from '../../../hooks/useDimensions';
+import useScreenDimensions from '../../../hooks/useScreenDimensions';
 
 // UI
 // import LinkWithScrollOnTop from '../../ui/LinkWithScrollOnTop';
@@ -24,7 +24,7 @@ const OtherProjects = () => {
    const projectsInfo = projects();
    const [projectsByLanguage, setProjectsByLanguage] = useState([]);
    const [projectsAreSliced, setProjectsAreSliced] = useState(true);
-   const { screenWidth } = useDimensions();
+   const { screenWidth } = useScreenDimensions();
    const { t } = useTranslation();
 
    // Filter projects NOT main and NOT archived

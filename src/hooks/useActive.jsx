@@ -1,4 +1,3 @@
-// Libraries
 import { useState } from 'react';
 
 const useActive = (somethingActive) => {

@@ -1,17 +1,12 @@
-// Libraries
 import { useTranslation, Trans } from 'react-i18next';
 
-// UI
 import Button from '../ui/Button';
+import useScreenDimensions from '../../hooks/useScreenDimensions';
 
-// Custom hooks
-import useDimensions from '../../hooks/useDimensions';
-
-// SCSS
 import classes from './index.module.scss';
 
 const Presentation = () => {
-   const { screenWidth } = useDimensions();
+   const { screenWidth } = useScreenDimensions();
    const { t } = useTranslation();
 
    return (
